@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>InterfazBotonesUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">InterfazBotonesUsuario.java</span></div><h1>InterfazBotonesUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Sistema;
+import dominio.Usuario;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class InterfazBotonesUsuario extends javax.swing.JPanel {
+
+    private Sistema sistema;
+    private JPanel actual;
+    private JFrame ventana;
+    private Usuario usuarioActual;
+
+<span class="nc" id="L15">    public InterfazBotonesUsuario(Sistema unSistema, JFrame unaVentana, Usuario unUsuario) {</span>
+<span class="nc" id="L16">        initComponents();</span>
+<span class="nc" id="L17">        sistema = unSistema;</span>
+<span class="nc" id="L18">        ventana = unaVentana;</span>
+<span class="nc" id="L19">        usuarioActual = unUsuario;</span>
+<span class="nc" id="L20">        actual = new PanelHomeUsuario(sistema, this, ventana);</span>
+<span class="nc" id="L21">        ventana.add(this);</span>
+<span class="nc" id="L22">        ventana.add(actual);</span>
+<span class="nc" id="L23">        etiquetaUsuarioActual.setText(this.usuarioActual.getNombre());</span>
+<span class="nc" id="L24">    }</span>
+
+    public JPanel getActual() {
+<span class="nc" id="L27">        return actual;</span>
+    }
+
+    public void setActual(JPanel actual) {
+<span class="nc" id="L31">        this.actual = actual;</span>
+<span class="nc" id="L32">    }</span>
+
+    public Usuario getUsuarioActual() {
+<span class="nc" id="L35">        return usuarioActual;</span>
+    }
+
+    public void setUsuarioActual(Usuario usuarioActual) {
+<span class="nc" id="L39">        this.usuarioActual = usuarioActual;</span>
+<span class="nc" id="L40">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L46">        panelBotonesUsuario = new javax.swing.JPanel();</span>
+<span class="nc" id="L47">        btnHome = new javax.swing.JButton();</span>
+<span class="nc" id="L48">        btnPedirPlan = new javax.swing.JButton();</span>
+<span class="nc" id="L49">        btnConsultaDirecta = new javax.swing.JButton();</span>
+<span class="nc" id="L50">        btnPerfil = new javax.swing.JButton();</span>
+<span class="nc" id="L51">        btnCambiarUsuario = new javax.swing.JButton();</span>
+<span class="nc" id="L52">        btnAgregarComida = new javax.swing.JButton();</span>
+<span class="nc" id="L53">        fondo = new javax.swing.JLabel();</span>
+<span class="nc" id="L54">        etiquetaUsuarioActual = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L56">        setPreferredSize(new java.awt.Dimension(250, 784));</span>
+<span class="nc" id="L57">        setLayout(null);</span>
+
+<span class="nc" id="L59">        panelBotonesUsuario.setBackground(new java.awt.Color(204, 255, 153));</span>
+<span class="nc" id="L60">        panelBotonesUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L61">        panelBotonesUsuario.setMinimumSize(new java.awt.Dimension(250, 784));</span>
+<span class="nc" id="L62">        panelBotonesUsuario.setPreferredSize(new java.awt.Dimension(250, 784));</span>
+<span class="nc" id="L63">        panelBotonesUsuario.setLayout(null);</span>
+
+<span class="nc" id="L65">        btnHome.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L66">        btnHome.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L67">        btnHome.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L68">        btnHome.setText(&quot;Home&quot;);</span>
+<span class="nc" id="L69">        btnHome.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L70">        btnHome.setContentAreaFilled(false);</span>
+<span class="nc" id="L71">        btnHome.setOpaque(true);</span>
+<span class="nc" id="L72">        btnHome.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L74">                btnHomeActionPerformed(evt);</span>
+<span class="nc" id="L75">            }</span>
+        });
+<span class="nc" id="L77">        panelBotonesUsuario.add(btnHome);</span>
+<span class="nc" id="L78">        btnHome.setBounds(2, 36, 270, 46);</span>
+
+<span class="nc" id="L80">        btnPedirPlan.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L81">        btnPedirPlan.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L82">        btnPedirPlan.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L83">        btnPedirPlan.setText(&quot;Pedir Plan&quot;);</span>
+<span class="nc" id="L84">        btnPedirPlan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L85">        btnPedirPlan.setContentAreaFilled(false);</span>
+<span class="nc" id="L86">        btnPedirPlan.setOpaque(true);</span>
+<span class="nc" id="L87">        btnPedirPlan.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L89">                btnPedirPlanActionPerformed(evt);</span>
+<span class="nc" id="L90">            }</span>
+        });
+<span class="nc" id="L92">        panelBotonesUsuario.add(btnPedirPlan);</span>
+<span class="nc" id="L93">        btnPedirPlan.setBounds(2, 231, 270, 43);</span>
+
+<span class="nc" id="L95">        btnConsultaDirecta.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L96">        btnConsultaDirecta.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L97">        btnConsultaDirecta.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L98">        btnConsultaDirecta.setText(&quot;Consulta Directa&quot;);</span>
+<span class="nc" id="L99">        btnConsultaDirecta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L100">        btnConsultaDirecta.setContentAreaFilled(false);</span>
+<span class="nc" id="L101">        btnConsultaDirecta.setOpaque(true);</span>
+<span class="nc" id="L102">        btnConsultaDirecta.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L104">                btnConsultaDirectaActionPerformed(evt);</span>
+<span class="nc" id="L105">            }</span>
+        });
+<span class="nc" id="L107">        panelBotonesUsuario.add(btnConsultaDirecta);</span>
+<span class="nc" id="L108">        btnConsultaDirecta.setBounds(2, 167, 270, 43);</span>
+
+<span class="nc" id="L110">        btnPerfil.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L111">        btnPerfil.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L112">        btnPerfil.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L113">        btnPerfil.setText(&quot;Perfil&quot;);</span>
+<span class="nc" id="L114">        btnPerfil.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L115">        btnPerfil.setContentAreaFilled(false);</span>
+<span class="nc" id="L116">        btnPerfil.setOpaque(true);</span>
+<span class="nc" id="L117">        btnPerfil.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L119">                btnPerfilActionPerformed(evt);</span>
+<span class="nc" id="L120">            }</span>
+        });
+<span class="nc" id="L122">        panelBotonesUsuario.add(btnPerfil);</span>
+<span class="nc" id="L123">        btnPerfil.setBounds(2, 103, 270, 43);</span>
+
+<span class="nc" id="L125">        btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L126">        btnCambiarUsuario.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L127">        btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L128">        btnCambiarUsuario.setText(&quot;Cambiar Usuario&quot;);</span>
+<span class="nc" id="L129">        btnCambiarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L130">        btnCambiarUsuario.setContentAreaFilled(false);</span>
+<span class="nc" id="L131">        btnCambiarUsuario.setOpaque(true);</span>
+<span class="nc" id="L132">        btnCambiarUsuario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L134">                btnCambiarUsuarioActionPerformed(evt);</span>
+<span class="nc" id="L135">            }</span>
+        });
+<span class="nc" id="L137">        panelBotonesUsuario.add(btnCambiarUsuario);</span>
+<span class="nc" id="L138">        btnCambiarUsuario.setBounds(2, 361, 270, 45);</span>
+
+<span class="nc" id="L140">        btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L141">        btnAgregarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L142">        btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L143">        btnAgregarComida.setText(&quot;Agregar Comida a Dieta&quot;);</span>
+<span class="nc" id="L144">        btnAgregarComida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L145">        btnAgregarComida.setContentAreaFilled(false);</span>
+<span class="nc" id="L146">        btnAgregarComida.setOpaque(true);</span>
+<span class="nc" id="L147">        btnAgregarComida.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L149">                btnAgregarComidaActionPerformed(evt);</span>
+<span class="nc" id="L150">            }</span>
+        });
+<span class="nc" id="L152">        panelBotonesUsuario.add(btnAgregarComida);</span>
+<span class="nc" id="L153">        btnAgregarComida.setBounds(2, 295, 270, 45);</span>
+
+<span class="nc" id="L155">        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/fondo2.png&quot;))); // NOI18N</span>
+<span class="nc" id="L156">        panelBotonesUsuario.add(fondo);</span>
+<span class="nc" id="L157">        fondo.setBounds(0, 0, 330, 790);</span>
+<span class="nc" id="L158">        panelBotonesUsuario.add(etiquetaUsuarioActual);</span>
+<span class="nc" id="L159">        etiquetaUsuarioActual.setBounds(23, 604, 282, 42);</span>
+
+<span class="nc" id="L161">        add(panelBotonesUsuario);</span>
+<span class="nc" id="L162">        panelBotonesUsuario.setBounds(-1, 0, 330, 810);</span>
+<span class="nc" id="L163">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+<span class="nc" id="L166">        ventana.remove(actual);</span>
+<span class="nc" id="L167">        actual = new PanelHomeUsuario(sistema, this, ventana);</span>
+<span class="nc" id="L168">        ventana.add(actual);</span>
+<span class="nc" id="L169">        ventana.pack();</span>
+<span class="nc" id="L170">    }//GEN-LAST:event_btnHomeActionPerformed</span>
+
+    private void btnPedirPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedirPlanActionPerformed
+<span class="nc" id="L173">        ventana.remove(actual);</span>
+<span class="nc" id="L174">        actual = new PanelPlanAlimentacionUsuario(sistema, ventana, this);</span>
+<span class="nc" id="L175">        ventana.add(actual);</span>
+<span class="nc" id="L176">        ventana.pack();</span>
+<span class="nc" id="L177">    }//GEN-LAST:event_btnPedirPlanActionPerformed</span>
+
+    private void btnConsultaDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDirectaActionPerformed
+<span class="nc" id="L180">        ventana.remove(actual);</span>
+<span class="nc" id="L181">        actual = new PanelConsultaProfesional(sistema, this, ventana);</span>
+<span class="nc" id="L182">        ventana.add(actual);</span>
+<span class="nc" id="L183">        ventana.pack();</span>
+<span class="nc" id="L184">    }//GEN-LAST:event_btnConsultaDirectaActionPerformed</span>
+
+    private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
+<span class="nc" id="L187">        ventana.remove(actual);</span>
+<span class="nc" id="L188">        actual = new PanelPerfilUsuario(sistema, ventana, this);</span>
+<span class="nc" id="L189">        ventana.add(actual);</span>
+<span class="nc" id="L190">        ventana.pack();</span>
+<span class="nc" id="L191">    }//GEN-LAST:event_btnPerfilActionPerformed</span>
+
+    private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
+<span class="nc" id="L194">        ventana.remove(actual);</span>
+<span class="nc" id="L195">        actual = new PanelCambioDeUsuario(ventana, sistema, this);</span>
+<span class="nc" id="L196">        ventana.add(actual);</span>
+<span class="nc" id="L197">        ventana.pack();</span>
+<span class="nc" id="L198">    }//GEN-LAST:event_btnCambiarUsuarioActionPerformed</span>
+
+    private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
+<span class="nc" id="L201">        ventana.remove(actual);</span>
+<span class="nc" id="L202">        actual = new PanelDietaDiariaUsuario(sistema, ventana, this);</span>
+<span class="nc" id="L203">        ventana.add(actual);</span>
+<span class="nc" id="L204">        ventana.pack();</span>
+<span class="nc" id="L205">    }//GEN-LAST:event_btnAgregarComidaActionPerformed</span>
+
+   
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarComida;
+    private javax.swing.JButton btnCambiarUsuario;
+    private javax.swing.JButton btnConsultaDirecta;
+    private javax.swing.JButton btnHome;
+    private javax.swing.JButton btnPedirPlan;
+    private javax.swing.JButton btnPerfil;
+    private javax.swing.JLabel etiquetaUsuarioActual;
+    private javax.swing.JLabel fondo;
+    private javax.swing.JPanel panelBotonesUsuario;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

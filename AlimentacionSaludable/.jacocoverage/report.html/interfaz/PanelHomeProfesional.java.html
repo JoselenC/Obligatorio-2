@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelHomeProfesional.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelHomeProfesional.java</span></div><h1>PanelHomeProfesional.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Profesional;
+import dominio.Sistema;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+
+public class PanelHomeProfesional extends javax.swing.JPanel {
+
+    //Atributos
+    private Profesional profesional;
+    private Sistema sistema;
+    private InterfazBotonesProfesional interfaz;
+    private JFrame ventana;
+
+    //Cosntructor
+    public PanelHomeProfesional(Sistema unSistema,
+<span class="nc" id="L18">            InterfazBotonesProfesional interfazActual, JFrame unaVentana) {</span>
+<span class="nc" id="L19">        initComponents();</span>
+<span class="nc" id="L20">        sistema = unSistema;</span>
+<span class="nc" id="L21">        interfaz = interfazActual;</span>
+<span class="nc" id="L22">        ventana = unaVentana;</span>
+<span class="nc" id="L23">        profesional = interfaz.getUsuarioActivo();</span>
+<span class="nc" id="L24">        jListDatosDelProfesional.setListData(cargoDatosDelProfesional(profesional).toArray());</span>
+<span class="nc" id="L25">        etiquetaFoto.setIcon(profesional.getFotoPerfil());</span>
+<span class="nc" id="L26">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L32">        btnEdiatrPerfilProfesional = new javax.swing.JButton();</span>
+<span class="nc" id="L33">        etiquetaTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L34">        jScrollPane2 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L35">        jListDatosDelProfesional = new javax.swing.JList();</span>
+<span class="nc" id="L36">        etiquetaEditar = new javax.swing.JLabel();</span>
+<span class="nc" id="L37">        etiquetaFoto = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L39">        setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L40">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
+<span class="nc" id="L41">        setLayout(null);</span>
+
+<span class="nc" id="L43">        btnEdiatrPerfilProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/btnEditar.png&quot;))); // NOI18N</span>
+<span class="nc" id="L44">        btnEdiatrPerfilProfesional.setBorderPainted(false);</span>
+<span class="nc" id="L45">        btnEdiatrPerfilProfesional.setContentAreaFilled(false);</span>
+<span class="nc" id="L46">        btnEdiatrPerfilProfesional.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L48">                btnEdiatrPerfilProfesionalActionPerformed(evt);</span>
+<span class="nc" id="L49">            }</span>
+        });
+<span class="nc" id="L51">        add(btnEdiatrPerfilProfesional);</span>
+<span class="nc" id="L52">        btnEdiatrPerfilProfesional.setBounds(50, 60, 110, 70);</span>
+
+<span class="nc" id="L54">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L55">        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L56">        etiquetaTitulo.setText(&quot;Datos del Profesional&quot;);</span>
+<span class="nc" id="L57">        add(etiquetaTitulo);</span>
+<span class="nc" id="L58">        etiquetaTitulo.setBounds(400, 20, 360, 40);</span>
+
+<span class="nc" id="L60">        jListDatosDelProfesional.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L61">        jListDatosDelProfesional.setModel(new javax.swing.AbstractListModel() {</span>
+<span class="nc" id="L62">            String[] strings = { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot;, &quot;Item 5&quot; };</span>
+<span class="nc" id="L63">            public int getSize() { return strings.length; }</span>
+<span class="nc" id="L64">            public Object getElementAt(int i) { return strings[i]; }</span>
+        });
+<span class="nc" id="L66">        jScrollPane2.setViewportView(jListDatosDelProfesional);</span>
+
+<span class="nc" id="L68">        add(jScrollPane2);</span>
+<span class="nc" id="L69">        jScrollPane2.setBounds(310, 100, 590, 600);</span>
+
+<span class="nc" id="L71">        etiquetaEditar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L72">        etiquetaEditar.setText(&quot;Editar &quot;);</span>
+<span class="nc" id="L73">        add(etiquetaEditar);</span>
+<span class="nc" id="L74">        etiquetaEditar.setBounds(60, 140, 80, 30);</span>
+
+<span class="nc" id="L76">        etiquetaFoto.setMaximumSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L77">        etiquetaFoto.setMinimumSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L78">        etiquetaFoto.setPreferredSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L79">        add(etiquetaFoto);</span>
+<span class="nc" id="L80">        etiquetaFoto.setBounds(70, 240, 210, 290);</span>
+<span class="nc" id="L81">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnEdiatrPerfilProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdiatrPerfilProfesionalActionPerformed
+<span class="nc" id="L84">        ventana.remove(this);</span>
+<span class="nc" id="L85">        PanelEditarPerfilProfesional nuevo = new PanelEditarPerfilProfesional(sistema, ventana, interfaz);</span>
+<span class="nc" id="L86">        interfaz.setActual(nuevo);</span>
+<span class="nc" id="L87">        ventana.add(nuevo);</span>
+<span class="nc" id="L88">        ventana.pack();</span>
+<span class="nc" id="L89">    }//GEN-LAST:event_btnEdiatrPerfilProfesionalActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEdiatrPerfilProfesional;
+    private javax.swing.JLabel etiquetaEditar;
+    private javax.swing.JLabel etiquetaFoto;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JList jListDatosDelProfesional;
+    private javax.swing.JScrollPane jScrollPane2;
+    // End of variables declaration//GEN-END:variables
+
+    private ArrayList&lt;String&gt; cargoDatosDelProfesional(Profesional prof) {
+<span class="nc" id="L102">        ArrayList&lt;String&gt; datos = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L103">        datos.add(&quot;Nombre: &quot; + prof.getNombre());</span>
+<span class="nc" id="L104">        datos.add(&quot;Apellidos: &quot; + prof.getApellidos());</span>
+<span class="nc" id="L105">        datos.add(&quot;Nombre de usuario: &quot; + prof.getNombreUsuario());</span>
+<span class="nc" id="L106">        datos.add(&quot;Fecha de nacimiento: &quot; + prof.getFechaNacimiento());</span>
+<span class="nc" id="L107">        datos.add(&quot;Nombre del título profesional: &quot; + prof.getNombreTituloProf());</span>
+<span class="nc" id="L108">        datos.add(&quot;Fecha graduación: &quot; + prof.getFechaGraduacion());</span>
+<span class="nc" id="L109">        datos.add(&quot;País de graduación: &quot; + prof.getPaisObtuvoTitulo());</span>
+<span class="nc" id="L110">        return datos;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

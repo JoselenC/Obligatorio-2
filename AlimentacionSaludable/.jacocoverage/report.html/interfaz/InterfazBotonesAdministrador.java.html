@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>InterfazBotonesAdministrador.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">InterfazBotonesAdministrador.java</span></div><h1>InterfazBotonesAdministrador.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Sistema;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class InterfazBotonesAdministrador extends javax.swing.JPanel {
+
+    //Atributos
+    private Sistema sistema;
+    private JPanel actual;
+    private JFrame ventana;
+
+    //Cosntructor
+<span class="nc" id="L15">    public InterfazBotonesAdministrador(Sistema unSistema, JFrame unaVentana) {</span>
+<span class="nc" id="L16">        initComponents();</span>
+<span class="nc" id="L17">        sistema = unSistema;</span>
+<span class="nc" id="L18">        ventana = unaVentana;</span>
+<span class="nc" id="L19">        actual = new PanelRegistroUsuario(sistema, ventana);</span>
+<span class="nc" id="L20">        ventana.add(this);</span>
+<span class="nc" id="L21">        ventana.add(actual);</span>
+
+<span class="nc" id="L23">    }</span>
+
+    public JPanel getActual() {
+<span class="nc" id="L26">        return actual;</span>
+    }
+
+    public void setActual(JPanel actual) {
+<span class="nc" id="L30">        this.actual = actual;</span>
+<span class="nc" id="L31">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L37">        panelBotonesAdministrador = new javax.swing.JPanel();</span>
+<span class="nc" id="L38">        btnRegistrarUsuario = new javax.swing.JButton();</span>
+<span class="nc" id="L39">        btnRegistrarProfesional = new javax.swing.JButton();</span>
+<span class="nc" id="L40">        btnRegistrarAlimento = new javax.swing.JButton();</span>
+<span class="nc" id="L41">        btnCambiarUsuario = new javax.swing.JButton();</span>
+<span class="nc" id="L42">        fondo = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L44">        setPreferredSize(new java.awt.Dimension(250, 784));</span>
+<span class="nc" id="L45">        setLayout(null);</span>
+
+<span class="nc" id="L47">        panelBotonesAdministrador.setBackground(new java.awt.Color(204, 255, 153));</span>
+<span class="nc" id="L48">        panelBotonesAdministrador.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L49">        panelBotonesAdministrador.setPreferredSize(new java.awt.Dimension(246, 784));</span>
+<span class="nc" id="L50">        panelBotonesAdministrador.setLayout(null);</span>
+
+<span class="nc" id="L52">        btnRegistrarUsuario.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L53">        btnRegistrarUsuario.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L54">        btnRegistrarUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L55">        btnRegistrarUsuario.setText(&quot;Registrar Usuario&quot;);</span>
+<span class="nc" id="L56">        btnRegistrarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L57">        btnRegistrarUsuario.setContentAreaFilled(false);</span>
+<span class="nc" id="L58">        btnRegistrarUsuario.setOpaque(true);</span>
+<span class="nc" id="L59">        btnRegistrarUsuario.setPreferredSize(new java.awt.Dimension(193, 136));</span>
+<span class="nc" id="L60">        btnRegistrarUsuario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L62">                btnRegistrarUsuarioActionPerformed(evt);</span>
+<span class="nc" id="L63">            }</span>
+        });
+<span class="nc" id="L65">        panelBotonesAdministrador.add(btnRegistrarUsuario);</span>
+<span class="nc" id="L66">        btnRegistrarUsuario.setBounds(0, 30, 260, 50);</span>
+
+<span class="nc" id="L68">        btnRegistrarProfesional.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L69">        btnRegistrarProfesional.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L70">        btnRegistrarProfesional.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L71">        btnRegistrarProfesional.setText(&quot;Registrar Profesional&quot;);</span>
+<span class="nc" id="L72">        btnRegistrarProfesional.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L73">        btnRegistrarProfesional.setContentAreaFilled(false);</span>
+<span class="nc" id="L74">        btnRegistrarProfesional.setOpaque(true);</span>
+<span class="nc" id="L75">        btnRegistrarProfesional.setPreferredSize(new java.awt.Dimension(225, 196));</span>
+<span class="nc" id="L76">        btnRegistrarProfesional.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L78">                btnRegistrarProfesionalActionPerformed(evt);</span>
+<span class="nc" id="L79">            }</span>
+        });
+<span class="nc" id="L81">        panelBotonesAdministrador.add(btnRegistrarProfesional);</span>
+<span class="nc" id="L82">        btnRegistrarProfesional.setBounds(0, 110, 260, 50);</span>
+
+<span class="nc" id="L84">        btnRegistrarAlimento.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L85">        btnRegistrarAlimento.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L86">        btnRegistrarAlimento.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L87">        btnRegistrarAlimento.setText(&quot;Registrar Alimento&quot;);</span>
+<span class="nc" id="L88">        btnRegistrarAlimento.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L89">        btnRegistrarAlimento.setContentAreaFilled(false);</span>
+<span class="nc" id="L90">        btnRegistrarAlimento.setOpaque(true);</span>
+<span class="nc" id="L91">        btnRegistrarAlimento.setPreferredSize(new java.awt.Dimension(205, 196));</span>
+<span class="nc" id="L92">        btnRegistrarAlimento.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L94">                btnRegistrarAlimentoActionPerformed(evt);</span>
+<span class="nc" id="L95">            }</span>
+        });
+<span class="nc" id="L97">        panelBotonesAdministrador.add(btnRegistrarAlimento);</span>
+<span class="nc" id="L98">        btnRegistrarAlimento.setBounds(0, 190, 260, 50);</span>
+
+<span class="nc" id="L100">        btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L101">        btnCambiarUsuario.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L102">        btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L103">        btnCambiarUsuario.setText(&quot;Cambiar Usuario&quot;);</span>
+<span class="nc" id="L104">        btnCambiarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L105">        btnCambiarUsuario.setContentAreaFilled(false);</span>
+<span class="nc" id="L106">        btnCambiarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L107">        btnCambiarUsuario.setOpaque(true);</span>
+<span class="nc" id="L108">        btnCambiarUsuario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L110">                btnCambiarUsuarioActionPerformed(evt);</span>
+<span class="nc" id="L111">            }</span>
+        });
+<span class="nc" id="L113">        panelBotonesAdministrador.add(btnCambiarUsuario);</span>
+<span class="nc" id="L114">        btnCambiarUsuario.setBounds(0, 270, 260, 50);</span>
+
+<span class="nc" id="L116">        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/fondo2.png&quot;))); // NOI18N</span>
+<span class="nc" id="L117">        fondo.setText(&quot;jLabel1&quot;);</span>
+<span class="nc" id="L118">        panelBotonesAdministrador.add(fondo);</span>
+<span class="nc" id="L119">        fondo.setBounds(0, 0, 250, 780);</span>
+
+<span class="nc" id="L121">        add(panelBotonesAdministrador);</span>
+<span class="nc" id="L122">        panelBotonesAdministrador.setBounds(0, 0, 250, 784);</span>
+<span class="nc" id="L123">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioActionPerformed
+<span class="nc" id="L126">        ventana.remove(actual);</span>
+<span class="nc" id="L127">        actual = new PanelRegistroUsuario(sistema, ventana);</span>
+<span class="nc" id="L128">        ventana.add(actual);</span>
+<span class="nc" id="L129">        ventana.pack();</span>
+<span class="nc" id="L130">    }//GEN-LAST:event_btnRegistrarUsuarioActionPerformed</span>
+
+    private void btnRegistrarProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarProfesionalActionPerformed
+<span class="nc" id="L133">        ventana.remove(actual);</span>
+<span class="nc" id="L134">        actual = new PanelRegistroProfesional(sistema, ventana);</span>
+<span class="nc" id="L135">        ventana.add(actual);</span>
+<span class="nc" id="L136">        ventana.pack();</span>
+<span class="nc" id="L137">    }//GEN-LAST:event_btnRegistrarProfesionalActionPerformed</span>
+
+    private void btnRegistrarAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarAlimentoActionPerformed
+<span class="nc" id="L140">        ventana.remove(actual);</span>
+<span class="nc" id="L141">        actual = new PanelRegistroAlimento(sistema, ventana);</span>
+<span class="nc" id="L142">        ventana.add(actual);</span>
+<span class="nc" id="L143">        ventana.pack();</span>
+<span class="nc" id="L144">    }//GEN-LAST:event_btnRegistrarAlimentoActionPerformed</span>
+
+    private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
+<span class="nc" id="L147">        ventana.remove(actual);</span>
+<span class="nc" id="L148">        actual = new PanelCambioDeUsuario(ventana, sistema, this);</span>
+<span class="nc" id="L149">        ventana.add(actual);</span>
+<span class="nc" id="L150">        ventana.pack();</span>
+<span class="nc" id="L151">    }//GEN-LAST:event_btnCambiarUsuarioActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCambiarUsuario;
+    private javax.swing.JButton btnRegistrarAlimento;
+    private javax.swing.JButton btnRegistrarProfesional;
+    private javax.swing.JButton btnRegistrarUsuario;
+    private javax.swing.JLabel fondo;
+    private javax.swing.JPanel panelBotonesAdministrador;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

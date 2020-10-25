@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelRealizarPlanAlimentacion.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelRealizarPlanAlimentacion.java</span></div><h1>PanelRealizarPlanAlimentacion.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Alimento;
+import dominio.PlanDeAlimentacion;
+import dominio.Sistema;
+import dominio.Usuario;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+
+public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
+
+    //Atributos
+    private Sistema sistema;
+    private InterfazBotonesProfesional interfaz;
+    private JFrame ventana;
+    private Usuario usuarioAModificar;
+    private PlanDeAlimentacion nuevoPlan;
+
+    //Constructor
+    public PanelRealizarPlanAlimentacion(Sistema unSistema,
+            InterfazBotonesProfesional unaInterfaz,
+            JFrame unaVentana,
+<span class="nc" id="L23">            Usuario unUsuario) {</span>
+<span class="nc" id="L24">        initComponents();</span>
+<span class="nc" id="L25">        sistema = unSistema;</span>
+<span class="nc" id="L26">        interfaz = unaInterfaz;</span>
+<span class="nc" id="L27">        ventana = unaVentana;</span>
+<span class="nc" id="L28">        usuarioAModificar = unUsuario;</span>
+<span class="nc" id="L29">        nuevoPlan = new PlanDeAlimentacion(usuarioAModificar);</span>
+<span class="nc" id="L30">        listaComidasDiarias.setListData(nuevoPlan.getListaLunes().toArray());</span>
+<span class="nc" id="L31">    }</span>
+
+    //Constructor
+    public PanelRealizarPlanAlimentacion(Sistema unSistema,
+            InterfazBotonesProfesional unaInterfaz,
+            JFrame unaVentana,
+            Usuario unUsuario,
+<span class="nc" id="L38">            PlanDeAlimentacion unPlan) {</span>
+<span class="nc" id="L39">        initComponents();</span>
+<span class="nc" id="L40">        sistema = unSistema;</span>
+<span class="nc" id="L41">        interfaz = unaInterfaz;</span>
+<span class="nc" id="L42">        ventana = unaVentana;</span>
+<span class="nc" id="L43">        usuarioAModificar = unUsuario;</span>
+<span class="nc" id="L44">        nuevoPlan = unPlan;</span>
+<span class="nc" id="L45">        listaComidasDiarias.setListData(nuevoPlan.getListaLunes().toArray());</span>
+<span class="nc" id="L46">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L52">        listaDiasDeLaSemana = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L53">        etiquetaDiasDeLaSemana = new javax.swing.JLabel();</span>
+<span class="nc" id="L54">        etiquetaTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L55">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L56">        listaComidasDiarias = new javax.swing.JList();</span>
+<span class="nc" id="L57">        btnAgregarComida = new javax.swing.JButton();</span>
+<span class="nc" id="L58">        btnQuitarComida = new javax.swing.JButton();</span>
+<span class="nc" id="L59">        btnVolver = new javax.swing.JButton();</span>
+<span class="nc" id="L60">        btnEnviarPlan = new javax.swing.JButton();</span>
+<span class="nc" id="L61">        mensajeAlAceptar = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L63">        setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L64">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
+<span class="nc" id="L65">        setLayout(null);</span>
+
+<span class="nc" id="L67">        listaDiasDeLaSemana.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L68">        listaDiasDeLaSemana.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;lunes&quot;, &quot;martes&quot;, &quot;miercoles&quot;, &quot;jueves&quot;, &quot;viernes&quot;, &quot;sabado&quot;, &quot;domingo&quot; }));</span>
+<span class="nc" id="L69">        listaDiasDeLaSemana.addItemListener(new java.awt.event.ItemListener() {</span>
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+<span class="nc" id="L71">                listaDiasDeLaSemanaItemStateChanged(evt);</span>
+<span class="nc" id="L72">            }</span>
+        });
+<span class="nc" id="L74">        add(listaDiasDeLaSemana);</span>
+<span class="nc" id="L75">        listaDiasDeLaSemana.setBounds(380, 130, 160, 35);</span>
+
+<span class="nc" id="L77">        etiquetaDiasDeLaSemana.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L78">        etiquetaDiasDeLaSemana.setText(&quot;Dia de la semana:&quot;);</span>
+<span class="nc" id="L79">        add(etiquetaDiasDeLaSemana);</span>
+<span class="nc" id="L80">        etiquetaDiasDeLaSemana.setBounds(170, 130, 200, 30);</span>
+
+<span class="nc" id="L82">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L83">        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L84">        etiquetaTitulo.setText(&quot;Realizar Plan de Alimentación&quot;);</span>
+<span class="nc" id="L85">        add(etiquetaTitulo);</span>
+<span class="nc" id="L86">        etiquetaTitulo.setBounds(300, 20, 480, 50);</span>
+
+<span class="nc" id="L88">        listaComidasDiarias.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L89">        jScrollPane1.setViewportView(listaComidasDiarias);</span>
+
+<span class="nc" id="L91">        add(jScrollPane1);</span>
+<span class="nc" id="L92">        jScrollPane1.setBounds(360, 180, 410, 370);</span>
+
+<span class="nc" id="L94">        btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L95">        btnAgregarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L96">        btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L97">        btnAgregarComida.setText(&quot;Agregar Comida&quot;);</span>
+<span class="nc" id="L98">        btnAgregarComida.setContentAreaFilled(false);</span>
+<span class="nc" id="L99">        btnAgregarComida.setOpaque(true);</span>
+<span class="nc" id="L100">        btnAgregarComida.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L102">                btnAgregarComidaActionPerformed(evt);</span>
+<span class="nc" id="L103">            }</span>
+        });
+<span class="nc" id="L105">        add(btnAgregarComida);</span>
+<span class="nc" id="L106">        btnAgregarComida.setBounds(600, 570, 210, 37);</span>
+
+<span class="nc" id="L108">        btnQuitarComida.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L109">        btnQuitarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L110">        btnQuitarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L111">        btnQuitarComida.setText(&quot;Quitar Comida&quot;);</span>
+<span class="nc" id="L112">        btnQuitarComida.setContentAreaFilled(false);</span>
+<span class="nc" id="L113">        btnQuitarComida.setOpaque(true);</span>
+<span class="nc" id="L114">        btnQuitarComida.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L116">                btnQuitarComidaActionPerformed(evt);</span>
+<span class="nc" id="L117">            }</span>
+        });
+<span class="nc" id="L119">        add(btnQuitarComida);</span>
+<span class="nc" id="L120">        btnQuitarComida.setBounds(300, 570, 190, 37);</span>
+
+<span class="nc" id="L122">        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/volver.png&quot;))); // NOI18N</span>
+<span class="nc" id="L123">        btnVolver.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L124">        btnVolver.setBorderPainted(false);</span>
+<span class="nc" id="L125">        btnVolver.setContentAreaFilled(false);</span>
+<span class="nc" id="L126">        btnVolver.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L128">                btnVolverActionPerformed(evt);</span>
+<span class="nc" id="L129">            }</span>
+        });
+<span class="nc" id="L131">        add(btnVolver);</span>
+<span class="nc" id="L132">        btnVolver.setBounds(20, 20, 100, 50);</span>
+
+<span class="nc" id="L134">        btnEnviarPlan.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L135">        btnEnviarPlan.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L136">        btnEnviarPlan.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L137">        btnEnviarPlan.setText(&quot;Enviar Plan&quot;);</span>
+<span class="nc" id="L138">        btnEnviarPlan.setContentAreaFilled(false);</span>
+<span class="nc" id="L139">        btnEnviarPlan.setOpaque(true);</span>
+<span class="nc" id="L140">        btnEnviarPlan.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L142">                btnEnviarPlanActionPerformed(evt);</span>
+<span class="nc" id="L143">            }</span>
+        });
+<span class="nc" id="L145">        add(btnEnviarPlan);</span>
+<span class="nc" id="L146">        btnEnviarPlan.setBounds(890, 100, 160, 37);</span>
+
+<span class="nc" id="L148">        mensajeAlAceptar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L149">        add(mensajeAlAceptar);</span>
+<span class="nc" id="L150">        mensajeAlAceptar.setBounds(790, 160, 350, 50);</span>
+<span class="nc" id="L151">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnQuitarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarComidaActionPerformed
+<span class="nc" id="L154">        Alimento alimentoSeleccionado = (Alimento) listaComidasDiarias.getSelectedValue();</span>
+<span class="nc" id="L155">        listaActiva().remove(alimentoSeleccionado);</span>
+<span class="nc" id="L156">        actualizarLista();</span>
+<span class="nc" id="L157">    }//GEN-LAST:event_btnQuitarComidaActionPerformed</span>
+
+    private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
+<span class="nc" id="L160">        ventana.remove(this);</span>
+<span class="nc" id="L161">        ArrayList&lt;Alimento&gt; listaActiva = listaActiva();</span>
+<span class="nc" id="L162">        PanelAgregarComidasAPlan nuevo = new PanelAgregarComidasAPlan(sistema, interfaz, ventana, listaActiva, nuevoPlan, usuarioAModificar);</span>
+<span class="nc" id="L163">        interfaz.setActual(nuevo);</span>
+<span class="nc" id="L164">        ventana.add(nuevo);</span>
+<span class="nc" id="L165">        ventana.pack();</span>
+<span class="nc" id="L166">    }//GEN-LAST:event_btnAgregarComidaActionPerformed</span>
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+<span class="nc" id="L169">        ventana.remove(this);</span>
+<span class="nc" id="L170">        PanelSeleccionarPlanARealizar nuevo = new PanelSeleccionarPlanARealizar(sistema, interfaz, ventana);</span>
+<span class="nc" id="L171">        interfaz.setActual(nuevo);</span>
+<span class="nc" id="L172">        ventana.add(nuevo);</span>
+<span class="nc" id="L173">        ventana.pack();</span>
+<span class="nc" id="L174">    }//GEN-LAST:event_btnVolverActionPerformed</span>
+
+    private void listaDiasDeLaSemanaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaItemStateChanged
+<span class="nc" id="L177">        actualizarLista();</span>
+<span class="nc" id="L178">    }//GEN-LAST:event_listaDiasDeLaSemanaItemStateChanged</span>
+
+    private void btnEnviarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarPlanActionPerformed
+<span class="nc" id="L181">        usuarioAModificar.setPlan(nuevoPlan);</span>
+<span class="nc" id="L182">        mensajeAlAceptar.setText(&quot;Se ha enviado correctamente&quot;);</span>
+<span class="nc" id="L183">    }//GEN-LAST:event_btnEnviarPlanActionPerformed</span>
+
+    void actualizarLista() {
+<span class="nc bnc" id="L186" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;lunes&quot;)) {</span>
+<span class="nc" id="L187">            listaComidasDiarias.setListData(nuevoPlan.getListaLunes().toArray());</span>
+        }
+<span class="nc bnc" id="L189" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;martes&quot;)) {</span>
+<span class="nc" id="L190">            listaComidasDiarias.setListData(nuevoPlan.getListaMartes().toArray());</span>
+        }
+<span class="nc bnc" id="L192" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;miercoles&quot;)) {</span>
+<span class="nc" id="L193">            listaComidasDiarias.setListData(nuevoPlan.getListaMiercoles().toArray());</span>
+        }
+<span class="nc bnc" id="L195" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;jueves&quot;)) {</span>
+<span class="nc" id="L196">            listaComidasDiarias.setListData(nuevoPlan.getListaJueves().toArray());</span>
+        }
+<span class="nc bnc" id="L198" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;viernes&quot;)) {</span>
+<span class="nc" id="L199">            listaComidasDiarias.setListData(nuevoPlan.getListaViernes().toArray());</span>
+        }
+<span class="nc bnc" id="L201" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;sabado&quot;)) {</span>
+<span class="nc" id="L202">            listaComidasDiarias.setListData(nuevoPlan.getListaSabado().toArray());</span>
+        }
+<span class="nc bnc" id="L204" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;domingo&quot;)) {</span>
+<span class="nc" id="L205">            listaComidasDiarias.setListData(nuevoPlan.getListaDomingo().toArray());</span>
+        }
+<span class="nc" id="L207">    }</span>
+
+    ArrayList&lt;Alimento&gt; listaActiva() {
+<span class="nc" id="L210">        ArrayList&lt;Alimento&gt; retorno = null;</span>
+<span class="nc bnc" id="L211" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;lunes&quot;)) {</span>
+<span class="nc" id="L212">            retorno = nuevoPlan.getListaLunes();</span>
+        }
+<span class="nc bnc" id="L214" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;martes&quot;)) {</span>
+<span class="nc" id="L215">            retorno = nuevoPlan.getListaMartes();</span>
+        }
+<span class="nc bnc" id="L217" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;miercoles&quot;)) {</span>
+<span class="nc" id="L218">            retorno = nuevoPlan.getListaMiercoles();</span>
+        }
+<span class="nc bnc" id="L220" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;jueves&quot;)) {</span>
+<span class="nc" id="L221">            retorno = nuevoPlan.getListaJueves();</span>
+        }
+<span class="nc bnc" id="L223" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;viernes&quot;)) {</span>
+<span class="nc" id="L224">            retorno = nuevoPlan.getListaViernes();</span>
+        }
+<span class="nc bnc" id="L226" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;sabado&quot;)) {</span>
+<span class="nc" id="L227">            retorno = nuevoPlan.getListaSabado();</span>
+        }
+<span class="nc bnc" id="L229" title="All 2 branches missed.">        if (listaDiasDeLaSemana.getSelectedItem().equals(&quot;domingo&quot;)) {</span>
+<span class="nc" id="L230">            retorno = nuevoPlan.getListaDomingo();</span>
+        }
+<span class="nc" id="L232">        return retorno;</span>
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarComida;
+    private javax.swing.JButton btnEnviarPlan;
+    private javax.swing.JButton btnQuitarComida;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel etiquetaDiasDeLaSemana;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList listaComidasDiarias;
+    private javax.swing.JComboBox&lt;String&gt; listaDiasDeLaSemana;
+    private javax.swing.JLabel mensajeAlAceptar;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelPerfilUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelPerfilUsuario.java</span></div><h1>PanelPerfilUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Sistema;
+import dominio.Usuario;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+
+public class PanelPerfilUsuario extends javax.swing.JPanel {
+
+    //Atrubutos
+    private Sistema sistema;
+    private Usuario usuario;
+    private JFrame ventana;
+    private InterfazBotonesUsuario interfaz;
+
+    //Constructor
+<span class="nc" id="L17">    public PanelPerfilUsuario(Sistema unSistema, JFrame unaVentana, InterfazBotonesUsuario interfazActual) {</span>
+<span class="nc" id="L18">        initComponents();</span>
+<span class="nc" id="L19">        sistema = unSistema;</span>
+<span class="nc" id="L20">        ventana = unaVentana;</span>
+<span class="nc" id="L21">        interfaz = interfazActual;</span>
+<span class="nc" id="L22">        usuario = interfaz.getUsuarioActual();</span>
+<span class="nc" id="L23">        datosDelUsuario.setListData(cargoDatosDelUsuario(usuario).toArray());</span>
+<span class="nc" id="L24">        etiquetaFoto.setIcon(usuario.getFotoPerfil());</span>
+<span class="nc" id="L25">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L31">        panelHome = new javax.swing.JPanel();</span>
+<span class="nc" id="L32">        etiquetaInfoUsuario = new javax.swing.JLabel();</span>
+<span class="nc" id="L33">        btnEditarPerfilUsuario = new javax.swing.JButton();</span>
+<span class="nc" id="L34">        etiquetaFoto = new javax.swing.JLabel();</span>
+<span class="nc" id="L35">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L36">        datosDelUsuario = new javax.swing.JList();</span>
+<span class="nc" id="L37">        etiquetaEditar = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L39">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
+
+<span class="nc" id="L41">        panelHome.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L42">        panelHome.setLayout(null);</span>
+
+<span class="nc" id="L44">        etiquetaInfoUsuario.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L45">        etiquetaInfoUsuario.setForeground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L46">        etiquetaInfoUsuario.setText(&quot;Info del Usuario&quot;);</span>
+<span class="nc" id="L47">        panelHome.add(etiquetaInfoUsuario);</span>
+<span class="nc" id="L48">        etiquetaInfoUsuario.setBounds(420, 20, 300, 50);</span>
+
+<span class="nc" id="L50">        btnEditarPerfilUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/btnEditar.png&quot;))); // NOI18N</span>
+<span class="nc" id="L51">        btnEditarPerfilUsuario.setBorderPainted(false);</span>
+<span class="nc" id="L52">        btnEditarPerfilUsuario.setContentAreaFilled(false);</span>
+<span class="nc" id="L53">        btnEditarPerfilUsuario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L55">                btnEditarPerfilUsuarioActionPerformed(evt);</span>
+<span class="nc" id="L56">            }</span>
+        });
+<span class="nc" id="L58">        panelHome.add(btnEditarPerfilUsuario);</span>
+<span class="nc" id="L59">        btnEditarPerfilUsuario.setBounds(70, 40, 90, 70);</span>
+
+<span class="nc" id="L61">        etiquetaFoto.setMaximumSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L62">        etiquetaFoto.setMinimumSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L63">        etiquetaFoto.setPreferredSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L64">        panelHome.add(etiquetaFoto);</span>
+<span class="nc" id="L65">        etiquetaFoto.setBounds(120, 180, 220, 260);</span>
+
+<span class="nc" id="L67">        datosDelUsuario.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L68">        datosDelUsuario.setModel(new javax.swing.AbstractListModel() {</span>
+<span class="nc" id="L69">            String[] strings = { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot;, &quot;Item 5&quot; };</span>
+<span class="nc" id="L70">            public int getSize() { return strings.length; }</span>
+<span class="nc" id="L71">            public Object getElementAt(int i) { return strings[i]; }</span>
+        });
+<span class="nc" id="L73">        jScrollPane1.setViewportView(datosDelUsuario);</span>
+
+<span class="nc" id="L75">        panelHome.add(jScrollPane1);</span>
+<span class="nc" id="L76">        jScrollPane1.setBounds(390, 100, 440, 470);</span>
+
+<span class="nc" id="L78">        etiquetaEditar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L79">        etiquetaEditar.setText(&quot;Editar&quot;);</span>
+<span class="nc" id="L80">        panelHome.add(etiquetaEditar);</span>
+<span class="nc" id="L81">        etiquetaEditar.setBounds(80, 120, 70, 30);</span>
+
+<span class="nc" id="L83">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L84">        this.setLayout(layout);</span>
+<span class="nc" id="L85">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L86">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L87">            .addGap(0, 893, Short.MAX_VALUE)</span>
+<span class="nc" id="L88">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L89">                .addComponent(panelHome, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L91">        layout.setVerticalGroup(</span>
+<span class="nc" id="L92">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L93">            .addGap(0, 627, Short.MAX_VALUE)</span>
+<span class="nc" id="L94">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L95">                .addComponent(panelHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L97">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnEditarPerfilUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPerfilUsuarioActionPerformed
+<span class="nc" id="L100">        ventana.remove(this);</span>
+<span class="nc" id="L101">        PanelEditarPerfilUsuario nuevo = new PanelEditarPerfilUsuario(sistema, ventana, interfaz);</span>
+<span class="nc" id="L102">        interfaz.setActual(nuevo);</span>
+<span class="nc" id="L103">        ventana.add(nuevo);</span>
+<span class="nc" id="L104">        ventana.pack();</span>
+<span class="nc" id="L105">    }//GEN-LAST:event_btnEditarPerfilUsuarioActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditarPerfilUsuario;
+    private javax.swing.JList datosDelUsuario;
+    private javax.swing.JLabel etiquetaEditar;
+    private javax.swing.JLabel etiquetaFoto;
+    private javax.swing.JLabel etiquetaInfoUsuario;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel panelHome;
+    // End of variables declaration//GEN-END:variables
+
+    public ArrayList&lt;String&gt; cargoDatosDelUsuario(Usuario unUsuario) {
+<span class="nc" id="L119">        String restricciones = imprimoRestricciones(unUsuario);</span>
+<span class="nc" id="L120">        ArrayList&lt;String&gt; datos = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L121">        datos.add(&quot;Nombre: &quot; + unUsuario.getNombre());</span>
+<span class="nc" id="L122">        datos.add(&quot;Apellidos: &quot; + unUsuario.getApellidos());</span>
+<span class="nc" id="L123">        datos.add(&quot;Nombre de usuario: &quot; + unUsuario.getNombreUsuario());</span>
+<span class="nc" id="L124">        datos.add(&quot;Fecha de nacimiento: &quot; + unUsuario.getFechaNacimiento());</span>
+<span class="nc" id="L125">        datos.add(&quot;Nacionalidad: &quot; + unUsuario.getNacionalidad());</span>
+<span class="nc" id="L126">        datos.add(&quot;Altura: &quot; + unUsuario.getAlturaCm());</span>
+<span class="nc" id="L127">        datos.add(&quot;Paso: &quot; + unUsuario.getPesoKg());</span>
+<span class="nc" id="L128">        datos.add(&quot;Sexo: &quot; + unUsuario.getSexo());</span>
+<span class="nc" id="L129">        datos.add(&quot;Restricciones: &quot; + restricciones);</span>
+<span class="nc" id="L130">        datos.add(&quot;Preferencias: &quot; + unUsuario.getPreferenciasAlimentarias());</span>
+<span class="nc" id="L131">        return datos;</span>
+    }
+
+    public String imprimoRestricciones(Usuario unUsuario) {
+<span class="nc" id="L135">        int cantidadDeRestricciones = 0;</span>
+<span class="nc" id="L136">        String retorno = &quot;&quot;;</span>
+<span class="nc" id="L137">        int contador = 0;</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">        for (int i = 0; i &lt; unUsuario.getListaRestricciones().length; i++) {</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">            if (unUsuario.getListaRestricciones()[i] == true) {</span>
+<span class="nc" id="L140">                cantidadDeRestricciones++;</span>
+            }
+        }
+<span class="nc bnc" id="L143" title="All 2 branches missed.">        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Celiaco.ordinal()] == true) {</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">            if (contador == cantidadDeRestricciones - 1) {</span>
+<span class="nc" id="L145">                retorno += &quot;Celiaco&quot;;</span>
+            } else {
+<span class="nc" id="L147">                retorno += &quot;Celiaco, &quot;;</span>
+<span class="nc" id="L148">                contador++;</span>
+            }
+
+        }
+<span class="nc bnc" id="L152" title="All 2 branches missed.">        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Diabetico.ordinal()] == true) {</span>
+<span class="nc bnc" id="L153" title="All 2 branches missed.">            if (contador == cantidadDeRestricciones - 1) {</span>
+<span class="nc" id="L154">                retorno += &quot;Diabético&quot;;</span>
+            } else {
+<span class="nc" id="L156">                retorno += &quot;Diabético, &quot;;</span>
+<span class="nc" id="L157">                contador++;</span>
+            }
+        }
+<span class="nc bnc" id="L160" title="All 2 branches missed.">        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Hipertension.ordinal()] == true) {</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">            if (contador == cantidadDeRestricciones - 1) {</span>
+<span class="nc" id="L162">                retorno += &quot;Hipertensión&quot;;</span>
+            } else {
+<span class="nc" id="L164">                retorno += &quot;Hipertensión, &quot;;</span>
+<span class="nc" id="L165">                contador++;</span>
+            }
+        }
+<span class="nc bnc" id="L168" title="All 2 branches missed.">        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.IntoleranteALaLactosa.ordinal()] == true) {</span>
+<span class="nc bnc" id="L169" title="All 2 branches missed.">            if (contador == cantidadDeRestricciones - 1) {</span>
+<span class="nc" id="L170">                retorno += &quot;Intolerancia a la lactosa&quot;;</span>
+            } else {
+<span class="nc" id="L172">                retorno += &quot;Intolerancia a la lactosa, &quot;;</span>
+<span class="nc" id="L173">                contador++;</span>
+            }
+        }
+<span class="nc bnc" id="L176" title="All 2 branches missed.">        if (cantidadDeRestricciones == 0) {</span>
+<span class="nc" id="L177">            retorno += &quot;Ninguna &quot;;</span>
+        }
+<span class="nc" id="L179">        return retorno;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
