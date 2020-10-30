@@ -97,7 +97,7 @@ public class Alimento implements Serializable {
 
     public enum Nutrientes {
         Proteinas, Lipidos, HidratosDeCarbono, Vitaminas, Minerales, Agua,
-        Fibra, Ninguna
+        Fibra, Ninguno
     }
 
     public Nutrientes[] inicializoEnumNutrientes() {
