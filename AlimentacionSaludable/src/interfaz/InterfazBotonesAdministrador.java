@@ -16,7 +16,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
-        actual = new PanelRegistroUsuario(sistema, ventana);
+        actual = new PanelValidacionAdministrador(sistema, ventana);
         ventana.add(this);
         ventana.add(actual);
 
