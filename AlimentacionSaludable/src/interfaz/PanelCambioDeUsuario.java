@@ -157,21 +157,10 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
     private void btnPruebaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruebaAdministradorActionPerformed
-        if (interfazProf != null) {
-            ventana.remove(interfazProf.getActual());
-            ventana.remove(interfazProf);
-        }
-        if (interfazAdm != null) {
-            ventana.remove(interfazAdm.getActual());
-            ventana.remove(interfazAdm);
-        }
-        if (interfazUsr != null) {
-            ventana.remove(interfazUsr.getActual());
-            ventana.remove(interfazUsr);
-        }
-        ventana.remove(this);
-        InterfazBotonesAdministrador nuevaBotonera = new InterfazBotonesAdministrador(sistema, ventana);
-        ventana.pack();
+       ventana.remove(this);
+       InterfazBotonesAdministrador nuevaBotonera = new InterfazBotonesAdministrador(sistema, ventana);
+       ventana.pack();
+        
     }//GEN-LAST:event_btnPruebaAdministradorActionPerformed
 
     private void listaTiposDeUsuariosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_listaTiposDeUsuariosFocusLost

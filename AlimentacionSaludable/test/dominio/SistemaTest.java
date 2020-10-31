@@ -197,8 +197,8 @@ public class SistemaTest {
         ArrayList<Usuario> listaU = new ArrayList<Usuario>();
         ArrayList<Profesional> listaP = new ArrayList<Profesional>();
         ArrayList<Alimento> listaA = new ArrayList<Alimento>();
+        ArrayList<Administrador> listaAdmi = new ArrayList<Administrador>();
         Sistema.tipoUsuario usuarioActivo = Sistema.tipoUsuario.NoSeleccionado;
-        Sistema s = new Sistema(listaA,listaU,listaP,usuarioActivo);
-    }
-    
+        Sistema s = new Sistema(listaA,listaU,listaP,usuarioActivo,listaAdmi);
+    }    
 }
