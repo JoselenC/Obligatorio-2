@@ -6,6 +6,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
 
@@ -39,6 +40,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         etiquetaAsunto = new javax.swing.JLabel();
         cajaAsunto = new javax.swing.JTextField();
         etiquetaTitulo = new javax.swing.JLabel();
+        lblEnvio = new javax.swing.JLabel();
 
         panelRedactarConsulta.setBackground(new java.awt.Color(255, 255, 255));
         panelRedactarConsulta.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -105,6 +107,9 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         etiquetaTitulo.setText("Redactar Consulta ");
         panelRedactarConsulta.add(etiquetaTitulo);
         etiquetaTitulo.setBounds(410, 10, 310, 44);
+        panelRedactarConsulta.add(lblEnvio);
+        lblEnvio.setBounds(670, 640, 0, 0);
+        lblEnvio.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -134,6 +139,13 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         mensajeAEnviar.setAsunto(cajaAsunto.getText());
         mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());
         destino.getCasillaDeEntrada().add(mensajeAEnviar);
+        JOptionPane.showMessageDialog(null, "Se envio correctamente el mensaje");
+        ventana.remove(this);
+        PanelConsultaProfesionalDesdeProfesional nuevo = new PanelConsultaProfesionalDesdeProfesional(sistema, interfazProf, ventana);
+        interfazProf.setActual(nuevo);
+        ventana.add(nuevo);
+        ventana.pack();
+
     }//GEN-LAST:event_btnEnviarConsultaActionPerformed
 
 
@@ -146,6 +158,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaMensaje;
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblEnvio;
     private javax.swing.JComboBox<String> listaUsrConsultas;
     private javax.swing.JPanel panelRedactarConsulta;
     private javax.swing.JTextArea textoConsultaAEnviar;
