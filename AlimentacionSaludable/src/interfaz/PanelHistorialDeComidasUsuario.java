@@ -20,6 +20,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         ventana = unaVentana;
         interfaz = unaInterfaz;
         listaHistorialDeComidas.setListData(interfaz.getUsuarioActual().getHistorialComidas().toArray());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -31,6 +32,8 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         btnVerHistorial = new javax.swing.JButton();
         etiquetaTitulo = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -72,6 +75,16 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         });
         add(btnVolver);
         btnVolver.setBounds(20, 0, 100, 60);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(810, 10, 190, 130);
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        add(lblUsuario);
+        lblUsuario.setBounds(830, 140, 210, 20);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
@@ -98,7 +111,9 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
     private javax.swing.JButton btnVerHistorial;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaHistorialDeComidas;
     // End of variables declaration//GEN-END:variables
 }

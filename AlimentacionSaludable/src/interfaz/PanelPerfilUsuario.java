@@ -22,6 +22,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         usuario = interfaz.getUsuarioActual();
         datosDelUsuario.setListData(cargoDatosDelUsuario(usuario).toArray());
         etiquetaFoto.setIcon(usuario.getFotoPerfil());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -35,6 +36,8 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         datosDelUsuario = new javax.swing.JList();
         etiquetaEditar = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -80,6 +83,16 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         panelHome.add(etiquetaEditar);
         etiquetaEditar.setBounds(80, 120, 70, 30);
 
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        panelHome.add(lblUsuario);
+        lblUsuario.setBounds(840, 140, 230, 20);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        panelHome.add(jLabel2);
+        jLabel2.setBounds(810, 10, 190, 130);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,7 +124,9 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaEditar;
     private javax.swing.JLabel etiquetaFoto;
     private javax.swing.JLabel etiquetaInfoUsuario;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JPanel panelHome;
     // End of variables declaration//GEN-END:variables
 

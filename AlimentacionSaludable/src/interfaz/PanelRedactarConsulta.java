@@ -21,6 +21,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         interfazUsuario = interfazActual;
         ventana = unaVentana;
         listaProfConsulta.setModel(new DefaultComboBoxModel(sistema.getListaProfesionales().toArray()));
+        //lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -38,6 +39,8 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         etiquetaMensaje = new javax.swing.JLabel();
         etiquetaTitulo = new javax.swing.JLabel();
         mensajeAlAceptar = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -120,6 +123,16 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         mensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         add(mensajeAlAceptar);
         mensajeAlAceptar.setBounds(710, 640, 370, 50);
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        add(lblUsuario);
+        lblUsuario.setBounds(830, 130, 210, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(810, 10, 190, 130);
     }// </editor-fold>//GEN-END:initComponents
 
     private void listaProfConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaProfConsultaActionPerformed
@@ -158,7 +171,9 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaDestinatarioConsulta;
     private javax.swing.JLabel etiquetaMensaje;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JComboBox<String> listaProfConsulta;
     private javax.swing.JLabel mensajeAlAceptar;
     private javax.swing.JTextArea textoConsultaAEnviar;

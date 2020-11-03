@@ -21,6 +21,7 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         ventana = unaVentana;
         interfaz = unaInterfaz;
         listaProfesionalesAlim.setModel(new DefaultComboBoxModel(sistema.getListaProfesionales().toArray()));
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -33,6 +34,8 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         btnAceptarPlan = new javax.swing.JButton();
         etiquetaPlanDeAlimentacion = new javax.swing.JLabel();
         mensajeAlAceptar = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         panelPlan.setBackground(new java.awt.Color(255, 255, 255));
         panelPlan.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -45,7 +48,7 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
 
         listaProfesionalesAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelPlan.add(listaProfesionalesAlim);
-        listaProfesionalesAlim.setBounds(360, 170, 360, 35);
+        listaProfesionalesAlim.setBounds(360, 170, 360, 37);
 
         btnAceptarPlan.setBackground(new java.awt.Color(255, 0, 102));
         btnAceptarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -71,6 +74,16 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         panelPlan.add(mensajeAlAceptar);
         mensajeAlAceptar.setBounds(730, 220, 410, 80);
 
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        panelPlan.add(lblUsuario);
+        lblUsuario.setBounds(820, 130, 210, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        panelPlan.add(jLabel2);
+        jLabel2.setBounds(810, 10, 190, 130);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,6 +108,8 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
     private javax.swing.JButton btnAceptarPlan;
     private javax.swing.JLabel etiquetaPlanDeAlimentacion;
     private javax.swing.JLabel etiquetaProfesionalACargo;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JComboBox listaProfesionalesAlim;
     private javax.swing.JLabel mensajeAlAceptar;
     private javax.swing.JPanel panelPlan;
