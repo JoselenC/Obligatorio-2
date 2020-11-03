@@ -1,5 +1,7 @@
 package dominio;
 
+import java.util.Objects;
+
 public class Administrador {
     private String usuario;
     private String contraseña;
@@ -7,6 +9,33 @@ public class Administrador {
     public Administrador(String vUsuario, String vContraseña){
         usuario=vUsuario;
         contraseña=vContraseña;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Administrador other = (Administrador) obj;
+        if (!Objects.equals(this.usuario, other.usuario)) {
+            return false;
+        }
+        if (!Objects.equals(this.contraseña, other.contraseña)) {
+            return false;
+        }
+        return true;
     }
 
     public String getUsuario() {
