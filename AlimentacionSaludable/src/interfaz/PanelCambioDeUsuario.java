@@ -24,7 +24,7 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         sistema = unSistema;
         interfazProf = unaInterfaz;
         listaTiposDeUsuarios.setModel(new DefaultComboBoxModel(sistema.getListaTiposDeUsuario()));
-        actualizarLista();
+        actualizarLista();        
     }
 
     //constructor desde Usuario
@@ -110,7 +110,7 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
             }
         });
         add(listaTiposDeUsuarios);
-        listaTiposDeUsuarios.setBounds(90, 160, 180, 35);
+        listaTiposDeUsuarios.setBounds(90, 160, 180, 37);
 
         etiquetaTiposDeUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaTiposDeUsuarios.setText("Tipo de Usuario");

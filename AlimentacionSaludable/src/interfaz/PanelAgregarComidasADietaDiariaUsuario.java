@@ -20,6 +20,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         ventana = unaVentana;
         interfaz = unaInterfaz;
         listaComidasDiarias.setListData(sistema.getListaAlimentos().toArray());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -31,6 +32,8 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         etiquetaTitulo = new javax.swing.JLabel();
         btnAgregarComida = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -73,6 +76,16 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         });
         add(btnVolver);
         btnVolver.setBounds(0, 10, 110, 70);
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        add(lblUsuario);
+        lblUsuario.setBounds(820, 140, 220, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(810, 10, 190, 130);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
@@ -95,7 +108,9 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
     private javax.swing.JButton btnAgregarComida;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaComidasDiarias;
     // End of variables declaration//GEN-END:variables
 }

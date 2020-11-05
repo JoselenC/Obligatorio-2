@@ -38,6 +38,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             }
         }
         listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -50,6 +51,8 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         etiquetaTituloAlim = new javax.swing.JLabel();
         etiquetaBtnAgregarComidas = new javax.swing.JButton();
         etiquetaBtnQuitarComida = new javax.swing.JButton();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         panelDietaDiaria.setBackground(new java.awt.Color(255, 255, 255));
         panelDietaDiaria.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -95,6 +98,16 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         panelDietaDiaria.add(etiquetaBtnQuitarComida);
         etiquetaBtnQuitarComida.setBounds(290, 110, 190, 37);
 
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        panelDietaDiaria.add(lblUsuario);
+        lblUsuario.setBounds(820, 130, 230, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        panelDietaDiaria.add(jLabel2);
+        jLabel2.setBounds(810, 0, 190, 130);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,6 +142,8 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
     private javax.swing.JButton etiquetaBtnAgregarComidas;
     private javax.swing.JButton etiquetaBtnQuitarComida;
     private javax.swing.JLabel etiquetaTituloAlim;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaComidasDiarias;
     private javax.swing.JScrollPane lstComDiarias;
     private javax.swing.JPanel panelDietaDiaria;
