@@ -5,6 +5,7 @@ import dominio.Sistema;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
@@ -19,8 +20,18 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         sistema = unSistema;
         ventana = unaVentana;
         interfaz = unaInterfaz;
+        if(sistema.getListaAlimentos().size()==0){
+         JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
+         ventana.remove(this);
+        PanelDietaDiariaUsuario nuevo = new PanelDietaDiariaUsuario(sistema, ventana, interfaz);
+        interfaz.setActual(nuevo);
+        ventana.add(nuevo);
+        ventana.pack();
+        }
+        else{
         listaComidasDiarias.setListData(sistema.getListaAlimentos().toArray());
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -93,6 +104,13 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().add(comidaSeleccionada);
         LocalDate diaActual = LocalDate.now();
         interfaz.getUsuarioActual().setFechaUltimaAdicion(diaActual.toString());
+        JOptionPane.showMessageDialog(null, "Se agrego correctamete la comida");
+         ventana.remove(this);
+        PanelDietaDiariaUsuario nuevo = new PanelDietaDiariaUsuario(sistema, ventana, interfaz);
+        interfaz.setActual(nuevo);
+        ventana.add(nuevo);
+        ventana.pack();
+        
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
