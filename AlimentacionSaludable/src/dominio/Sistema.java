@@ -22,6 +22,7 @@ public class Sistema implements Serializable {
     ArrayList<Alimento> listaAlimentos;
     ArrayList<Usuario> listaUsuarios;
     ArrayList<Profesional> listaProfesionales;
+    ArrayList<Administrador> administradores;
     tipoUsuario[] listaTiposDeUsuario;
     tipoUsuario usuarioActivo;
 
@@ -29,11 +30,13 @@ public class Sistema implements Serializable {
     public Sistema(ArrayList<Alimento> listaAlimentos,
             ArrayList<Usuario> listaUsuarios,
             ArrayList<Profesional> listaProfesionales,
+            ArrayList<Administrador> listaAdministradores,
             tipoUsuario usuarioActivo) {
         this.listaAlimentos = listaAlimentos;
         this.listaUsuarios = listaUsuarios;
         this.listaProfesionales = listaProfesionales;
         this.usuarioActivo = usuarioActivo;
+        administradores=listaAdministradores;
         this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();
     }
 
@@ -41,6 +44,7 @@ public class Sistema implements Serializable {
         this.listaAlimentos = new ArrayList();
         this.listaUsuarios = new ArrayList();
         this.listaProfesionales = new ArrayList();
+        this.administradores = new ArrayList();
         this.usuarioActivo = tipoUsuario.NoSeleccionado;
         this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();
     }
@@ -68,7 +72,19 @@ public class Sistema implements Serializable {
     public ArrayList<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
-
+    
+     public ArrayList<Administrador> getListaAdministradores() {
+        return administradores;
+    }
+    
+     public void setAdministrador(Administrador administrador) {
+        administradores.add(administrador);
+    }
+    
+    public void setListaAdministradores(ArrayList<Administrador> listaAdministradores) {
+        this.administradores=listaAdministradores;
+    }
+      
     public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }

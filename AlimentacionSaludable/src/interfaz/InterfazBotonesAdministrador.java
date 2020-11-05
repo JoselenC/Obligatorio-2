@@ -18,14 +18,12 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         ventana = unaVentana;
         actual = new PanelValidacionAdministrador(sistema, ventana);
         ventana.add(this);
-        ventana.add(actual);
+        ventana.add(actual);    
+        
 
     }
 
-    public JPanel getActual() {
-        return actual;
-    }
-
+ 
     public void setActual(JPanel actual) {
         this.actual = actual;
     }
@@ -55,6 +53,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         btnRegistrarUsuario.setText("Registrar Usuario");
         btnRegistrarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistrarUsuario.setContentAreaFilled(false);
+        btnRegistrarUsuario.setEnabled(false);
         btnRegistrarUsuario.setOpaque(true);
         btnRegistrarUsuario.setPreferredSize(new java.awt.Dimension(193, 136));
         btnRegistrarUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +70,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         btnRegistrarProfesional.setText("Registrar Profesional");
         btnRegistrarProfesional.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistrarProfesional.setContentAreaFilled(false);
+        btnRegistrarProfesional.setEnabled(false);
         btnRegistrarProfesional.setOpaque(true);
         btnRegistrarProfesional.setPreferredSize(new java.awt.Dimension(225, 196));
         btnRegistrarProfesional.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +87,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         btnRegistrarAlimento.setText("Registrar Alimento");
         btnRegistrarAlimento.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistrarAlimento.setContentAreaFilled(false);
+        btnRegistrarAlimento.setEnabled(false);
         btnRegistrarAlimento.setOpaque(true);
         btnRegistrarAlimento.setPreferredSize(new java.awt.Dimension(205, 196));
         btnRegistrarAlimento.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +105,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         btnCambiarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCambiarUsuario.setContentAreaFilled(false);
         btnCambiarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCambiarUsuario.setEnabled(false);
         btnCambiarUsuario.setOpaque(true);
         btnCambiarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

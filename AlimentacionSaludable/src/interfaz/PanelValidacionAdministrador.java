@@ -7,6 +7,7 @@ package interfaz;
 
 import dominio.Administrador;
 import dominio.Sistema;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -17,12 +18,18 @@ public class PanelValidacionAdministrador extends javax.swing.JPanel {
 
     private Sistema sistema;
     private JFrame ventana;
+    private ArrayList<Administrador> administradores= new ArrayList<Administrador>();
+    private boolean inicioSesion=false;
+    
     public PanelValidacionAdministrador(Sistema unSistema, JFrame unaVentana) {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
     }
 
+    public boolean inicioSesion(){
+        return inicioSesion;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -157,29 +164,45 @@ public class PanelValidacionAdministrador extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void brnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnRegistrarmeActionPerformed
-      // String usuario= txtUsuario.getText();
-       //String contraseña=txtContraseña.getText();             
-       // Administrador nuevoAdministrador= new Administrador(usuario,contraseña);
-       // if(!sistema.getAdministradores().contains(nuevoAdministrador)){
-         //  sistema.getAdministradores().add(nuevoAdministrador);
-          // lblAdministrador.setText("registrado exitosamente");
-        //}
-        //else{
-          //  lblAdministrador.setText("ya estas registrado en el sistema presiona iniiar sesion");
-        //}
+        String usuario = txtUsuario.getText();
+        String contraseña=txtContraseña.getText();
+        if(usuario==""){
+            lblUsuario.setText("El usuario no puede ser vacio");
+        }
+        else if(contraseña==""){
+            lblContraseña.setText("La contraseña no puede ser vacia");
+        }
+        else{
+            Administrador nuevoAdministrador= new Administrador(usuario,contraseña);           
+            if(sistema.getListaAdministradores().contains(nuevoAdministrador)){
+             lblAdministrador.setText("ya estas registrado en el sistema presiona iniiar sesion");
+            }
+            else{
+              sistema.getListaAdministradores().add(nuevoAdministrador);
+             lblAdministrador.setText("registrado exitosamente");             
+            }       
+        }
     }//GEN-LAST:event_brnRegistrarmeActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-     //  String usuario= txtUsuario.getText();
-     //  String contraseña=txtContraseña.getText();             
-     //   Administrador administrador= new Administrador(usuario,contraseña);
-     //   if(sistema.getAdministradores().contains(administrador)){
-       //    sistema.getAdministradores().add(administrador);
-           
-        //}
-        //else{
-          //  lblAdministrador.setText("usuario no registrado en el sistema");
-        //}
+        String usuario = txtUsuario.getText();
+        String contraseña=txtContraseña.getText();
+        if(usuario==""){
+            lblUsuario.setText("El usuario no puede ser vacio");
+        }
+        else if(contraseña==""){
+            lblContraseña.setText("La contraseña no puede ser vacia");
+        }
+        else{
+            Administrador nuevoAdministrador= new Administrador(usuario,contraseña);           
+            if(sistema.getListaAdministradores().contains(nuevoAdministrador)){
+                this.inicioSesion=true;
+            
+            }
+            else{
+             lblAdministrador.setText("Administrador no registrado en el sistema");             
+            }       
+        }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
 
