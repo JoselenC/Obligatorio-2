@@ -8,23 +8,24 @@ package interfaz;
 import dominio.Administrador;
 import dominio.Sistema;
 import java.util.ArrayList;
-import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Choche
  */
-public class PanelValidacionAdministrador extends javax.swing.JPanel {
+public class PanelValidacionAdministrador extends javax.swing.JFrame {
 
     private Sistema sistema;
-    private JFrame ventana;
     private ArrayList<Administrador> administradores= new ArrayList<Administrador>();
     private boolean inicioSesion=false;
     
-    public PanelValidacionAdministrador(Sistema unSistema, JFrame unaVentana) {
+    public PanelValidacionAdministrador(Sistema unSistema) {
         initComponents();
         sistema = unSistema;
-        ventana = unaVentana;
+       this.setSize(500, 400);
+       this.setResizable(false); 
+       this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); 
     }
 
     public boolean inicioSesion(){
@@ -48,27 +49,26 @@ public class PanelValidacionAdministrador extends javax.swing.JPanel {
         brnRegistrarme = new javax.swing.JButton();
         lblUsuario = new javax.swing.JLabel();
         lblContraseña = new javax.swing.JLabel();
-        lblAdministrador = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Usuario");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Contraseña");
 
-        txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        txtContraseña.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        etiquetaTituloProf.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaTituloProf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         etiquetaTituloProf.setForeground(new java.awt.Color(255, 0, 102));
         etiquetaTituloProf.setText("Inicio sesion administrador");
 
         btnIniciarSesion.setBackground(new java.awt.Color(255, 0, 102));
-        btnIniciarSesion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnIniciarSesion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnIniciarSesion.setText("Iniciar sesion");
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +77,7 @@ public class PanelValidacionAdministrador extends javax.swing.JPanel {
         });
 
         brnRegistrarme.setBackground(new java.awt.Color(255, 0, 102));
-        brnRegistrarme.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        brnRegistrarme.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         brnRegistrarme.setText("Registrarme");
         brnRegistrarme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,75 +85,62 @@ public class PanelValidacionAdministrador extends javax.swing.JPanel {
             }
         });
 
-        lblUsuario.setText("jLabel3");
-
-        lblContraseña.setText("jLabel3");
-
-        lblAdministrador.setText("jLabel3");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(263, 263, 263)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                            .addComponent(txtUsuario))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(163, 163, 163)
+                                .addComponent(etiquetaTituloProf))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(67, 67, 67)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblUsuario)
                             .addComponent(lblContraseña)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(246, 246, 246)
-                            .addComponent(brnRegistrarme)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnIniciarSesion))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(273, 273, 273)
-                            .addComponent(etiquetaTituloProf)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(311, 311, 311)
-                        .addComponent(lblAdministrador)))
-                .addContainerGap(448, Short.MAX_VALUE))
+                        .addGap(107, 107, 107)
+                        .addComponent(brnRegistrarme)
+                        .addGap(75, 75, 75)
+                        .addComponent(btnIniciarSesion)))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(223, 223, 223)
+                .addComponent(btnIniciarSesion)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(etiquetaTituloProf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblUsuario)))
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblContraseña)))
-                .addGap(33, 33, 33)
-                .addComponent(lblAdministrador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brnRegistrarme)
-                    .addComponent(btnIniciarSesion))
-                .addGap(281, 281, 281))
+                .addGap(65, 65, 65)
+                .addComponent(brnRegistrarme)
+                .addGap(0, 36, Short.MAX_VALUE))
         );
 
         jLabel2.getAccessibleContext().setAccessibleDescription("");
@@ -175,11 +162,12 @@ public class PanelValidacionAdministrador extends javax.swing.JPanel {
         else{
             Administrador nuevoAdministrador= new Administrador(usuario,contraseña);           
             if(sistema.getListaAdministradores().contains(nuevoAdministrador)){
-             lblAdministrador.setText("ya estas registrado en el sistema presiona iniiar sesion");
+                JOptionPane.showMessageDialog(null,"ya estas registrado en el sistema presiona iniciar sesion");  
             }
             else{
               sistema.getListaAdministradores().add(nuevoAdministrador);
-             lblAdministrador.setText("registrado exitosamente");             
+              JOptionPane.showMessageDialog(null,"Registrado exitosamente");  
+              this.setVisible(false);
             }       
         }
     }//GEN-LAST:event_brnRegistrarmeActionPerformed
@@ -200,7 +188,8 @@ public class PanelValidacionAdministrador extends javax.swing.JPanel {
             
             }
             else{
-             lblAdministrador.setText("Administrador no registrado en el sistema");             
+                JOptionPane.showMessageDialog(null,"Administrador no registrado en el sistema"); 
+                           this.setVisible(false);
             }       
         }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
@@ -212,7 +201,6 @@ public class PanelValidacionAdministrador extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaTituloProf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblAdministrador;
     private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JTextField txtContraseña;
