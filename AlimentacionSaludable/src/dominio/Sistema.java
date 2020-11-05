@@ -146,6 +146,7 @@ public class Sistema implements Serializable {
             out.writeObject(listaAlimentos);
             out.writeObject(listaUsuarios);
             out.writeObject(listaProfesionales);
+            out.writeObject(administradores);
             out.flush();
             out.close();
         } catch (IOException ex) {
