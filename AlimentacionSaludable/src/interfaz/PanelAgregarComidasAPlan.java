@@ -6,6 +6,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
 
@@ -31,7 +32,17 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         usuarioAModificar = unUsuario;
         listaAModificar = unaLista;
         plan = unPlan;
+         if(sistema.getListaAlimentos().size()==0){
+         JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
+         ventana.remove(this);
+        PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
+        interfaz.setActual(nuevo);
+        ventana.add(nuevo);
+        ventana.pack();
+        }
+         else{
         listaComidas.setListData(sistema.getListaAlimentos().toArray());
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -97,6 +108,12 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         Alimento alimentoAAgregar = (Alimento) listaComidas.getSelectedValue();
         listaAModificar.add(alimentoAAgregar);
+         JOptionPane.showMessageDialog(null, "Se agrego correctamete la comida");
+         ventana.remove(this);
+       PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
+        interfaz.setActual(nuevo);
+        ventana.add(nuevo);
+        ventana.pack();
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
 
