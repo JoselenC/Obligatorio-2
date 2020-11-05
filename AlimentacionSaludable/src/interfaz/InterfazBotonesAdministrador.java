@@ -134,7 +134,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
-private void botones(JPanel actualNueva){
+private void cambiarPanel(JPanel actualNueva){
         ventana.remove(actual);
         nuevaActual= actualNueva;
         ventana.add(nuevaActual);
@@ -144,22 +144,22 @@ private void botones(JPanel actualNueva){
 
     private void btnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioActionPerformed
         nuevaActual = new PanelRegistroUsuario(sistema, ventana);
-        botones(nuevaActual);       
+        cambiarPanel(nuevaActual);       
     }//GEN-LAST:event_btnRegistrarUsuarioActionPerformed
 
     private void btnRegistrarProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarProfesionalActionPerformed
         nuevaActual = new PanelRegistroProfesional(sistema, ventana);
-        botones(nuevaActual); 
+        cambiarPanel(nuevaActual); 
     }//GEN-LAST:event_btnRegistrarProfesionalActionPerformed
 
     private void btnRegistrarAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarAlimentoActionPerformed
         nuevaActual = new PanelRegistroAlimento(sistema, ventana);
-        botones(nuevaActual);  
+        cambiarPanel(nuevaActual);  
     }//GEN-LAST:event_btnRegistrarAlimentoActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         nuevaActual = new PanelCambioDeUsuario(ventana, sistema, this);
-        botones(nuevaActual); 
+        cambiarPanel(nuevaActual); 
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
 

@@ -133,7 +133,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
 
     
     
-    private void botones(JPanel actualNueva){
+    private void cambiarPanel(JPanel actualNueva){
         ventana.remove(actual);
         nuevaActual= actualNueva;
         ventana.add(nuevaActual);
@@ -144,22 +144,22 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
     
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         nuevaActual = new PanelHomeProfesional(sistema, this, ventana);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnConsultaDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDirectaActionPerformed
         nuevaActual = new PanelConsultaProfesionalDesdeProfesional(sistema, this, ventana);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnConsultaDirectaActionPerformed
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
        nuevaActual = new PanelSeleccionarPlanARealizar(sistema, this, ventana);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnRealizarPlanActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         nuevaActual = new PanelCambioDeUsuario(ventana, sistema, this);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
 

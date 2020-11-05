@@ -520,16 +520,19 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_fechaNacimientoFocusLost
 
-    private void checkBoxIntoleranteLactosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxIntoleranteLactosaActionPerformed
-        int posicionEnum = Usuario.Restricciones.IntoleranteALaLactosa.ordinal();
+    private void auxCheckBox(int posicionEnum){
         boolean valorEnPos = usuario.getListaRestricciones()[posicionEnum];
         usuario.getListaRestricciones()[posicionEnum] = !valorEnPos;
+    }
+    
+    private void checkBoxIntoleranteLactosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxIntoleranteLactosaActionPerformed
+        int posicionEnum = Usuario.Restricciones.IntoleranteALaLactosa.ordinal();
+        auxCheckBox(posicionEnum);
     }//GEN-LAST:event_checkBoxIntoleranteLactosaActionPerformed
 
     private void checkBoxHipertensionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxHipertensionActionPerformed
         int posicionEnum = Usuario.Restricciones.Hipertension.ordinal();
-        boolean valorEnPos = usuario.getListaRestricciones()[posicionEnum];
-        usuario.getListaRestricciones()[posicionEnum] = !valorEnPos;
+        auxCheckBox(posicionEnum);
     }//GEN-LAST:event_checkBoxHipertensionActionPerformed
 
     private void rBMacrobioticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBMacrobioticoActionPerformed
@@ -554,14 +557,12 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
     private void checkBoxCeliacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxCeliacoActionPerformed
         int posicionEnum = Usuario.Restricciones.Celiaco.ordinal();
-        boolean valorEnPos = usuario.getListaRestricciones()[posicionEnum];
-        usuario.getListaRestricciones()[posicionEnum] = !valorEnPos;
+        auxCheckBox(posicionEnum);
     }//GEN-LAST:event_checkBoxCeliacoActionPerformed
 
     private void checkBoxDiabeticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxDiabeticoActionPerformed
         int posicionEnum = Usuario.Restricciones.Diabetico.ordinal();
-        boolean valorEnPos = usuario.getListaRestricciones()[posicionEnum];
-        usuario.getListaRestricciones()[posicionEnum] = !valorEnPos;
+        auxCheckBox(posicionEnum);
     }//GEN-LAST:event_checkBoxDiabeticoActionPerformed
 
     private void cajaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaNombreActionPerformed

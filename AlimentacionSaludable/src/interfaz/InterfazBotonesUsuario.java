@@ -171,7 +171,7 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         panelBotonesUsuario.setBounds(-1, 0, 330, 810);
     }// </editor-fold>//GEN-END:initComponents
 
-     private void botones(JPanel actualNueva){
+     private void cambiarPanel(JPanel actualNueva){
         ventana.remove(actual);
         nuevaActual= actualNueva;
         ventana.add(nuevaActual);
@@ -188,27 +188,27 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
 
     private void btnPedirPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedirPlanActionPerformed
         nuevaActual = new PanelPlanAlimentacionUsuario(sistema, ventana, this);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnPedirPlanActionPerformed
 
     private void btnConsultaDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDirectaActionPerformed
         nuevaActual = new PanelConsultaProfesional(sistema, this, ventana);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnConsultaDirectaActionPerformed
 
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
         nuevaActual = new PanelPerfilUsuario(sistema, ventana, this);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnPerfilActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         nuevaActual = new PanelCambioDeUsuario(ventana, sistema, this);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         nuevaActual = new PanelDietaDiariaUsuario(sistema, ventana, this);
-        botones(nuevaActual);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
    

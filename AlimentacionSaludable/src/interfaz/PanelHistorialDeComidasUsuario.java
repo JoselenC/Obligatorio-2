@@ -74,6 +74,11 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         btnVolver.setBounds(20, 0, 100, 60);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cambiarPanel(){
+        
+    }
+    
+    
     private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
         ComidaPorDia comidaSeleccionada = (ComidaPorDia) listaHistorialDeComidas.getSelectedValue();
         if (comidaSeleccionada != null) {

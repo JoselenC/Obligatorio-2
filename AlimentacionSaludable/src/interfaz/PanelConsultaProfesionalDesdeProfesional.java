@@ -127,16 +127,21 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         ventana.pack();
     }//GEN-LAST:event_btnRedactarActionPerformed
 
+     public void mensjSeleccionado(){
+         mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();
+    }
+    
     private void listaMensajesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaMensajesValueChanged
-        mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();
+        mensjSeleccionado();
         if (mensajeSeleccionado != null) {
             textoLeerMensaje.setText(mensajeSeleccionado.getMensaje());
         }
     }//GEN-LAST:event_listaMensajesValueChanged
 
+   
     private void btnBorrarConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarConsActionPerformed
         if (mensajeSeleccionado != null) {
-            mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();
+            mensjSeleccionado();
             textoLeerMensaje.setText("");
             interfaz.getUsuarioActivo().getCasillaDeEntrada().remove(mensajeSeleccionado);
             mensajeSeleccionado = null;
