@@ -22,6 +22,10 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         
 
     }
+    
+    public JPanel getActual() {
+        return this.actual;
+    }
 
  
     public void setActual(JPanel actual) {
