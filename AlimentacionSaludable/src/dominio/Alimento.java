@@ -105,7 +105,7 @@ public class Alimento implements Serializable {
             Nutrientes.Agua, Nutrientes.Fibra,
             Nutrientes.HidratosDeCarbono,
             Nutrientes.Lipidos, Nutrientes.Minerales,
-            Nutrientes.Proteinas, Nutrientes.Vitaminas
+            Nutrientes.Proteinas, Nutrientes.Vitaminas,Nutrientes.Ninguno
         };
         return listaEnumPivot;
     }
