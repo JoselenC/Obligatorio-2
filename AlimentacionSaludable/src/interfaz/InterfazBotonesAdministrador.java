@@ -16,17 +16,14 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
+        actual = new PanelValidacionAdministrador(sistema, ventana);       
         actual = new PanelValidacionAdministrador(sistema, ventana);
         ventana.add(this);
-        ventana.add(actual);    
-        
+        ventana.add(actual);  
+                
 
     }
     
-    public JPanel getActual() {
-        return this.actual;
-    }
-
  
     public void setActual(JPanel actual) {
         this.actual = actual;
