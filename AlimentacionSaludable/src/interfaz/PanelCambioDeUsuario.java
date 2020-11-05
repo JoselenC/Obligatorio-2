@@ -157,7 +157,9 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
     private void btnPruebaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruebaAdministradorActionPerformed
-       ventana.remove(this);
+       ventana.remove(this);       
+       PanelValidacionAdministrador validacion = new PanelValidacionAdministrador(sistema);  
+       validacion .setVisible(true);
        InterfazBotonesAdministrador nuevaBotonera = new InterfazBotonesAdministrador(sistema, ventana);
        ventana.pack();
         
@@ -192,10 +194,6 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         if (interfazProf != null) {
             ventana.remove(interfazProf.getActual());
             ventana.remove(interfazProf);
-        }
-        if (interfazAdm != null) {
-            ventana.remove(interfazAdm.getActual());
-            ventana.remove(interfazAdm);
         }
         if (interfazUsr != null) {
             ventana.remove(interfazUsr.getActual());
