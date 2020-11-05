@@ -59,6 +59,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         btnRedactar.setText("Redactar");
         btnRedactar.setContentAreaFilled(false);
         btnRedactar.setOpaque(true);
+        btnRedactar.setPreferredSize(new java.awt.Dimension(99, 37));
         btnRedactar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRedactarActionPerformed(evt);
@@ -96,6 +97,8 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         btnBorrarCons.setForeground(new java.awt.Color(255, 255, 255));
         btnBorrarCons.setText("Borrar");
         btnBorrarCons.setContentAreaFilled(false);
+        btnBorrarCons.setMaximumSize(new java.awt.Dimension(127, 37));
+        btnBorrarCons.setMinimumSize(new java.awt.Dimension(127, 37));
         btnBorrarCons.setOpaque(true);
         btnBorrarCons.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
