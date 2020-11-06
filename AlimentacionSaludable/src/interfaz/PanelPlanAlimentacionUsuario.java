@@ -37,7 +37,7 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        panelPlan.setBackground(new java.awt.Color(255, 255, 255));
+        panelPlan.setBackground(new java.awt.Color(229, 229, 240));
         panelPlan.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelPlan.setLayout(null);
 
@@ -50,7 +50,7 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         panelPlan.add(listaProfesionalesAlim);
         listaProfesionalesAlim.setBounds(360, 170, 360, 37);
 
-        btnAceptarPlan.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarPlan.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarPlan.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarPlan.setText("Aceptar");
@@ -65,7 +65,7 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         btnAceptarPlan.setBounds(740, 170, 150, 37);
 
         etiquetaPlanDeAlimentacion.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaPlanDeAlimentacion.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaPlanDeAlimentacion.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaPlanDeAlimentacion.setText("Plan de Alimentación");
         panelPlan.add(etiquetaPlanDeAlimentacion);
         etiquetaPlanDeAlimentacion.setBounds(390, 30, 350, 50);

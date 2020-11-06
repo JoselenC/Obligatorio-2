@@ -31,11 +31,12 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         listaUsuarios = new javax.swing.JList();
         btnRealizarPlan = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Seleccionar Plan de Alimentacion a Realizar");
         add(etiquetaTitulo);
         etiquetaTitulo.setBounds(190, 20, 710, 40);
@@ -46,7 +47,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(340, 120, 410, 410);
 
-        btnRealizarPlan.setBackground(new java.awt.Color(255, 0, 102));
+        btnRealizarPlan.setBackground(new java.awt.Color(102, 102, 102));
         btnRealizarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRealizarPlan.setForeground(new java.awt.Color(255, 255, 255));
         btnRealizarPlan.setText("Realizar Plan");

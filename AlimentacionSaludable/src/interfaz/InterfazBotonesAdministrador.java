@@ -35,17 +35,15 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         btnRegistrarProfesional = new javax.swing.JButton();
         btnRegistrarAlimento = new javax.swing.JButton();
         btnCambiarUsuario = new javax.swing.JButton();
-        fondo = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(250, 784));
         setLayout(null);
 
-        panelBotonesAdministrador.setBackground(new java.awt.Color(204, 255, 153));
-        panelBotonesAdministrador.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        panelBotonesAdministrador.setPreferredSize(new java.awt.Dimension(246, 784));
+        panelBotonesAdministrador.setBackground(new java.awt.Color(193, 193, 217));
+        panelBotonesAdministrador.setPreferredSize(new java.awt.Dimension(250, 600));
         panelBotonesAdministrador.setLayout(null);
 
-        btnRegistrarUsuario.setBackground(new java.awt.Color(255, 0, 102));
+        btnRegistrarUsuario.setBackground(new java.awt.Color(102, 102, 102));
         btnRegistrarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRegistrarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarUsuario.setText("Registrar Usuario");
@@ -61,7 +59,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         panelBotonesAdministrador.add(btnRegistrarUsuario);
         btnRegistrarUsuario.setBounds(0, 30, 260, 50);
 
-        btnRegistrarProfesional.setBackground(new java.awt.Color(255, 0, 102));
+        btnRegistrarProfesional.setBackground(new java.awt.Color(102, 102, 102));
         btnRegistrarProfesional.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRegistrarProfesional.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarProfesional.setText("Registrar Profesional");
@@ -77,7 +75,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         panelBotonesAdministrador.add(btnRegistrarProfesional);
         btnRegistrarProfesional.setBounds(0, 110, 260, 50);
 
-        btnRegistrarAlimento.setBackground(new java.awt.Color(255, 0, 102));
+        btnRegistrarAlimento.setBackground(new java.awt.Color(102, 102, 102));
         btnRegistrarAlimento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRegistrarAlimento.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarAlimento.setText("Registrar Alimento");
@@ -93,7 +91,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         panelBotonesAdministrador.add(btnRegistrarAlimento);
         btnRegistrarAlimento.setBounds(0, 190, 260, 50);
 
-        btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
+        btnCambiarUsuario.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarUsuario.setText("Cambiar Usuario");
@@ -109,41 +107,36 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         panelBotonesAdministrador.add(btnCambiarUsuario);
         btnCambiarUsuario.setBounds(0, 270, 260, 50);
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo2.png"))); // NOI18N
-        fondo.setText("jLabel1");
-        panelBotonesAdministrador.add(fondo);
-        fondo.setBounds(0, 0, 250, 780);
-
         add(panelBotonesAdministrador);
-        panelBotonesAdministrador.setBounds(0, 0, 250, 784);
+        panelBotonesAdministrador.setBounds(0, 0, 250, 600);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioActionPerformed
         ventana.remove(actual);
         actual = new PanelRegistroUsuario(sistema, ventana);
         ventana.add(actual);
-        ventana.pack();
+       ventana.setSize(600,600);
     }//GEN-LAST:event_btnRegistrarUsuarioActionPerformed
 
     private void btnRegistrarProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarProfesionalActionPerformed
         ventana.remove(actual);
         actual = new PanelRegistroProfesional(sistema, ventana);
         ventana.add(actual);
-        ventana.pack();
+       ventana.setSize(600,600);
     }//GEN-LAST:event_btnRegistrarProfesionalActionPerformed
 
     private void btnRegistrarAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarAlimentoActionPerformed
         ventana.remove(actual);
         actual = new PanelRegistroAlimento(sistema, ventana);
         ventana.add(actual);
-        ventana.pack();
+        ventana.setSize(600,600);
     }//GEN-LAST:event_btnRegistrarAlimentoActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         ventana.remove(actual);
         actual = new PanelCambioDeUsuario(ventana, sistema, this);
         ventana.add(actual);
-        ventana.pack();
+       ventana.setSize(600,600);
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
 
@@ -152,7 +145,6 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
     private javax.swing.JButton btnRegistrarAlimento;
     private javax.swing.JButton btnRegistrarProfesional;
     private javax.swing.JButton btnRegistrarUsuario;
-    private javax.swing.JLabel fondo;
     private javax.swing.JPanel panelBotonesAdministrador;
     // End of variables declaration//GEN-END:variables
 }

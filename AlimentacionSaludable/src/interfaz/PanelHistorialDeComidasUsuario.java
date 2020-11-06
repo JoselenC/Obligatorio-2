@@ -35,7 +35,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
@@ -45,7 +45,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(220, 100, 650, 400);
 
-        btnVerHistorial.setBackground(new java.awt.Color(255, 0, 102));
+        btnVerHistorial.setBackground(new java.awt.Color(102, 102, 102));
         btnVerHistorial.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnVerHistorial.setForeground(new java.awt.Color(255, 255, 255));
         btnVerHistorial.setText("Ver Historial");
@@ -60,7 +60,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         btnVerHistorial.setBounds(700, 520, 170, 37);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Historial de Comidas");
         add(etiquetaTitulo);
         etiquetaTitulo.setBounds(380, 10, 330, 40);

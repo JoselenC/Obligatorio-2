@@ -36,12 +36,12 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
         lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Panel Home");
         add(jLabel1);
         jLabel1.setBounds(430, 10, 220, 40);
@@ -72,7 +72,7 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
         add(etiquetaComidasDelDia);
         etiquetaComidasDelDia.setBounds(120, 110, 180, 29);
 
-        btnHistorialDeComidas.setBackground(new java.awt.Color(255, 0, 102));
+        btnHistorialDeComidas.setBackground(new java.awt.Color(102, 102, 102));
         btnHistorialDeComidas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnHistorialDeComidas.setForeground(new java.awt.Color(255, 255, 255));
         btnHistorialDeComidas.setText("Historial de Comidas");

@@ -92,7 +92,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelRegUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        panelRegUsuario.setBackground(new java.awt.Color(229, 229, 240));
         panelRegUsuario.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelRegUsuario.setLayout(null);
 
@@ -193,13 +193,13 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
         etiquetaMedidaPeso.setText("Kg");
         panelRegUsuario.add(etiquetaMedidaPeso);
-        etiquetaMedidaPeso.setBounds(650, 380, 24, 26);
+        etiquetaMedidaPeso.setBounds(650, 380, 12, 14);
 
         etiquetaMedidaAltura.setText("Cm");
         panelRegUsuario.add(etiquetaMedidaAltura);
-        etiquetaMedidaAltura.setBounds(650, 330, 31, 26);
+        etiquetaMedidaAltura.setBounds(650, 330, 15, 14);
 
-        btnAceptarUsuario.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarUsuario.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarUsuario.setText("Aceptar");
@@ -214,7 +214,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         btnAceptarUsuario.setBounds(820, 630, 170, 40);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Registro Usuario");
         panelRegUsuario.add(etiquetaTitulo);
         etiquetaTitulo.setBounds(390, 0, 330, 44);
@@ -231,7 +231,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(listaNacionalidadesUsuario);
-        listaNacionalidadesUsuario.setBounds(480, 230, 160, 35);
+        listaNacionalidadesUsuario.setBounds(480, 230, 160, 37);
 
         etiquetaSexo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaSexo.setText("Sexo:");
@@ -285,7 +285,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(checkBoxIntoleranteLactosa);
-        checkBoxIntoleranteLactosa.setBounds(590, 460, 285, 37);
+        checkBoxIntoleranteLactosa.setBounds(590, 460, 271, 37);
 
         checkBoxDiabetico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxDiabetico.setText("Diabético");
@@ -346,7 +346,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(fechaNacimiento);
-        fechaNacimiento.setBounds(480, 280, 160, 32);
+        fechaNacimiento.setBounds(480, 280, 160, 20);
 
         etiquetaErrorFechaNacimiento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegUsuario.add(etiquetaErrorFechaNacimiento);
@@ -401,7 +401,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         panelRegUsuario.add(rBOrganico);
         rBOrganico.setBounds(940, 540, 140, 37);
 
-        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));
+        btnCambiarFoto.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarFoto.setText("Cambiar Foto");
@@ -419,21 +419,17 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1147, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(panelRegUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelRegUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 784, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(panelRegUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelRegUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -49,12 +49,12 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelRegAlimento.setBackground(new java.awt.Color(255, 255, 255));
+        panelRegAlimento.setBackground(new java.awt.Color(229, 229, 240));
         panelRegAlimento.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelRegAlimento.setLayout(null);
 
         etiquetaRegistroAlim.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaRegistroAlim.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaRegistroAlim.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaRegistroAlim.setText("Registro Alimento");
         panelRegAlimento.add(etiquetaRegistroAlim);
         etiquetaRegistroAlim.setBounds(360, 10, 310, 44);
@@ -89,7 +89,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         panelRegAlimento.add(listaTiposAlimentos);
         listaTiposAlimentos.setBounds(420, 180, 230, 35);
 
-        btnAceptarRegAlim.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarRegAlim.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarRegAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarRegAlim.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarRegAlim.setText("Aceptar");
@@ -193,7 +193,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         panelRegAlimento.add(etiquetaTituloPpalesNutrientes);
         etiquetaTituloPpalesNutrientes.setBounds(130, 230, 280, 29);
 
-        checkBoxNinguno.setBackground(new java.awt.Color(255, 255, 255));
+        checkBoxNinguno.setBackground(new java.awt.Color(229, 229, 240));
         checkBoxNinguno.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxNinguno.setText("Ninguno");
         checkBoxNinguno.addActionListener(new java.awt.event.ActionListener() {

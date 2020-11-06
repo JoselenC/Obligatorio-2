@@ -49,14 +49,13 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         btnRealizarPlan = new javax.swing.JButton();
         btnConsultaDirecta = new javax.swing.JButton();
         btnCambiarUsuario = new javax.swing.JButton();
-        fondo = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 255, 153));
+        setBackground(new java.awt.Color(193, 193, 217));
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        setPreferredSize(new java.awt.Dimension(250, 784));
+        setPreferredSize(new java.awt.Dimension(250, 600));
         setLayout(null);
 
-        btnHome.setBackground(new java.awt.Color(255, 0, 102));
+        btnHome.setBackground(new java.awt.Color(102, 102, 102));
         btnHome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnHome.setForeground(new java.awt.Color(255, 255, 255));
         btnHome.setText("Home");
@@ -71,7 +70,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         add(btnHome);
         btnHome.setBounds(2, 32, 258, 41);
 
-        btnRealizarPlan.setBackground(new java.awt.Color(255, 0, 102));
+        btnRealizarPlan.setBackground(new java.awt.Color(102, 102, 102));
         btnRealizarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRealizarPlan.setForeground(new java.awt.Color(255, 255, 255));
         btnRealizarPlan.setText("Realizar Plan");
@@ -86,7 +85,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         add(btnRealizarPlan);
         btnRealizarPlan.setBounds(2, 91, 258, 44);
 
-        btnConsultaDirecta.setBackground(new java.awt.Color(255, 0, 102));
+        btnConsultaDirecta.setBackground(new java.awt.Color(102, 102, 102));
         btnConsultaDirecta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnConsultaDirecta.setForeground(new java.awt.Color(255, 255, 255));
         btnConsultaDirecta.setText("Consulta Directa");
@@ -101,7 +100,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         add(btnConsultaDirecta);
         btnConsultaDirecta.setBounds(2, 156, 258, 43);
 
-        btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
+        btnCambiarUsuario.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarUsuario.setText("Cambiar Usuario");
@@ -115,38 +114,34 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         });
         add(btnCambiarUsuario);
         btnCambiarUsuario.setBounds(2, 220, 258, 44);
-
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo2.png"))); // NOI18N
-        add(fondo);
-        fondo.setBounds(0, 0, 260, 784);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         ventana.remove(actual);
         actual = new PanelHomeProfesional(sistema, this, ventana);
         ventana.add(actual);
-        ventana.pack();
+        ventana.setSize(600,600);
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnConsultaDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDirectaActionPerformed
         ventana.remove(actual);
         actual = new PanelConsultaProfesionalDesdeProfesional(sistema, this, ventana);
         ventana.add(actual);
-        ventana.pack();
+        ventana.setSize(600,600);
     }//GEN-LAST:event_btnConsultaDirectaActionPerformed
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         ventana.remove(actual);
         actual = new PanelSeleccionarPlanARealizar(sistema, this, ventana);
         ventana.add(actual);
-        ventana.pack();
+        ventana.setSize(600,600);
     }//GEN-LAST:event_btnRealizarPlanActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         ventana.remove(actual);
         actual = new PanelCambioDeUsuario(ventana, sistema, this);
         ventana.add(actual);
-        ventana.pack();
+        ventana.setSize(600,600);
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
 
@@ -155,6 +150,5 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
     private javax.swing.JButton btnConsultaDirecta;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnRealizarPlan;
-    private javax.swing.JLabel fondo;
     // End of variables declaration//GEN-END:variables
 }

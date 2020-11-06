@@ -49,11 +49,11 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelConsultaProf.setBackground(new java.awt.Color(255, 255, 255));
+        panelConsultaProf.setBackground(new java.awt.Color(229, 229, 240));
         panelConsultaProf.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelConsultaProf.setLayout(null);
 
-        btnRedactar.setBackground(new java.awt.Color(255, 0, 102));
+        btnRedactar.setBackground(new java.awt.Color(102, 102, 102));
         btnRedactar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRedactar.setForeground(new java.awt.Color(255, 255, 255));
         btnRedactar.setText("Redactar");
@@ -92,7 +92,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         panelConsultaProf.add(jScrollPane2);
         jScrollPane2.setBounds(630, 160, 280, 350);
 
-        btnBorrarCons.setBackground(new java.awt.Color(255, 0, 102));
+        btnBorrarCons.setBackground(new java.awt.Color(102, 102, 102));
         btnBorrarCons.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnBorrarCons.setForeground(new java.awt.Color(255, 255, 255));
         btnBorrarCons.setText("Borrar");
@@ -109,15 +109,16 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         btnBorrarCons.setBounds(800, 530, 110, 37);
 
         etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloConsultas.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTituloConsultas.setText("Consultas a Profesionales");
         panelConsultaProf.add(etiquetaTituloConsultas);
         etiquetaTituloConsultas.setBounds(340, 10, 420, 40);
 
         etiquetaBandejaDeEntrada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaBandejaDeEntrada.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaBandejaDeEntrada.setText("Bandeja de entrada");
         panelConsultaProf.add(etiquetaBandejaDeEntrada);
-        etiquetaBandejaDeEntrada.setBounds(670, 120, 210, 30);
+        etiquetaBandejaDeEntrada.setBounds(640, 120, 210, 30);
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");

@@ -41,11 +41,11 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelHome.setBackground(new java.awt.Color(255, 255, 255));
+        panelHome.setBackground(new java.awt.Color(229, 229, 240));
         panelHome.setLayout(null);
 
         etiquetaInfoUsuario.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaInfoUsuario.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaInfoUsuario.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaInfoUsuario.setText("Info del Usuario");
         panelHome.add(etiquetaInfoUsuario);
         etiquetaInfoUsuario.setBounds(420, 20, 300, 50);
