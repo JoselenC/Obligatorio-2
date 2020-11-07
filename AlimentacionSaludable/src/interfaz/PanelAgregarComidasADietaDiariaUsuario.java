@@ -45,6 +45,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         btnVolver = new javax.swing.JButton();
         lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -54,14 +55,14 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(listaComidasDiarias);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(340, 100, 370, 410);
+        jScrollPane1.setBounds(290, 160, 340, 360);
 
         etiquetaTitulo.setBackground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Agregar Comida");
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(390, 10, 270, 50);
+        etiquetaTitulo.setBounds(340, 40, 270, 50);
 
         btnAgregarComida.setBackground(new java.awt.Color(102, 102, 102));
         btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -75,7 +76,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComida);
-        btnAgregarComida.setBounds(430, 530, 210, 37);
+        btnAgregarComida.setBounds(540, 560, 210, 37);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setBorderPainted(false);
@@ -91,12 +92,16 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");
         add(lblUsuario);
-        lblUsuario.setBounds(820, 140, 220, 30);
+        lblUsuario.setBounds(690, 210, 220, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(810, 10, 190, 130);
+        jLabel2.setBounds(710, 0, 190, 200);
+
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        add(jPanel1);
+        jPanel1.setBounds(10, 10, 950, 120);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
@@ -127,6 +132,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaComidasDiarias;

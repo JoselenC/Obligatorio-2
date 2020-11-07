@@ -146,11 +146,14 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         if (interfazProf != null) {
             ventana.remove(interfazProf.getActual());
             ventana.remove(interfazProf);
+             ventana.remove(interfazAdm);
         }
         if (interfazUsr != null) {
             ventana.remove(interfazUsr.getActual());
             ventana.remove(interfazUsr);
+            ventana.remove(interfazAdm);
         }
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

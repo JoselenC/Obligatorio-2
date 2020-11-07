@@ -13,6 +13,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
     public PanelPrincipal(Sistema unSistema) {
         initComponents();
         sistema = unSistema;
+        this.setSize(400,400);
         this.setResizable(false);
     }
 
@@ -22,6 +23,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(229, 229, 240));
+        setLocation(new java.awt.Point(0, 0));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);

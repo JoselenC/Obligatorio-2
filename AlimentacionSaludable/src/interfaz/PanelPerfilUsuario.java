@@ -30,7 +30,6 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
     private void initComponents() {
 
         panelHome = new javax.swing.JPanel();
-        etiquetaInfoUsuario = new javax.swing.JLabel();
         btnEditarPerfilUsuario = new javax.swing.JButton();
         etiquetaFoto = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -38,17 +37,13 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         etiquetaEditar = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        etiquetaInfoUsuario = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
         panelHome.setBackground(new java.awt.Color(229, 229, 240));
         panelHome.setLayout(null);
-
-        etiquetaInfoUsuario.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaInfoUsuario.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaInfoUsuario.setText("Info del Usuario");
-        panelHome.add(etiquetaInfoUsuario);
-        etiquetaInfoUsuario.setBounds(420, 20, 300, 50);
 
         btnEditarPerfilUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnEditar.png"))); // NOI18N
         btnEditarPerfilUsuario.setBorderPainted(false);
@@ -59,7 +54,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
             }
         });
         panelHome.add(btnEditarPerfilUsuario);
-        btnEditarPerfilUsuario.setBounds(70, 40, 90, 70);
+        btnEditarPerfilUsuario.setBounds(40, 140, 90, 70);
 
         etiquetaFoto.setMaximumSize(new java.awt.Dimension(210, 240));
         etiquetaFoto.setMinimumSize(new java.awt.Dimension(210, 240));
@@ -76,34 +71,46 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(datosDelUsuario);
 
         panelHome.add(jScrollPane1);
-        jScrollPane1.setBounds(390, 100, 440, 470);
+        jScrollPane1.setBounds(390, 160, 440, 470);
 
         etiquetaEditar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaEditar.setText("Editar");
         panelHome.add(etiquetaEditar);
-        etiquetaEditar.setBounds(80, 120, 70, 30);
+        etiquetaEditar.setBounds(50, 230, 70, 30);
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");
         panelHome.add(lblUsuario);
-        lblUsuario.setBounds(840, 140, 230, 20);
+        lblUsuario.setBounds(850, 340, 230, 20);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
         panelHome.add(jLabel2);
-        jLabel2.setBounds(810, 10, 190, 130);
+        jLabel2.setBounds(910, 30, 190, 230);
+
+        jPanel1.setBackground(new java.awt.Color(137, 137, 161));
+
+        etiquetaInfoUsuario.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaInfoUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaInfoUsuario.setText("Info del Usuario");
+        jPanel1.add(etiquetaInfoUsuario);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 893, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelHome, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE))
+                .addComponent(panelHome, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 627, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(663, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE))
         );
@@ -111,10 +118,10 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
 
     private void btnEditarPerfilUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPerfilUsuarioActionPerformed
         ventana.remove(this);
-        PanelEditarPerfilUsuario nuevo = new PanelEditarPerfilUsuario(sistema, ventana, interfaz);
-        interfaz.setActual(nuevo);
+        PanelEditarPerfilUsuario nuevo = new PanelEditarPerfilUsuario(sistema, ventana, interfaz);        
         ventana.add(nuevo);
         ventana.pack();
+        
     }//GEN-LAST:event_btnEditarPerfilUsuarioActionPerformed
 
 
@@ -125,6 +132,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaFoto;
     private javax.swing.JLabel etiquetaInfoUsuario;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPanel panelHome;

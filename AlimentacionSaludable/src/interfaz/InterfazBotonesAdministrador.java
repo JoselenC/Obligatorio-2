@@ -108,35 +108,35 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         btnCambiarUsuario.setBounds(0, 270, 260, 50);
 
         add(panelBotonesAdministrador);
-        panelBotonesAdministrador.setBounds(0, 0, 250, 600);
+        panelBotonesAdministrador.setBounds(0, 0, 250, 1010);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioActionPerformed
         ventana.remove(actual);
         actual = new PanelRegistroUsuario(sistema, ventana);
         ventana.add(actual);
-       ventana.setSize(600,600);
+        ventana.pack();
     }//GEN-LAST:event_btnRegistrarUsuarioActionPerformed
 
     private void btnRegistrarProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarProfesionalActionPerformed
         ventana.remove(actual);
         actual = new PanelRegistroProfesional(sistema, ventana);
         ventana.add(actual);
-       ventana.setSize(600,600);
+        ventana.pack();
     }//GEN-LAST:event_btnRegistrarProfesionalActionPerformed
 
     private void btnRegistrarAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarAlimentoActionPerformed
         ventana.remove(actual);
         actual = new PanelRegistroAlimento(sistema, ventana);
         ventana.add(actual);
-        ventana.setSize(600,600);
+         ventana.pack();
     }//GEN-LAST:event_btnRegistrarAlimentoActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         ventana.remove(actual);
         actual = new PanelCambioDeUsuario(ventana, sistema, this);
         ventana.add(actual);
-       ventana.setSize(600,600);
+        ventana.pack();
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
 

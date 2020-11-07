@@ -120,28 +120,28 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         ventana.remove(actual);
         actual = new PanelHomeProfesional(sistema, this, ventana);
         ventana.add(actual);
-        ventana.setSize(600,600);
+         ventana.pack();
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnConsultaDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDirectaActionPerformed
         ventana.remove(actual);
         actual = new PanelConsultaProfesionalDesdeProfesional(sistema, this, ventana);
         ventana.add(actual);
-        ventana.setSize(600,600);
+         ventana.pack();
     }//GEN-LAST:event_btnConsultaDirectaActionPerformed
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         ventana.remove(actual);
         actual = new PanelSeleccionarPlanARealizar(sistema, this, ventana);
         ventana.add(actual);
-        ventana.setSize(600,600);
+         ventana.pack();
     }//GEN-LAST:event_btnRealizarPlanActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         ventana.remove(actual);
         actual = new PanelCambioDeUsuario(ventana, sistema, this);
         ventana.add(actual);
-        ventana.setSize(600,600);
+         ventana.pack();
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
 

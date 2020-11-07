@@ -44,6 +44,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Ninguna);
         fotoPerfil.setSize(210, 240);
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
