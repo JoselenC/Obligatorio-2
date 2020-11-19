@@ -21,7 +21,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         interfazUsuario = interfazActual;
         ventana = unaVentana;
         ventana.pack();
-        listaProfConsulta.setModel(new DefaultComboBoxModel(sistema.getListaProfesionales().toArray()));
+        listaProfConsulta.setModel(new DefaultComboBoxModel(sistema.getProfesionales().toArray()));
         //lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 

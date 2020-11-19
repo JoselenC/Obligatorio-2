@@ -22,7 +22,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         listaMensajes.setListData(interfaz.getUsuarioActivo().getCasillaDeEntrada().toArray());
         textoLeerMensaje.setEditable(false);
         mensajeSeleccionado = null;
-        if(sistema.getListaUsuarios().size()<1){
+        if(sistema.getUsuarios().size()<1){
             btnRedactar.setEnabled(false);
         }
     }

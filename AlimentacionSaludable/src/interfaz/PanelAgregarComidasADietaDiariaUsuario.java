@@ -20,7 +20,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         sistema = unSistema;
         ventana = unaVentana;
         interfaz = unaInterfaz;        
-        listaComidasDiarias.setListData(sistema.getListaAlimentos().toArray());
+        listaComidasDiarias.setListData(sistema.getAlimentos().toArray());
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
         
     }

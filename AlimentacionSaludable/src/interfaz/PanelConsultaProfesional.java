@@ -27,7 +27,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         }
         mensajeSeleccionado = null;
         textoLeerMensaje.setEditable(false);
-        if(sistema.getListaProfesionales().size()<1){
+        if(sistema.getProfesionales().size()<1){
             btnRedactar.setEnabled(false);
         }
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());

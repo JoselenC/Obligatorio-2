@@ -19,9 +19,9 @@ public class Sistema implements Serializable {
 
     //Atributos
     private static final long serialVersionUID = 6106269076155338045L;
-    ArrayList<Alimento> listaAlimentos;
-    ArrayList<Usuario> listaUsuarios;
-    ArrayList<Profesional> listaProfesionales;
+    ArrayList<Alimento> alimentos;
+    ArrayList<Usuario> usuarios;
+    ArrayList<Profesional> profesionales;
     ArrayList<Administrador> administradores;
     tipoUsuario[] listaTiposDeUsuario;
     tipoUsuario usuarioActivo;
@@ -32,18 +32,18 @@ public class Sistema implements Serializable {
             ArrayList<Profesional> listaProfesionales,
             ArrayList<Administrador> listaAdministradores,
             tipoUsuario usuarioActivo) {
-        this.listaAlimentos = listaAlimentos;
-        this.listaUsuarios = listaUsuarios;
-        this.listaProfesionales = listaProfesionales;
+        this.alimentos = listaAlimentos;
+        this.usuarios = listaUsuarios;
+        this.profesionales = listaProfesionales;
         this.usuarioActivo = usuarioActivo;
         administradores = listaAdministradores;
         this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();
     }
 
     public Sistema() {
-        this.listaAlimentos = new ArrayList();
-        this.listaUsuarios = new ArrayList();
-        this.listaProfesionales = new ArrayList();
+        this.alimentos = new ArrayList();
+        this.usuarios = new ArrayList();
+        this.profesionales = new ArrayList();
         this.administradores = new ArrayList();
         this.usuarioActivo = tipoUsuario.NoSeleccionado;
         this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();
@@ -61,21 +61,21 @@ public class Sistema implements Serializable {
                 .orElse(null);
     }
 
-    public ArrayList<Alimento> getListaAlimentos() {
-        return listaAlimentos;
+    public ArrayList<Alimento> getAlimentos() {
+        return alimentos;
     }
 
-    public void setListaAlimentos(ArrayList<Alimento> listaAlimentos) {
-        this.listaAlimentos = listaAlimentos;
+    public void setAlimentos(ArrayList<Alimento> alimentos) {
+        this.alimentos = alimentos;
     }
 
-    public ArrayList<Usuario> getListaUsuarios() {
-        return listaUsuarios;
+    public ArrayList<Usuario> getUsuarios() {
+        return usuarios;
     }
 
     public Usuario getUsuarioPorNombre(String nombre) {
-        for (int i = 0; i < listaUsuarios.size(); i++) {
-           Usuario usuario = listaUsuarios.get(i);
+        for (int i = 0; i < usuarios.size(); i++) {
+           Usuario usuario = usuarios.get(i);
             if (usuario.getNombreUsuario().equals(nombre)) {
                 return usuario;
             }
@@ -84,8 +84,8 @@ public class Sistema implements Serializable {
     }
 
     public boolean existeNombreUsuario(String nombre) {
-        for (int i = 0; i < listaUsuarios.size(); i++) {
-            Usuario usuario = listaUsuarios.get(i);
+        for (int i = 0; i < usuarios.size(); i++) {
+            Usuario usuario = usuarios.get(i);
             if (usuario.getNombreUsuario().equals(nombre)) {
                 return true;
             }
@@ -94,8 +94,8 @@ public class Sistema implements Serializable {
     }
 
     public boolean existeNombreProfesional(String nombre) {
-        for (int i = 0; i < listaProfesionales.size(); i++) {
-            Profesional profesional = listaProfesionales.get(i);
+        for (int i = 0; i < profesionales.size(); i++) {
+            Profesional profesional = profesionales.get(i);
             if (profesional.getNombreUsuario().equals(nombre)) {
                 return true;
             }
@@ -104,8 +104,8 @@ public class Sistema implements Serializable {
     }
 
     public Profesional getProfesionalPorNombre(String nombre) {
-        for (int i = 0; i < listaProfesionales.size(); i++) {
-            Profesional profesional = listaProfesionales.get(i);
+        for (int i = 0; i < profesionales.size(); i++) {
+            Profesional profesional = profesionales.get(i);
             if (profesional.getNombreUsuario().equals(nombre)) {
                 return profesional;
             }
@@ -125,16 +125,16 @@ public class Sistema implements Serializable {
         this.administradores = listaAdministradores;
     }
 
-    public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
-        this.listaUsuarios = listaUsuarios;
+    public void setUsuarios(ArrayList<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 
-    public ArrayList<Profesional> getListaProfesionales() {
-        return listaProfesionales;
+    public ArrayList<Profesional> getProfesionales() {
+        return profesionales;
     }
 
-    public void setListaProfesionales(ArrayList<Profesional> listaProfesionales) {
-        this.listaProfesionales = listaProfesionales;
+    public void setProfesionales(ArrayList<Profesional> profesionales) {
+        this.profesionales = profesionales;
     }
 
     public tipoUsuario getUsuarioActivo() {
@@ -161,25 +161,28 @@ public class Sistema implements Serializable {
         try {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("sis.ser"));
             ArrayList<Alimento> listAlimentos = (ArrayList<Alimento>) in.readObject();
-            listaAlimentos = listAlimentos;
+            alimentos = listAlimentos;
             ArrayList<Usuario> listUsuarios = (ArrayList<Usuario>) in.readObject();
-            listaUsuarios = listUsuarios;
+            usuarios = listUsuarios;
             ArrayList<Profesional> listProfesionales = (ArrayList<Profesional>) in.readObject();
-            listaProfesionales = listProfesionales;
+            profesionales = listProfesionales;
+            ArrayList<Administrador> administradores = (ArrayList<Administrador>) in.readObject();
+            administradores = administradores;
             in.close();
         } catch (Exception ex) {
-            listaAlimentos = new ArrayList<Alimento>();
-            listaUsuarios = new ArrayList<Usuario>();
-            listaProfesionales = new ArrayList<Profesional>();
+            alimentos = new ArrayList<Alimento>();
+            usuarios = new ArrayList<Usuario>();
+            profesionales = new ArrayList<Profesional>();
+            administradores= new ArrayList<Administrador>();
         }
     }
 
     public void guardarSistema() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sis.ser"));
-            out.writeObject(listaAlimentos);
-            out.writeObject(listaUsuarios);
-            out.writeObject(listaProfesionales);
+            out.writeObject(alimentos);
+            out.writeObject(usuarios);
+            out.writeObject(profesionales);
             out.writeObject(administradores);
             out.flush();
             out.close();
@@ -228,8 +231,8 @@ public class Sistema implements Serializable {
         usuario.setAlturaCm(unaAltura);
         usuario.setPesoKg(unPeso);
         usuario.setFotoPerfil(unaFotoPerfil);
-        if (!this.getListaUsuarios().contains(usuario)) {
-            this.getListaUsuarios().add(usuario);
+        if (!this.getUsuarios().contains(usuario)) {
+            this.getUsuarios().add(usuario);
         }
     }
 
@@ -250,8 +253,8 @@ public class Sistema implements Serializable {
         profesional.setFechaGraduacion(unaFechaGraduacion);
         profesional.setPaisObtuvoTitulo(unPaisTitulo);
         profesional.setFotoPerfil(unaFotoPerfil);
-        if (!this.getListaProfesionales().contains(profesional)) {
-            this.getListaProfesionales().add(profesional);
+        if (!this.getProfesionales().contains(profesional)) {
+            this.getProfesionales().add(profesional);
         }
     }
 
@@ -262,9 +265,14 @@ public class Sistema implements Serializable {
         alimento.setNombre(nombreAlim);
         alimento.setTipo(alimento.getListaEnumTipoAlimento()[unTipo.ordinal()]);
         alimento.setListaNutrientesSeleccionados(unaListaNutrientes);
-        if (!this.getListaAlimentos().contains(alimento)) {
-            this.getListaAlimentos().add(alimento);
+        if (!this.getAlimentos().contains(alimento)) {
+            this.getAlimentos().add(alimento);
         }
     }
 
+     public void registroAdministrador(String usuarioAdministrador, String contraseñaAdministrador) {
+        Administrador administrador= new Administrador();
+        administrador.setUsuario(usuarioAdministrador);
+        administrador.setContraseña(contraseñaAdministrador);
+    }
 }

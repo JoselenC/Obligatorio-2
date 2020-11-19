@@ -212,7 +212,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(btnAceptarUsuario);
-        btnAceptarUsuario.setBounds(820, 630, 170, 40);
+        btnAceptarUsuario.setBounds(810, 600, 170, 40);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
@@ -465,8 +465,8 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         if (nombreUsuario.trim().isEmpty()) {
             etiquetaErrorNombreUsuario.setText("El nombre de usuario no puede estar vacío");
         } else {
-            if (sistema.getListaUsuarios().contains(comparoUsuario)
-                    && sistema.getListaProfesionales().contains(comparoProf)) {
+            if (sistema.getUsuarios().contains(comparoUsuario)
+                    && sistema.getProfesionales().contains(comparoProf)) {
                 etiquetaErrorNombreUsuario.setText("El nombre de usuario ya está en uso");
             } else {
                 etiquetaErrorNombreUsuario.setText(" ");
@@ -500,8 +500,8 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
         boolean apellidoValido = !cajaApellidos.getText().trim().isEmpty();
         boolean nombreUsuarioValido = !cajaNombUsuario.getText().trim().isEmpty()
-                && !sistema.getListaUsuarios().contains(comparoUsr)
-                && !sistema.getListaProfesionales().contains(comparoProf);
+                && !sistema.getUsuarios().contains(comparoUsr)
+                && !sistema.getProfesionales().contains(comparoProf);
         boolean fNacimientoValido = fechaNacimiento.getCalendar() != null;
         boolean altura = pidoDatoNumerico(cajaAltura.getText(), 0, 265, etiquetaErrorAltura);
         boolean peso = pidoDatoNumerico(cajaPeso.getText(), 0, 600, etiquetaErrorPeso);
@@ -525,7 +525,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             usuario.setAlturaCm(Integer.parseInt(cajaAltura.getText()));
             usuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
             usuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
-            sistema.getListaUsuarios().add(usuario);
+            sistema.getUsuarios().add(usuario);
             JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
 
         } else {

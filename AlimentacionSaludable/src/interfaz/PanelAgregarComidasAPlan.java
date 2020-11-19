@@ -33,7 +33,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         listaAModificar = unaLista;
         plan = unPlan;
         
-        listaComidas.setListData(sistema.getListaAlimentos().toArray());
+        listaComidas.setListData(sistema.getAlimentos().toArray());
         
     }
 

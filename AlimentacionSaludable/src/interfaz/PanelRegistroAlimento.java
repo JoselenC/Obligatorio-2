@@ -236,7 +236,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             etiquetaErrorNombreAlimento.setText("El nombre no puede ser vacío");
         } else {
             alimento.setNombre(nombre);
-            if (sistema.getListaAlimentos().contains(alimento)) {
+            if (sistema.getAlimentos().contains(alimento)) {
                 etiquetaErrorNombreAlimento.setText("Esa comida ya se encuentra en el sistema");
             } else {
                 etiquetaErrorNombreAlimento.setText(" ");
@@ -248,12 +248,12 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         Alimento comparo = new Alimento();
         comparo.setNombre(cajaNombreAlim.getText());
         boolean nombre = !cajaNombreAlim.getText().trim().isEmpty()
-                && !sistema.getListaAlimentos().contains(comparo);
+                && !sistema.getAlimentos().contains(comparo);
         if (nombre) {
             alimento.setNombre(cajaNombreAlim.getText());
             alimento.setTipo(alimento.getListaEnumTipoAlimento()[listaTiposAlimentos.getSelectedIndex()]);
             etiquetaMensajeAlAceptar.setText("Alimento registrado correctamente");
-            sistema.getListaAlimentos().add(alimento);
+            sistema.getAlimentos().add(alimento);
         } else {
             etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento");
         }

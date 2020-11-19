@@ -21,7 +21,7 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         sistema = unSistema;
         ventana = unaVentana;
         interfaz = unaInterfaz;
-        listaProfesionalesAlim.setModel(new DefaultComboBoxModel(sistema.getListaProfesionales().toArray()));
+        listaProfesionalesAlim.setModel(new DefaultComboBoxModel(sistema.getProfesionales().toArray()));
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 

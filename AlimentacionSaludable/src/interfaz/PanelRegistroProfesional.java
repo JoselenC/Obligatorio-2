@@ -279,8 +279,8 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         if (nombreUsuario.trim().isEmpty()) {
             etiquetaErrorNombreUsuarioProf.setText("El nombre de usuario no puede estar vacío");
         } else {
-            if (sistema.getListaUsuarios().contains(comparoUsuario)
-                    && sistema.getListaProfesionales().contains(comparoProf)) {
+            if (sistema.getUsuarios().contains(comparoUsuario)
+                    && sistema.getProfesionales().contains(comparoProf)) {
                 etiquetaErrorNombreUsuarioProf.setText("El nombre de usuario ya está en uso");
             } else {
                 etiquetaErrorNombreUsuarioProf.setText(" ");
@@ -304,8 +304,8 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         Profesional comparoProf = new Profesional();
         comparoProf.setNombreUsuario(cajaUsuarioProf.getText());
         boolean nombreUsuarioValido = !cajaUsuarioProf.getText().trim().isEmpty()
-                && !sistema.getListaUsuarios().contains(comparoUsr)
-                && !sistema.getListaProfesionales().contains(comparoProf);
+                && !sistema.getUsuarios().contains(comparoUsr)
+                && !sistema.getProfesionales().contains(comparoProf);
         boolean fNacimientoValido = fechaNacimiento.getCalendar() != null;
         boolean nombreTituloValido = !cajaNombreTituloProf.getText().trim().isEmpty();
         boolean fGraduacionValido = fechaGraduacion.getCalendar() != null;
@@ -323,7 +323,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             profesional.setFechaGraduacion(fGraduacion);
             profesional.setPaisObtuvoTitulo(profesional.getListaEnumPais()[listaPaisDeGraduacion.getSelectedIndex()]);
             profesional.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
-            sistema.getListaProfesionales().add(profesional);
+            sistema.getProfesionales().add(profesional);
             etiquetaMensajeAlAceptar.setText("Profesional registrado correctamente");
         } else {
             etiquetaMensajeAlAceptar.setText("Error al ingresar el profesional");

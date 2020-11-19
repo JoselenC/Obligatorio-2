@@ -22,7 +22,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         sistema = unSistema;
         interfazProf = interfazActual;
         ventana = unaVentana;
-        listaUsrConsultas.setModel(new DefaultComboBoxModel(sistema.getListaUsuarios().toArray()));
+        listaUsrConsultas.setModel(new DefaultComboBoxModel(sistema.getUsuarios().toArray()));
     }
 
     @SuppressWarnings("unchecked")

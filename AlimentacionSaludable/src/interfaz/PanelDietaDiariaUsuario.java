@@ -134,7 +134,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed
 
     private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
-        if(sistema.getListaAlimentos().size()==0){
+        if(sistema.getAlimentos().size()==0){
          JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
         }
         else{
