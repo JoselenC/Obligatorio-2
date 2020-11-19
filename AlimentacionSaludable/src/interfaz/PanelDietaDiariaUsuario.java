@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
 
@@ -54,7 +55,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        panelDietaDiaria.setBackground(new java.awt.Color(255, 255, 255));
+        panelDietaDiaria.setBackground(new java.awt.Color(229, 229, 240));
         panelDietaDiaria.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelDietaDiaria.setLayout(null);
 
@@ -65,12 +66,12 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         lstComDiarias.setBounds(370, 160, 330, 410);
 
         etiquetaTituloAlim.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloAlim.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloAlim.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTituloAlim.setText("Comidas Ingeridas Diarias");
         panelDietaDiaria.add(etiquetaTituloAlim);
         etiquetaTituloAlim.setBounds(330, 10, 440, 44);
 
-        etiquetaBtnAgregarComidas.setBackground(new java.awt.Color(255, 0, 102));
+        etiquetaBtnAgregarComidas.setBackground(new java.awt.Color(102, 102, 102));
         etiquetaBtnAgregarComidas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaBtnAgregarComidas.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaBtnAgregarComidas.setText("Agregar Comida");
@@ -82,9 +83,9 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         panelDietaDiaria.add(etiquetaBtnAgregarComidas);
-        etiquetaBtnAgregarComidas.setBounds(550, 110, 210, 37);
+        etiquetaBtnAgregarComidas.setBounds(140, 170, 210, 37);
 
-        etiquetaBtnQuitarComida.setBackground(new java.awt.Color(255, 0, 102));
+        etiquetaBtnQuitarComida.setBackground(new java.awt.Color(102, 102, 102));
         etiquetaBtnQuitarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaBtnQuitarComida.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaBtnQuitarComida.setText("Quitar Comdia");
@@ -96,7 +97,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         panelDietaDiaria.add(etiquetaBtnQuitarComida);
-        etiquetaBtnQuitarComida.setBounds(290, 110, 190, 37);
+        etiquetaBtnQuitarComida.setBounds(140, 260, 210, 37);
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");
@@ -127,14 +128,22 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().remove(alimentoABorrar);
             listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
         }
+        else{
+             JOptionPane.showMessageDialog(null, "Seleccione una comida para quitar");
+        }
     }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed
 
     private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
+        if(sistema.getListaAlimentos().size()==0){
+         JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
+        }
+        else{
         ventana.remove(this);
         PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema, ventana, interfaz);
         interfaz.setActual(nuevo);
         ventana.add(nuevo);
         ventana.pack();
+        }
     }//GEN-LAST:event_etiquetaBtnAgregarComidasActionPerformed
 
 

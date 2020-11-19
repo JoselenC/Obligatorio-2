@@ -65,12 +65,12 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelRegProf.setBackground(new java.awt.Color(255, 255, 255));
+        panelRegProf.setBackground(new java.awt.Color(229, 229, 240));
         panelRegProf.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelRegProf.setLayout(null);
 
         etiquetaTituloProf.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloProf.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloProf.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTituloProf.setText("Editar perfil del profesional");
         panelRegProf.add(etiquetaTituloProf);
         etiquetaTituloProf.setBounds(350, 10, 450, 50);
@@ -137,7 +137,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         panelRegProf.add(cajaNombreTituloProf);
         cajaNombreTituloProf.setBounds(560, 270, 160, 35);
 
-        btnAceptarProf.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarProf.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarProf.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarProf.setText("Aceptar");
@@ -187,7 +187,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
             }
         });
         panelRegProf.add(fechaNacimiento);
-        fechaNacimiento.setBounds(560, 220, 160, 32);
+        fechaNacimiento.setBounds(560, 220, 160, 20);
 
         etiquetaErrorFechaNacimiento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(etiquetaErrorFechaNacimiento);
@@ -199,13 +199,13 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
             }
         });
         panelRegProf.add(fechaGraduacion);
-        fechaGraduacion.setBounds(560, 320, 160, 32);
+        fechaGraduacion.setBounds(560, 320, 160, 20);
 
         etiquetaErrorFechaGraduacion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(etiquetaErrorFechaGraduacion);
         etiquetaErrorFechaGraduacion.setBounds(740, 370, 310, 26);
 
-        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));
+        btnCambiarFoto.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarFoto.setText("Cambiar Foto");

@@ -23,8 +23,7 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         ventana = unaVentana;
         sistema = unSistema;
         interfazProf = unaInterfaz;
-        listaTiposDeUsuarios.setModel(new DefaultComboBoxModel(sistema.getListaTiposDeUsuario()));
-        actualizarLista();        
+        this.setSize(800, 500);
     }
 
     //constructor desde Usuario
@@ -35,8 +34,6 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         ventana = unaVentana;
         sistema = unSistema;
         interfazUsr = unaInterfaz;
-        listaTiposDeUsuarios.setModel(new DefaultComboBoxModel(sistema.getListaTiposDeUsuario()));
-        actualizarLista();
     }
 
     //constructor desde Administrador
@@ -47,8 +44,6 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         ventana = unaVentana;
         sistema = unSistema;
         interfazAdm = unaInterfaz;
-        listaTiposDeUsuarios.setModel(new DefaultComboBoxModel(sistema.getListaTiposDeUsuario()));
-        actualizarLista();
     }
 
     //constructor para comenzar la aplicacion
@@ -57,135 +52,113 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         initComponents();
         ventana = unaVentana;
         sistema = unSistema;
-        listaTiposDeUsuarios.setModel(new DefaultComboBoxModel(sistema.getListaTiposDeUsuario()));
-        listaTiposDeUsuarios.setSelectedIndex(0);
-        actualizarLista();
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCambiarUsuario = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listaUsuarios = new javax.swing.JList();
-        listaTiposDeUsuarios = new javax.swing.JComboBox();
-        etiquetaTiposDeUsuarios = new javax.swing.JLabel();
+        btnProfesional = new javax.swing.JButton();
+        btnPruebaAdministrador1 = new javax.swing.JButton();
+        btnUsuario1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         etiquetaTitulo = new javax.swing.JLabel();
-        btnPruebaAdministrador = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1147, 784));
+        setBackground(new java.awt.Color(229, 229, 240));
+        setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(null);
 
-        btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
-        btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambiarUsuario.setText("Cambiar Usuario");
-        btnCambiarUsuario.setContentAreaFilled(false);
-        btnCambiarUsuario.setOpaque(true);
-        btnCambiarUsuario.addActionListener(new java.awt.event.ActionListener() {
+        btnProfesional.setBackground(new java.awt.Color(229, 229, 240));
+        btnProfesional.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnProfesional.setForeground(new java.awt.Color(255, 255, 255));
+        btnProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/profesional 2.png"))); // NOI18N
+        btnProfesional.setBorderPainted(false);
+        btnProfesional.setContentAreaFilled(false);
+        btnProfesional.setOpaque(true);
+        btnProfesional.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCambiarUsuarioActionPerformed(evt);
+                btnProfesionalActionPerformed(evt);
             }
         });
-        add(btnCambiarUsuario);
-        btnCambiarUsuario.setBounds(640, 500, 210, 37);
+        add(btnProfesional);
+        btnProfesional.setBounds(40, 150, 210, 250);
 
-        listaUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jScrollPane1.setViewportView(listaUsuarios);
-
-        add(jScrollPane1);
-        jScrollPane1.setBounds(500, 120, 290, 340);
-
-        listaTiposDeUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        listaTiposDeUsuarios.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                listaTiposDeUsuariosFocusLost(evt);
-            }
-        });
-        listaTiposDeUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        btnPruebaAdministrador1.setBackground(new java.awt.Color(229, 229, 240));
+        btnPruebaAdministrador1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnPruebaAdministrador1.setForeground(new java.awt.Color(255, 255, 255));
+        btnPruebaAdministrador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/administrador 1 1.png"))); // NOI18N
+        btnPruebaAdministrador1.setBorderPainted(false);
+        btnPruebaAdministrador1.setContentAreaFilled(false);
+        btnPruebaAdministrador1.setOpaque(true);
+        btnPruebaAdministrador1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaTiposDeUsuariosActionPerformed(evt);
+                btnPruebaAdministrador1ActionPerformed(evt);
             }
         });
-        add(listaTiposDeUsuarios);
-        listaTiposDeUsuarios.setBounds(90, 160, 180, 37);
+        add(btnPruebaAdministrador1);
+        btnPruebaAdministrador1.setBounds(490, 160, 260, 210);
 
-        etiquetaTiposDeUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaTiposDeUsuarios.setText("Tipo de Usuario");
-        add(etiquetaTiposDeUsuarios);
-        etiquetaTiposDeUsuarios.setBounds(60, 120, 180, 29);
-
-        etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
-        etiquetaTitulo.setText("Cambio de Usuario");
-        add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(330, 21, 330, 44);
-
-        btnPruebaAdministrador.setBackground(new java.awt.Color(255, 0, 102));
-        btnPruebaAdministrador.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnPruebaAdministrador.setForeground(new java.awt.Color(255, 255, 255));
-        btnPruebaAdministrador.setText("Modo Administrador");
-        btnPruebaAdministrador.setContentAreaFilled(false);
-        btnPruebaAdministrador.setOpaque(true);
-        btnPruebaAdministrador.addActionListener(new java.awt.event.ActionListener() {
+        btnUsuario1.setBackground(new java.awt.Color(229, 229, 240));
+        btnUsuario1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        btnUsuario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
+        btnUsuario1.setBorderPainted(false);
+        btnUsuario1.setContentAreaFilled(false);
+        btnUsuario1.setOpaque(true);
+        btnUsuario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPruebaAdministradorActionPerformed(evt);
+                btnUsuario1ActionPerformed(evt);
             }
         });
-        add(btnPruebaAdministrador);
-        btnPruebaAdministrador.setBounds(40, 280, 250, 37);
+        add(btnUsuario1);
+        btnUsuario1.setBounds(280, 170, 220, 197);
+
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+
+        etiquetaTitulo.setBackground(new java.awt.Color(135, 135, 156));
+        etiquetaTitulo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 48)); // NOI18N
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaTitulo.setText("Inicio de sesion");
+        jPanel1.add(etiquetaTitulo);
+
+        add(jPanel1);
+        jPanel1.setBounds(10, 10, 800, 90);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
-        if (listaUsuarios.getSelectedValue() != null) {
-            this.limpioInterfaces();
-            if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Profesional) {
-                Profesional profSeleccionado = (Profesional) listaUsuarios.getSelectedValue();
-                ventana.remove(this);
-                InterfazBotonesProfesional nuevaBotonera = new InterfazBotonesProfesional(sistema, ventana, profSeleccionado);
-                ventana.pack();
-            }
-            if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Usuario) {
-                Usuario usuarioSeleccionado = (Usuario) listaUsuarios.getSelectedValue();
-                ventana.remove(this);
-                InterfazBotonesUsuario nuevaBotonera = new InterfazBotonesUsuario(sistema, ventana, usuarioSeleccionado);
-                ventana.pack();
-            }
+    private void btnPruebaAdministrador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruebaAdministrador1ActionPerformed
+        if (interfazProf != null) {
+            ventana.remove(interfazProf);
         }
-    }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
+        if (interfazUsr != null) {
+            ventana.remove(interfazAdm);
+        }
+        PanelValidacionAdministrador validacion = new PanelValidacionAdministrador(sistema, ventana, this);
+        validacion.setVisible(true);
+    }//GEN-LAST:event_btnPruebaAdministrador1ActionPerformed
 
-    private void btnPruebaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruebaAdministradorActionPerformed
-        PanelValidacionAdministrador validacion = new PanelValidacionAdministrador(sistema,ventana,this);  
-        validacion .setVisible(true);
-        
-    }//GEN-LAST:event_btnPruebaAdministradorActionPerformed
+    private void btnUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuario1ActionPerformed
+        if (interfazProf != null) {
+            ventana.remove(interfazProf);
+        }
+        if (interfazAdm != null) {
+            ventana.remove(interfazAdm);
+        }
+        FromIngresoUsuario usuario = new FromIngresoUsuario(sistema, ventana, "Usuario", this);
+        usuario.setVisible(true);
+    }//GEN-LAST:event_btnUsuario1ActionPerformed
 
-    private void listaTiposDeUsuariosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_listaTiposDeUsuariosFocusLost
-        actualizarLista();
-    }//GEN-LAST:event_listaTiposDeUsuariosFocusLost
+    private void btnProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesionalActionPerformed
 
-    private void listaTiposDeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaTiposDeUsuariosActionPerformed
-        actualizarLista();
-    }//GEN-LAST:event_listaTiposDeUsuariosActionPerformed
-    void actualizarLista() {
-        if (sistema.getListaUsuarios().size() < 1 && listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Usuario) {
-            btnCambiarUsuario.setEnabled(false);
-        } else {
-            if (sistema.getListaProfesionales().size() < 1 && listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Profesional) {
-                btnCambiarUsuario.setEnabled(false);
-            } else {
-                btnCambiarUsuario.setEnabled(true);
-            }
+        if (interfazUsr != null) {
+            ventana.remove(interfazProf);
         }
-        if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Profesional) {
-            listaUsuarios.setListData(sistema.getListaProfesionales().toArray());
+        if (interfazAdm != null) {
+            ventana.remove(interfazAdm);
         }
-        if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Usuario) {
-            listaUsuarios.setListData(sistema.getListaUsuarios().toArray());
-        }
-    }
+        FromIngresoUsuario usuario = new FromIngresoUsuario(sistema, ventana, "Profesional", this);
+        usuario.setVisible(true);
+
+    }//GEN-LAST:event_btnProfesionalActionPerformed
 
     void limpioInterfaces() {
         if (interfazProf != null) {
@@ -196,15 +169,14 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
             ventana.remove(interfazUsr.getActual());
             ventana.remove(interfazUsr);
         }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCambiarUsuario;
-    private javax.swing.JButton btnPruebaAdministrador;
-    private javax.swing.JLabel etiquetaTiposDeUsuarios;
+    private javax.swing.JButton btnProfesional;
+    private javax.swing.JButton btnPruebaAdministrador1;
+    private javax.swing.JButton btnUsuario1;
     private javax.swing.JLabel etiquetaTitulo;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox listaTiposDeUsuarios;
-    private javax.swing.JList listaUsuarios;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

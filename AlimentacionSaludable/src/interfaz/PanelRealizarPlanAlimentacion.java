@@ -6,6 +6,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
@@ -25,7 +26,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         sistema = unSistema;
         interfaz = unaInterfaz;
         ventana = unaVentana;
-        usuarioAModificar = unUsuario;
+        usuarioAModificar = unUsuario;        
         nuevoPlan = new PlanDeAlimentacion(usuarioAModificar);
         listaComidasDiarias.setListData(nuevoPlan.getListaLunes().toArray());
     }
@@ -60,7 +61,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         btnEnviarPlan = new javax.swing.JButton();
         mensajeAlAceptar = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
@@ -80,7 +81,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         etiquetaDiasDeLaSemana.setBounds(170, 130, 200, 30);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Realizar Plan de Alimentación");
         add(etiquetaTitulo);
         etiquetaTitulo.setBounds(300, 20, 480, 50);
@@ -91,7 +92,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(360, 180, 410, 370);
 
-        btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));
+        btnAgregarComida.setBackground(new java.awt.Color(102, 102, 102));
         btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarComida.setText("Agregar Comida");
@@ -103,9 +104,9 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComida);
-        btnAgregarComida.setBounds(600, 570, 210, 37);
+        btnAgregarComida.setBounds(560, 570, 210, 37);
 
-        btnQuitarComida.setBackground(new java.awt.Color(255, 0, 102));
+        btnQuitarComida.setBackground(new java.awt.Color(102, 102, 102));
         btnQuitarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnQuitarComida.setForeground(new java.awt.Color(255, 255, 255));
         btnQuitarComida.setText("Quitar Comida");
@@ -117,7 +118,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
             }
         });
         add(btnQuitarComida);
-        btnQuitarComida.setBounds(300, 570, 190, 37);
+        btnQuitarComida.setBounds(360, 570, 190, 37);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setToolTipText("");
@@ -131,7 +132,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         add(btnVolver);
         btnVolver.setBounds(20, 20, 100, 50);
 
-        btnEnviarPlan.setBackground(new java.awt.Color(255, 0, 102));
+        btnEnviarPlan.setBackground(new java.awt.Color(102, 102, 102));
         btnEnviarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnEnviarPlan.setForeground(new java.awt.Color(255, 255, 255));
         btnEnviarPlan.setText("Enviar Plan");
@@ -179,7 +180,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
     private void btnEnviarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarPlanActionPerformed
         usuarioAModificar.setPlan(nuevoPlan);
-        mensajeAlAceptar.setText("Se ha enviado correctamente");
+        JOptionPane.showMessageDialog(null, "Se ha enviado correctamente el plan");
     }//GEN-LAST:event_btnEnviarPlanActionPerformed
 
     void actualizarLista() {

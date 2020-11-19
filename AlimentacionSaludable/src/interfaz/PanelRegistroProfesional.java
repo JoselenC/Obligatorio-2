@@ -66,12 +66,12 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelRegProf.setBackground(new java.awt.Color(255, 255, 255));
+        panelRegProf.setBackground(new java.awt.Color(229, 229, 240));
         panelRegProf.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelRegProf.setLayout(null);
 
         etiquetaTituloProf.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloProf.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloProf.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTituloProf.setText("Registro Profesionales");
         panelRegProf.add(etiquetaTituloProf);
         etiquetaTituloProf.setBounds(350, 10, 360, 50);
@@ -133,7 +133,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         panelRegProf.add(cajaNombreTituloProf);
         cajaNombreTituloProf.setBounds(560, 320, 160, 35);
 
-        btnAceptarProf.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarProf.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarProf.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarProf.setText("Aceptar");
@@ -201,7 +201,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         panelRegProf.add(etiquetaErrorFechaGraduacion);
         etiquetaErrorFechaGraduacion.setBounds(740, 370, 310, 26);
 
-        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));
+        btnCambiarFoto.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarFoto.setText("Cambiar Foto");
@@ -240,7 +240,6 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         etiquetaUsuarioProf1.setBounds(330, 220, 220, 26);
         panelRegProf.add(lblRepetirContraseña);
         lblRepetirContraseña.setBounds(730, 550, 0, 0);
-        lblRepetirContraseña.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

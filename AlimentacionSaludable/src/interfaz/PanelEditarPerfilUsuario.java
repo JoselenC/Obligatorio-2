@@ -44,6 +44,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Ninguna);
         fotoPerfil.setSize(210, 240);
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -98,7 +99,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelEditarPerfilUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        panelEditarPerfilUsuario.setBackground(new java.awt.Color(229, 229, 240));
         panelEditarPerfilUsuario.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelEditarPerfilUsuario.setLayout(null);
 
@@ -186,7 +187,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         panelEditarPerfilUsuario.add(etiquetaMedidaAltura);
         etiquetaMedidaAltura.setBounds(650, 280, 15, 14);
 
-        btnAceptarUsuario.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarUsuario.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarUsuario.setText("Aceptar");
@@ -201,7 +202,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         btnAceptarUsuario.setBounds(850, 590, 200, 40);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Editar perfil del usuario");
         panelEditarPerfilUsuario.add(etiquetaTitulo);
         etiquetaTitulo.setBounds(390, 0, 380, 44);
@@ -388,7 +389,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         panelEditarPerfilUsuario.add(rBOrganico);
         rBOrganico.setBounds(940, 490, 140, 37);
 
-        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));
+        btnCambiarFoto.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarFoto.setText("Cambiar Foto");

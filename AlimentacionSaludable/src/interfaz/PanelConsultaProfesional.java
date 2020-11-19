@@ -3,6 +3,7 @@ package interfaz;
 import dominio.Sistema;
 import javax.swing.JFrame;
 import dominio.Mensaje;
+import javax.swing.JOptionPane;
 
 public class PanelConsultaProfesional extends javax.swing.JPanel {
 
@@ -19,6 +20,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         sistema = unSistema;
         interfaz = interfazActual;
         ventana = unaVentana;
+        ventana.pack();
         listaMensajes.setListData(interfaz.getUsuarioActual().getCasillaDeEntrada().toArray());
         if (interfaz.getUsuarioActual().getCasillaDeEntrada().size() > 0) {
             listaMensajes.setSelectedIndex(0);
@@ -29,6 +31,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
             btnRedactar.setEnabled(false);
         }
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -42,18 +45,19 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         listaMensajes = new javax.swing.JList();
         btnBorrarCons = new javax.swing.JButton();
-        etiquetaTituloConsultas = new javax.swing.JLabel();
-        etiquetaBandejaDeEntrada = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        etiquetaBandejaDeEntrada = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        etiquetaTituloConsultas = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelConsultaProf.setBackground(new java.awt.Color(255, 255, 255));
+        panelConsultaProf.setBackground(new java.awt.Color(229, 229, 240));
         panelConsultaProf.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelConsultaProf.setLayout(null);
 
-        btnRedactar.setBackground(new java.awt.Color(255, 0, 102));
+        btnRedactar.setBackground(new java.awt.Color(102, 102, 102));
         btnRedactar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRedactar.setForeground(new java.awt.Color(255, 255, 255));
         btnRedactar.setText("Redactar");
@@ -66,7 +70,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
             }
         });
         panelConsultaProf.add(btnRedactar);
-        btnRedactar.setBounds(630, 530, 130, 37);
+        btnRedactar.setBounds(540, 540, 130, 37);
 
         textoLeerMensaje.setColumns(20);
         textoLeerMensaje.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -74,7 +78,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         jScrollPane1.setViewportView(textoLeerMensaje);
 
         panelConsultaProf.add(jScrollPane1);
-        jScrollPane1.setBounds(60, 160, 547, 347);
+        jScrollPane1.setBounds(60, 160, 440, 370);
 
         listaMensajes.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaMensajes.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -90,9 +94,9 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         jScrollPane2.setViewportView(listaMensajes);
 
         panelConsultaProf.add(jScrollPane2);
-        jScrollPane2.setBounds(630, 160, 280, 350);
+        jScrollPane2.setBounds(530, 160, 280, 360);
 
-        btnBorrarCons.setBackground(new java.awt.Color(255, 0, 102));
+        btnBorrarCons.setBackground(new java.awt.Color(102, 102, 102));
         btnBorrarCons.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnBorrarCons.setForeground(new java.awt.Color(255, 255, 255));
         btnBorrarCons.setText("Borrar");
@@ -106,28 +110,32 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
             }
         });
         panelConsultaProf.add(btnBorrarCons);
-        btnBorrarCons.setBounds(800, 530, 110, 37);
-
-        etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 0, 102));
-        etiquetaTituloConsultas.setText("Consultas a Profesionales");
-        panelConsultaProf.add(etiquetaTituloConsultas);
-        etiquetaTituloConsultas.setBounds(340, 10, 420, 40);
-
-        etiquetaBandejaDeEntrada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaBandejaDeEntrada.setText("Bandeja de entrada");
-        panelConsultaProf.add(etiquetaBandejaDeEntrada);
-        etiquetaBandejaDeEntrada.setBounds(670, 120, 210, 30);
+        btnBorrarCons.setBounds(690, 540, 110, 37);
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");
         panelConsultaProf.add(lblUsuario);
-        lblUsuario.setBounds(880, 140, 200, 20);
+        lblUsuario.setBounds(890, 210, 200, 20);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        panelConsultaProf.add(jLabel2);
-        jLabel2.setBounds(860, 10, 190, 130);
+        etiquetaBandejaDeEntrada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaBandejaDeEntrada.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaBandejaDeEntrada.setText("Bandeja de entrada");
+        panelConsultaProf.add(etiquetaBandejaDeEntrada);
+        etiquetaBandejaDeEntrada.setBounds(540, 120, 210, 30);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
+        panelConsultaProf.add(jLabel3);
+        jLabel3.setBounds(880, 10, 188, 189);
+
+        jPanel1.setBackground(new java.awt.Color(137, 137, 161));
+
+        etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaTituloConsultas.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaTituloConsultas.setText("Consultas a Profesionales");
+        jPanel1.add(etiquetaTituloConsultas);
+
+        panelConsultaProf.add(jPanel1);
+        jPanel1.setBounds(0, 0, 1130, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -165,6 +173,9 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
             mensajeSeleccionado = null;
             listaMensajes.setListData(interfaz.getUsuarioActual().getCasillaDeEntrada().toArray());
         }
+        else{
+            JOptionPane.showMessageDialog(null, "Seleccione una consulta para borrar");
+        }
     }//GEN-LAST:event_btnBorrarConsActionPerformed
 
     private void listaMensajesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaMensajesValueChanged
@@ -172,6 +183,9 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         if (mensajeSeleccionado != null) {
             String textoMensaje = mensajeSeleccionado.getMensaje();
             textoLeerMensaje.setText(textoMensaje);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Seleccione una consulta");
         }
     }//GEN-LAST:event_listaMensajesValueChanged
 
@@ -181,7 +195,8 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
     private javax.swing.JButton btnRedactar;
     private javax.swing.JLabel etiquetaBandejaDeEntrada;
     private javax.swing.JLabel etiquetaTituloConsultas;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblUsuario;
