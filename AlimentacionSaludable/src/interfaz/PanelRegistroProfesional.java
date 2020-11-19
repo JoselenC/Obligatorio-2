@@ -187,7 +187,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
 
         etiquetaErrorFechaNacimiento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(etiquetaErrorFechaNacimiento);
-        etiquetaErrorFechaNacimiento.setBounds(740, 270, 390, 26);
+        etiquetaErrorFechaNacimiento.setBounds(740, 270, 400, 26);
 
         fechaGraduacion.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -199,7 +199,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
 
         etiquetaErrorFechaGraduacion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(etiquetaErrorFechaGraduacion);
-        etiquetaErrorFechaGraduacion.setBounds(740, 370, 310, 26);
+        etiquetaErrorFechaGraduacion.setBounds(740, 370, 380, 26);
 
         btnCambiarFoto.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N

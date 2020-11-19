@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class PanelRegistroUsuario extends javax.swing.JPanel {
@@ -40,7 +41,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         listaNacionalidadesUsuario.setSelectedIndex(Usuario.Nacionalidades.Uruguaya.ordinal());
         fotoPerfil.setSize(210, 240);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -193,11 +194,11 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
         etiquetaMedidaPeso.setText("Kg");
         panelRegUsuario.add(etiquetaMedidaPeso);
-        etiquetaMedidaPeso.setBounds(650, 380, 12, 14);
+        etiquetaMedidaPeso.setBounds(650, 380, 20, 14);
 
         etiquetaMedidaAltura.setText("Cm");
         panelRegUsuario.add(etiquetaMedidaAltura);
-        etiquetaMedidaAltura.setBounds(650, 330, 15, 14);
+        etiquetaMedidaAltura.setBounds(650, 330, 20, 14);
 
         btnAceptarUsuario.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -319,7 +320,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
         etiquetaErrorNombreUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegUsuario.add(etiquetaErrorNombreUsuario);
-        etiquetaErrorNombreUsuario.setBounds(660, 180, 390, 30);
+        etiquetaErrorNombreUsuario.setBounds(660, 180, 480, 30);
 
         etiquetaErrorAltura.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegUsuario.add(etiquetaErrorAltura);
@@ -435,6 +436,12 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
     private void cajaNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaNombreFocusLost
         String nombre = cajaNombre.getText();
+        if (nombre.trim().isEmpty()) {
+            etiquetaErrorNombre.setText("El nombre no puede ser vacío");
+        } else {
+            etiquetaErrorNombre.setText(" ");
+        }
+
 
     }//GEN-LAST:event_cajaNombreFocusLost
 
@@ -442,7 +449,11 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         String apellido = cajaApellidos.getText();
         if (apellido.trim().isEmpty()) {
             etiquetaErrorApellido.setText("El apellido no puede ser vacío");
+        } else {
+            etiquetaErrorApellido.setText(" ");
         }
+
+
     }//GEN-LAST:event_cajaApellidosFocusLost
 
     private void cajaNombUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaNombUsuarioFocusLost
@@ -465,11 +476,12 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
     private void cajaAlturaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaAlturaFocusLost
         String altura = cajaAltura.getText();
-        if (pidoDatoNumerico(altura, 0, 265, etiquetaErrorAltura)) {
+        if (altura.trim().isEmpty()) {
+            etiquetaErrorAltura.setText("La altura no puede estar vacia");
+        } else if (pidoDatoNumerico(altura, 0, 265, etiquetaErrorAltura)) {
             int alturaEnInt = Integer.parseInt(altura);
-        }
     }//GEN-LAST:event_cajaAlturaFocusLost
-
+}
     private void cajaPesoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaPesoFocusLost
         String peso = cajaPeso.getText();
         if (peso.trim().isEmpty()) {
@@ -485,7 +497,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         comparoProf.setNombreUsuario(cajaNombUsuario.getText());
         Usuario comparoUsr = new Usuario();
         comparoUsr.setNombreUsuario(cajaNombUsuario.getText());
-       
+
         boolean apellidoValido = !cajaApellidos.getText().trim().isEmpty();
         boolean nombreUsuarioValido = !cajaNombUsuario.getText().trim().isEmpty()
                 && !sistema.getListaUsuarios().contains(comparoUsr)
@@ -496,6 +508,8 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         boolean sexoPred = sexoPredeterminado();
         if (apellidoValido && nombreUsuarioValido
                 && altura && peso && fNacimientoValido) {
+            etiquetaErrorAltura.setText("");
+            etiquetaErrorPeso.setText("");
             usuario.setNombre(cajaNombre.getText());
             usuario.setApellidos(cajaApellidos.getText());
             usuario.setNombreUsuario(cajaNombUsuario.getText());
@@ -512,29 +526,19 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             usuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
             usuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
             sistema.getListaUsuarios().add(usuario);
-            etiquetaMensajeAlAceptar.setText("Usuario registrado correctamente");
-            
+            JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
+
         } else {
-            etiquetaMensajeAlAceptar.setText("Error al ingresar el usuario");
-            
-            if (apellidoValido == false) {
-                etiquetaErrorApellido.setText("El apellido no puede ser vacío");
-            }
+            JOptionPane.showMessageDialog(this, "Error al ingresar el usuario");
+
             if (nombreUsuarioValido == false) {
                 etiquetaErrorNombreUsuario.setText("Nombre de usuario no válido");
             }
             if (fNacimientoValido == false) {
                 etiquetaErrorFechaNacimiento.setText("Fecha de nacimiento no válida");
             }
-            if (altura == false) {
-                 etiquetaErrorAltura.setText("La altura no puede estar vacía");
-            }
-            if (peso == false) {
-                 etiquetaErrorPeso.setText("El peso no puede estar vacío");
-            }
-        }
     }//GEN-LAST:event_btnAceptarUsuarioActionPerformed
-
+    }
     private void rBtnMasculinoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnMasculinoUsuarioActionPerformed
         usuario.setSexo("Masculino");
     }//GEN-LAST:event_rBtnMasculinoUsuarioActionPerformed
@@ -618,18 +622,18 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         }
         actualizar();
     }//GEN-LAST:event_btnCambiarFotoActionPerformed
-    
+
     void actualizar() {
         fotoPerfil.setIcon(usuario.getFotoPerfil());
     }
-    
+
     ImageIcon resizeImageIcon(ImageIcon imageIcon, Integer width, Integer height) {
         BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TRANSLUCENT);
-        
+
         Graphics2D graphics2D = bufferedImage.createGraphics();
         graphics2D.drawImage(imageIcon.getImage(), 0, 0, width, height, null);
         graphics2D.dispose();
-        
+
         return new ImageIcon(bufferedImage, imageIcon.getDescription());
     }
 
@@ -696,7 +700,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         }
         return pidiendo;
     }
-    
+
     private boolean sexoPredeterminado() {
         boolean predeterminado = true;
         if (rBtnMasculinoUsuario.isSelected() == false) {
