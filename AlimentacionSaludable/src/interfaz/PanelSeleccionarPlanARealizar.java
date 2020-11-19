@@ -5,6 +5,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
@@ -19,6 +20,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         interfaz = unaInterfaz;
         sistema = unSistema;
         ventana = unaVentana;
+        ventana.pack();
         listaUsuarios.setListData(listaConPlanARealizar().toArray());
     }
 
@@ -64,12 +66,19 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         if (listaUsuarios.getSelectedValue() != null) {
+             if(sistema.getListaAlimentos().size()==0){
+            JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema para realizar plan");
+             }
+             else{
             Usuario usuarioAModificar = sistema.getListaUsuarios().get(listaUsuarios.getSelectedIndex());
             ventana.remove(this);
             PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar);
             interfaz.setActual(nuevo);
             ventana.add(nuevo);
-            ventana.pack();
+            ventana.pack();}
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Seleccione un usuario para realizar plan");
         }
 
     }//GEN-LAST:event_btnRealizarPlanActionPerformed

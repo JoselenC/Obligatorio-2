@@ -6,6 +6,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
@@ -25,7 +26,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         sistema = unSistema;
         interfaz = unaInterfaz;
         ventana = unaVentana;
-        usuarioAModificar = unUsuario;
+        usuarioAModificar = unUsuario;        
         nuevoPlan = new PlanDeAlimentacion(usuarioAModificar);
         listaComidasDiarias.setListData(nuevoPlan.getListaLunes().toArray());
     }
@@ -179,7 +180,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
     private void btnEnviarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarPlanActionPerformed
         usuarioAModificar.setPlan(nuevoPlan);
-        mensajeAlAceptar.setText("Se ha enviado correctamente");
+        JOptionPane.showMessageDialog(null, "Se ha enviado correctamente el plan");
     }//GEN-LAST:event_btnEnviarPlanActionPerformed
 
     void actualizarLista() {

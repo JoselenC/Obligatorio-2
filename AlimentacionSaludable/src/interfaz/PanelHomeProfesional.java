@@ -20,6 +20,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         sistema = unSistema;
         interfaz = interfazActual;
         ventana = unaVentana;
+        ventana.pack();
         profesional = interfaz.getUsuarioActivo();
         jListDatosDelProfesional.setListData(cargoDatosDelProfesional(profesional).toArray());
         etiquetaFoto.setIcon(profesional.getFotoPerfil());

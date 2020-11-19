@@ -19,19 +19,10 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
-        interfaz = unaInterfaz;
-        if(sistema.getListaAlimentos().size()==0){
-         JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
-         ventana.remove(this);
-        PanelDietaDiariaUsuario nuevo = new PanelDietaDiariaUsuario(sistema, ventana, interfaz);
-        interfaz.setActual(nuevo);
-        ventana.add(nuevo);
-        ventana.setSize(600,600);
-        }
-        else{
+        interfaz = unaInterfaz;        
         listaComidasDiarias.setListData(sistema.getListaAlimentos().toArray());
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
-        }
+        
     }
 
     @SuppressWarnings("unchecked")

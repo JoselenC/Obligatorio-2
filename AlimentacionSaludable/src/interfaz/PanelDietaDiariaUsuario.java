@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
 
@@ -127,14 +128,22 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().remove(alimentoABorrar);
             listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
         }
+        else{
+             JOptionPane.showMessageDialog(null, "Seleccione una comida para quitar");
+        }
     }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed
 
     private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
+        if(sistema.getListaAlimentos().size()==0){
+         JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
+        }
+        else{
         ventana.remove(this);
         PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema, ventana, interfaz);
         interfaz.setActual(nuevo);
         ventana.add(nuevo);
         ventana.pack();
+        }
     }//GEN-LAST:event_etiquetaBtnAgregarComidasActionPerformed
 
 

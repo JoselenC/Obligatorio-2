@@ -17,11 +17,12 @@ public class FromIngresoUsuario extends javax.swing.JFrame {
     public FromIngresoUsuario(Sistema unSistema, JFrame unaVentana, String tipoUsuario,JPanel cambioUsuario) {
         initComponents();
         sistema = unSistema;
-        this.setSize(400, 215);
+        this.pack();
         this.setResizable(false);
         this.setLocation(30, 30);
         setLocationRelativeTo(cambioUsuario);
         ventana = unaVentana;
+        ventana.pack();
         tipo = tipoUsuario;
         cambio=cambioUsuario;
     }

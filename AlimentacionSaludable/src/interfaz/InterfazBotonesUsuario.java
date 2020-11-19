@@ -20,7 +20,7 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         actual = new PanelHomeUsuario(sistema, this, ventana);
         ventana.add(this);
         ventana.add(actual);       
-         ventana.pack();
+        ventana.pack();
         etiquetaUsuarioActual.setText(this.usuarioActual.getNombre());
         
         
@@ -164,7 +164,7 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         ventana.remove(actual);
         actual = new PanelHomeUsuario(sistema, this, ventana);
         ventana.add(actual);
-         ventana.pack();
+        ventana.pack();
         
     }//GEN-LAST:event_btnHomeActionPerformed
 
@@ -172,14 +172,14 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         ventana.remove(actual);
         actual = new PanelPlanAlimentacionUsuario(sistema, ventana, this);
         ventana.add(actual);
-         ventana.pack();       
+        ventana.pack();       
     }//GEN-LAST:event_btnPedirPlanActionPerformed
 
     private void btnConsultaDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDirectaActionPerformed
         ventana.remove(actual);
         actual = new PanelConsultaProfesional(sistema, this, ventana);
         ventana.add(actual);
-         ventana.pack();
+        ventana.pack();
     }//GEN-LAST:event_btnConsultaDirectaActionPerformed
 
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
@@ -193,14 +193,14 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         ventana.remove(actual);
         actual = new PanelCambioDeUsuario(ventana, sistema, this);
         ventana.add(actual);
-         ventana.pack();
+        ventana.pack();
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         ventana.remove(actual);
         actual = new PanelDietaDiariaUsuario(sistema, ventana, this);
         ventana.add(actual);
-         ventana.pack();
+        ventana.pack();
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
    

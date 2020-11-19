@@ -22,8 +22,8 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         initComponents();
         ventana = unaVentana;
         sistema = unSistema;
-        interfazProf = unaInterfaz; 
-        this.setSize(800,500);
+        interfazProf = unaInterfaz;
+        this.setSize(800, 500);
     }
 
     //constructor desde Usuario
@@ -126,34 +126,50 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPruebaAdministrador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruebaAdministrador1ActionPerformed
-         PanelValidacionAdministrador validacion = new PanelValidacionAdministrador(sistema,ventana,this);  
-        validacion .setVisible(true);
+        if (interfazProf != null) {
+            ventana.remove(interfazProf);
+        }
+        if (interfazUsr != null) {
+            ventana.remove(interfazAdm);
+        }
+        PanelValidacionAdministrador validacion = new PanelValidacionAdministrador(sistema, ventana, this);
+        validacion.setVisible(true);
     }//GEN-LAST:event_btnPruebaAdministrador1ActionPerformed
 
     private void btnUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuario1ActionPerformed
-        
-        FromIngresoUsuario usuario= new FromIngresoUsuario(sistema,ventana,"Usuario",this);
+        if (interfazProf != null) {
+            ventana.remove(interfazProf);
+        }
+        if (interfazAdm != null) {
+            ventana.remove(interfazAdm);
+        }
+        FromIngresoUsuario usuario = new FromIngresoUsuario(sistema, ventana, "Usuario", this);
         usuario.setVisible(true);
     }//GEN-LAST:event_btnUsuario1ActionPerformed
 
     private void btnProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesionalActionPerformed
-        FromIngresoUsuario usuario= new FromIngresoUsuario(sistema,ventana,"Profesional",this);
+
+        if (interfazUsr != null) {
+            ventana.remove(interfazProf);
+        }
+        if (interfazAdm != null) {
+            ventana.remove(interfazAdm);
+        }
+        FromIngresoUsuario usuario = new FromIngresoUsuario(sistema, ventana, "Profesional", this);
         usuario.setVisible(true);
-         
+
     }//GEN-LAST:event_btnProfesionalActionPerformed
-  
+
     void limpioInterfaces() {
         if (interfazProf != null) {
             ventana.remove(interfazProf.getActual());
             ventana.remove(interfazProf);
-             ventana.remove(interfazAdm);
         }
         if (interfazUsr != null) {
             ventana.remove(interfazUsr.getActual());
             ventana.remove(interfazUsr);
-            ventana.remove(interfazAdm);
         }
-       
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -23,6 +23,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         actual = new PanelHomeProfesional(unSistema, this, unaVentana);
         ventana.add(this);
         ventana.add(actual);
+        ventana.pack();
     }
 
     public JPanel getActual() {

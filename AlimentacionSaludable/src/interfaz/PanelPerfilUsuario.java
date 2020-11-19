@@ -35,8 +35,8 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         datosDelUsuario = new javax.swing.JList();
         etiquetaEditar = new javax.swing.JLabel();
-        lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         etiquetaInfoUsuario = new javax.swing.JLabel();
 
@@ -71,21 +71,21 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(datosDelUsuario);
 
         panelHome.add(jScrollPane1);
-        jScrollPane1.setBounds(390, 160, 440, 470);
+        jScrollPane1.setBounds(340, 150, 410, 440);
 
         etiquetaEditar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaEditar.setText("Editar");
         panelHome.add(etiquetaEditar);
         etiquetaEditar.setBounds(50, 230, 70, 30);
 
-        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lblUsuario.setText("jLabel1");
-        panelHome.add(lblUsuario);
-        lblUsuario.setBounds(850, 340, 230, 20);
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
         panelHome.add(jLabel2);
         jLabel2.setBounds(910, 30, 190, 230);
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        panelHome.add(lblUsuario);
+        lblUsuario.setBounds(870, 270, 230, 20);
 
         jPanel1.setBackground(new java.awt.Color(137, 137, 161));
 

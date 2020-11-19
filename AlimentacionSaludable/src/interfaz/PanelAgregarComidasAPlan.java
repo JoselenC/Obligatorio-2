@@ -32,17 +32,9 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         usuarioAModificar = unUsuario;
         listaAModificar = unaLista;
         plan = unPlan;
-         if(sistema.getListaAlimentos().size()==0){
-         JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
-         ventana.remove(this);
-        PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
-        interfaz.setActual(nuevo);
-        ventana.add(nuevo);
-        ventana.setSize(600,600);
-        }
-         else{
+        
         listaComidas.setListData(sistema.getListaAlimentos().toArray());
-        }
+        
     }
 
     @SuppressWarnings("unchecked")

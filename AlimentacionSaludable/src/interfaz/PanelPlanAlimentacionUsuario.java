@@ -4,6 +4,7 @@ import dominio.Profesional;
 import dominio.Sistema;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
 
@@ -32,10 +33,11 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         etiquetaProfesionalACargo = new javax.swing.JLabel();
         listaProfesionalesAlim = new javax.swing.JComboBox();
         btnAceptarPlan = new javax.swing.JButton();
-        etiquetaPlanDeAlimentacion = new javax.swing.JLabel();
         mensajeAlAceptar = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        etiquetaTituloConsultas = new javax.swing.JLabel();
 
         panelPlan.setBackground(new java.awt.Color(229, 229, 240));
         panelPlan.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -44,11 +46,11 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         etiquetaProfesionalACargo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaProfesionalACargo.setText("Profesional a cargo:");
         panelPlan.add(etiquetaProfesionalACargo);
-        etiquetaProfesionalACargo.setBounds(130, 170, 220, 29);
+        etiquetaProfesionalACargo.setBounds(110, 290, 220, 29);
 
         listaProfesionalesAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelPlan.add(listaProfesionalesAlim);
-        listaProfesionalesAlim.setBounds(360, 170, 360, 37);
+        listaProfesionalesAlim.setBounds(360, 290, 360, 37);
 
         btnAceptarPlan.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -62,27 +64,30 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
             }
         });
         panelPlan.add(btnAceptarPlan);
-        btnAceptarPlan.setBounds(740, 170, 150, 37);
-
-        etiquetaPlanDeAlimentacion.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaPlanDeAlimentacion.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaPlanDeAlimentacion.setText("Plan de Alimentación");
-        panelPlan.add(etiquetaPlanDeAlimentacion);
-        etiquetaPlanDeAlimentacion.setBounds(390, 30, 350, 50);
+        btnAceptarPlan.setBounds(750, 290, 150, 37);
 
         mensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelPlan.add(mensajeAlAceptar);
-        mensajeAlAceptar.setBounds(730, 220, 410, 80);
+        mensajeAlAceptar.setBounds(500, 390, 410, 80);
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");
         panelPlan.add(lblUsuario);
-        lblUsuario.setBounds(820, 130, 210, 30);
+        lblUsuario.setBounds(810, 210, 210, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
         panelPlan.add(jLabel2);
-        jLabel2.setBounds(810, 10, 190, 130);
+        jLabel2.setBounds(790, 20, 188, 189);
+
+        jPanel1.setBackground(new java.awt.Color(137, 137, 161));
+
+        etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaTituloConsultas.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaTituloConsultas.setText("Plan de alimentacion");
+        jPanel1.add(etiquetaTituloConsultas);
+
+        panelPlan.add(jPanel1);
+        jPanel1.setBounds(0, 0, 1130, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -100,15 +105,17 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         Profesional profesionalActivo = (Profesional) listaProfesionalesAlim.getSelectedItem();
         interfaz.getUsuarioActual().setProfesionalAsignado(profesionalActivo);
         interfaz.getUsuarioActual().setNecesitoPlan(true);
-        mensajeAlAceptar.setText("Se ha pedido el plan de alimentación");
+         JOptionPane.showMessageDialog(null, "Se ha pedido el plan de alimentación");
+       
     }//GEN-LAST:event_btnAceptarPlanActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarPlan;
-    private javax.swing.JLabel etiquetaPlanDeAlimentacion;
     private javax.swing.JLabel etiquetaProfesionalACargo;
+    private javax.swing.JLabel etiquetaTituloConsultas;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JComboBox listaProfesionalesAlim;
     private javax.swing.JLabel mensajeAlAceptar;
