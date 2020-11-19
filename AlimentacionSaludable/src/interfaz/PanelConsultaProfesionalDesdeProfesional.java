@@ -22,7 +22,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         listaMensajes.setListData(interfaz.getUsuarioActivo().getCasillaDeEntrada().toArray());
         textoLeerMensaje.setEditable(false);
         mensajeSeleccionado = null;
-        if(sistema.getListaUsuarios().size()<1){
+        if(sistema.getUsuarios().size()<1){
             btnRedactar.setEnabled(false);
         }
     }
@@ -43,11 +43,11 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelConsultaProf.setBackground(new java.awt.Color(255, 255, 255));
+        panelConsultaProf.setBackground(new java.awt.Color(229, 229, 240));
         panelConsultaProf.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelConsultaProf.setLayout(null);
 
-        btnRedactar.setBackground(new java.awt.Color(255, 0, 102));
+        btnRedactar.setBackground(new java.awt.Color(102, 102, 102));
         btnRedactar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRedactar.setForeground(new java.awt.Color(255, 255, 255));
         btnRedactar.setText("Redactar");
@@ -80,7 +80,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         panelConsultaProf.add(jScrollPane2);
         jScrollPane2.setBounds(670, 160, 258, 350);
 
-        btnBorrarCons.setBackground(new java.awt.Color(255, 0, 102));
+        btnBorrarCons.setBackground(new java.awt.Color(102, 102, 102));
         btnBorrarCons.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnBorrarCons.setForeground(new java.awt.Color(255, 255, 255));
         btnBorrarCons.setText("Borrar");
@@ -92,30 +92,31 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
             }
         });
         panelConsultaProf.add(btnBorrarCons);
-        btnBorrarCons.setBounds(830, 530, 100, 37);
+        btnBorrarCons.setBounds(820, 530, 110, 37);
 
         etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloConsultas.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTituloConsultas.setText("Consultas a Profesionales");
         panelConsultaProf.add(etiquetaTituloConsultas);
         etiquetaTituloConsultas.setBounds(330, 10, 420, 44);
 
         etiquetaBandejaDeEntrada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaBandejaDeEntrada.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaBandejaDeEntrada.setText("Bandeja de entrada");
         panelConsultaProf.add(etiquetaBandejaDeEntrada);
-        etiquetaBandejaDeEntrada.setBounds(680, 110, 220, 30);
+        etiquetaBandejaDeEntrada.setBounds(690, 120, 220, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelConsultaProf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

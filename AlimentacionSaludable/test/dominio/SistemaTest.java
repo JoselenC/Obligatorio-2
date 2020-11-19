@@ -106,7 +106,7 @@ public class SistemaTest {
         Usuario.Nacionalidades unaNacionalidad = Usuario.Nacionalidades.Uruguaya;
         Sistema instance = new Sistema();
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);
-        assertTrue(instance.getListaUsuarios().size()>0);
+        assertTrue(instance.getUsuarios().size()>0);
     }
     
     @Test
@@ -124,7 +124,7 @@ public class SistemaTest {
         Sistema instance = new Sistema();
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);
-        assertFalse(instance.getListaUsuarios().size()>1);
+        assertFalse(instance.getUsuarios().size()>1);
     }
 
     @Test
@@ -142,7 +142,7 @@ public class SistemaTest {
         Sistema instance = new Sistema();
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
-        assertFalse(instance.getListaProfesionales().size()>1);
+        assertFalse(instance.getProfesionales().size()>1);
     }
     
     @Test
@@ -159,7 +159,7 @@ public class SistemaTest {
         Profesional.Pais unPaisTitulo = Profesional.Pais.Uruguay;
         Sistema instance = new Sistema();
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
-        assertTrue(instance.getListaProfesionales().size()>0);
+        assertTrue(instance.getProfesionales().size()>0);
     }
 
     @Test
@@ -171,7 +171,7 @@ public class SistemaTest {
         boolean[] unaListaNutrientes = new boolean[a.getListaNutrientesSeleccionados().length];
         Sistema instance = new Sistema();
         instance.registroAlimento(nombreAlim, unTipo, unaListaNutrientes);
-        assertTrue(instance.getListaAlimentos().size()>0);
+        assertTrue(instance.getAlimentos().size()>0);
     }
     
     @Test
@@ -184,7 +184,7 @@ public class SistemaTest {
         Sistema instance = new Sistema();
         instance.registroAlimento(nombreAlim, unTipo, unaListaNutrientes);
         instance.registroAlimento(nombreAlim, unTipo, unaListaNutrientes);
-        assertFalse(instance.getListaAlimentos().size()>1);
+        assertFalse(instance.getAlimentos().size()>1);
     }
     
     @Test

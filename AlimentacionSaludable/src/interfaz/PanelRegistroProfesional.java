@@ -66,12 +66,12 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelRegProf.setBackground(new java.awt.Color(255, 255, 255));
+        panelRegProf.setBackground(new java.awt.Color(229, 229, 240));
         panelRegProf.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelRegProf.setLayout(null);
 
         etiquetaTituloProf.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloProf.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloProf.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTituloProf.setText("Registro Profesionales");
         panelRegProf.add(etiquetaTituloProf);
         etiquetaTituloProf.setBounds(350, 10, 360, 50);
@@ -133,7 +133,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         panelRegProf.add(cajaNombreTituloProf);
         cajaNombreTituloProf.setBounds(560, 320, 160, 35);
 
-        btnAceptarProf.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarProf.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarProf.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarProf.setText("Aceptar");
@@ -187,7 +187,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
 
         etiquetaErrorFechaNacimiento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(etiquetaErrorFechaNacimiento);
-        etiquetaErrorFechaNacimiento.setBounds(740, 270, 390, 26);
+        etiquetaErrorFechaNacimiento.setBounds(740, 270, 400, 26);
 
         fechaGraduacion.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -199,9 +199,9 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
 
         etiquetaErrorFechaGraduacion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(etiquetaErrorFechaGraduacion);
-        etiquetaErrorFechaGraduacion.setBounds(740, 370, 310, 26);
+        etiquetaErrorFechaGraduacion.setBounds(740, 370, 380, 26);
 
-        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));
+        btnCambiarFoto.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarFoto.setText("Cambiar Foto");
@@ -240,7 +240,6 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         etiquetaUsuarioProf1.setBounds(330, 220, 220, 26);
         panelRegProf.add(lblRepetirContraseña);
         lblRepetirContraseña.setBounds(730, 550, 0, 0);
-        lblRepetirContraseña.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -280,8 +279,8 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         if (nombreUsuario.trim().isEmpty()) {
             etiquetaErrorNombreUsuarioProf.setText("El nombre de usuario no puede estar vacío");
         } else {
-            if (sistema.getListaUsuarios().contains(comparoUsuario)
-                    && sistema.getListaProfesionales().contains(comparoProf)) {
+            if (sistema.getUsuarios().contains(comparoUsuario)
+                    && sistema.getProfesionales().contains(comparoProf)) {
                 etiquetaErrorNombreUsuarioProf.setText("El nombre de usuario ya está en uso");
             } else {
                 etiquetaErrorNombreUsuarioProf.setText(" ");
@@ -305,8 +304,8 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         Profesional comparoProf = new Profesional();
         comparoProf.setNombreUsuario(cajaUsuarioProf.getText());
         boolean nombreUsuarioValido = !cajaUsuarioProf.getText().trim().isEmpty()
-                && !sistema.getListaUsuarios().contains(comparoUsr)
-                && !sistema.getListaProfesionales().contains(comparoProf);
+                && !sistema.getUsuarios().contains(comparoUsr)
+                && !sistema.getProfesionales().contains(comparoProf);
         boolean fNacimientoValido = fechaNacimiento.getCalendar() != null;
         boolean nombreTituloValido = !cajaNombreTituloProf.getText().trim().isEmpty();
         boolean fGraduacionValido = fechaGraduacion.getCalendar() != null;
@@ -324,7 +323,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             profesional.setFechaGraduacion(fGraduacion);
             profesional.setPaisObtuvoTitulo(profesional.getListaEnumPais()[listaPaisDeGraduacion.getSelectedIndex()]);
             profesional.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
-            sistema.getListaProfesionales().add(profesional);
+            sistema.getProfesionales().add(profesional);
             etiquetaMensajeAlAceptar.setText("Profesional registrado correctamente");
         } else {
             etiquetaMensajeAlAceptar.setText("Error al ingresar el profesional");

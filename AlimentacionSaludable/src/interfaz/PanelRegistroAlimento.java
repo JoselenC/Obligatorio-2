@@ -45,15 +45,16 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         etiquetaErrorNombreAlimento = new javax.swing.JLabel();
         etiquetaMensajeAlAceptar = new javax.swing.JLabel();
         etiquetaTituloPpalesNutrientes = new javax.swing.JLabel();
+        checkBoxNinguno = new javax.swing.JCheckBox();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelRegAlimento.setBackground(new java.awt.Color(255, 255, 255));
+        panelRegAlimento.setBackground(new java.awt.Color(229, 229, 240));
         panelRegAlimento.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelRegAlimento.setLayout(null);
 
         etiquetaRegistroAlim.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaRegistroAlim.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaRegistroAlim.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaRegistroAlim.setText("Registro Alimento");
         panelRegAlimento.add(etiquetaRegistroAlim);
         etiquetaRegistroAlim.setBounds(360, 10, 310, 44);
@@ -88,7 +89,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         panelRegAlimento.add(listaTiposAlimentos);
         listaTiposAlimentos.setBounds(420, 180, 230, 35);
 
-        btnAceptarRegAlim.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarRegAlim.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarRegAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarRegAlim.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarRegAlim.setText("Aceptar");
@@ -133,7 +134,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxHidratosDeCarbono);
-        checkBoxHidratosDeCarbono.setBounds(410, 270, 257, 37);
+        checkBoxHidratosDeCarbono.setBounds(410, 270, 243, 37);
 
         checkBoxVitaminas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxVitaminas.setText("Vitaminas");
@@ -192,6 +193,17 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         panelRegAlimento.add(etiquetaTituloPpalesNutrientes);
         etiquetaTituloPpalesNutrientes.setBounds(130, 230, 280, 29);
 
+        checkBoxNinguno.setBackground(new java.awt.Color(229, 229, 240));
+        checkBoxNinguno.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        checkBoxNinguno.setText("Ninguno");
+        checkBoxNinguno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxNingunoActionPerformed(evt);
+            }
+        });
+        panelRegAlimento.add(checkBoxNinguno);
+        checkBoxNinguno.setBounds(510, 310, 140, 37);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -204,6 +216,8 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
                 .addComponent(panelRegAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        panelRegAlimento.getAccessibleContext().setAccessibleName("checkBoxNinguno");
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkBoxHidratosDeCarbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxHidratosDeCarbonoActionPerformed
@@ -222,7 +236,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             etiquetaErrorNombreAlimento.setText("El nombre no puede ser vacío");
         } else {
             alimento.setNombre(nombre);
-            if (sistema.getListaAlimentos().contains(alimento)) {
+            if (sistema.getAlimentos().contains(alimento)) {
                 etiquetaErrorNombreAlimento.setText("Esa comida ya se encuentra en el sistema");
             } else {
                 etiquetaErrorNombreAlimento.setText(" ");
@@ -234,12 +248,12 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         Alimento comparo = new Alimento();
         comparo.setNombre(cajaNombreAlim.getText());
         boolean nombre = !cajaNombreAlim.getText().trim().isEmpty()
-                && !sistema.getListaAlimentos().contains(comparo);
+                && !sistema.getAlimentos().contains(comparo);
         if (nombre) {
             alimento.setNombre(cajaNombreAlim.getText());
             alimento.setTipo(alimento.getListaEnumTipoAlimento()[listaTiposAlimentos.getSelectedIndex()]);
             etiquetaMensajeAlAceptar.setText("Alimento registrado correctamente");
-            sistema.getListaAlimentos().add(alimento);
+            sistema.getAlimentos().add(alimento);
         } else {
             etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento");
         }
@@ -275,6 +289,11 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
 
     }//GEN-LAST:event_listaTiposAlimentosActionPerformed
 
+    private void checkBoxNingunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxNingunoActionPerformed
+     boolean estadoActual = alimento.getListaNutrientesSeleccionados()[Alimento.Nutrientes.Ninguno.ordinal()];
+        estadoActual = !estadoActual;
+    }//GEN-LAST:event_checkBoxNingunoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarRegAlim;
@@ -284,6 +303,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
     private javax.swing.JCheckBox checkBoxHidratosDeCarbono;
     private javax.swing.JCheckBox checkBoxLipidos;
     private javax.swing.JCheckBox checkBoxMinerales;
+    private javax.swing.JCheckBox checkBoxNinguno;
     private javax.swing.JCheckBox checkBoxProteinas;
     private javax.swing.JCheckBox checkBoxVitaminas;
     private javax.swing.JLabel etiquetaErrorNombreAlimento;

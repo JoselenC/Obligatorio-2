@@ -20,6 +20,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         sistema = unSistema;
         interfaz = interfazActual;
         ventana = unaVentana;
+        ventana.pack();
         profesional = interfaz.getUsuarioActivo();
         jListDatosDelProfesional.setListData(cargoDatosDelProfesional(profesional).toArray());
         etiquetaFoto.setIcon(profesional.getFotoPerfil());
@@ -36,7 +37,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         etiquetaEditar = new javax.swing.JLabel();
         etiquetaFoto = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
@@ -52,7 +53,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         btnEdiatrPerfilProfesional.setBounds(50, 60, 110, 70);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Datos del Profesional");
         add(etiquetaTitulo);
         etiquetaTitulo.setBounds(400, 20, 360, 40);

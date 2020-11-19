@@ -5,6 +5,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
@@ -19,6 +20,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         interfaz = unaInterfaz;
         sistema = unSistema;
         ventana = unaVentana;
+        ventana.pack();
         listaUsuarios.setListData(listaConPlanARealizar().toArray());
     }
 
@@ -31,11 +33,12 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         listaUsuarios = new javax.swing.JList();
         btnRealizarPlan = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Seleccionar Plan de Alimentacion a Realizar");
         add(etiquetaTitulo);
         etiquetaTitulo.setBounds(190, 20, 710, 40);
@@ -46,7 +49,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(340, 120, 410, 410);
 
-        btnRealizarPlan.setBackground(new java.awt.Color(255, 0, 102));
+        btnRealizarPlan.setBackground(new java.awt.Color(102, 102, 102));
         btnRealizarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnRealizarPlan.setForeground(new java.awt.Color(255, 255, 255));
         btnRealizarPlan.setText("Realizar Plan");
@@ -63,21 +66,28 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         if (listaUsuarios.getSelectedValue() != null) {
-            Usuario usuarioAModificar = sistema.getListaUsuarios().get(listaUsuarios.getSelectedIndex());
+             if(sistema.getAlimentos().size()==0){
+            JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema para realizar plan");
+             }
+             else{
+            Usuario usuarioAModificar = sistema.getUsuarios().get(listaUsuarios.getSelectedIndex());
             ventana.remove(this);
             PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar);
             interfaz.setActual(nuevo);
             ventana.add(nuevo);
-            ventana.pack();
+            ventana.pack();}
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Seleccione un usuario para realizar plan");
         }
 
     }//GEN-LAST:event_btnRealizarPlanActionPerformed
 
     ArrayList<Usuario> listaConPlanARealizar() {
         ArrayList<Usuario> retorno = new ArrayList<Usuario>();
-        for (int i = 0; i < sistema.getListaUsuarios().size(); i++) {
-            if (sistema.getListaUsuarios().get(i).isNecesitoPlan() && sistema.getListaUsuarios().get(i).getProfesionalAsignado().equals(interfaz.getUsuarioActivo())) {
-                retorno.add(sistema.getListaUsuarios().get(i));
+        for (int i = 0; i < sistema.getUsuarios().size(); i++) {
+            if (sistema.getUsuarios().get(i).isNecesitoPlan() && sistema.getUsuarios().get(i).getProfesionalAsignado().equals(interfaz.getUsuarioActivo())) {
+                retorno.add(sistema.getUsuarios().get(i));
             }
         }
         return retorno;

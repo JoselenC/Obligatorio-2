@@ -43,6 +43,8 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         usuario.setListaRestricciones(new boolean[usuario.getListaRestricciones().length]);
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Ninguna);
         fotoPerfil.setSize(210, 240);
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -92,10 +94,12 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         rBOrganico = new javax.swing.JRadioButton();
         btnCambiarFoto = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
-        panelEditarPerfilUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        panelEditarPerfilUsuario.setBackground(new java.awt.Color(229, 229, 240));
         panelEditarPerfilUsuario.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelEditarPerfilUsuario.setLayout(null);
 
@@ -177,13 +181,13 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
         etiquetaMedidaPeso.setText("Kg");
         panelEditarPerfilUsuario.add(etiquetaMedidaPeso);
-        etiquetaMedidaPeso.setBounds(650, 330, 24, 26);
+        etiquetaMedidaPeso.setBounds(650, 330, 12, 14);
 
         etiquetaMedidaAltura.setText("Cm");
         panelEditarPerfilUsuario.add(etiquetaMedidaAltura);
-        etiquetaMedidaAltura.setBounds(650, 280, 31, 26);
+        etiquetaMedidaAltura.setBounds(650, 280, 15, 14);
 
-        btnAceptarUsuario.setBackground(new java.awt.Color(255, 0, 102));
+        btnAceptarUsuario.setBackground(new java.awt.Color(102, 102, 102));
         btnAceptarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarUsuario.setText("Aceptar");
@@ -198,7 +202,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         btnAceptarUsuario.setBounds(850, 590, 200, 40);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Editar perfil del usuario");
         panelEditarPerfilUsuario.add(etiquetaTitulo);
         etiquetaTitulo.setBounds(390, 0, 380, 44);
@@ -215,7 +219,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
             }
         });
         panelEditarPerfilUsuario.add(listaNacionalidadesUsuario);
-        listaNacionalidadesUsuario.setBounds(480, 180, 160, 35);
+        listaNacionalidadesUsuario.setBounds(480, 180, 160, 37);
 
         etiquetaSexo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaSexo.setText("Sexo:");
@@ -269,7 +273,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
             }
         });
         panelEditarPerfilUsuario.add(checkBoxIntoleranteLactosa);
-        checkBoxIntoleranteLactosa.setBounds(590, 410, 285, 37);
+        checkBoxIntoleranteLactosa.setBounds(590, 410, 271, 37);
 
         checkBoxDiabetico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxDiabetico.setText("Diabético");
@@ -295,11 +299,11 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
         etiquetaErrorNombre.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelEditarPerfilUsuario.add(etiquetaErrorNombre);
-        etiquetaErrorNombre.setBounds(660, 80, 400, 30);
+        etiquetaErrorNombre.setBounds(8, 80, 400, 30);
 
         etiquetaErrorApellido.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelEditarPerfilUsuario.add(etiquetaErrorApellido);
-        etiquetaErrorApellido.setBounds(660, 130, 370, 30);
+        etiquetaErrorApellido.setBounds(640, 130, 270, 30);
 
         etiquetaErrorNombreUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelEditarPerfilUsuario.add(etiquetaErrorNombreUsuario);
@@ -330,7 +334,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
             }
         });
         panelEditarPerfilUsuario.add(fechaNacimiento);
-        fechaNacimiento.setBounds(480, 230, 160, 32);
+        fechaNacimiento.setBounds(480, 230, 160, 20);
 
         etiquetaErrorFechaNacimiento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelEditarPerfilUsuario.add(etiquetaErrorFechaNacimiento);
@@ -385,7 +389,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         panelEditarPerfilUsuario.add(rBOrganico);
         rBOrganico.setBounds(940, 490, 140, 37);
 
-        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));
+        btnCambiarFoto.setBackground(new java.awt.Color(102, 102, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarFoto.setText("Cambiar Foto");
@@ -410,11 +414,20 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         panelEditarPerfilUsuario.add(btnVolver);
         btnVolver.setBounds(30, 10, 100, 80);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        panelEditarPerfilUsuario.add(jLabel2);
+        jLabel2.setBounds(810, 10, 190, 130);
+
+        lblUsuario.setText("jLabel1");
+        panelEditarPerfilUsuario.add(lblUsuario);
+        lblUsuario.setBounds(820, 140, 210, 20);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1147, Short.MAX_VALUE)
+            .addGap(0, 1333, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -643,6 +656,8 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel fotoPerfil;
     private javax.swing.ButtonGroup grupoBotonesPreferencias;
     private javax.swing.ButtonGroup grupoBotonesSexo;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JComboBox listaNacionalidadesUsuario;
     private javax.swing.JPanel panelEditarPerfilUsuario;
     private javax.swing.JRadioButton rBMacrobiotico;

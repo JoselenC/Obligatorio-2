@@ -5,6 +5,7 @@ import dominio.Sistema;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
@@ -18,8 +19,10 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
-        interfaz = unaInterfaz;
-        listaComidasDiarias.setListData(sistema.getListaAlimentos().toArray());
+        interfaz = unaInterfaz;        
+        listaComidasDiarias.setListData(sistema.getAlimentos().toArray());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -31,8 +34,11 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         etiquetaTitulo = new javax.swing.JLabel();
         btnAgregarComida = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
@@ -40,16 +46,16 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(listaComidasDiarias);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(340, 100, 370, 410);
+        jScrollPane1.setBounds(290, 160, 340, 360);
 
-        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setBackground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Agregar Comida");
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(390, 10, 270, 50);
+        etiquetaTitulo.setBounds(340, 40, 270, 50);
 
-        btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));
+        btnAgregarComida.setBackground(new java.awt.Color(102, 102, 102));
         btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarComida.setText("Agregar Comida");
@@ -61,7 +67,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComida);
-        btnAgregarComida.setBounds(660, 540, 210, 37);
+        btnAgregarComida.setBounds(540, 560, 210, 37);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setBorderPainted(false);
@@ -73,6 +79,20 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         });
         add(btnVolver);
         btnVolver.setBounds(0, 10, 110, 70);
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        add(lblUsuario);
+        lblUsuario.setBounds(690, 210, 220, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(710, 0, 190, 200);
+
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        add(jPanel1);
+        jPanel1.setBounds(10, 10, 950, 120);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
@@ -80,6 +100,13 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().add(comidaSeleccionada);
         LocalDate diaActual = LocalDate.now();
         interfaz.getUsuarioActual().setFechaUltimaAdicion(diaActual.toString());
+        JOptionPane.showMessageDialog(null, "Se agrego correctamete la comida");
+         ventana.remove(this);
+        PanelDietaDiariaUsuario nuevo = new PanelDietaDiariaUsuario(sistema, ventana, interfaz);
+        interfaz.setActual(nuevo);
+        ventana.add(nuevo);
+        ventana.setSize(600,600);
+        
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -87,7 +114,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         PanelDietaDiariaUsuario nuevo = new PanelDietaDiariaUsuario(sistema, ventana, interfaz);
         interfaz.setActual(nuevo);
         ventana.add(nuevo);
-        ventana.pack();
+        ventana.setSize(600,600);
     }//GEN-LAST:event_btnVolverActionPerformed
 
 
@@ -95,7 +122,10 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
     private javax.swing.JButton btnAgregarComida;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaComidasDiarias;
     // End of variables declaration//GEN-END:variables
 }

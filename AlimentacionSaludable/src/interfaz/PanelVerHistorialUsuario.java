@@ -2,6 +2,8 @@ package interfaz;
 
 import dominio.ComidaPorDia;
 import dominio.Sistema;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class PanelVerHistorialUsuario extends javax.swing.JPanel {
@@ -24,6 +26,7 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
         comidaActiva = unaComidaPorDia;
         fecha.setText(comidaActiva.getFecha());
         listaHistorialDeComidas.setListData(comidaActiva.getComidasIngeridas().toArray());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -36,8 +39,10 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
         etiquetaTitulo = new javax.swing.JLabel();
         etiquetaFecha = new javax.swing.JLabel();
         fecha = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
@@ -59,7 +64,7 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
         btnVolver.setBounds(20, 10, 130, 60);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Historial de Comidas");
         add(etiquetaTitulo);
         etiquetaTitulo.setBounds(400, 20, 360, 40);
@@ -73,6 +78,16 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
         fecha.setText("-");
         add(fecha);
         fecha.setBounds(430, 110, 160, 29);
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel1");
+        add(lblUsuario);
+        lblUsuario.setBounds(930, 140, 210, 20);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(910, 10, 190, 130);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -89,7 +104,9 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaFecha;
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JLabel fecha;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaHistorialDeComidas;
     // End of variables declaration//GEN-END:variables
 }

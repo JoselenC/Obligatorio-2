@@ -6,6 +6,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
 
@@ -31,7 +32,9 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         usuarioAModificar = unUsuario;
         listaAModificar = unaLista;
         plan = unPlan;
-        listaComidas.setListData(sistema.getListaAlimentos().toArray());
+        
+        listaComidas.setListData(sistema.getAlimentos().toArray());
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -44,12 +47,13 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         btnAgregarComida = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaTitulo.setText("Agregar Comidas");
         add(etiquetaTitulo);
         etiquetaTitulo.setBounds(380, 20, 290, 50);
@@ -60,7 +64,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(350, 110, 370, 410);
 
-        btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));
+        btnAgregarComida.setBackground(new java.awt.Color(102, 102, 102));
         btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarComida.setText("Agregar Comida");
@@ -72,7 +76,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComida);
-        btnAgregarComida.setBounds(640, 530, 210, 37);
+        btnAgregarComida.setBounds(420, 540, 210, 37);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setBorderPainted(false);
@@ -91,12 +95,18 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
         interfaz.setActual(nuevo);
         ventana.add(nuevo);
-        ventana.pack();
+        ventana.setSize(600,600);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         Alimento alimentoAAgregar = (Alimento) listaComidas.getSelectedValue();
         listaAModificar.add(alimentoAAgregar);
+         JOptionPane.showMessageDialog(null, "Se agrego correctamete la comida");
+         ventana.remove(this);
+       PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
+        interfaz.setActual(nuevo);
+        ventana.add(nuevo);
+        ventana.setSize(600,600);
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
 

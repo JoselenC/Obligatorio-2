@@ -1,6 +1,8 @@
 package interfaz;
 
 import dominio.Sistema;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class PanelHomeUsuario extends javax.swing.JPanel {
@@ -17,35 +19,33 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
         interfaz = unaInterfaz;
         ventana = unaVentana;
         listaComidasPlan.setListData(interfaz.getUsuarioActual().getPlan().getListaLunes().toArray());
-
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());   
+        ventana.pack();
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaComidasPlan = new javax.swing.JList();
         listaDiasDeLaSemana = new javax.swing.JComboBox<>();
         etiquetaComidasDelDia = new javax.swing.JLabel();
         btnHistorialDeComidas = new javax.swing.JButton();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel1.setText("Panel Home");
-        add(jLabel1);
-        jLabel1.setBounds(430, 10, 220, 40);
 
         listaComidasPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jScrollPane1.setViewportView(listaComidasPlan);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(350, 170, 400, 390);
+        jScrollPane1.setBounds(260, 190, 400, 390);
 
         listaDiasDeLaSemana.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaDiasDeLaSemana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo" }));
@@ -60,14 +60,14 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
             }
         });
         add(listaDiasDeLaSemana);
-        listaDiasDeLaSemana.setBounds(310, 110, 140, 35);
+        listaDiasDeLaSemana.setBounds(60, 240, 139, 35);
 
         etiquetaComidasDelDia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaComidasDelDia.setText("Comidas del dia:");
         add(etiquetaComidasDelDia);
-        etiquetaComidasDelDia.setBounds(120, 110, 180, 29);
+        etiquetaComidasDelDia.setBounds(50, 190, 180, 29);
 
-        btnHistorialDeComidas.setBackground(new java.awt.Color(255, 0, 102));
+        btnHistorialDeComidas.setBackground(new java.awt.Color(102, 102, 102));
         btnHistorialDeComidas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnHistorialDeComidas.setForeground(new java.awt.Color(255, 255, 255));
         btnHistorialDeComidas.setText("Historial de Comidas");
@@ -79,7 +79,28 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
             }
         });
         add(btnHistorialDeComidas);
-        btnHistorialDeComidas.setBounds(610, 110, 250, 37);
+        btnHistorialDeComidas.setBounds(310, 610, 300, 37);
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblUsuario.setText("jLabel2");
+        add(lblUsuario);
+        lblUsuario.setBounds(730, 220, 240, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(750, 20, 188, 189);
+
+        jPanel1.setBackground(new java.awt.Color(137, 137, 161));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("Panel Home");
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabel1);
+
+        add(jPanel1);
+        jPanel1.setBounds(10, 10, 1130, 90);
     }// </editor-fold>//GEN-END:initComponents
 
     private void listaDiasDeLaSemanaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaItemStateChanged
@@ -128,7 +149,10 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
     private javax.swing.JButton btnHistorialDeComidas;
     private javax.swing.JLabel etiquetaComidasDelDia;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaComidasPlan;
     private javax.swing.JComboBox<String> listaDiasDeLaSemana;
     // End of variables declaration//GEN-END:variables

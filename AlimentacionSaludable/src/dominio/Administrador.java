@@ -1,14 +1,19 @@
 package dominio;
 
 import java.util.Objects;
+import java.io.Serializable;
 
 public class Administrador {
+    private static final long serialVersionUID = 6106269076155338045L;
     private String usuario;
     private String contraseña;
     
     public Administrador(String vUsuario, String vContraseña){
         usuario=vUsuario;
         contraseña=vContraseña;
+    }
+    
+    public Administrador(){
     }
 
     @Override
