@@ -11,6 +11,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class PanelRegistroProfesional extends javax.swing.JPanel {
@@ -145,7 +146,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             }
         });
         panelRegProf.add(btnAceptarProf);
-        btnAceptarProf.setBounds(850, 610, 150, 37);
+        btnAceptarProf.setBounds(700, 520, 150, 37);
 
         etiquetaPaisDeGraduacion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaPaisDeGraduacion.setText("País de graduación:");
@@ -324,9 +325,9 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             profesional.setPaisObtuvoTitulo(profesional.getListaEnumPais()[listaPaisDeGraduacion.getSelectedIndex()]);
             profesional.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
             sistema.getProfesionales().add(profesional);
-            etiquetaMensajeAlAceptar.setText("Profesional registrado correctamente");
+            JOptionPane.showMessageDialog(this, "Profesional registrado correctamente");
         } else {
-            etiquetaMensajeAlAceptar.setText("Error al ingresar el profesional");
+            JOptionPane.showMessageDialog(this, "Error al registrar al profesional");
             if (nombreValido == false) {
                 etiquetaErrorNombreProf.setText("El nombre no puede ser vacío");
             }

@@ -3,7 +3,7 @@ package dominio;
 import java.util.Objects;
 import java.io.Serializable;
 
-public class Administrador {
+public class Administrador implements Serializable {
     private static final long serialVersionUID = 6106269076155338045L;
     private String usuario;
     private String contraseña;
