@@ -166,8 +166,8 @@ public class Sistema implements Serializable {
             usuarios = listUsuarios;
             ArrayList<Profesional> listProfesionales = (ArrayList<Profesional>) in.readObject();
             profesionales = listProfesionales;
-            ArrayList<Administrador> administradores = (ArrayList<Administrador>) in.readObject();
-            administradores = administradores;
+            ArrayList<Administrador> listAdministradores = (ArrayList<Administrador>) in.readObject();
+            administradores = listAdministradores;
             in.close();
         } catch (Exception ex) {
             alimentos = new ArrayList<Alimento>();

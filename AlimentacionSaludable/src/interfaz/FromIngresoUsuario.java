@@ -130,7 +130,7 @@ public class FromIngresoUsuario extends javax.swing.JFrame {
                 InterfazBotonesProfesional nuevaBotonera = new InterfazBotonesProfesional(sistema, ventana, profesionalSeleccionado);
                 ventana.pack();
             } else {
-                JOptionPane.showMessageDialog(null, "Usuario no registrado en el sistema");
+                JOptionPane.showMessageDialog(null, "Profesional no registrado en el sistema");
             }
         }
     }//GEN-LAST:event_brnInicioSesionActionPerformed
