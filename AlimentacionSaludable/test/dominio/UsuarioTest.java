@@ -1,5 +1,7 @@
 package dominio;
 
+import dominio.Usuario.Nacionalidades;
+import dominio.Usuario.Preferencias;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import org.junit.After;
@@ -28,6 +30,85 @@ public class UsuarioTest {
 
     @After
     public void tearDown() {
+    }
+
+    @Test
+    public void testInicializoListaNacionalidades() {
+        String[] listExpected = {"Alemana", "Australiana", "Austriaca",
+            "Brasileña", "Canadiense", "Chilena", "China", "Colombiana",
+            "Surcoreana", "Cubana", "Ecuatoriana", "Egipcia",
+            "Española", "EstadoUnidense", "Francesa", "Griega",
+            "Holandesa", "India", "Inglesa", "Israeli", "Italiana",
+            "Japonesa", "Méxicana", "Paraguaya", "Peruana",
+            "Portuguesa", "Rusa", "Sudáfricana", "Uruguaya",
+            "Venezolana"};
+        Usuario usuario = new Usuario();
+        String[] listaPaisesPivot = usuario.inicializoListaNacionalidades();
+        assertArrayEquals(listExpected, listaPaisesPivot);
+    }
+
+    @Test
+    public void testGetCasillaDeEntrada() {
+        ArrayList<Mensaje> casillaExpected = new ArrayList<Mensaje>();
+        Usuario usuario = new Usuario();
+        usuario.setCasillaDeEntrada(casillaExpected);
+        ArrayList<Mensaje> casillaDeEntrada = usuario.getCasillaDeEntrada();
+        assertEquals(casillaExpected, casillaDeEntrada);
+    }
+
+    @Test
+    public void testGetPrefernciasAlimentarias() {
+        Usuario.Preferencias preferenciasExpected = Preferencias.Ninguna;
+        Usuario usuario = new Usuario();
+        usuario.setPreferenciasAlimentarias(preferenciasExpected);
+        Usuario.Preferencias preferenciasAlimentarias = usuario.getPreferenciasAlimentarias();
+        assertEquals(preferenciasExpected, preferenciasAlimentarias);
+    }
+    
+    @Test
+    public void testGetRestricciones(){
+        Usuario.Restricciones restriccionesExpected= Usuario.Restricciones.Celiaco;
+        Usuario usuario = new Usuario();
+        usuario.setRestricciones(restriccionesExpected);
+        Usuario.Restricciones restricciones = usuario.getRestricciones();
+        assertEquals(restriccionesExpected, restricciones);
+    }
+    
+    @Test
+    public void testGetPlan(){
+        PlanDeAlimentacion planExpected= new PlanDeAlimentacion();
+        Usuario usuario = new Usuario();
+        usuario.setPlan(planExpected);
+         PlanDeAlimentacion plan = usuario.getPlan();
+        assertEquals(planExpected, plan);
+    }
+    
+    @Test
+    public void testSetCasillaDeEntrada(){
+        ArrayList<Mensaje> casillaExpected= new ArrayList<Mensaje>();
+        Usuario usuario = new Usuario();
+        usuario.setCasillaDeEntrada(casillaExpected);
+        ArrayList<Mensaje> casillaDeEntrada = usuario.getCasillaDeEntrada();
+        assertEquals(casillaExpected, casillaDeEntrada);
+    }
+    
+
+    @Test
+    public void testGetAlturaCm() {
+        double alturaExpected = 23;
+        Usuario usuario = new Usuario();
+        usuario.setAlturaCm(alturaExpected);
+        double alturaCm = usuario.getAlturaCm();
+        assertEquals(alturaExpected, alturaCm);
+    }
+
+    @Test
+    public void testGetProfesionalAsignado() {
+        Profesional profesionalExpected = new Profesional();
+        Usuario usuario = new Usuario();
+        usuario.setProfesionalAsignado(profesionalExpected);
+        Profesional profesionalAsignado = usuario.getProfesionalAsignado();
+        assertEquals(profesionalExpected, profesionalAsignado);
     }
 
     @Test
@@ -65,7 +146,6 @@ public class UsuarioTest {
         instance.setHistorialDelDia(historialDelDia);
         assertEquals(historialDelDia, instance.getHistorialDelDia());
     }
-
 
     @Test
     public void testGetNacionalidadEgipcia() {
@@ -481,17 +561,16 @@ public class UsuarioTest {
         instance.setPesoKg(pesoKg);
         assertEquals(instance.getPesoKg(), pesoKg, 0.0);
     }
-    
+
     @Test
     public void testSetPesoKgInvalido() {
         System.out.println("setPesoKgInvalido");
         Usuario instance = new Usuario();
         double pesoKg = -1;
         instance.setPesoKg(pesoKg);
-        assertFalse(instance.getPesoKg()==pesoKg);
+        assertFalse(instance.getPesoKg() == pesoKg);
     }
-    
-    
+
     @Test
     public void testSetSexoF() {
         System.out.println("setSexoM");
@@ -516,7 +595,7 @@ public class UsuarioTest {
         Usuario instance = new Usuario();
         boolean[] listaRestricciones = new boolean[5];
         instance.setListaRestricciones(listaRestricciones);
-        assertArrayEquals(listaRestricciones,instance.getListaRestricciones());
+        assertArrayEquals(listaRestricciones, instance.getListaRestricciones());
     }
 
     @Test
@@ -534,7 +613,7 @@ public class UsuarioTest {
         boolean necesitoPlan = false;
         Usuario instance = new Usuario();
         instance.setNecesitoPlan(necesitoPlan);
-        assertEquals(necesitoPlan,instance.isNecesitoPlan());
+        assertEquals(necesitoPlan, instance.isNecesitoPlan());
     }
 
     @Test
@@ -552,10 +631,8 @@ public class UsuarioTest {
         ArrayList<ComidaPorDia> historialComidas = new ArrayList<ComidaPorDia>();
         Usuario instance = new Usuario();
         instance.setHistorialComidas(historialComidas);
-        assertEquals(instance.getHistorialComidas(),historialComidas);
+        assertEquals(instance.getHistorialComidas(), historialComidas);
     }
-
-    
 
     @Test
     public void testInicializoListaEnum() {
@@ -571,14 +648,12 @@ public class UsuarioTest {
     public void testToString() {
         System.out.println("toString");
         Usuario instance = new Usuario();
-        String expResult = "Usuario: "+ instance.getNombreUsuario();
+        String expResult = "Usuario: " + instance.getNombreUsuario();
         String result = instance.toString();
         assertEquals(expResult, result);
     }
 
-   
-    
-        @Test
+    @Test
     public void testEqualsFalse() {
         System.out.println("equalsFalse");
         Object obj = new Usuario();
@@ -588,7 +663,7 @@ public class UsuarioTest {
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
     }
-    
+
     @Test
     public void testEqualsTrue() {
         System.out.println("equalsTrue");
@@ -597,16 +672,16 @@ public class UsuarioTest {
         boolean expResult = true;
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
-    }  
-    
-     @Test (expected = NullPointerException.class)
+    }
+
+    @Test(expected = NullPointerException.class)
     public void testEqualsNull() {
         System.out.println("equalsNull");
-        Usuario obj =  null;
+        Usuario obj = null;
         Usuario instance = new Usuario();
-        assert(obj.equals(instance));
-    } 
-    
+        assert (obj.equals(instance));
+    }
+
     @Test
     public void pruebaConstructorConParametros() {
         String nombre = "nombre";
@@ -622,23 +697,23 @@ public class UsuarioTest {
         PlanDeAlimentacion plan = new PlanDeAlimentacion(c);
         String sexo = "Masculino";
         ImageIcon fotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"));
-        Usuario nuevo = new Usuario(nacionalidad,peso,altura,preferencias,restricciones,plan,sexo,nombre,apellido,usuario,fNacimiento,fotoPerfil);
-       
+        Usuario nuevo = new Usuario(nacionalidad, peso, altura, preferencias, restricciones, plan, sexo, nombre, apellido, usuario, fNacimiento, fotoPerfil);
+
     }
-    
+
     @Test
-    public void pruebaValues(){
+    public void pruebaValues() {
         Usuario.Nacionalidades[] listaNac = Usuario.Nacionalidades.values();
     }
-    
+
     @Test
-    public void pruebaValues2(){
+    public void pruebaValues2() {
         Usuario.Restricciones[] listaNac = Usuario.Restricciones.values();
     }
-    
+
     @Test
-    public void pruebaValues3(){
+    public void pruebaValues3() {
         Usuario.Preferencias[] listaNac = Usuario.Preferencias.values();
     }
-    
+
 }

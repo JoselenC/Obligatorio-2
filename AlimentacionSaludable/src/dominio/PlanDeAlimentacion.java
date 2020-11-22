@@ -29,6 +29,10 @@ public class PlanDeAlimentacion implements Serializable{
         listaSabado = new ArrayList<Alimento>();
         listaDomingo = new ArrayList<Alimento>();
     }
+
+    PlanDeAlimentacion() {
+        
+    }
     
     //Metodos de la clase PlanDeAliemntacion
 

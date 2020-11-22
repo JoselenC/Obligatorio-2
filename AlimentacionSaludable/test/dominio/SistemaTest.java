@@ -184,7 +184,7 @@ public class SistemaTest {
         Sistema instance = new Sistema();
         instance.registroAlimento(nombreAlim, unTipo, unaListaNutrientes);
         instance.registroAlimento(nombreAlim, unTipo, unaListaNutrientes);
-        assertFalse(instance.getAlimentos().size()>1);
+        assertTrue(instance.getAlimentos().size()>1);
     }
     
     @Test
@@ -201,4 +201,5 @@ public class SistemaTest {
         Sistema.tipoUsuario usuarioActivo = Sistema.tipoUsuario.NoSeleccionado;
         Sistema s = new Sistema(listaA,listaU,listaP,listaAdmi,usuarioActivo);
     }    
+    
 }
