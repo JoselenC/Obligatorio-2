@@ -30,15 +30,50 @@ public class PersonaTest {
     }
 
     @Test
-    public void testGetNombre() {
+    public void testGetEmptyNombre() {
         System.out.println("getNombre");
         Persona instance = new Usuario();
         String expResult = "no ingreso nombre";
         String result = instance.getNombre();
         assertEquals(expResult, result);
     }
-
     
+     @Test
+    public void testGetNombre() {
+        String nombre="Juan";
+        Persona instance = new Usuario();
+        instance.setNombre(nombre);
+        String result = instance.getNombre();
+        assertEquals(nombre, result);
+    }
+
+     @Test
+    public void testGetEmptyApellido() {
+        Persona instance = new Usuario();
+        String expResult = "no ingreso apellido";
+        String result = instance.getApellidos();
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetApellidos() {
+        String apellido="Perez";
+        Persona instance = new Usuario();
+        instance.setApellidos(apellido);
+        String result = instance.getApellidos();
+        assertEquals(apellido, result);
+    }
+    
+    @Test
+    public void testGetFechaNacimiento() {
+        String fechaExpected="23/04/2020";
+        Persona instance = new Usuario();
+        instance.setApellidos("lopez");
+        instance.setFechaNacimiento(fechaExpected);
+        String fechaNacimiento = instance.getApellidos();
+        assertEquals(fechaExpected, fechaNacimiento);
+    }
+        
     @Test
     public void testEqualsFalse() {
         System.out.println("equalsFalse");

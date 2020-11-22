@@ -49,7 +49,8 @@ public class Usuario extends Persona implements Serializable {
         this.casillaDeEntrada = new ArrayList<Mensaje>();
         this.fechaUltimaAdicion = "no se ingreso";
     }
-
+    
+    
     public Usuario() {
         super("no ingreso nombre", "no ingreso apellido", "no ingreso usuario",
               "no ingreso fecha nacimiento", null);
@@ -134,9 +135,8 @@ public class Usuario extends Persona implements Serializable {
         if(pesoKg > 0 && pesoKg < 501){
             this.pesoKg = pesoKg;
         }
-        
     }
-
+    
     public double getAlturaCm() {
         return alturaCm;
     }
