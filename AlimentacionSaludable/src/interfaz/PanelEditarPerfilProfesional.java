@@ -332,7 +332,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
     private void cajaApellidosProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaApellidosProfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cajaApellidosProfActionPerformed
-
+       
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         ventana.remove(this);
         PanelHomeProfesional nuevo = new PanelHomeProfesional(sistema, interfaz, ventana);
