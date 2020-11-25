@@ -103,9 +103,9 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         ArrayList<String> datos = new ArrayList<>();
         datos.add("Nombre: " + prof.getNombre());
         datos.add("Apellidos: " + prof.getApellidos());
-        datos.add("Nombre de usuario: " + prof.getNombreUsuario());
+        datos.add("Nombre de usuario: " + prof.getAliasUsuario());
         datos.add("Fecha de nacimiento: " + prof.getFechaNacimiento());
-        datos.add("Nombre del título profesional: " + prof.getNombreTituloProf());
+        datos.add("Nombre del título profesional: " + prof.getTituloProfesional());
         datos.add("Fecha graduación: " + prof.getFechaGraduacion());
         datos.add("País de graduación: " + prof.getPaisObtuvoTitulo());
         return datos;

@@ -1,7 +1,6 @@
 package interfaz;
 
 import dominio.Mensaje;
-import dominio.Profesional;
 import dominio.Sistema;
 import dominio.Usuario;
 import javax.swing.DefaultComboBoxModel;

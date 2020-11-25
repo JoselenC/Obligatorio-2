@@ -291,7 +291,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());
             profesional.setFechaNacimiento(fNacimiento);
-            profesional.setNombreTituloProf(cajaNombreTituloProf.getText());
+            profesional.setTituloProfesional(cajaNombreTituloProf.getText());
             SimpleDateFormat formatter2 = new SimpleDateFormat("dd/MM/yyyy");
             String fGraduacion = formatter2.format(fechaGraduacion.getCalendar().getTime());
             profesional.setFechaGraduacion(fGraduacion);
@@ -330,7 +330,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCambiarFotoActionPerformed
 
     private void cajaApellidosProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaApellidosProfActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_cajaApellidosProfActionPerformed
        
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed

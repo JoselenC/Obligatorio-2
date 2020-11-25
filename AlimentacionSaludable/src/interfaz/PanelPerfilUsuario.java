@@ -143,7 +143,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         ArrayList<String> datos = new ArrayList<>();
         datos.add("Nombre: " + unUsuario.getNombre());
         datos.add("Apellidos: " + unUsuario.getApellidos());
-        datos.add("Nombre de usuario: " + unUsuario.getNombreUsuario());
+        datos.add("Alias de usuario: " + unUsuario.getAliasUsuario());
         datos.add("Fecha de nacimiento: " + unUsuario.getFechaNacimiento());
         datos.add("Nacionalidad: " + unUsuario.getNacionalidad());
         datos.add("Altura: " + unUsuario.getAlturaCm());

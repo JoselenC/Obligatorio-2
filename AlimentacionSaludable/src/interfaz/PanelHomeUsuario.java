@@ -1,8 +1,6 @@
 package interfaz;
 
 import dominio.Sistema;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class PanelHomeUsuario extends javax.swing.JPanel {

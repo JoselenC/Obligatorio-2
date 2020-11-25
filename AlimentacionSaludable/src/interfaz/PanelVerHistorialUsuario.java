@@ -2,8 +2,6 @@ package interfaz;
 
 import dominio.ComidaPorDia;
 import dominio.Sistema;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class PanelVerHistorialUsuario extends javax.swing.JPanel {

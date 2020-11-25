@@ -3,10 +3,7 @@ package interfaz;
 import dominio.Alimento;
 import dominio.ComidaPorDia;
 import dominio.Sistema;
-import dominio.Usuario;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -16,7 +13,6 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
     private Sistema sistema;
     private JFrame ventana;
     private InterfazBotonesUsuario interfaz;
-    private boolean deboActualizar;
 
     //Constructor
     public PanelDietaDiariaUsuario(Sistema unSistema,
@@ -28,17 +24,17 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         interfaz = unaInterfaz;
         LocalDate diaActual = LocalDate.now();
         interfaz.getUsuarioActual().setFechaUltimaAdicion(diaActual.toString());
-        if (interfaz.getUsuarioActual().getHistorialDelDia().getFecha() == null) {
-            interfaz.getUsuarioActual().getHistorialDelDia().setFecha(diaActual.toString());
+        if (interfaz.getUsuarioActual().getHistorialComidaDelDia().getFecha() == null) {
+            interfaz.getUsuarioActual().getHistorialComidaDelDia().setFecha(diaActual.toString());
         } else {
-            if (!interfaz.getUsuarioActual().getHistorialDelDia().getFecha().equals(interfaz.getUsuarioActual().getFechaUltimaAdicion()) && !interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().isEmpty()) {
-                interfaz.getUsuarioActual().getHistorialComidas().add(interfaz.getUsuarioActual().getHistorialDelDia());
+            if (!interfaz.getUsuarioActual().getHistorialComidaDelDia().getFecha().equals(interfaz.getUsuarioActual().getFechaUltimaAdicion()) && !interfaz.getUsuarioActual().getHistorialComidaDelDia().getComidasIngeridas().isEmpty()) {
+                interfaz.getUsuarioActual().getHistorialComidas().add(interfaz.getUsuarioActual().getHistorialComidaDelDia());
                 ComidaPorDia nuevoHistorial = new ComidaPorDia();
                 nuevoHistorial.setFecha(diaActual.toString());
-                interfaz.getUsuarioActual().setHistorialDelDia(nuevoHistorial);
+                interfaz.getUsuarioActual().setHistorialComidaDelDia(nuevoHistorial);
             }
         }
-        listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
+        listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialComidaDelDia().getComidasIngeridas().toArray());
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
     }
 
@@ -124,9 +120,8 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
     private void etiquetaBtnQuitarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnQuitarComidaActionPerformed
         if (listaComidasDiarias.getSelectedValue() != null) {
             Alimento alimentoABorrar = (Alimento) listaComidasDiarias.getSelectedValue();
-            int diaActual = interfaz.getUsuarioActual().getHistorialComidas().size();
-            interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().remove(alimentoABorrar);
-            listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
+            interfaz.getUsuarioActual().getHistorialComidaDelDia().getComidasIngeridas().remove(alimentoABorrar);
+            listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialComidaDelDia().getComidasIngeridas().toArray());
         }
         else{
              JOptionPane.showMessageDialog(null, "Seleccione una comida para quitar");
@@ -134,7 +129,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed
 
     private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
-        if(sistema.getAlimentos().size()==0){
+        if(sistema.getAlimentos().isEmpty()){
          JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
         }
         else{
