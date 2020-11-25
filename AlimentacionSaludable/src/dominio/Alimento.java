@@ -1,7 +1,6 @@
 package dominio;
 
 import java.io.Serializable;
-import java.util.Objects;
 import java.util.Optional;
 
 public class Alimento implements Serializable {
@@ -10,15 +9,15 @@ public class Alimento implements Serializable {
     private static final long serialVersionUID = 6106269076155338045L;
     private String nombre;
     private TipoAlimento tipo;
-    private TipoAlimento[] listaEnumTipoAlimento = inicializoEnumTipoAlimento();
-    private Nutrientes[] listaEnumNutrientes = inicializoEnumNutrientes();
+    private TipoAlimento[] listaTipoAlimento = inicializoTipoAlimento();
+    private Nutrientes[] listaNutrientes = inicializoNutrientes();
     private boolean[] listaNutrientesSeleccionados;
 
     //Constructor
     public Alimento() {
         this.nombre = "sin nombre";
         this.tipo = TipoAlimento.Otro;
-        this.listaNutrientesSeleccionados = new boolean[listaEnumNutrientes
+        this.listaNutrientesSeleccionados = new boolean[listaNutrientes
                                                         .length];
     }
 
@@ -41,26 +40,26 @@ public class Alimento implements Serializable {
         this.tipo = tipo;
     }
 
-    public Nutrientes[] getListaEnumNutrientes() {
-        Nutrientes[] lista = listaEnumNutrientes;
+    public Nutrientes[] getListaNutrientes() {
+        Nutrientes[] lista = listaNutrientes;
         return lista;
     }
 
-    public void setListaEnumNutrientes(Nutrientes[] listaEnumNutrientes) {
-        this.listaEnumNutrientes = Optional
-                .ofNullable(listaEnumNutrientes)
+    public void setListaNutrientes(Nutrientes[] listaNutrientes) {
+        this.listaNutrientes = Optional
+                .ofNullable(listaNutrientes)
                 .orElse(null);
     }
 
-    public TipoAlimento[] getListaEnumTipoAlimento() {
-        TipoAlimento[] lista = listaEnumTipoAlimento;
+    public TipoAlimento[] getListaTipoAlimento() {
+        TipoAlimento[] lista = listaTipoAlimento;
         return lista;
     }
 
-    public void setListaEnumTipoAlimento(TipoAlimento[]
-                                         listaEnumTipoAlimento) {
-        this.listaEnumTipoAlimento = Optional
-                .ofNullable(listaEnumTipoAlimento)
+    public void setListaTipoAlimento(TipoAlimento[]
+                                         listaTipoAlimento) {
+        this.listaTipoAlimento = Optional
+                .ofNullable(listaTipoAlimento)
                 .orElse(null);
     }
 
@@ -82,7 +81,7 @@ public class Alimento implements Serializable {
         ProvenienteDeAnimales
     }
 
-    public TipoAlimento[] inicializoEnumTipoAlimento() {
+    public TipoAlimento[] inicializoTipoAlimento() {
         TipoAlimento[] listaEnumPivot = {
             TipoAlimento.Bebidas, TipoAlimento.CarnesBlancas,
             TipoAlimento.CarnesRojas, TipoAlimento.Cereal,
@@ -100,14 +99,14 @@ public class Alimento implements Serializable {
         Fibra, Ninguno
     }
 
-    public Nutrientes[] inicializoEnumNutrientes() {
-        Nutrientes[] listaEnumPivot = {
+    public Nutrientes[] inicializoNutrientes() {
+        Nutrientes[] listaNutrientes = {
             Nutrientes.Agua, Nutrientes.Fibra,
             Nutrientes.HidratosDeCarbono,
             Nutrientes.Lipidos, Nutrientes.Minerales,
             Nutrientes.Proteinas, Nutrientes.Vitaminas,Nutrientes.Ninguno
         };
-        return listaEnumPivot;
+        return listaNutrientes;
     }
 
     //redefino toString

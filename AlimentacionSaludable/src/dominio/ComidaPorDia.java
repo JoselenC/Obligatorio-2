@@ -2,10 +2,7 @@ package dominio;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Objects;
 
 public class ComidaPorDia implements Serializable{
     //Atributos
@@ -20,13 +17,12 @@ public class ComidaPorDia implements Serializable{
     }
     
     public ComidaPorDia() {
-        this.comidasIngeridas = new ArrayList<Alimento>();
+        this.comidasIngeridas = new ArrayList<>();
         LocalDate diaActual = LocalDate.now();
         this.fecha = diaActual.toString();
     }
     
-    //Metodos de la clase comidaPorDia
-    public ArrayList<Alimento> getComidasIngeridas() {
+        public ArrayList<Alimento> getComidasIngeridas() {
         return comidasIngeridas;
     }
 

@@ -1,12 +1,10 @@
 package dominio;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PlanDeAlimentacion implements Serializable{
-   
-    //Atributos
+
     private static final long serialVersionUID = 6106269076155338045L;
     private Usuario usuario;
     private ArrayList<Alimento> listaLunes;
@@ -17,24 +15,22 @@ public class PlanDeAlimentacion implements Serializable{
     private ArrayList<Alimento> listaSabado;
     private ArrayList<Alimento> listaDomingo;
     
-    
-    //Constructor
+
     public PlanDeAlimentacion(Usuario usuario) {
         this.usuario = usuario;
-        listaLunes = new ArrayList<Alimento>();
-        listaMartes = new ArrayList<Alimento>();
-        listaMiercoles = new ArrayList<Alimento>();
-        listaJueves = new ArrayList<Alimento>();
-        listaViernes = new ArrayList<Alimento>();
-        listaSabado = new ArrayList<Alimento>();
-        listaDomingo = new ArrayList<Alimento>();
+        listaLunes = new ArrayList<>();
+        listaMartes = new ArrayList<>();
+        listaMiercoles = new ArrayList<>();
+        listaJueves = new ArrayList<>();
+        listaViernes = new ArrayList<>();
+        listaSabado = new ArrayList<>();
+        listaDomingo = new ArrayList<>();
     }
 
     PlanDeAlimentacion() {
         
     }
     
-    //Metodos de la clase PlanDeAliemntacion
 
     public Usuario getUsuario() {
         return usuario;

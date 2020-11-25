@@ -50,7 +50,7 @@ public class SistemaTest {
         int min = 0;
         int max = 2;
         Sistema instance = new Sistema();
-        boolean result = instance.pidoDatoNumerico(dato, min, max);
+        boolean result = instance.esNumero(dato, min, max);
         assertFalse(result);
     }
     
@@ -61,7 +61,7 @@ public class SistemaTest {
         int min = 0;
         int max = 2;
         Sistema instance = new Sistema();
-        boolean result = instance.pidoDatoNumerico(dato, min, max);
+        boolean result = instance.esNumero(dato, min, max);
         assertFalse(result);
     }
 

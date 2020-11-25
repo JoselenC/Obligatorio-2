@@ -17,8 +17,8 @@ public class Mensaje implements Serializable{
         Persona p = (Persona) new Usuario();
         this.origen = p;
         this.destino = p;
-        this.asunto = "no tiene texto";
-        this.mensaje = "no tiene texto";
+        this.asunto = "No se asigno un asunto";
+        this.mensaje = "No se ha scrito un texto de mensaje";
     }
     
     //Metodos de la clase Mensaje
@@ -55,11 +55,10 @@ public class Mensaje implements Serializable{
         this.mensaje = mensaje;
     }
     
-    //Redefino toString
-
+ 
     @Override
     public String toString() {
-        return "Mensaje de: "+ origen.getNombreUsuario() 
+        return "Mensaje de: "+ origen.getAliasUsuario() 
                + " con Asunto: " + asunto;
     }
     

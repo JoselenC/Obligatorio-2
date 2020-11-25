@@ -1,6 +1,5 @@
 package dominio;
 
-import com.toedter.calendar.JDateChooser;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
@@ -9,15 +8,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Optional;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 public class Sistema implements Serializable {
 
-    //Atributos
     private static final long serialVersionUID = 6106269076155338045L;
     ArrayList<Alimento> alimentos;
     ArrayList<Usuario> usuarios;
@@ -26,8 +22,7 @@ public class Sistema implements Serializable {
     tipoUsuario[] listaTiposDeUsuario;
     tipoUsuario usuarioActivo;
 
-    //Cosntructor
-    public Sistema(ArrayList<Alimento> listaAlimentos,
+     public Sistema(ArrayList<Alimento> listaAlimentos,
             ArrayList<Usuario> listaUsuarios,
             ArrayList<Profesional> listaProfesionales,
             ArrayList<Administrador> listaAdministradores,
@@ -76,7 +71,7 @@ public class Sistema implements Serializable {
     public Usuario getUsuarioPorNombre(String nombre) {
         for (int i = 0; i < usuarios.size(); i++) {
            Usuario usuario = usuarios.get(i);
-            if (usuario.getNombreUsuario().equals(nombre)) {
+            if (usuario.getAliasUsuario().equals(nombre)) {
                 return usuario;
             }
         }
@@ -86,7 +81,7 @@ public class Sistema implements Serializable {
     public boolean existeNombreUsuario(String nombre) {
         for (int i = 0; i < usuarios.size(); i++) {
             Usuario usuario = usuarios.get(i);
-            if (usuario.getNombreUsuario().equals(nombre)) {
+            if (usuario.getAliasUsuario().equals(nombre)) {
                 return true;
             }
         }
@@ -96,7 +91,7 @@ public class Sistema implements Serializable {
     public boolean existeNombreProfesional(String nombre) {
         for (int i = 0; i < profesionales.size(); i++) {
             Profesional profesional = profesionales.get(i);
-            if (profesional.getNombreUsuario().equals(nombre)) {
+            if (profesional.getAliasUsuario().equals(nombre)) {
                 return true;
             }
         }
@@ -106,7 +101,7 @@ public class Sistema implements Serializable {
     public Profesional getProfesionalPorNombre(String nombre) {
         for (int i = 0; i < profesionales.size(); i++) {
             Profesional profesional = profesionales.get(i);
-            if (profesional.getNombreUsuario().equals(nombre)) {
+            if (profesional.getAliasUsuario().equals(nombre)) {
                 return profesional;
             }
         }
@@ -149,7 +144,6 @@ public class Sistema implements Serializable {
         Profesional, Usuario, NoSeleccionado
     }
 
-    //Metodo para inicializar lista de enums de tipo de usuario
     tipoUsuario[] inicializoListaTiposDeUsuario() {
         tipoUsuario[] listaPivot = {tipoUsuario.Profesional,
             tipoUsuario.Usuario};
@@ -169,11 +163,11 @@ public class Sistema implements Serializable {
             ArrayList<Administrador> listAdministradores = (ArrayList<Administrador>) in.readObject();
             administradores = listAdministradores;
             in.close();
-        } catch (Exception ex) {
-            alimentos = new ArrayList<Alimento>();
-            usuarios = new ArrayList<Usuario>();
-            profesionales = new ArrayList<Profesional>();
-            administradores= new ArrayList<Administrador>();
+        } catch (IOException | ClassNotFoundException ex) {
+            alimentos = new ArrayList<>();
+            usuarios = new ArrayList<>();
+            profesionales = new ArrayList<>();
+            administradores= new ArrayList<>();
         }
     }
 
@@ -190,8 +184,7 @@ public class Sistema implements Serializable {
         }
     }
 
-    //Metodo para validarque el dato sea numericoF
-    public boolean pidoDatoNumerico(int dato, int min, int max) {
+    public boolean esNumero(int dato, int min, int max) {
         int datoAVerificar = 0;
         boolean pidiendo = false;
         try {
@@ -205,6 +198,7 @@ public class Sistema implements Serializable {
         return pidiendo;
     }
 
+    
     //Metodo que adapta el tamaño de la imagen al deseado
     ImageIcon resizeImageIcon(ImageIcon imageIcon, Integer width,
             Integer height) {
@@ -224,8 +218,8 @@ public class Sistema implements Serializable {
         Usuario usuario = new Usuario();
         usuario.setNombre(unNombre);
         usuario.setApellidos(unApellido);
-        usuario.setNombreUsuario(unUsuario);
-        usuario.setNacionalidad(usuario.getListaEnumNac()[unaNacionalidad.ordinal()]);
+        usuario.setAliasUsuario(unUsuario);
+        usuario.setNacionalidad(usuario.getListaNacionalidades()[unaNacionalidad.ordinal()]);
         usuario.setFechaNacimiento(unaFechaNacimiento);
         usuario.setSexo(unSexo);
         usuario.setAlturaCm(unaAltura);
@@ -247,9 +241,9 @@ public class Sistema implements Serializable {
         Profesional profesional = new Profesional();
         profesional.setNombre(unNombre);
         profesional.setApellidos(unApellido);
-        profesional.setNombreUsuario(unNombreUsuario);
+        profesional.setAliasUsuario(unNombreUsuario);
         profesional.setFechaNacimiento(unaFechaNacimiento);
-        profesional.setNombreTituloProf(unNombreTitulo);
+        profesional.setTituloProfesional(unNombreTitulo);
         profesional.setFechaGraduacion(unaFechaGraduacion);
         profesional.setPaisObtuvoTitulo(unPaisTitulo);
         profesional.setFotoPerfil(unaFotoPerfil);
@@ -263,7 +257,7 @@ public class Sistema implements Serializable {
             boolean[] unaListaNutrientes) {
         Alimento alimento = new Alimento();
         alimento.setNombre(nombreAlim);
-        alimento.setTipo(alimento.getListaEnumTipoAlimento()[unTipo.ordinal()]);
+        alimento.setTipo(alimento.getListaTipoAlimento()[unTipo.ordinal()]);
         alimento.setListaNutrientesSeleccionados(unaListaNutrientes);
         if (!this.getAlimentos().contains(alimento)) {
             this.getAlimentos().add(alimento);

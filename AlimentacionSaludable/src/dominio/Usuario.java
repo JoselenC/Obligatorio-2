@@ -3,7 +3,6 @@ package dominio;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import java.io.Serializable;
-import java.util.Objects;
 import java.util.Optional;
 
 public class Usuario extends Persona implements Serializable {
@@ -11,7 +10,7 @@ public class Usuario extends Persona implements Serializable {
     //Atributos
     private static final long serialVersionUID = 6106269076155338045L;
     private Nacionalidades nacionalidad;
-    private Nacionalidades[] listaEnumNac;
+    private Nacionalidades[] listaNacionalidades;
     private double pesoKg;
     private double alturaCm;
     private Preferencias preferenciasAlimentarias;
@@ -22,11 +21,11 @@ public class Usuario extends Persona implements Serializable {
     private Profesional profesionalAsignado;
     private String sexo;
     private ArrayList<ComidaPorDia> historialComidas;
-    private ComidaPorDia historialDelDia;
+    private ComidaPorDia historialComidaDelDia;
     private ArrayList<Mensaje> casillaDeEntrada;
     private String fechaUltimaAdicion;
 
-    //Costructor
+    
     public Usuario(Nacionalidades nacionalidad, double pesoKg, double alturaCm,
             Preferencias preferenciasAlimentarias, Restricciones restricciones,
             PlanDeAlimentacion plan, String sexo, String nombre,
@@ -43,17 +42,18 @@ public class Usuario extends Persona implements Serializable {
         this.necesitoPlan = false;
         this.profesionalAsignado = new Profesional();
         this.sexo = sexo;
-        this.historialComidas = new ArrayList<ComidaPorDia>();
-        this.historialDelDia = new ComidaPorDia();
-        this.listaEnumNac = inicializoListaEnum();
-        this.casillaDeEntrada = new ArrayList<Mensaje>();
-        this.fechaUltimaAdicion = "no se ingreso";
+        this.historialComidas = new ArrayList<>();
+        this.historialComidaDelDia = new ComidaPorDia();
+        this.listaNacionalidades = inicializoListaNacionalidades();
+        this.casillaDeEntrada = new ArrayList<>();
+        this.fechaUltimaAdicion = "No se ingreso la fecha correspondiente";
     }
     
     
     public Usuario() {
-        super("no ingreso nombre", "no ingreso apellido", "no ingreso usuario",
-              "no ingreso fecha nacimiento", null);
+        super("No se ingreso el nombre", "No se ingreso el apellido", 
+                "No se ingreso el alias de usuario", 
+                "No se ingreso su fecha de nacimiento", null);
         this.setFotoPerfil(new javax
                            .swing.ImageIcon(getClass()
                            .getResource
@@ -67,15 +67,14 @@ public class Usuario extends Persona implements Serializable {
         this.necesitoPlan = false;
         this.profesionalAsignado = new Profesional();
         this.plan = new PlanDeAlimentacion(this);
-        this.sexo = "no se ingreso";
-        this.historialComidas = new ArrayList<ComidaPorDia>();
-        this.historialDelDia = new ComidaPorDia();
-        this.listaEnumNac = inicializoListaEnum();
-        this.casillaDeEntrada = new ArrayList<Mensaje>();
-        this.fechaUltimaAdicion = "no se ingreso";
+        this.sexo = "No se ha ingresado el sexo";
+        this.historialComidas = new ArrayList<>();
+        this.historialComidaDelDia = new ComidaPorDia();
+        this.listaNacionalidades = inicializoListaNacionalidades();
+        this.casillaDeEntrada = new ArrayList<>();
+        this.fechaUltimaAdicion = "No se ingreso la fecha correspondiente";
     }
 
-    // Metodos de la clase usuario
     public String getFechaUltimaAdicion() {
         return fechaUltimaAdicion;
     }
@@ -84,12 +83,12 @@ public class Usuario extends Persona implements Serializable {
         this.fechaUltimaAdicion = fechaUltimaAdicion;
     }
 
-    public ComidaPorDia getHistorialDelDia() {
-        return historialDelDia;
+    public ComidaPorDia getHistorialComidaDelDia() {
+        return historialComidaDelDia;
     }
 
-    public void setHistorialDelDia(ComidaPorDia historialDelDia) {
-        this.historialDelDia = historialDelDia;
+    public void setHistorialComidaDelDia(ComidaPorDia historialComidaDelDia) {
+        this.historialComidaDelDia = historialComidaDelDia;
     }
 
     public Profesional getProfesionalAsignado() {
@@ -116,13 +115,13 @@ public class Usuario extends Persona implements Serializable {
         this.nacionalidad = nacionalidad;
     }
 
-    public Nacionalidades[] getListaEnumNac() {
-        Nacionalidades[] lista = listaEnumNac;
+    public Nacionalidades[] getListaNacionalidades() {
+        Nacionalidades[] lista = listaNacionalidades;
         return lista;
     }
 
-    public void setListaEnumNac(Nacionalidades[] listaEnumNac) {
-        this.listaEnumNac = Optional
+    public void setListaNacionalidades (Nacionalidades[] listaEnumNac) {
+        this.listaNacionalidades = Optional
                 .ofNullable(listaEnumNac)
                 .orElse(null);
     }
@@ -217,7 +216,7 @@ public class Usuario extends Persona implements Serializable {
         Rusa, Sudáfricana, Surcoreana, Uruguaya, Venezolana
     }
 
-    String[] inicializoListaNacionalidades() {
+    String[] misNacionalidades() {
         String[] listaPaisesPivot = {"Alemana", "Australiana", "Austriaca",
             "Brasileña","Canadiense", "Chilena", "China", "Colombiana",
             "Surcoreana", "Cubana", "Ecuatoriana", "Egipcia",
@@ -229,7 +228,7 @@ public class Usuario extends Persona implements Serializable {
         return listaPaisesPivot;
     }
 
-    public Nacionalidades[] inicializoListaEnum() {
+    public Nacionalidades[] inicializoListaNacionalidades() {
         Nacionalidades[] listaEnumPivot = {
             Nacionalidades.Alemana, Nacionalidades.Argentina,
             Nacionalidades.Australiana, Nacionalidades.Austriaca,
@@ -261,6 +260,6 @@ public class Usuario extends Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "Usuario: " + this.getNombreUsuario();
+        return "Usuario: " + this.getAliasUsuario();
     }
 }

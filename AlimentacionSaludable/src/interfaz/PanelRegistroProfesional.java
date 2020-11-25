@@ -27,7 +27,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         sistema = unSistema;
         ventana = unaVentana;
         prof = new Profesional();
-        Profesional.Pais[] listaPaises = prof.inicializoListaEnumPaises();
+        Profesional.Pais[] listaPaises = prof.inicializoListaPaises();
         listaPaisDeGraduacion.setModel(new DefaultComboBoxModel(listaPaises));
         listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.Uruguay.ordinal());
     }
