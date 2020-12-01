@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelEditarPerfilProfesional.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelEditarPerfilProfesional.java</span></div><h1>PanelEditarPerfilProfesional.java</h1><pre class="source lang-java linenums">package interfaz;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelEditarPerfilProfesional.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelEditarPerfilProfesional.java</span></div><h1>PanelEditarPerfilProfesional.java</h1><pre class="source lang-java linenums">package interfaz;
 
 import dominio.Sistema;
 import dominio.Profesional;
@@ -65,12 +65,12 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
 
 <span class="nc" id="L66">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
 
-<span class="nc" id="L68">        panelRegProf.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L68">        panelRegProf.setBackground(new java.awt.Color(229, 229, 240));</span>
 <span class="nc" id="L69">        panelRegProf.setPreferredSize(new java.awt.Dimension(1147, 784));</span>
 <span class="nc" id="L70">        panelRegProf.setLayout(null);</span>
 
 <span class="nc" id="L72">        etiquetaTituloProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
-<span class="nc" id="L73">        etiquetaTituloProf.setForeground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L73">        etiquetaTituloProf.setForeground(new java.awt.Color(102, 102, 102));</span>
 <span class="nc" id="L74">        etiquetaTituloProf.setText(&quot;Editar perfil del profesional&quot;);</span>
 <span class="nc" id="L75">        panelRegProf.add(etiquetaTituloProf);</span>
 <span class="nc" id="L76">        etiquetaTituloProf.setBounds(350, 10, 450, 50);</span>
@@ -137,7 +137,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
 <span class="nc" id="L137">        panelRegProf.add(cajaNombreTituloProf);</span>
 <span class="nc" id="L138">        cajaNombreTituloProf.setBounds(560, 270, 160, 35);</span>
 
-<span class="nc" id="L140">        btnAceptarProf.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L140">        btnAceptarProf.setBackground(new java.awt.Color(102, 102, 102));</span>
 <span class="nc" id="L141">        btnAceptarProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
 <span class="nc" id="L142">        btnAceptarProf.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L143">        btnAceptarProf.setText(&quot;Aceptar&quot;);</span>
@@ -187,7 +187,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
 <span class="nc" id="L187">            }</span>
         });
 <span class="nc" id="L189">        panelRegProf.add(fechaNacimiento);</span>
-<span class="nc" id="L190">        fechaNacimiento.setBounds(560, 220, 160, 32);</span>
+<span class="nc" id="L190">        fechaNacimiento.setBounds(560, 220, 160, 20);</span>
 
 <span class="nc" id="L192">        etiquetaErrorFechaNacimiento.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
 <span class="nc" id="L193">        panelRegProf.add(etiquetaErrorFechaNacimiento);</span>
@@ -199,13 +199,13 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
 <span class="nc" id="L199">            }</span>
         });
 <span class="nc" id="L201">        panelRegProf.add(fechaGraduacion);</span>
-<span class="nc" id="L202">        fechaGraduacion.setBounds(560, 320, 160, 32);</span>
+<span class="nc" id="L202">        fechaGraduacion.setBounds(560, 320, 160, 20);</span>
 
 <span class="nc" id="L204">        etiquetaErrorFechaGraduacion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
 <span class="nc" id="L205">        panelRegProf.add(etiquetaErrorFechaGraduacion);</span>
 <span class="nc" id="L206">        etiquetaErrorFechaGraduacion.setBounds(740, 370, 310, 26);</span>
 
-<span class="nc" id="L208">        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L208">        btnCambiarFoto.setBackground(new java.awt.Color(102, 102, 102));</span>
 <span class="nc" id="L209">        btnCambiarFoto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
 <span class="nc" id="L210">        btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L211">        btnCambiarFoto.setText(&quot;Cambiar Foto&quot;);</span>

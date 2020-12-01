@@ -70,7 +70,7 @@ public class PersonaTest {
         Persona instance = new Usuario();
         instance.setApellidos("lopez");
         instance.setFechaNacimiento(fechaExpected);
-        String fechaNacimiento = instance.getApellidos();
+        String fechaNacimiento = instance.getFechaNacimiento();
         assertEquals(fechaExpected, fechaNacimiento);
     }
         
@@ -99,6 +99,15 @@ public class PersonaTest {
         Persona instance = new Usuario();
         boolean test = instance.equals("soy string");
         assertFalse(test);
+    }
+    
+    @Test
+    public void testSetGetFotoPerfil(){
+        ImageIcon fotoPerfil=new ImageIcon();
+        Persona instance = new Usuario();
+        instance.setFotoPerfil(fotoPerfil);
+        ImageIcon fotoPerfil2=instance.getFotoPerfil();
+        assertEquals(fotoPerfil,fotoPerfil2);
     }
 
     public class PersonaImpl extends Persona {

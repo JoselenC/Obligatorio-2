@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelAgregarComidasAPlan.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelAgregarComidasAPlan.java</span></div><h1>PanelAgregarComidasAPlan.java</h1><pre class="source lang-java linenums">package interfaz;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelAgregarComidasAPlan.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelAgregarComidasAPlan.java</span></div><h1>PanelAgregarComidasAPlan.java</h1><pre class="source lang-java linenums">package interfaz;
 
 import dominio.Alimento;
 import dominio.PlanDeAlimentacion;
@@ -6,6 +6,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
 
@@ -23,81 +24,90 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
             JFrame unaVentana,
             ArrayList&lt;Alimento&gt; unaLista,
             PlanDeAlimentacion unPlan,
-<span class="nc" id="L26">            Usuario unUsuario) {</span>
-<span class="nc" id="L27">        initComponents();</span>
-<span class="nc" id="L28">        sistema = unSistema;</span>
-<span class="nc" id="L29">        interfaz = unaInterfaz;</span>
-<span class="nc" id="L30">        ventana = unaVentana;</span>
-<span class="nc" id="L31">        usuarioAModificar = unUsuario;</span>
-<span class="nc" id="L32">        listaAModificar = unaLista;</span>
-<span class="nc" id="L33">        plan = unPlan;</span>
-<span class="nc" id="L34">        listaComidas.setListData(sistema.getListaAlimentos().toArray());</span>
-<span class="nc" id="L35">    }</span>
+<span class="nc" id="L27">            Usuario unUsuario) {</span>
+<span class="nc" id="L28">        initComponents();</span>
+<span class="nc" id="L29">        sistema = unSistema;</span>
+<span class="nc" id="L30">        interfaz = unaInterfaz;</span>
+<span class="nc" id="L31">        ventana = unaVentana;</span>
+<span class="nc" id="L32">        usuarioAModificar = unUsuario;</span>
+<span class="nc" id="L33">        listaAModificar = unaLista;</span>
+<span class="nc" id="L34">        plan = unPlan;</span>
+        
+<span class="nc" id="L36">        listaComidas.setListData(sistema.getAlimentos().toArray());</span>
+        
+<span class="nc" id="L38">    }</span>
 
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L41">        etiquetaTitulo = new javax.swing.JLabel();</span>
-<span class="nc" id="L42">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L43">        listaComidas = new javax.swing.JList();</span>
-<span class="nc" id="L44">        btnAgregarComida = new javax.swing.JButton();</span>
-<span class="nc" id="L45">        btnVolver = new javax.swing.JButton();</span>
+<span class="nc" id="L44">        etiquetaTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L45">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L46">        listaComidas = new javax.swing.JList();</span>
+<span class="nc" id="L47">        btnAgregarComida = new javax.swing.JButton();</span>
+<span class="nc" id="L48">        btnVolver = new javax.swing.JButton();</span>
 
-<span class="nc" id="L47">        setBackground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L48">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
-<span class="nc" id="L49">        setLayout(null);</span>
+<span class="nc" id="L50">        setBackground(new java.awt.Color(229, 229, 240));</span>
+<span class="nc" id="L51">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
+<span class="nc" id="L52">        setLayout(null);</span>
 
-<span class="nc" id="L51">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
-<span class="nc" id="L52">        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));</span>
-<span class="nc" id="L53">        etiquetaTitulo.setText(&quot;Agregar Comidas&quot;);</span>
-<span class="nc" id="L54">        add(etiquetaTitulo);</span>
-<span class="nc" id="L55">        etiquetaTitulo.setBounds(380, 20, 290, 50);</span>
+<span class="nc" id="L54">        etiquetaTitulo.setBackground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L55">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L56">        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L57">        etiquetaTitulo.setText(&quot;Agregar Comidas&quot;);</span>
+<span class="nc" id="L58">        add(etiquetaTitulo);</span>
+<span class="nc" id="L59">        etiquetaTitulo.setBounds(380, 20, 290, 50);</span>
 
-<span class="nc" id="L57">        listaComidas.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L58">        jScrollPane1.setViewportView(listaComidas);</span>
+<span class="nc" id="L61">        listaComidas.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L62">        jScrollPane1.setViewportView(listaComidas);</span>
 
-<span class="nc" id="L60">        add(jScrollPane1);</span>
-<span class="nc" id="L61">        jScrollPane1.setBounds(350, 110, 370, 410);</span>
+<span class="nc" id="L64">        add(jScrollPane1);</span>
+<span class="nc" id="L65">        jScrollPane1.setBounds(350, 110, 370, 410);</span>
 
-<span class="nc" id="L63">        btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));</span>
-<span class="nc" id="L64">        btnAgregarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L65">        btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L66">        btnAgregarComida.setText(&quot;Agregar Comida&quot;);</span>
-<span class="nc" id="L67">        btnAgregarComida.setContentAreaFilled(false);</span>
-<span class="nc" id="L68">        btnAgregarComida.setOpaque(true);</span>
-<span class="nc" id="L69">        btnAgregarComida.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L67">        btnAgregarComida.setBackground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L68">        btnAgregarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L69">        btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L70">        btnAgregarComida.setText(&quot;Agregar Comida&quot;);</span>
+<span class="nc" id="L71">        btnAgregarComida.setContentAreaFilled(false);</span>
+<span class="nc" id="L72">        btnAgregarComida.setOpaque(true);</span>
+<span class="nc" id="L73">        btnAgregarComida.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L71">                btnAgregarComidaActionPerformed(evt);</span>
-<span class="nc" id="L72">            }</span>
+<span class="nc" id="L75">                btnAgregarComidaActionPerformed(evt);</span>
+<span class="nc" id="L76">            }</span>
         });
-<span class="nc" id="L74">        add(btnAgregarComida);</span>
-<span class="nc" id="L75">        btnAgregarComida.setBounds(640, 530, 210, 37);</span>
+<span class="nc" id="L78">        add(btnAgregarComida);</span>
+<span class="nc" id="L79">        btnAgregarComida.setBounds(420, 540, 210, 37);</span>
 
-<span class="nc" id="L77">        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/volver.png&quot;))); // NOI18N</span>
-<span class="nc" id="L78">        btnVolver.setBorderPainted(false);</span>
-<span class="nc" id="L79">        btnVolver.setContentAreaFilled(false);</span>
-<span class="nc" id="L80">        btnVolver.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L81">        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/volver.png&quot;))); // NOI18N</span>
+<span class="nc" id="L82">        btnVolver.setBorderPainted(false);</span>
+<span class="nc" id="L83">        btnVolver.setContentAreaFilled(false);</span>
+<span class="nc" id="L84">        btnVolver.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L82">                btnVolverActionPerformed(evt);</span>
-<span class="nc" id="L83">            }</span>
+<span class="nc" id="L86">                btnVolverActionPerformed(evt);</span>
+<span class="nc" id="L87">            }</span>
         });
-<span class="nc" id="L85">        add(btnVolver);</span>
-<span class="nc" id="L86">        btnVolver.setBounds(10, 10, 100, 60);</span>
-<span class="nc" id="L87">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L89">        add(btnVolver);</span>
+<span class="nc" id="L90">        btnVolver.setBounds(10, 10, 100, 60);</span>
+<span class="nc" id="L91">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-<span class="nc" id="L90">        ventana.remove(this);</span>
-<span class="nc" id="L91">        PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);</span>
-<span class="nc" id="L92">        interfaz.setActual(nuevo);</span>
-<span class="nc" id="L93">        ventana.add(nuevo);</span>
-<span class="nc" id="L94">        ventana.pack();</span>
-<span class="nc" id="L95">    }//GEN-LAST:event_btnVolverActionPerformed</span>
+<span class="nc" id="L94">        ventana.remove(this);</span>
+<span class="nc" id="L95">        PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);</span>
+<span class="nc" id="L96">        interfaz.setActual(nuevo);</span>
+<span class="nc" id="L97">        ventana.add(nuevo);</span>
+<span class="nc" id="L98">        ventana.setSize(600,600);</span>
+<span class="nc" id="L99">    }//GEN-LAST:event_btnVolverActionPerformed</span>
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
-<span class="nc" id="L98">        Alimento alimentoAAgregar = (Alimento) listaComidas.getSelectedValue();</span>
-<span class="nc" id="L99">        listaAModificar.add(alimentoAAgregar);</span>
-<span class="nc" id="L100">    }//GEN-LAST:event_btnAgregarComidaActionPerformed</span>
+<span class="nc" id="L102">        Alimento alimentoAAgregar = (Alimento) listaComidas.getSelectedValue();</span>
+<span class="nc" id="L103">        listaAModificar.add(alimentoAAgregar);</span>
+<span class="nc" id="L104">         JOptionPane.showMessageDialog(null, &quot;Se agrego correctamete la comida&quot;);</span>
+<span class="nc" id="L105">         ventana.remove(this);</span>
+<span class="nc" id="L106">       PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);</span>
+<span class="nc" id="L107">        interfaz.setActual(nuevo);</span>
+<span class="nc" id="L108">        ventana.add(nuevo);</span>
+<span class="nc" id="L109">        ventana.setSize(600,600);</span>
+<span class="nc" id="L110">    }//GEN-LAST:event_btnAgregarComidaActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

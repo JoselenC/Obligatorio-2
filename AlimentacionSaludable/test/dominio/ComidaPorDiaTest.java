@@ -69,6 +69,26 @@ public class ComidaPorDiaTest {
         assertEquals(comidasIngeridasExpected, comidasIngeridas);
     }
     
+      @Test
+    public void testEqualsCaseObjNull() {
+        ArrayList<Alimento> comidasIngeridasExpected = new ArrayList<Alimento>();
+        ComidaPorDia instance = new ComidaPorDia();
+        instance.setComidasIngeridas(comidasIngeridasExpected);
+        ArrayList<Alimento> comidasIngeridas= instance.getComidasIngeridas();
+        assertNotEquals(null, comidasIngeridas);
+    }
+    
+     @Test
+    public void testEqualsCaseDiffType() {
+        ArrayList<Alimento> comidasIngeridasExpected = new ArrayList<Alimento>();
+        ComidaPorDia instance = new ComidaPorDia();
+        instance.setComidasIngeridas(comidasIngeridasExpected);
+        ArrayList<Alimento> comidasIngeridas= instance.getComidasIngeridas();
+        Usuario usuario=new Usuario();
+        assertNotEquals(usuario, comidasIngeridas);
+    }
+    
+    
     @Test
     public void testSetFecha() {
        String fechaExpected = "23/03/2020";

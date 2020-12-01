@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Sistema.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Sistema.java</span></div><h1>Sistema.java</h1><pre class="source lang-java linenums">package dominio;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Sistema.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Sistema.java</span></div><h1>Sistema.java</h1><pre class="source lang-java linenums">package dominio;
 
 import com.toedter.calendar.JDateChooser;
 import java.awt.Graphics2D;
@@ -19,9 +19,10 @@ public class Sistema implements Serializable {
 
     //Atributos
     private static final long serialVersionUID = 6106269076155338045L;
-    ArrayList&lt;Alimento&gt; listaAlimentos;
-    ArrayList&lt;Usuario&gt; listaUsuarios;
-    ArrayList&lt;Profesional&gt; listaProfesionales;
+    ArrayList&lt;Alimento&gt; alimentos;
+    ArrayList&lt;Usuario&gt; usuarios;
+    ArrayList&lt;Profesional&gt; profesionales;
+    ArrayList&lt;Administrador&gt; administradores;
     tipoUsuario[] listaTiposDeUsuario;
     tipoUsuario usuarioActivo;
 
@@ -29,195 +30,250 @@ public class Sistema implements Serializable {
     public Sistema(ArrayList&lt;Alimento&gt; listaAlimentos,
             ArrayList&lt;Usuario&gt; listaUsuarios,
             ArrayList&lt;Profesional&gt; listaProfesionales,
-<span class="fc" id="L32">            tipoUsuario usuarioActivo) {</span>
-<span class="fc" id="L33">        this.listaAlimentos = listaAlimentos;</span>
-<span class="fc" id="L34">        this.listaUsuarios = listaUsuarios;</span>
-<span class="fc" id="L35">        this.listaProfesionales = listaProfesionales;</span>
-<span class="fc" id="L36">        this.usuarioActivo = usuarioActivo;</span>
-<span class="fc" id="L37">        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();</span>
-<span class="fc" id="L38">    }</span>
+            ArrayList&lt;Administrador&gt; listaAdministradores,
+<span class="fc" id="L34">            tipoUsuario usuarioActivo) {</span>
+<span class="fc" id="L35">        this.alimentos = listaAlimentos;</span>
+<span class="fc" id="L36">        this.usuarios = listaUsuarios;</span>
+<span class="fc" id="L37">        this.profesionales = listaProfesionales;</span>
+<span class="fc" id="L38">        this.usuarioActivo = usuarioActivo;</span>
+<span class="fc" id="L39">        administradores = listaAdministradores;</span>
+<span class="fc" id="L40">        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();</span>
+<span class="fc" id="L41">    }</span>
 
-<span class="fc" id="L40">    public Sistema() {</span>
-<span class="fc" id="L41">        this.listaAlimentos = new ArrayList();</span>
-<span class="fc" id="L42">        this.listaUsuarios = new ArrayList();</span>
-<span class="fc" id="L43">        this.listaProfesionales = new ArrayList();</span>
-<span class="fc" id="L44">        this.usuarioActivo = tipoUsuario.NoSeleccionado;</span>
-<span class="fc" id="L45">        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();</span>
-<span class="fc" id="L46">    }</span>
+<span class="fc" id="L43">    public Sistema() {</span>
+<span class="fc" id="L44">        this.alimentos = new ArrayList();</span>
+<span class="fc" id="L45">        this.usuarios = new ArrayList();</span>
+<span class="fc" id="L46">        this.profesionales = new ArrayList();</span>
+<span class="fc" id="L47">        this.administradores = new ArrayList();</span>
+<span class="fc" id="L48">        this.usuarioActivo = tipoUsuario.NoSeleccionado;</span>
+<span class="fc" id="L49">        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();</span>
+<span class="fc" id="L50">    }</span>
     //Metodos de la clase sistema
 
     public tipoUsuario[] getListaTiposDeUsuario() {
-<span class="fc" id="L50">        tipoUsuario[] lista = listaTiposDeUsuario;</span>
-<span class="fc" id="L51">        return lista;</span>
+<span class="fc" id="L54">        tipoUsuario[] lista = listaTiposDeUsuario;</span>
+<span class="fc" id="L55">        return lista;</span>
     }
 
     public void setListaTiposDeUsuario(tipoUsuario[] listaTiposDeUsuario) {
-<span class="nc" id="L55">        this.listaTiposDeUsuario = Optional</span>
-<span class="nc" id="L56">                .ofNullable(listaTiposDeUsuario)</span>
-<span class="nc" id="L57">                .orElse(null);</span>
-<span class="nc" id="L58">    }</span>
+<span class="fc" id="L59">        this.listaTiposDeUsuario = Optional</span>
+<span class="fc" id="L60">                .ofNullable(listaTiposDeUsuario)</span>
+<span class="fc" id="L61">                .orElse(null);</span>
+<span class="fc" id="L62">    }</span>
 
-    public ArrayList&lt;Alimento&gt; getListaAlimentos() {
-<span class="fc" id="L61">        return listaAlimentos;</span>
+    public ArrayList&lt;Alimento&gt; getAlimentos() {
+<span class="fc" id="L65">        return alimentos;</span>
     }
 
-    public void setListaAlimentos(ArrayList&lt;Alimento&gt; listaAlimentos) {
-<span class="nc" id="L65">        this.listaAlimentos = listaAlimentos;</span>
-<span class="nc" id="L66">    }</span>
+    public void setAlimentos(ArrayList&lt;Alimento&gt; alimentos) {
+<span class="fc" id="L69">        this.alimentos = alimentos;</span>
+<span class="fc" id="L70">    }</span>
 
-    public ArrayList&lt;Usuario&gt; getListaUsuarios() {
-<span class="fc" id="L69">        return listaUsuarios;</span>
+    public ArrayList&lt;Usuario&gt; getUsuarios() {
+<span class="fc" id="L73">        return usuarios;</span>
     }
 
-    public void setListaUsuarios(ArrayList&lt;Usuario&gt; listaUsuarios) {
-<span class="nc" id="L73">        this.listaUsuarios = listaUsuarios;</span>
-<span class="nc" id="L74">    }</span>
-
-    public ArrayList&lt;Profesional&gt; getListaProfesionales() {
-<span class="fc" id="L77">        return listaProfesionales;</span>
+    public Usuario getUsuarioPorNombre(String nombre) {
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        for (int i = 0; i &lt; usuarios.size(); i++) {</span>
+<span class="fc" id="L78">           Usuario usuario = usuarios.get(i);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">            if (usuario.getNombreUsuario().equals(nombre)) {</span>
+<span class="fc" id="L80">                return usuario;</span>
+            }
+        }
+<span class="fc" id="L83">        return null;</span>
     }
 
-    public void setListaProfesionales(ArrayList&lt;Profesional&gt;
-                                      listaProfesionales) {
-<span class="nc" id="L82">        this.listaProfesionales = listaProfesionales;</span>
-<span class="nc" id="L83">    }</span>
+    public boolean existeNombreUsuario(String nombre) {
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        for (int i = 0; i &lt; usuarios.size(); i++) {</span>
+<span class="fc" id="L88">            Usuario usuario = usuarios.get(i);</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">            if (usuario.getNombreUsuario().equals(nombre)) {</span>
+<span class="fc" id="L90">                return true;</span>
+            }
+        }
+<span class="fc" id="L93">        return false;</span>
+    }
+
+    public boolean existeNombreProfesional(String nombre) {
+<span class="pc bfc" id="L97" title="All 2 branches covered.">        for (int i = 0; i &lt; profesionales.size(); i++) {</span>
+<span class="fc" id="L98">            Profesional profesional = profesionales.get(i);</span>
+<span class="pc bpc" id="L99" title="1 of 2 branches missed.">            if (profesional.getNombreUsuario().equals(nombre)) {</span>
+<span class="fc" id="L100">                return true;</span>
+            }
+        }
+<span class="fc" id="L103">        return false;</span>
+    }
+
+    public Profesional getProfesionalPorNombre(String nombre) {
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">        for (int i = 0; i &lt; profesionales.size(); i++) {</span>
+<span class="fc" id="L108">            Profesional profesional = profesionales.get(i);</span>
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">            if (profesional.getNombreUsuario().equals(nombre)) {</span>
+<span class="fc" id="L110">                return profesional;</span>
+            }
+        }
+<span class="nc" id="L113">        return null;</span>
+    }
+
+    public ArrayList&lt;Administrador&gt; getListaAdministradores() {
+<span class="fc" id="L117">        return administradores;</span>
+    }
+
+    public void setAdministrador(Administrador administrador) {
+<span class="fc" id="L121">        administradores.add(administrador);</span>
+<span class="fc" id="L122">    }</span>
+
+    public void setListaAdministradores(ArrayList&lt;Administrador&gt; listaAdministradores) {
+<span class="fc" id="L125">        this.administradores = listaAdministradores;</span>
+<span class="fc" id="L126">    }</span>
+
+    public void setUsuarios(ArrayList&lt;Usuario&gt; usuarios) {
+<span class="fc" id="L129">        this.usuarios = usuarios;</span>
+<span class="fc" id="L130">    }</span>
+
+    public ArrayList&lt;Profesional&gt; getProfesionales() {
+<span class="fc" id="L133">        return profesionales;</span>
+    }
+
+    public void setProfesionales(ArrayList&lt;Profesional&gt; profesionales) {
+<span class="fc" id="L137">        this.profesionales = profesionales;</span>
+<span class="fc" id="L138">    }</span>
 
     public tipoUsuario getUsuarioActivo() {
-<span class="nc" id="L86">        return usuarioActivo;</span>
+<span class="fc" id="L141">        return usuarioActivo;</span>
     }
 
     public void setUsuarioActivo(tipoUsuario usuarioActivo) {
-<span class="nc" id="L90">        this.usuarioActivo = usuarioActivo;</span>
-<span class="nc" id="L91">    }</span>
+<span class="fc" id="L145">        this.usuarioActivo = usuarioActivo;</span>
+<span class="fc" id="L146">    }</span>
 
-<span class="pc" id="L93">    public enum tipoUsuario {</span>
-<span class="fc" id="L94">        Profesional, Usuario, NoSeleccionado</span>
+<span class="pc" id="L148">    public enum tipoUsuario {</span>
+<span class="fc" id="L149">        Profesional, Usuario, NoSeleccionado</span>
     }
 
     //Metodo para inicializar lista de enums de tipo de usuario
     tipoUsuario[] inicializoListaTiposDeUsuario() {
-<span class="fc" id="L99">        tipoUsuario[] listaPivot = {tipoUsuario.Profesional,</span>
+<span class="fc" id="L154">        tipoUsuario[] listaPivot = {tipoUsuario.Profesional,</span>
             tipoUsuario.Usuario};
-<span class="fc" id="L101">        return listaPivot;</span>
+<span class="fc" id="L156">        return listaPivot;</span>
     }
 
     //CARGAR Y GUARDAR SISTEMA
     public void cargarSistema() {
         try {
-<span class="nc" id="L107">            ObjectInputStream in = new ObjectInputStream</span>
-                                   (new FileInputStream(&quot;sis.ser&quot;));
-<span class="nc" id="L109">            ArrayList&lt;Alimento&gt; listAlimentos = (ArrayList&lt;Alimento&gt;)</span>
-<span class="nc" id="L110">                                                in.readObject();</span>
-<span class="nc" id="L111">            listaAlimentos = listAlimentos;</span>
-<span class="nc" id="L112">            ArrayList&lt;Usuario&gt; listUsuarios = (ArrayList&lt;Usuario&gt;)</span>
-<span class="nc" id="L113">                                              in.readObject();</span>
-<span class="nc" id="L114">            listaUsuarios = listUsuarios;</span>
-<span class="nc" id="L115">            ArrayList&lt;Profesional&gt; listProfesionales = (ArrayList&lt;Profesional&gt;)</span>
-<span class="nc" id="L116">                                                        in.readObject();</span>
-<span class="nc" id="L117">            listaProfesionales = listProfesionales;</span>
-<span class="nc" id="L118">            in.close();</span>
-<span class="nc" id="L119">        } catch (Exception ex) {</span>
-<span class="nc" id="L120">            listaAlimentos = new ArrayList&lt;Alimento&gt;();</span>
-<span class="nc" id="L121">            listaUsuarios = new ArrayList&lt;Usuario&gt;();</span>
-<span class="nc" id="L122">            listaProfesionales = new ArrayList&lt;Profesional&gt;();</span>
-<span class="nc" id="L123">        }</span>
-<span class="nc" id="L124">    }</span>
+<span class="nc" id="L162">            ObjectInputStream in = new ObjectInputStream(new FileInputStream(&quot;sis.ser&quot;));</span>
+<span class="nc" id="L163">            ArrayList&lt;Alimento&gt; listAlimentos = (ArrayList&lt;Alimento&gt;) in.readObject();</span>
+<span class="nc" id="L164">            alimentos = listAlimentos;</span>
+<span class="nc" id="L165">            ArrayList&lt;Usuario&gt; listUsuarios = (ArrayList&lt;Usuario&gt;) in.readObject();</span>
+<span class="nc" id="L166">            usuarios = listUsuarios;</span>
+<span class="nc" id="L167">            ArrayList&lt;Profesional&gt; listProfesionales = (ArrayList&lt;Profesional&gt;) in.readObject();</span>
+<span class="nc" id="L168">            profesionales = listProfesionales;</span>
+<span class="nc" id="L169">            ArrayList&lt;Administrador&gt; listAdministradores = (ArrayList&lt;Administrador&gt;) in.readObject();</span>
+<span class="nc" id="L170">            administradores = listAdministradores;</span>
+<span class="nc" id="L171">            in.close();</span>
+<span class="nc" id="L172">        } catch (Exception ex) {</span>
+<span class="nc" id="L173">            alimentos = new ArrayList&lt;Alimento&gt;();</span>
+<span class="nc" id="L174">            usuarios = new ArrayList&lt;Usuario&gt;();</span>
+<span class="nc" id="L175">            profesionales = new ArrayList&lt;Profesional&gt;();</span>
+<span class="nc" id="L176">            administradores= new ArrayList&lt;Administrador&gt;();</span>
+<span class="nc" id="L177">        }</span>
+<span class="nc" id="L178">    }</span>
 
     public void guardarSistema() {
         try {
-<span class="nc" id="L128">            ObjectOutputStream out = new ObjectOutputStream</span>
-                                         (new FileOutputStream(&quot;sis.ser&quot;));
-<span class="nc" id="L130">            out.writeObject(listaAlimentos);</span>
-<span class="nc" id="L131">            out.writeObject(listaUsuarios);</span>
-<span class="nc" id="L132">            out.writeObject(listaProfesionales);</span>
-<span class="nc" id="L133">            out.flush();</span>
-<span class="nc" id="L134">            out.close();</span>
-<span class="nc" id="L135">        } catch (IOException ex) {</span>
-<span class="nc" id="L136">        }</span>
-<span class="nc" id="L137">    }</span>
+<span class="nc" id="L182">            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(&quot;sis.ser&quot;));</span>
+<span class="nc" id="L183">            out.writeObject(alimentos);</span>
+<span class="nc" id="L184">            out.writeObject(usuarios);</span>
+<span class="nc" id="L185">            out.writeObject(profesionales);</span>
+<span class="nc" id="L186">            out.writeObject(administradores);</span>
+<span class="nc" id="L187">            out.flush();</span>
+<span class="nc" id="L188">            out.close();</span>
+<span class="nc" id="L189">        } catch (IOException ex) {</span>
+<span class="nc" id="L190">        }</span>
+<span class="nc" id="L191">    }</span>
 
     //Metodo para validarque el dato sea numericoF
     public boolean pidoDatoNumerico(int dato, int min, int max) {
-<span class="fc" id="L141">        int datoAVerificar = 0;</span>
-<span class="fc" id="L142">        boolean pidiendo = false;</span>
+<span class="fc" id="L195">        int datoAVerificar = 0;</span>
+<span class="fc" id="L196">        boolean pidiendo = false;</span>
         try {
-<span class="fc" id="L144">            datoAVerificar = dato;</span>
-<span class="pc bpc" id="L145" title="1 of 4 branches missed.">            if ((datoAVerificar &gt;= min) &amp;&amp; (datoAVerificar &lt;= max)) {</span>
-<span class="nc" id="L146">                pidiendo = true;</span>
+<span class="fc" id="L198">            datoAVerificar = dato;</span>
+<span class="pc bpc" id="L199" title="1 of 4 branches missed.">            if ((datoAVerificar &gt;= min) &amp;&amp; (datoAVerificar &lt;= max)) {</span>
+<span class="nc" id="L200">                pidiendo = true;</span>
             }
-<span class="nc" id="L148">        } catch (NumberFormatException ex) {</span>
-            
-<span class="fc" id="L150">        }</span>
-<span class="fc" id="L151">        return pidiendo;</span>
+<span class="nc" id="L202">        } catch (NumberFormatException ex) {</span>
+
+<span class="fc" id="L204">        }</span>
+<span class="fc" id="L205">        return pidiendo;</span>
     }
 
     //Metodo que adapta el tamaño de la imagen al deseado
     ImageIcon resizeImageIcon(ImageIcon imageIcon, Integer width,
-                              Integer height) {
-<span class="fc" id="L157">        BufferedImage bufferedImage = new BufferedImage</span>
-<span class="fc" id="L158">                                      (width, height,</span>
-                                       BufferedImage.TRANSLUCENT);
-<span class="fc" id="L160">        Graphics2D graphics2D = bufferedImage.createGraphics();</span>
-<span class="fc" id="L161">        graphics2D.drawImage(imageIcon.getImage(), 0, 0, width, height, null);</span>
-<span class="fc" id="L162">        graphics2D.dispose();</span>
-<span class="fc" id="L163">        return new ImageIcon(bufferedImage, imageIcon.getDescription());</span>
+            Integer height) {
+<span class="fc" id="L211">        BufferedImage bufferedImage = new BufferedImage(width, height,</span>
+                BufferedImage.TRANSLUCENT);
+<span class="fc" id="L213">        Graphics2D graphics2D = bufferedImage.createGraphics();</span>
+<span class="fc" id="L214">        graphics2D.drawImage(imageIcon.getImage(), 0, 0, width, height, null);</span>
+<span class="fc" id="L215">        graphics2D.dispose();</span>
+<span class="fc" id="L216">        return new ImageIcon(bufferedImage, imageIcon.getDescription());</span>
     }
 
     void registroUsuario(String unNombre, String unApellido, String unUsuario,
-                         String unSexo, String unaFechaNacimiento,
-                         double unaAltura, ImageIcon unaFotoPerfil,
-                         double unPeso,
-                         Usuario.Nacionalidades unaNacionalidad) {
-<span class="fc" id="L171">        Usuario usuario = new Usuario();</span>
-<span class="fc" id="L172">        usuario.setNombre(unNombre);</span>
-<span class="fc" id="L173">        usuario.setApellidos(unApellido);</span>
-<span class="fc" id="L174">        usuario.setNombreUsuario(unUsuario);</span>
-<span class="fc" id="L175">        usuario.setNacionalidad(usuario.getListaEnumNac()</span>
-<span class="fc" id="L176">                                [unaNacionalidad.ordinal()]);</span>
-<span class="fc" id="L177">        usuario.setFechaNacimiento(unaFechaNacimiento);</span>
-<span class="fc" id="L178">        usuario.setSexo(unSexo);</span>
-<span class="fc" id="L179">        usuario.setAlturaCm(unaAltura);</span>
-<span class="fc" id="L180">        usuario.setPesoKg(unPeso);</span>
-<span class="fc" id="L181">        usuario.setFotoPerfil(unaFotoPerfil);</span>
-<span class="fc bfc" id="L182" title="All 2 branches covered.">        if(!this.getListaUsuarios().contains(usuario)){</span>
-<span class="fc" id="L183">            this.getListaUsuarios().add(usuario);</span>
+            String unSexo, String unaFechaNacimiento,
+            double unaAltura, ImageIcon unaFotoPerfil,
+            double unPeso,
+            Usuario.Nacionalidades unaNacionalidad) {
+<span class="fc" id="L224">        Usuario usuario = new Usuario();</span>
+<span class="fc" id="L225">        usuario.setNombre(unNombre);</span>
+<span class="fc" id="L226">        usuario.setApellidos(unApellido);</span>
+<span class="fc" id="L227">        usuario.setNombreUsuario(unUsuario);</span>
+<span class="fc" id="L228">        usuario.setNacionalidad(usuario.getListaEnumNac()[unaNacionalidad.ordinal()]);</span>
+<span class="fc" id="L229">        usuario.setFechaNacimiento(unaFechaNacimiento);</span>
+<span class="fc" id="L230">        usuario.setSexo(unSexo);</span>
+<span class="fc" id="L231">        usuario.setAlturaCm(unaAltura);</span>
+<span class="fc" id="L232">        usuario.setPesoKg(unPeso);</span>
+<span class="fc" id="L233">        usuario.setFotoPerfil(unaFotoPerfil);</span>
+<span class="fc bfc" id="L234" title="All 2 branches covered.">        if (!this.getUsuarios().contains(usuario)) {</span>
+<span class="fc" id="L235">            this.getUsuarios().add(usuario);</span>
         }
-<span class="fc" id="L185">    }</span>
+<span class="fc" id="L237">    }</span>
 
     public void registroProfesional(String unNombre, String unApellido,
-                                    String unNombreUsuario,
-                                    String unNombreTitulo,
-                                    Profesional.Pais unPais,
-                                    ImageIcon unaFotoPerfil,
-                                    String unaFechaNacimiento,
-                                    String unaFechaGraduacion,
-                                    Profesional.Pais unPaisTitulo) {
-<span class="fc" id="L195">        Profesional profesional = new Profesional();</span>
-<span class="fc" id="L196">        profesional.setNombre(unNombre);</span>
-<span class="fc" id="L197">        profesional.setApellidos(unApellido);</span>
-<span class="fc" id="L198">        profesional.setNombreUsuario(unNombreUsuario);</span>
-<span class="fc" id="L199">        profesional.setFechaNacimiento(unaFechaNacimiento);</span>
-<span class="fc" id="L200">        profesional.setNombreTituloProf(unNombreTitulo);</span>
-<span class="fc" id="L201">        profesional.setFechaGraduacion(unaFechaGraduacion);</span>
-<span class="fc" id="L202">        profesional.setPaisObtuvoTitulo(unPaisTitulo);</span>
-<span class="fc" id="L203">        profesional.setFotoPerfil(unaFotoPerfil);</span>
-<span class="fc bfc" id="L204" title="All 2 branches covered.">        if(!this.getListaProfesionales().contains(profesional)){</span>
-<span class="fc" id="L205">            this.getListaProfesionales().add(profesional);</span>
+            String unNombreUsuario,
+            String unNombreTitulo,
+            Profesional.Pais unPais,
+            ImageIcon unaFotoPerfil,
+            String unaFechaNacimiento,
+            String unaFechaGraduacion,
+            Profesional.Pais unPaisTitulo) {
+<span class="fc" id="L247">        Profesional profesional = new Profesional();</span>
+<span class="fc" id="L248">        profesional.setNombre(unNombre);</span>
+<span class="fc" id="L249">        profesional.setApellidos(unApellido);</span>
+<span class="fc" id="L250">        profesional.setNombreUsuario(unNombreUsuario);</span>
+<span class="fc" id="L251">        profesional.setFechaNacimiento(unaFechaNacimiento);</span>
+<span class="fc" id="L252">        profesional.setNombreTituloProf(unNombreTitulo);</span>
+<span class="fc" id="L253">        profesional.setFechaGraduacion(unaFechaGraduacion);</span>
+<span class="fc" id="L254">        profesional.setPaisObtuvoTitulo(unPaisTitulo);</span>
+<span class="fc" id="L255">        profesional.setFotoPerfil(unaFotoPerfil);</span>
+<span class="fc bfc" id="L256" title="All 2 branches covered.">        if (!this.getProfesionales().contains(profesional)) {</span>
+<span class="fc" id="L257">            this.getProfesionales().add(profesional);</span>
         }
-<span class="fc" id="L207">    }</span>
+<span class="fc" id="L259">    }</span>
 
     public void registroAlimento(String nombreAlim,
-                                 Alimento.TipoAlimento unTipo,
-                                 boolean[] unaListaNutrientes) {
-<span class="fc" id="L212">        Alimento alimento = new Alimento();</span>
-<span class="fc" id="L213">        alimento.setNombre(nombreAlim);</span>
-<span class="fc" id="L214">        alimento.setTipo(alimento.getListaEnumTipoAlimento()</span>
-<span class="fc" id="L215">                        [unTipo.ordinal()]);</span>
-<span class="fc" id="L216">        alimento.setListaNutrientesSeleccionados(unaListaNutrientes);</span>
-<span class="fc bfc" id="L217" title="All 2 branches covered.">        if(!this.getListaAlimentos().contains(alimento)){</span>
-<span class="fc" id="L218">            this.getListaAlimentos().add(alimento);</span>
+            Alimento.TipoAlimento unTipo,
+            boolean[] unaListaNutrientes) {
+<span class="fc" id="L264">        Alimento alimento = new Alimento();</span>
+<span class="fc" id="L265">        alimento.setNombre(nombreAlim);</span>
+<span class="fc" id="L266">        alimento.setTipo(alimento.getListaEnumTipoAlimento()[unTipo.ordinal()]);</span>
+<span class="fc" id="L267">        alimento.setListaNutrientesSeleccionados(unaListaNutrientes);</span>
+<span class="pc bpc" id="L268" title="1 of 2 branches missed.">        if (!this.getAlimentos().contains(alimento)) {</span>
+<span class="fc" id="L269">            this.getAlimentos().add(alimento);</span>
         }
-<span class="fc" id="L220">    }</span>
+<span class="fc" id="L271">    }</span>
 
+     public void registroAdministrador(String usuarioAdministrador, String contraseñaAdministrador) {
+<span class="fc" id="L274">        Administrador administrador= new Administrador();</span>
+<span class="fc" id="L275">        administrador.setUsuario(usuarioAdministrador);</span>
+<span class="fc" id="L276">        administrador.setContraseña(contraseñaAdministrador);</span>
+<span class="fc" id="L277">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
