@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.jacocoverage",
+    "\\build",
+    "\\src",
+    "\\src\\alimentacionsaludable",
+    "\\test",
+    "\\test\\dominio"
+  ],
+  "SelectedNode": "\\.jacocoverage\\jacoco.latest.exec",
+  "PreviewInSolutionExplorer": false
+}

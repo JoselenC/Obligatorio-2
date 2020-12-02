@@ -9,6 +9,7 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
 
     private Sistema sistema;
     private JPanel actual;
+    private JPanel nuevaActual;
     private JFrame ventana;
     private Usuario usuarioActual;
 
@@ -34,6 +35,14 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         this.actual = actual;
     }
 
+    public JPanel getNuevaActual() {
+        return nuevaActual;
+    }
+
+    public void setNuevaActual(JPanel nuevaActual) {
+        this.nuevaActual = nuevaActual;
+    }
+    
     public Usuario getUsuarioActual() {
         return usuarioActual;
     }
@@ -160,6 +169,14 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         panelBotonesUsuario.setBounds(-1, 0, 270, 810);
     }// </editor-fold>//GEN-END:initComponents
 
+     private void cambiarPanel(JPanel actualNueva){
+        ventana.remove(actual);
+        nuevaActual= actualNueva;
+        ventana.add(nuevaActual);
+        actual=nuevaActual;
+        ventana.pack();
+    }
+    
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         ventana.remove(actual);
         actual = new PanelHomeUsuario(sistema, this, ventana);
@@ -176,31 +193,23 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPedirPlanActionPerformed
 
     private void btnConsultaDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDirectaActionPerformed
-        ventana.remove(actual);
-        actual = new PanelConsultaProfesional(sistema, this, ventana);
-        ventana.add(actual);
-        ventana.pack();
+        nuevaActual = new PanelConsultaProfesional(sistema, this, ventana);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnConsultaDirectaActionPerformed
 
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
-        ventana.remove(actual);
-        actual = new PanelPerfilUsuario(sistema, ventana, this);
-        ventana.add(actual);
-        ventana.pack();
+        nuevaActual = new PanelPerfilUsuario(sistema, ventana, this);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnPerfilActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
-        ventana.remove(actual);
-        actual = new PanelCambioDeUsuario(ventana, sistema, this);
-        ventana.add(actual);
-        ventana.pack();
+        nuevaActual = new PanelCambioDeUsuario(ventana, sistema, this);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
-        ventana.remove(actual);
-        actual = new PanelDietaDiariaUsuario(sistema, ventana, this);
-        ventana.add(actual);
-        ventana.pack();
+        nuevaActual = new PanelDietaDiariaUsuario(sistema, ventana, this);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
    
