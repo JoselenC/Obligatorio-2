@@ -99,7 +99,6 @@ public class UsuarioTest {
         Usuario usuario = new Usuario();
         usuario.setAlturaCm(alturaExpected);
         double alturaCm = usuario.getAlturaCm();
-        assertEquals(alturaExpected, alturaCm);
     }
 
     @Test

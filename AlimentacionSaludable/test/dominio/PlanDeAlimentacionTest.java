@@ -51,7 +51,7 @@ public class PlanDeAlimentacionTest {
     public void testSetListaMartes() {
         ArrayList<Alimento> listaMartesExpected = new ArrayList<Alimento>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
-        plan.setListaLunes(listaMartesExpected);
+        plan.setListaMartes(listaMartesExpected);
         ArrayList<Alimento> listaMartes = plan.getListaMartes();
         assertEquals(listaMartesExpected, listaMartes);
     }
@@ -69,7 +69,7 @@ public class PlanDeAlimentacionTest {
     public void testSetListaJueves() {
         ArrayList<Alimento> listaJuevesExpected = new ArrayList<Alimento>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
-        plan.setListaLunes(listaJuevesExpected);
+        plan.setListaJueves(listaJuevesExpected);
         ArrayList<Alimento> listaJueves = plan.getListaJueves();
         assertEquals(listaJuevesExpected, listaJueves);
     }
@@ -107,6 +107,6 @@ public class PlanDeAlimentacionTest {
         PlanDeAlimentacion planExpected = new PlanDeAlimentacion();
         planExpected.setUsuario(usuarioExpected);
         PlanDeAlimentacion plan = new PlanDeAlimentacion(usuarioExpected);
-        assertEquals(planExpected, plan);
+        assertEquals(planExpected.getUsuario(), plan.getUsuario());
     }
 }

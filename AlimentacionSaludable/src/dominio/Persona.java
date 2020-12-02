@@ -22,14 +22,7 @@ public abstract class Persona implements Serializable {
         this.fechaNacimiento = fechaNacimiento;
         this.fotoPerfil = fotoPerfil;
     }
-     public Persona(String nombre, String apellidos, String nombreUsuario,
-                   String fechaNacimiento) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.nombreUsuario = nombreUsuario;
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
+    
     //Metodos de la clase persona
     public String getNombre() {
         return nombre;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Alimento.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Alimento.java</span></div><h1>Alimento.java</h1><pre class="source lang-java linenums">package dominio;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Alimento.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Alimento.java</span></div><h1>Alimento.java</h1><pre class="source lang-java linenums">package dominio;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -24,12 +24,12 @@ public class Alimento implements Serializable {
 
     //Metodos de la clase Aliemntos
     public String getNombre() {
-<span class="fc" id="L27">        return nombre;</span>
+<span class="nc" id="L27">        return nombre;</span>
     }
 
     public void setNombre(String nombre) {
-<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if(!nombre.trim().isEmpty()){</span>
-<span class="nc" id="L32">            this.nombre = nombre;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if(!nombre.trim().isEmpty()){</span>
+<span class="fc" id="L32">            this.nombre = nombre;</span>
         }
 <span class="fc" id="L34">    }</span>
 
@@ -42,15 +42,15 @@ public class Alimento implements Serializable {
 <span class="fc" id="L42">    }</span>
 
     public Nutrientes[] getListaEnumNutrientes() {
-<span class="nc" id="L45">        Nutrientes[] lista = listaEnumNutrientes;</span>
-<span class="nc" id="L46">        return lista;</span>
+<span class="fc" id="L45">        Nutrientes[] lista = listaEnumNutrientes;</span>
+<span class="fc" id="L46">        return lista;</span>
     }
 
     public void setListaEnumNutrientes(Nutrientes[] listaEnumNutrientes) {
-<span class="nc" id="L50">        this.listaEnumNutrientes = Optional</span>
-<span class="nc" id="L51">                .ofNullable(listaEnumNutrientes)</span>
-<span class="nc" id="L52">                .orElse(null);</span>
-<span class="nc" id="L53">    }</span>
+<span class="fc" id="L50">        this.listaEnumNutrientes = Optional</span>
+<span class="fc" id="L51">                .ofNullable(listaEnumNutrientes)</span>
+<span class="fc" id="L52">                .orElse(null);</span>
+<span class="fc" id="L53">    }</span>
 
     public TipoAlimento[] getListaEnumTipoAlimento() {
 <span class="fc" id="L56">        TipoAlimento[] lista = listaEnumTipoAlimento;</span>
@@ -59,10 +59,10 @@ public class Alimento implements Serializable {
 
     public void setListaEnumTipoAlimento(TipoAlimento[]
                                          listaEnumTipoAlimento) {
-<span class="nc" id="L62">        this.listaEnumTipoAlimento = Optional</span>
-<span class="nc" id="L63">                .ofNullable(listaEnumTipoAlimento)</span>
-<span class="nc" id="L64">                .orElse(null);</span>
-<span class="nc" id="L65">    }</span>
+<span class="fc" id="L62">        this.listaEnumTipoAlimento = Optional</span>
+<span class="fc" id="L63">                .ofNullable(listaEnumTipoAlimento)</span>
+<span class="fc" id="L64">                .orElse(null);</span>
+<span class="fc" id="L65">    }</span>
 
     public boolean[] getListaNutrientesSeleccionados() {
 <span class="fc" id="L68">        boolean[] lista = listaNutrientesSeleccionados;</span>
@@ -97,7 +97,7 @@ public class Alimento implements Serializable {
 
 <span class="pc" id="L98">    public enum Nutrientes {</span>
 <span class="fc" id="L99">        Proteinas, Lipidos, HidratosDeCarbono, Vitaminas, Minerales, Agua,</span>
-<span class="fc" id="L100">        Fibra, Ninguna</span>
+<span class="fc" id="L100">        Fibra, Ninguno</span>
     }
 
     public Nutrientes[] inicializoEnumNutrientes() {
@@ -105,7 +105,7 @@ public class Alimento implements Serializable {
             Nutrientes.Agua, Nutrientes.Fibra,
             Nutrientes.HidratosDeCarbono,
             Nutrientes.Lipidos, Nutrientes.Minerales,
-            Nutrientes.Proteinas, Nutrientes.Vitaminas
+            Nutrientes.Proteinas, Nutrientes.Vitaminas,Nutrientes.Ninguno
         };
 <span class="fc" id="L110">        return listaEnumPivot;</span>
     }
@@ -113,31 +113,14 @@ public class Alimento implements Serializable {
     //redefino toString
     @Override
     public String toString() {
-<span class="nc" id="L116">        return nombre;</span>
+<span class="fc" id="L116">        return nombre;</span>
     }
 
     @Override
     public int hashCode() {
 <span class="nc" id="L121">        int hash = 7;</span>
 <span class="nc" id="L122">        return hash;</span>
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-<span class="fc" id="L127">        boolean retorno=true;</span>
-<span class="pc bpc" id="L128" title="1 of 2 branches missed.">        if (obj == null) {</span>
-<span class="nc" id="L129">            retorno = false;</span>
-        }
-<span class="pc bpc" id="L131" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
-<span class="nc" id="L132">            retorno = false;</span>
-        }
-<span class="pc bpc" id="L134" title="1 of 2 branches missed.">        if(retorno == true){</span>
-<span class="fc" id="L135">            Alimento other = (Alimento) obj;</span>
-<span class="fc" id="L136">            retorno = other.getNombre().equalsIgnoreCase(this.getNombre());</span>
-        }
-<span class="fc" id="L138">        return retorno;</span>
-    }
-    
+    } 
     
 
 }

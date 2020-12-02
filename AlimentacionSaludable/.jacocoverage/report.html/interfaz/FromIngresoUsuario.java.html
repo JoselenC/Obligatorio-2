@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>FromIngresoUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">FromIngresoUsuario.java</span></div><h1>FromIngresoUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Profesional;
+import dominio.Sistema;
+import dominio.Usuario;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+public class FromIngresoUsuario extends javax.swing.JFrame {
+
+    private Sistema sistema;
+    private JFrame ventana;
+    String tipo;
+    JPanel cambio;
+
+<span class="nc" id="L17">    public FromIngresoUsuario(Sistema unSistema, JFrame unaVentana, String tipoUsuario,JPanel cambioUsuario) {</span>
+<span class="nc" id="L18">        initComponents();</span>
+<span class="nc" id="L19">        sistema = unSistema;</span>
+<span class="nc" id="L20">        this.pack();</span>
+<span class="nc" id="L21">        this.setResizable(false);</span>
+<span class="nc" id="L22">        this.setLocation(30, 30);</span>
+<span class="nc" id="L23">        setLocationRelativeTo(cambioUsuario);</span>
+<span class="nc" id="L24">        ventana = unaVentana;</span>
+<span class="nc" id="L25">        ventana.pack();</span>
+<span class="nc" id="L26">        tipo = tipoUsuario;</span>
+<span class="nc" id="L27">        cambio=cambioUsuario;</span>
+<span class="nc" id="L28">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L34">        etiquetaTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L35">        etiquetaTitulo1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L36">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L37">        txtUsuario = new javax.swing.JTextField();</span>
+<span class="nc" id="L38">        brnInicioSesion = new javax.swing.JButton();</span>
+<span class="nc" id="L39">        jPanel2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L40">        etiquetaTitulo3 = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L42">        etiquetaTitulo.setBackground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L43">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L44">        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L45">        etiquetaTitulo.setText(&quot;Agregar Comidas&quot;);</span>
+
+<span class="nc" id="L47">        etiquetaTitulo1.setBackground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L48">        etiquetaTitulo1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L49">        etiquetaTitulo1.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L50">        etiquetaTitulo1.setText(&quot;Agregar Comidas&quot;);</span>
+
+<span class="nc" id="L52">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L53">        setBackground(new java.awt.Color(229, 229, 240));</span>
+<span class="nc" id="L54">        setPreferredSize(new java.awt.Dimension(400, 215));</span>
+
+<span class="nc" id="L56">        jLabel1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L57">        jLabel1.setText(&quot;Nombre&quot;);</span>
+
+<span class="nc" id="L59">        txtUsuario.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+
+<span class="nc" id="L61">        brnInicioSesion.setBackground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L62">        brnInicioSesion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L63">        brnInicioSesion.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L64">        brnInicioSesion.setText(&quot;Iniciar sesion&quot;);</span>
+<span class="nc" id="L65">        brnInicioSesion.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L67">                brnInicioSesionActionPerformed(evt);</span>
+<span class="nc" id="L68">            }</span>
+        });
+
+<span class="nc" id="L71">        jPanel2.setBackground(new java.awt.Color(171, 171, 199));</span>
+
+<span class="nc" id="L73">        etiquetaTitulo3.setBackground(new java.awt.Color(135, 135, 156));</span>
+<span class="nc" id="L74">        etiquetaTitulo3.setFont(new java.awt.Font(&quot;Yu Gothic UI Semibold&quot;, 0, 18)); // NOI18N</span>
+<span class="nc" id="L75">        etiquetaTitulo3.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L76">        etiquetaTitulo3.setText(&quot;Inicio de sesion&quot;);</span>
+<span class="nc" id="L77">        jPanel2.add(etiquetaTitulo3);</span>
+
+<span class="nc" id="L79">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L80">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L81">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L82">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L83">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L84">                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L85">                .addGap(0, 412, Short.MAX_VALUE))</span>
+<span class="nc" id="L86">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L87">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L88">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L89">                        .addGap(25, 25, 25)</span>
+<span class="nc" id="L90">                        .addComponent(jLabel1)</span>
+<span class="nc" id="L91">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L92">                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L93">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L94">                        .addGap(149, 149, 149)</span>
+<span class="nc" id="L95">                        .addComponent(brnInicioSesion)))</span>
+<span class="nc" id="L96">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L98">        layout.setVerticalGroup(</span>
+<span class="nc" id="L99">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L100">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L101">                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L102">                .addGap(31, 31, 31)</span>
+<span class="nc" id="L103">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L104">                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L105">                    .addComponent(jLabel1))</span>
+<span class="nc" id="L106">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L107">                .addComponent(brnInicioSesion)</span>
+<span class="nc" id="L108">                .addContainerGap(36, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L111">        pack();</span>
+<span class="nc" id="L112">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void brnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnInicioSesionActionPerformed
+<span class="nc bnc" id="L115" title="All 2 branches missed.">        if (&quot;Usuario&quot;.equals(tipo)) {</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">            if(sistema.existeNombreUsuario(txtUsuario.getText())){</span>
+<span class="nc" id="L117">            Usuario usuarioSeleccionado = sistema.getUsuarioPorNombre(txtUsuario.getText());           </span>
+<span class="nc" id="L118">                ventana.remove(cambio);</span>
+<span class="nc" id="L119">                this.setVisible(false);</span>
+<span class="nc" id="L120">                InterfazBotonesUsuario nuevaBotonera = new InterfazBotonesUsuario(sistema, ventana, usuarioSeleccionado);</span>
+<span class="nc" id="L121">                ventana.pack();</span>
+<span class="nc" id="L122">            } else {</span>
+<span class="nc" id="L123">                JOptionPane.showMessageDialog(null, &quot;Usuario no registrado en el sistema&quot;);</span>
+            }
+        } else {
+<span class="nc" id="L126">            Profesional profesionalSeleccionado = sistema.getProfesionalPorNombre(txtUsuario.getText());</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">            if (sistema.existeNombreProfesional(txtUsuario.getText())) {</span>
+<span class="nc" id="L128">                ventana.remove(cambio);</span>
+<span class="nc" id="L129">                 this.setVisible(false);</span>
+<span class="nc" id="L130">                InterfazBotonesProfesional nuevaBotonera = new InterfazBotonesProfesional(sistema, ventana, profesionalSeleccionado);</span>
+<span class="nc" id="L131">                ventana.pack();</span>
+<span class="nc" id="L132">            } else {</span>
+<span class="nc" id="L133">                JOptionPane.showMessageDialog(null, &quot;Profesional no registrado en el sistema&quot;);</span>
+            }
+        }
+<span class="nc" id="L136">    }//GEN-LAST:event_brnInicioSesionActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton brnInicioSesion;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel etiquetaTitulo1;
+    private javax.swing.JLabel etiquetaTitulo3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField txtUsuario;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
