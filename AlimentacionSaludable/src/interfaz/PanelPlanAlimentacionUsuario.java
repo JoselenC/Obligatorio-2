@@ -1,5 +1,4 @@
 package interfaz;
-
 import dominio.Profesional;
 import dominio.Sistema;
 import javax.swing.DefaultComboBoxModel;
@@ -8,12 +7,10 @@ import javax.swing.JOptionPane;
 
 public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private JFrame ventana;
     private InterfazBotonesUsuario interfaz;
 
-    //Constructor
     public PanelPlanAlimentacionUsuario(Sistema unSistema,
             JFrame unaVentana,
             InterfazBotonesUsuario unaInterfaz) {

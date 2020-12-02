@@ -99,7 +99,6 @@ public class Profesional extends Persona implements Serializable {
         return listaEnumPivot;
     }
 
-    //redefino toString
     @Override
     public String toString() {
         return "Usuario: " + this.getAliasUsuario();

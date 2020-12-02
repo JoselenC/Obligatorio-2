@@ -8,12 +8,10 @@ import javax.swing.JFrame;
 
 public class PanelRedactarConsulta extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private InterfazBotonesUsuario interfazUsuario;
     private JFrame ventana;
 
-    //Constructor para usuarios
     public PanelRedactarConsulta(Sistema unSistema,
             InterfazBotonesUsuario interfazActual, JFrame unaVentana) {
         initComponents();

@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class Alimento implements Serializable {
 
-    //Atrubutos
+    
     private static final long serialVersionUID = 6106269076155338045L;
     private String nombre;
     private TipoAlimento tipo;
@@ -14,7 +14,7 @@ public class Alimento implements Serializable {
     private Nutrientes[] listaNutrientes = inicializoNutrientes();
     private boolean[] listaNutrientesSeleccionados;
 
-    //Constructor
+   
     public Alimento() {
         this.nombre = "sin nombre";
         this.tipo = TipoAlimento.Otro;
@@ -22,7 +22,7 @@ public class Alimento implements Serializable {
                                                         .length];
     }
 
-    //Metodos de la clase Aliemntos
+    
     public String getNombre() {
         return nombre;
     }
@@ -110,7 +110,7 @@ public class Alimento implements Serializable {
         return listaNutrientes;
     }
 
-    //redefino toString
+ 
     @Override
     public String toString() {
         return nombre;

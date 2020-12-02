@@ -6,10 +6,8 @@ import java.io.IOException;
 
 public class PanelPrincipal extends javax.swing.JFrame {
 
-    //Atributos
     Sistema sistema;
 
-    //Constructor
     public PanelPrincipal(Sistema unSistema) {
         initComponents();
         sistema = unSistema;

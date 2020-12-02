@@ -8,12 +8,10 @@ import javax.swing.JLabel;
 
 public class PanelRegistroAlimento extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private Alimento alimento;
     private JFrame ventana;
 
-    //Cosntructor
     public PanelRegistroAlimento(Sistema unSistema, JFrame unaVentana) {
         initComponents();
         sistema = unSistema;

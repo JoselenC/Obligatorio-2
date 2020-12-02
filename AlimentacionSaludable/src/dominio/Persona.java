@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 
 public abstract class Persona implements Serializable {
 
-    //Atributos
+    
     private static final long serialVersionUID = 6106269076155338045L;
     private String nombre;
     private String apellido;
@@ -13,7 +13,7 @@ public abstract class Persona implements Serializable {
     private String fechaNacimiento;
     private ImageIcon fotoPerfil;
 
-    //Cosntructor
+   
     public Persona(String nombre, String apellidos, String nombreUsuario,
                    String fechaNacimiento, ImageIcon fotoPerfil) {
         this.nombre = nombre;
@@ -22,6 +22,7 @@ public abstract class Persona implements Serializable {
         this.fechaNacimiento = fechaNacimiento;
         this.fotoPerfil = fotoPerfil;
     }
+    
      public Persona(String nombre, String apellidos, String nombreUsuario,
                    String fechaNacimiento) {
         this.nombre = nombre;
@@ -70,7 +71,7 @@ public abstract class Persona implements Serializable {
         this.fotoPerfil = fotoPerfil;
     }
 
-    //Redefino el equals
+
     @Override
     public boolean equals(Object obj) {
         boolean retorno = true;

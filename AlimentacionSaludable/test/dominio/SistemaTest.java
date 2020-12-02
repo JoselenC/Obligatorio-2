@@ -189,7 +189,7 @@ public class SistemaTest {
         Sistema sistema= new Sistema();
         ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
         Usuario usuario = new Usuario();
-        usuario.setNombreUsuario("joselen");
+        usuario.setNombre("joselen");
         usuarios.add(usuario);
         sistema.setUsuarios(usuarios);
         Usuario usuarioEncontrado= sistema.getUsuarioPorNombre("joselen");
@@ -201,7 +201,7 @@ public class SistemaTest {
         Sistema sistema= new Sistema();
         ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
         Usuario usuario = new Usuario();
-        usuario.setNombreUsuario("joselen");
+        usuario.setNombre("joselen");
         usuarios.add(usuario);
         sistema.setUsuarios(usuarios);
         Usuario usuarioEncontrado= sistema.getUsuarioPorNombre("joselenC");
@@ -229,7 +229,7 @@ public class SistemaTest {
         Sistema sistema= new Sistema();
         ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
         Usuario usuario = new Usuario();
-        usuario.setNombreUsuario("joselen");
+        usuario.setNombre("joselen");
         usuarios.add(usuario);
         sistema.setUsuarios(usuarios);
         boolean usuarioEncontrado= sistema.existeNombreUsuario("joselen");
@@ -241,7 +241,7 @@ public class SistemaTest {
         Sistema sistema= new Sistema();
         ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
         Usuario usuario = new Usuario();
-        usuario.setNombreUsuario("joselen");
+        usuario.setNombre("joselen");
         usuarios.add(usuario);
         sistema.setUsuarios(usuarios);
         boolean usuarioEncontrado= sistema.existeNombreUsuario("joselenC");
@@ -253,7 +253,7 @@ public class SistemaTest {
         Sistema sistema= new Sistema();
         ArrayList<Profesional> profesionales= new ArrayList<Profesional>();
         Profesional profesional = new Profesional();
-        profesional.setNombreUsuario("joselen");
+        profesional.setNombre("joselen");
         profesionales.add(profesional);
         boolean profesionalEncontrado= sistema.existeNombreProfesional("joselenC");
         assertFalse(profesionalEncontrado);
@@ -264,7 +264,7 @@ public class SistemaTest {
         Sistema sistema= new Sistema();
         ArrayList<Profesional> profesionales= new ArrayList<Profesional>();
         Profesional profesional = new Profesional();
-        profesional.setNombreUsuario("joselen");
+        profesional.setNombre("joselen");
         profesionales.add(profesional);
         sistema.setProfesionales(profesionales);
         boolean profesionalEncontrado= sistema.existeNombreProfesional("joselen");
@@ -276,7 +276,7 @@ public class SistemaTest {
         Sistema sistema= new Sistema();
         ArrayList<Profesional> profesionales= new ArrayList<Profesional>();
         Profesional profesional = new Profesional();
-        profesional.setNombreUsuario("joselen");
+        profesional.setNombre("joselen");
         profesionales.add(profesional);
         sistema.setProfesionales(profesionales);
         Profesional profesionalEncontrado= sistema.getProfesionalPorNombre("joselen");

@@ -7,13 +7,13 @@ import javax.swing.JOptionPane;
 
 public class PanelConsultaProfesional extends javax.swing.JPanel {
 
-    //Atrubutos
+    
     private Sistema sistema;
     private InterfazBotonesUsuario interfaz;
     private JFrame ventana;
     private Mensaje mensajeSeleccionado;
 
-    //Constructor
+   
     public PanelConsultaProfesional(Sistema unSistema,
             InterfazBotonesUsuario interfazActual, JFrame unaVentana) {
         initComponents();

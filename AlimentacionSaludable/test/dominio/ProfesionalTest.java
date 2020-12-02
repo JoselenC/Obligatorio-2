@@ -52,7 +52,7 @@ public class ProfesionalTest {
         System.out.println("getNombreTituloProf");
         Profesional instance = new Profesional();
         String expResult = "no ingreso titulo prof";
-        String result = instance.getNombreTituloProf();
+        String result = instance.getTituloProfesional();
         assertEquals(expResult, result);
     }
 
@@ -61,8 +61,8 @@ public class ProfesionalTest {
         System.out.println("setNombreTituloProf");
         String nombreTituloProf = "no ingreso titulo prof";
         Profesional instance = new Profesional();
-        instance.setNombreTituloProf(nombreTituloProf);
-        assertEquals(nombreTituloProf, instance.getNombreTituloProf());
+        instance.setTituloProfesional(nombreTituloProf);
+        assertEquals(nombreTituloProf, instance.getTituloProfesional());
     }
 
     @Test
@@ -326,7 +326,7 @@ public class ProfesionalTest {
     public void testToString() {
         System.out.println("toString");
         Profesional instance = new Profesional();
-        String expResult = "Usuario: " + instance.getNombreUsuario();;
+        String expResult = "Usuario: " + instance.getNombre();;
         String result = instance.toString();
         assertEquals(expResult, result);
     }
@@ -335,7 +335,7 @@ public class ProfesionalTest {
     public void testEqualsFalse() {
         System.out.println("equals");
         Profesional obj = new Profesional();
-        obj.setNombreUsuario("prueba");
+        obj.setNombre("prueba");
         Profesional instance = new Profesional();
         boolean expResult = false;
         boolean result = instance.equals(obj);
@@ -364,7 +364,7 @@ public class ProfesionalTest {
     public void testEqualsDistintoTipo() {
         System.out.println("equalsDistintoTipo");
         Profesional obj = new Profesional();
-        obj.setNombreUsuario("nombre");
+        obj.setNombre("nombre");
         boolean test = obj.equals("soy string");
         assertFalse(test);
     }

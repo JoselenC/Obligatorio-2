@@ -16,13 +16,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private Usuario usuario;
     private JFrame ventana;
     private InterfazBotonesUsuario interfaz;
 
-    //Constructor
     public PanelEditarPerfilUsuario(Sistema unSistema, JFrame unaVentana,
             InterfazBotonesUsuario interfazActual) {
         initComponents();

@@ -6,13 +6,11 @@ import javax.swing.JFrame;
 
 public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel {
 
-    //Atrubutos
     private Sistema sistema;
     private InterfazBotonesProfesional interfaz;
     private JFrame ventana;
     private Mensaje mensajeSeleccionado;
 
-    //Constructor
     public PanelConsultaProfesionalDesdeProfesional(Sistema unSistema,
             InterfazBotonesProfesional interfazActual, JFrame unaVentana) {
         initComponents();

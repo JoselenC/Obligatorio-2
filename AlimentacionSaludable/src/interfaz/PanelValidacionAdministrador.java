@@ -164,8 +164,8 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
         } else if (contraseña.equals("")) {
              JOptionPane.showMessageDialog(null,"La contraseña no puede ser vacia");
         } 
-        else if (contraseña.length()>8){
-             JOptionPane.showMessageDialog(null,"La contraseña no puede tener mas de 8 caracteres");
+        else if (contraseña.length()<8){
+             JOptionPane.showMessageDialog(null,"La contraseña debe tener mas de 8 caracteres");
         }
         else {
             Administrador nuevoAdministrador = new Administrador(usuario, contraseña);

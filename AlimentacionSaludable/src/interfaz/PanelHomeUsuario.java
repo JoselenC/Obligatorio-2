@@ -1,5 +1,4 @@
 package interfaz;
-
 import dominio.Sistema;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -7,12 +6,10 @@ import javax.swing.JFrame;
 
 public class PanelHomeUsuario extends javax.swing.JPanel {
 
-    //Atrubutos
     private Sistema sistema;
     private InterfazBotonesUsuario interfaz;
     private JFrame ventana;
 
-    //Constructor
     public PanelHomeUsuario(Sistema unSistema, InterfazBotonesUsuario unaInterfaz, JFrame unaVentana) {
         initComponents();
         sistema = unSistema;

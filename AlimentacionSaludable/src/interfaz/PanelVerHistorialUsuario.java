@@ -8,13 +8,11 @@ import javax.swing.JFrame;
 
 public class PanelVerHistorialUsuario extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private JFrame ventana;
     private InterfazBotonesUsuario interfaz;
     private ComidaPorDia comidaActiva;
 
-    //Constructor
     public PanelVerHistorialUsuario(Sistema unSistema,
             JFrame unaVentana,
             InterfazBotonesUsuario unaInterfaz,

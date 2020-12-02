@@ -11,14 +11,14 @@ import javax.swing.JPanel;
 
 public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
-    //Atributos
+   
     private Sistema sistema;
     private InterfazBotonesProfesional interfaz;
     private JFrame ventana;
     private Usuario usuarioAModificar;
     private PlanDeAlimentacion nuevoPlan;
 
-    //Constructor
+   
     public PanelRealizarPlanAlimentacion(Sistema unSistema,
             InterfazBotonesProfesional unaInterfaz,
             JFrame unaVentana,

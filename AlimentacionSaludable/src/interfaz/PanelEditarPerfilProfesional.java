@@ -1,5 +1,4 @@
 package interfaz;
-
 import dominio.Sistema;
 import dominio.Profesional;
 import java.awt.Graphics2D;
@@ -13,13 +12,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private Profesional profesional;
     private JFrame ventana;
     private InterfazBotonesProfesional interfaz;
 
-    //Constructor
     public PanelEditarPerfilProfesional(Sistema unSistema, JFrame unaVentana,
             InterfazBotonesProfesional interfazActual) {
         initComponents();

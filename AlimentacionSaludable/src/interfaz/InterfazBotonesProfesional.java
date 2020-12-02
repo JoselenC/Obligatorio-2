@@ -1,5 +1,4 @@
 package interfaz;
-
 import dominio.Profesional;
 import dominio.Sistema;
 import javax.swing.JFrame;
@@ -7,14 +6,14 @@ import javax.swing.JPanel;
 
 public class InterfazBotonesProfesional extends javax.swing.JPanel {
 
-    //Atrbutos
+    
     private Sistema sistema;
     private JFrame ventana;
     private JPanel actual;
     private JPanel nuevaActual;
     private Profesional usuarioActivo;
 
-    //Cosntructor
+   
     public InterfazBotonesProfesional(Sistema unSistema, JFrame unaVentana,
             Profesional unProfesional) {
         initComponents();

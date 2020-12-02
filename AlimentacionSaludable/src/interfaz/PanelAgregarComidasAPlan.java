@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
 
-    //Atributos
+    
     private Sistema sistema;
     private InterfazBotonesProfesional interfaz;
     private JFrame ventana;
@@ -19,7 +19,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
     private ArrayList<Alimento> listaAModificar;
     private PlanDeAlimentacion plan;
 
-    //Constructor
+    
     public PanelAgregarComidasAPlan(Sistema unSistema,
             InterfazBotonesProfesional unaInterfaz,
             JFrame unaVentana,

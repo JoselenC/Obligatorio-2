@@ -6,13 +6,13 @@ import javax.swing.JPanel;
 
 public class InterfazBotonesAdministrador extends javax.swing.JPanel {
 
-    //Atributos
+ 
     private Sistema sistema;
     private JPanel actual;    
     private JPanel nuevaActual;
     private JFrame ventana;
 
-    //Cosntructor
+    
     public InterfazBotonesAdministrador(Sistema unSistema, JFrame unaVentana) {
         initComponents();
         sistema = unSistema;

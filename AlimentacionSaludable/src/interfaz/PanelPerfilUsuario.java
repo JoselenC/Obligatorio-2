@@ -7,13 +7,11 @@ import javax.swing.JFrame;
 
 public class PanelPerfilUsuario extends javax.swing.JPanel {
 
-    //Atrubutos
     private Sistema sistema;
     private Usuario usuario;
     private JFrame ventana;
     private InterfazBotonesUsuario interfaz;
 
-    //Constructor
     public PanelPerfilUsuario(Sistema unSistema, JFrame unaVentana, InterfazBotonesUsuario interfazActual) {
         initComponents();
         sistema = unSistema;

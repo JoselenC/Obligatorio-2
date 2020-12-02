@@ -7,13 +7,11 @@ import javax.swing.JFrame;
 
 public class PanelHomeProfesional extends javax.swing.JPanel {
 
-    //Atributos
     private Profesional profesional;
     private Sistema sistema;
     private InterfazBotonesProfesional interfaz;
     private JFrame ventana;
 
-    //Cosntructor
     public PanelHomeProfesional(Sistema unSistema,
             InterfazBotonesProfesional interfazActual, JFrame unaVentana) {
         initComponents();

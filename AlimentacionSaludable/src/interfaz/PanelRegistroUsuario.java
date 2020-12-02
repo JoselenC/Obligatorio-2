@@ -18,12 +18,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class PanelRegistroUsuario extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private Usuario usuario;
     private JFrame ventana;
 
-    //Constructor
     public PanelRegistroUsuario(Sistema unSistema, JFrame unaVentana) {
         initComponents();
         sistema = unSistema;

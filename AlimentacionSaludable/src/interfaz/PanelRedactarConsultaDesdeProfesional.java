@@ -10,12 +10,10 @@ import javax.swing.JOptionPane;
 
 public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private InterfazBotonesProfesional interfazProf;
     private JFrame ventana;
 
-    //Constructor para profesional
     public PanelRedactarConsultaDesdeProfesional(Sistema unSistema,
             InterfazBotonesProfesional interfazActual, JFrame unaVentana) {
         initComponents();

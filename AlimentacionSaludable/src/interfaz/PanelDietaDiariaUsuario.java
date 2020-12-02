@@ -12,12 +12,10 @@ import javax.swing.JOptionPane;
 
 public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
 
-    //Atrubutos
     private Sistema sistema;
     private JFrame ventana;
     private InterfazBotonesUsuario interfaz;
 
-    //Constructor
     public PanelDietaDiariaUsuario(Sistema unSistema,
             JFrame unaVentana,
             InterfazBotonesUsuario unaInterfaz) {

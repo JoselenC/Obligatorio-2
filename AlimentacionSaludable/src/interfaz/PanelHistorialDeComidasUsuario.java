@@ -1,5 +1,4 @@
 package interfaz;
-
 import dominio.ComidaPorDia;
 import dominio.Sistema;
 import javax.swing.JFrame;
@@ -7,12 +6,10 @@ import javax.swing.JOptionPane;
 
 public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
 
-    //Atributos
     private Sistema sistema;
     private JFrame ventana;
     private InterfazBotonesUsuario interfaz;
 
-    //Constructor
     public PanelHistorialDeComidasUsuario(Sistema unSistema,
             JFrame unaVentana,
             InterfazBotonesUsuario unaInterfaz) {
@@ -100,11 +97,6 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         add(jPanel1);
         jPanel1.setBounds(0, 0, 1130, 90);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cambiarPanel(){
-        
-    }
-    
     
     private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
         ComidaPorDia comidaSeleccionada = (ComidaPorDia) listaHistorialDeComidas.getSelectedValue();

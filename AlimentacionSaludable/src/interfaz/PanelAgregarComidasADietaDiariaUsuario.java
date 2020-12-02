@@ -1,5 +1,4 @@
 package interfaz;
-
 import dominio.Alimento;
 import dominio.Sistema;
 import java.time.LocalDate;
@@ -21,8 +20,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         ventana = unaVentana;
         interfaz = unaInterfaz;        
         listaComidasDiarias.setListData(sistema.getAlimentos().toArray());
-        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
-        
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());        
     }
 
     @SuppressWarnings("unchecked")

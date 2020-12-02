@@ -15,7 +15,7 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
     private InterfazBotonesUsuario interfazUsr = null;
     private InterfazBotonesAdministrador interfazAdm = null;
 
-        //constructor desde Profesional
+       
     public PanelCambioDeUsuario(JFrame unaVentana,
             Sistema unSistema,
             InterfazBotonesProfesional unaInterfaz) {
@@ -27,8 +27,6 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
     }
 
     
-    
-    //constructor desde Usuario
     public PanelCambioDeUsuario(JFrame unaVentana,
             Sistema unSistema,
             InterfazBotonesUsuario unaInterfaz) {

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class Usuario extends Persona implements Serializable {
 
-    //Atributos
+
     private static final long serialVersionUID = 6106269076155338045L;
     private Nacionalidades nacionalidad;
     private Nacionalidades[] listaNacionalidades;

@@ -153,7 +153,7 @@ public class Sistema implements Serializable {
         return listaPivot;
     }
 
-    //CARGAR Y GUARDAR SISTEMA
+    
     public void cargarSistema() {
         try {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("sis.ser"));
@@ -202,7 +202,6 @@ public class Sistema implements Serializable {
     }
 
     
-    //Metodo que adapta el tamaño de la imagen al deseado
     ImageIcon resizeImageIcon(ImageIcon imageIcon, Integer width,
             Integer height) {
         BufferedImage bufferedImage = new BufferedImage(width, height,

@@ -32,8 +32,8 @@ public class AlimentoTest {
     public void testSetListaEnumNutrientes() {
         Alimento instance = new Alimento();
         Alimento.Nutrientes[] listaEnumNutrientesExpected = instance.inicializoNutrientes();
-        instance.setListaEnumNutrientes(listaEnumNutrientesExpected);
-        Alimento.Nutrientes[] listaEnumNutrientes = instance.getListaEnumNutrientes();
+        instance.setListaNutrientes(listaEnumNutrientesExpected);
+        Alimento.Nutrientes[] listaEnumNutrientes = instance.getListaNutrientes();
         assertArrayEquals(listaEnumNutrientesExpected, listaEnumNutrientes);
     }
 
@@ -41,8 +41,8 @@ public class AlimentoTest {
     public void testSetListaEnumTipoAlimento() {
         Alimento instance = new Alimento();
         Alimento.TipoAlimento[] listaEnumTipoAlimentoExpected = instance.inicializoTipoAlimento();
-        instance.setListaEnumTipoAlimento(listaEnumTipoAlimentoExpected);
-        Alimento.TipoAlimento[] listaEnumTipoAlimento = instance.getListaEnumTipoAlimento();
+        instance.setListaTipoAlimento(listaEnumTipoAlimentoExpected);
+        Alimento.TipoAlimento[] listaEnumTipoAlimento = instance.getListaTipoAlimento();
         assertArrayEquals(listaEnumTipoAlimentoExpected, listaEnumTipoAlimento);
     }
 
@@ -50,8 +50,8 @@ public class AlimentoTest {
     public void testgetListaEnumNutrientes() {
         Alimento instance = new Alimento();
         Alimento.Nutrientes[] listaEnumNutrientesExpected = instance.inicializoNutrientes();
-        instance.setListaEnumNutrientes(listaEnumNutrientesExpected);
-        Alimento.Nutrientes[] listaEnumNutrientes = instance.getListaEnumNutrientes();
+        instance.setListaNutrientes(listaEnumNutrientesExpected);
+        Alimento.Nutrientes[] listaEnumNutrientes = instance.getListaNutrientes();
         assertArrayEquals(listaEnumNutrientesExpected, listaEnumNutrientes);
     }
 

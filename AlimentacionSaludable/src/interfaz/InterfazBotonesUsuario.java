@@ -1,5 +1,4 @@
 package interfaz;
-
 import dominio.Sistema;
 import dominio.Usuario;
 import javax.swing.JFrame;

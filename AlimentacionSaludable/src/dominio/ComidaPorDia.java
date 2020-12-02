@@ -8,12 +8,12 @@ import java.util.Calendar;
 import java.util.Objects;
 
 public class ComidaPorDia implements Serializable{
-    //Atributos
+   
      private static final long serialVersionUID = 6106269076155338045L;
      private ArrayList<Alimento> comidasIngeridas;
      private String fecha;
      
-     //Constructor
+     
     public ComidaPorDia(ArrayList<Alimento> comidasIngeridas, String fecha) {
         this.comidasIngeridas = comidasIngeridas;
         this.fecha = fecha;

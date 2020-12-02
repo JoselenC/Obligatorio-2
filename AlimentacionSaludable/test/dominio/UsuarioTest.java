@@ -132,7 +132,7 @@ public class UsuarioTest {
         System.out.println("getHistorialDelDia");
         Usuario instance = new Usuario();
         ComidaPorDia expResult = new ComidaPorDia();
-        ComidaPorDia result = instance.getHistorialDelDia();
+        ComidaPorDia result = instance.getHistorialComidaDelDia();
         assertEquals(expResult, result);
 
     }
@@ -142,8 +142,8 @@ public class UsuarioTest {
         System.out.println("setHistorialDelDia");
         ComidaPorDia historialDelDia = new ComidaPorDia();
         Usuario instance = new Usuario();
-        instance.setHistorialDelDia(historialDelDia);
-        assertEquals(historialDelDia, instance.getHistorialDelDia());
+        instance.setHistorialComidaDelDia(historialDelDia);
+        assertEquals(historialDelDia, instance.getHistorialComidaDelDia());
     }
 
     @Test
@@ -530,7 +530,7 @@ public class UsuarioTest {
         System.out.println("getListaEnumNac");
         Usuario instance = new Usuario();
         Usuario.Nacionalidades[] expResult = instance.inicializoListaNacionalidades();
-        Usuario.Nacionalidades[] result = instance.getListaEnumNac();
+        Usuario.Nacionalidades[] result = instance.getListaNacionalidades();
         assertArrayEquals(expResult, result);
     }
 
@@ -539,8 +539,8 @@ public class UsuarioTest {
         System.out.println("setListaEnumNac");
         Usuario instance = new Usuario();
         Usuario.Nacionalidades[] listaEnumNac = instance.inicializoListaNacionalidades();
-        instance.setListaEnumNac(listaEnumNac);
-        assertArrayEquals(instance.getListaEnumNac(), listaEnumNac);
+        instance.setListaNacionalidades(listaEnumNac);
+        assertArrayEquals(instance.getListaNacionalidades(), listaEnumNac);
     }
 
     @Test
@@ -647,7 +647,7 @@ public class UsuarioTest {
     public void testToString() {
         System.out.println("toString");
         Usuario instance = new Usuario();
-        String expResult = "Usuario: " + instance.getNombreUsuario();
+        String expResult = "Usuario: " + instance.getNombre();
         String result = instance.toString();
         assertEquals(expResult, result);
     }
@@ -657,7 +657,7 @@ public class UsuarioTest {
         System.out.println("equalsFalse");
         Object obj = new Usuario();
         Usuario instance = new Usuario();
-        instance.setNombreUsuario("prueba");
+        instance.setNombre("prueba");
         boolean expResult = false;
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
