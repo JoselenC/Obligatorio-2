@@ -43,7 +43,7 @@ public class UsuarioTest {
             "Portuguesa", "Rusa", "Sudáfricana", "Uruguaya",
             "Venezolana"};
         Usuario usuario = new Usuario();
-        String[] listaPaisesPivot = usuario.inicializoListaNacionalidades();
+        String[] listaPaisesPivot = usuario.misNacionalidades();
         assertArrayEquals(listExpected, listaPaisesPivot);
     }
 
@@ -529,7 +529,7 @@ public class UsuarioTest {
     public void testGetListaEnumNac() {
         System.out.println("getListaEnumNac");
         Usuario instance = new Usuario();
-        Usuario.Nacionalidades[] expResult = instance.inicializoListaEnum();
+        Usuario.Nacionalidades[] expResult = instance.inicializoListaNacionalidades();
         Usuario.Nacionalidades[] result = instance.getListaEnumNac();
         assertArrayEquals(expResult, result);
     }
@@ -538,7 +538,7 @@ public class UsuarioTest {
     public void testSetListaEnumNac() {
         System.out.println("setListaEnumNac");
         Usuario instance = new Usuario();
-        Usuario.Nacionalidades[] listaEnumNac = instance.inicializoListaEnum();
+        Usuario.Nacionalidades[] listaEnumNac = instance.inicializoListaNacionalidades();
         instance.setListaEnumNac(listaEnumNac);
         assertArrayEquals(instance.getListaEnumNac(), listaEnumNac);
     }
@@ -637,8 +637,8 @@ public class UsuarioTest {
     public void testInicializoListaEnum() {
         System.out.println("inicializoListaEnum");
         Usuario instance = new Usuario();
-        Usuario.Nacionalidades[] expResult = instance.inicializoListaEnum();
-        Usuario.Nacionalidades[] result = instance.inicializoListaEnum();
+        Usuario.Nacionalidades[] expResult = instance.inicializoListaNacionalidades();
+        Usuario.Nacionalidades[] result = instance.inicializoListaNacionalidades();
         assertArrayEquals(expResult, result);
 
     }

@@ -66,8 +66,8 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         if (listaUsuarios.getSelectedValue() != null) {
-             if(sistema.getAlimentos().size()==0){
-            JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema para realizar plan");
+             if(sistema.getAlimentos().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema que permitan realizar el plan");
              }
              else{
             Usuario usuarioAModificar = sistema.getUsuarios().get(listaUsuarios.getSelectedIndex());
@@ -78,13 +78,13 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
             ventana.pack();}
         }
         else{
-            JOptionPane.showMessageDialog(null, "Seleccione un usuario para realizar plan");
+            JOptionPane.showMessageDialog(null, "Seleccione un usuario para realizar el plan");
         }
 
     }//GEN-LAST:event_btnRealizarPlanActionPerformed
 
     ArrayList<Usuario> listaConPlanARealizar() {
-        ArrayList<Usuario> retorno = new ArrayList<Usuario>();
+        ArrayList<Usuario> retorno = new ArrayList<>();
         for (int i = 0; i < sistema.getUsuarios().size(); i++) {
             if (sistema.getUsuarios().get(i).isNecesitoPlan() && sistema.getUsuarios().get(i).getProfesionalAsignado().equals(interfaz.getUsuarioActivo())) {
                 retorno.add(sistema.getUsuarios().get(i));

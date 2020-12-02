@@ -27,7 +27,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         sistema = unSistema;
         ventana = unaVentana;
         prof = new Profesional();
-        Profesional.Pais[] listaPaises = prof.inicializoListaEnumPaises();
+        Profesional.Pais[] listaPaises = prof.inicializoListaPaises();
         listaPaisDeGraduacion.setModel(new DefaultComboBoxModel(listaPaises));
         listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.Uruguay.ordinal());
     }
@@ -274,15 +274,15 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
     private void cajaUsuarioProfFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaUsuarioProfFocusLost
         String nombreUsuario = cajaUsuarioProf.getText();
         Profesional comparoProf = new Profesional();
-        comparoProf.setNombreUsuario(nombreUsuario);
+        comparoProf.setAliasUsuario(nombreUsuario);
         Usuario comparoUsuario = new Usuario();
-        comparoUsuario.setNombreUsuario(nombreUsuario);
+        comparoUsuario.setAliasUsuario(nombreUsuario);
         if (nombreUsuario.trim().isEmpty()) {
-            etiquetaErrorNombreUsuarioProf.setText("El nombre de usuario no puede estar vacío");
+            etiquetaErrorNombreUsuarioProf.setText("El alias del usuario no puede estar vacío");
         } else {
             if (sistema.getUsuarios().contains(comparoUsuario)
                     && sistema.getProfesionales().contains(comparoProf)) {
-                etiquetaErrorNombreUsuarioProf.setText("El nombre de usuario ya está en uso");
+                etiquetaErrorNombreUsuarioProf.setText("El alias de usuario ya está en uso");
             } else {
                 etiquetaErrorNombreUsuarioProf.setText(" ");
             }
@@ -301,9 +301,9 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         boolean nombreValido = !cajaNombreProf.getText().trim().isEmpty();
         
         Usuario comparoUsr = new Usuario();
-        comparoUsr.setNombreUsuario(cajaUsuarioProf.getText());
+        comparoUsr.setAliasUsuario(cajaUsuarioProf.getText());
         Profesional comparoProf = new Profesional();
-        comparoProf.setNombreUsuario(cajaUsuarioProf.getText());
+        comparoProf.setAliasUsuario(cajaUsuarioProf.getText());
         boolean nombreUsuarioValido = !cajaUsuarioProf.getText().trim().isEmpty()
                 && !sistema.getUsuarios().contains(comparoUsr)
                 && !sistema.getProfesionales().contains(comparoProf);
@@ -314,11 +314,11 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
                 && fNacimientoValido && nombreTituloValido && fGraduacionValido) {
             profesional.setNombre(cajaNombreProf.getText());
             profesional.setApellidos(cajaApellidosProf1.getText());
-            profesional.setNombreUsuario(cajaUsuarioProf.getText());
+            profesional.setAliasUsuario(cajaUsuarioProf.getText());
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());
             profesional.setFechaNacimiento(fNacimiento);
-            profesional.setNombreTituloProf(cajaNombreTituloProf.getText());
+            profesional.setTituloProfesional(cajaNombreTituloProf.getText());
             SimpleDateFormat formatter2 = new SimpleDateFormat("dd/MM/yyyy");
             String fGraduacion = formatter2.format(fechaGraduacion.getCalendar().getTime());
             profesional.setFechaGraduacion(fGraduacion);
@@ -333,13 +333,13 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             }
             
             if (nombreUsuarioValido == false) {
-                etiquetaErrorNombreUsuarioProf.setText("Nombre de usuario no válido");
+                etiquetaErrorNombreUsuarioProf.setText("Alias de usuario no válido");
             }
             if (fNacimientoValido == false) {
                 etiquetaErrorFechaNacimiento.setText("Fecha de nacimiento no válida");
             }
             if (nombreTituloValido == false) {
-                etiquetaErrorNombreTituloProf.setText("El nombre no puede ser válida");
+                etiquetaErrorNombreTituloProf.setText("El nombre del titulo no es válido");
             }
             if (fGraduacionValido == false) {
                 etiquetaErrorFechaGraduacion.setText("Fecha de graduación no válida");

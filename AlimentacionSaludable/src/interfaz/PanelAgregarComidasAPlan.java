@@ -7,6 +7,7 @@ import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
 
@@ -90,23 +91,24 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         btnVolver.setBounds(10, 10, 100, 60);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+      private void cambiarPanel(JPanel nuevaActual){
         ventana.remove(this);
-        PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
-        interfaz.setActual(nuevo);
-        ventana.add(nuevo);
+        interfaz.setActual(nuevaActual);
+        ventana.add(nuevaActual);
         ventana.setSize(600,600);
+    }
+    
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        PanelRealizarPlanAlimentacion nuevaActual = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
+        cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         Alimento alimentoAAgregar = (Alimento) listaComidas.getSelectedValue();
         listaAModificar.add(alimentoAAgregar);
          JOptionPane.showMessageDialog(null, "Se agrego correctamete la comida");
-         ventana.remove(this);
-       PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
-        interfaz.setActual(nuevo);
-        ventana.add(nuevo);
-        ventana.setSize(600,600);
+       PanelRealizarPlanAlimentacion nuevaActual = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
+       cambiarPanel(nuevaActual);
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
 

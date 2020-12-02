@@ -26,6 +26,8 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         this.setSize(800, 500);
     }
 
+    
+    
     //constructor desde Usuario
     public PanelCambioDeUsuario(JFrame unaVentana,
             Sistema unSistema,

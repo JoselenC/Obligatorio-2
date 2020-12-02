@@ -36,7 +36,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         grupoBotonesPreferencias.add(rBVegetariano);
         grupoBotonesPreferencias.add(rBMacrobiotico);
         grupoBotonesPreferencias.add(rBOrganico);
-        Usuario.Nacionalidades[] listaNac = usuario.getListaEnumNac();
+        Usuario.Nacionalidades[] listaNac = usuario.getListaNacionalidades();
         listaNacionalidadesUsuario.setModel(new DefaultComboBoxModel(listaNac));
         listaNacionalidadesUsuario.setSelectedIndex(Usuario.Nacionalidades.Uruguaya.ordinal());
         fotoPerfil.setSize(210, 240);
@@ -459,15 +459,15 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     private void cajaNombUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaNombUsuarioFocusLost
         String nombreUsuario = cajaNombUsuario.getText();
         Usuario comparoUsuario = new Usuario();
-        comparoUsuario.setNombreUsuario(nombreUsuario);
+        comparoUsuario.setAliasUsuario(nombreUsuario);
         Profesional comparoProf = new Profesional();
-        comparoProf.setNombreUsuario(nombreUsuario);
+        comparoProf.setAliasUsuario(nombreUsuario);
         if (nombreUsuario.trim().isEmpty()) {
             etiquetaErrorNombreUsuario.setText("El nombre de usuario no puede estar vacío");
         } else {
             if (sistema.getUsuarios().contains(comparoUsuario)
                     && sistema.getProfesionales().contains(comparoProf)) {
-                etiquetaErrorNombreUsuario.setText("El nombre de usuario ya está en uso");
+                etiquetaErrorNombreUsuario.setText("El alias de usuario ya está en uso");
             } else {
                 etiquetaErrorNombreUsuario.setText(" ");
             }
@@ -492,11 +492,11 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_cajaPesoFocusLost
 
     private void btnAceptarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarUsuarioActionPerformed
-        Usuario usuario = new Usuario();
+        Usuario miUsuario = new Usuario();
         Profesional comparoProf = new Profesional();
-        comparoProf.setNombreUsuario(cajaNombUsuario.getText());
+        comparoProf.setAliasUsuario(cajaNombUsuario.getText());
         Usuario comparoUsr = new Usuario();
-        comparoUsr.setNombreUsuario(cajaNombUsuario.getText());
+        comparoUsr.setAliasUsuario(cajaNombUsuario.getText());
 
         boolean apellidoValido = !cajaApellidos.getText().trim().isEmpty();
         boolean nombreUsuarioValido = !cajaNombUsuario.getText().trim().isEmpty()
@@ -510,26 +510,26 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
                 && altura && peso && fNacimientoValido) {
             etiquetaErrorAltura.setText("");
             etiquetaErrorPeso.setText("");
-            usuario.setNombre(cajaNombre.getText());
-            usuario.setApellidos(cajaApellidos.getText());
-            usuario.setNombreUsuario(cajaNombUsuario.getText());
-            usuario.setNacionalidad(usuario.getListaEnumNac()[listaNacionalidadesUsuario.getSelectedIndex()]);
+            miUsuario.setNombre(cajaNombre.getText());
+            miUsuario.setApellidos(cajaApellidos.getText());
+            miUsuario.setAliasUsuario(cajaNombUsuario.getText());
+            miUsuario.setNacionalidad(miUsuario.getListaNacionalidades()[listaNacionalidadesUsuario.getSelectedIndex()]);
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());
-            usuario.setFechaNacimiento(fNacimiento);
+            miUsuario.setFechaNacimiento(fNacimiento);
             if (sexoPred == true) {
-                usuario.setSexo("Masculino");
+                miUsuario.setSexo("Masculino");
             } else {
-                usuario.setSexo("Femenino");
+                miUsuario.setSexo("Femenino");
             }
-            usuario.setAlturaCm(Integer.parseInt(cajaAltura.getText()));
-            usuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
-            usuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
-            sistema.getUsuarios().add(usuario);
+            miUsuario.setAlturaCm(Integer.parseInt(cajaAltura.getText()));
+            miUsuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
+            miUsuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
+            sistema.getUsuarios().add(miUsuario);
             JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
 
         } else {
-            JOptionPane.showMessageDialog(this, "Error al ingresar el usuario");
+            JOptionPane.showMessageDialog(this, "Error al registrar el usuario");
 
             if (nombreUsuarioValido == false) {
                 etiquetaErrorNombreUsuario.setText("Nombre de usuario no válido");
@@ -685,7 +685,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private boolean pidoDatoNumerico(String dato, int min, int max, JLabel etiqueta) {
-        int datoAVerificar = 0;
+        int datoAVerificar;
         boolean pidiendo = false;
         try {
             datoAVerificar = Integer.parseInt(dato);

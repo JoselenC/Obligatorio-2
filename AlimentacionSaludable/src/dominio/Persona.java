@@ -8,8 +8,8 @@ public abstract class Persona implements Serializable {
     //Atributos
     private static final long serialVersionUID = 6106269076155338045L;
     private String nombre;
-    private String apellidos;
-    private String nombreUsuario;
+    private String apellido;
+    private String aliasUsuario;
     private String fechaNacimiento;
     private ImageIcon fotoPerfil;
 
@@ -17,13 +17,19 @@ public abstract class Persona implements Serializable {
     public Persona(String nombre, String apellidos, String nombreUsuario,
                    String fechaNacimiento, ImageIcon fotoPerfil) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.nombreUsuario = nombreUsuario;
+        this.apellido = apellidos;
+        this.aliasUsuario = nombreUsuario;
         this.fechaNacimiento = fechaNacimiento;
         this.fotoPerfil = fotoPerfil;
     }
-    
-    //Metodos de la clase persona
+     public Persona(String nombre, String apellidos, String nombreUsuario,
+                   String fechaNacimiento) {
+        this.nombre = nombre;
+        this.apellido = apellidos;
+        this.aliasUsuario = nombreUsuario;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -33,19 +39,19 @@ public abstract class Persona implements Serializable {
     }
 
     public String getApellidos() {
-        return apellidos;
+        return apellido;
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+        this.apellido = apellidos;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getAliasUsuario() {
+        return aliasUsuario;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setAliasUsuario(String aliasUsuario) {
+        this.aliasUsuario = aliasUsuario;
     }
 
     public String getFechaNacimiento() {
@@ -76,8 +82,8 @@ public abstract class Persona implements Serializable {
         }
         if(retorno == true){
             Persona p = (Persona) obj;
-            retorno = this.getNombreUsuario()
-                      .equalsIgnoreCase(p.getNombreUsuario());
+            retorno = this.getAliasUsuario()
+                      .equalsIgnoreCase(p.getAliasUsuario());
         }
         return retorno;
     }

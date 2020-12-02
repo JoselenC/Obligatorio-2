@@ -37,7 +37,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         grupoBotonesPreferencias.add(rBVegetariano);
         grupoBotonesPreferencias.add(rBMacrobiotico);
         grupoBotonesPreferencias.add(rBOrganico);
-        Usuario.Nacionalidades[] listaNac = usuario.getListaEnumNac();
+        Usuario.Nacionalidades[] listaNac = usuario.getListaNacionalidades();
         listaNacionalidadesUsuario.setModel(new DefaultComboBoxModel(listaNac));
         listaNacionalidadesUsuario.setSelectedIndex(Usuario.Nacionalidades.Uruguaya.ordinal());
         usuario.setListaRestricciones(new boolean[usuario.getListaRestricciones().length]);
@@ -484,7 +484,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
                 && altura && peso && fNacimientoValido) {
             usuario.setNombre(cajaNombre.getText());
             usuario.setApellidos(cajaApellidos.getText());
-            usuario.setNacionalidad(usuario.getListaEnumNac()[listaNacionalidadesUsuario.getSelectedIndex()]);
+            usuario.setNacionalidad(usuario.getListaNacionalidades()[listaNacionalidadesUsuario.getSelectedIndex()]);
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());
             usuario.setFechaNacimiento(fNacimiento);

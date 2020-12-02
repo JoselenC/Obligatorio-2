@@ -299,7 +299,7 @@ public class ProfesionalTest {
     public void testGetListaEnumPais() {
         System.out.println("getListaEnumPais");
         Profesional instance = new Profesional();
-        Profesional.Pais[] expResult = instance.inicializoListaEnumPaises();
+        Profesional.Pais[] expResult = instance.inicializoListaPaises();
         Profesional.Pais[] result = instance.getListaEnumPais();
         assertArrayEquals(expResult, result);
     }
@@ -308,7 +308,7 @@ public class ProfesionalTest {
     public void testSetListaEnumPais() {
         System.out.println("setListaEnumPais");
         Profesional instance = new Profesional();
-        Profesional.Pais[] listaEnumPais = instance.inicializoListaEnumPaises();
+        Profesional.Pais[] listaEnumPais = instance.inicializoListaPaises();
         instance.setListaEnumPais(listaEnumPais);
         assertArrayEquals(instance.getListaEnumPais(), listaEnumPais);
     }
@@ -317,8 +317,8 @@ public class ProfesionalTest {
     public void testInicializoListaEnumPaises() {
         System.out.println("inicializoListaEnumPaises");
         Profesional instance = new Profesional();
-        Profesional.Pais[] expResult = instance.inicializoListaEnumPaises();
-        Profesional.Pais[] result = instance.inicializoListaEnumPaises();
+        Profesional.Pais[] expResult = instance.inicializoListaPaises();
+        Profesional.Pais[] result = instance.inicializoListaPaises();
         assertArrayEquals(expResult, result);
     }
 

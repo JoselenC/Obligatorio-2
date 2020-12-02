@@ -55,11 +55,10 @@ public class Mensaje implements Serializable{
         this.mensaje = mensaje;
     }
     
-    //Redefino toString
-
+ 
     @Override
     public String toString() {
-        return "Mensaje de: "+ origen.getNombreUsuario() 
+        return "Mensaje de: "+ origen.getAliasUsuario() 
                + " con Asunto: " + asunto;
     }
     

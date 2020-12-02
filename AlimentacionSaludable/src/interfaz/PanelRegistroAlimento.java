@@ -19,7 +19,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         sistema = unSistema;
         ventana = unaVentana;
         alimento = new Alimento();
-        Alimento.TipoAlimento[] listaTipoAlimento = alimento.getListaEnumTipoAlimento();
+        Alimento.TipoAlimento[] listaTipoAlimento = alimento.getListaTipoAlimento();
         listaTiposAlimentos.setModel(new DefaultComboBoxModel(listaTipoAlimento));
         listaTiposAlimentos.setSelectedIndex(Alimento.TipoAlimento.Fruta.ordinal());
     }
@@ -237,7 +237,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         } else {
             alimento.setNombre(nombre);
             if (sistema.getAlimentos().contains(alimento)) {
-                etiquetaErrorNombreAlimento.setText("Esa comida ya se encuentra en el sistema");
+                etiquetaErrorNombreAlimento.setText("Esta comida ya se encuentra en el sistema");
             } else {
                 etiquetaErrorNombreAlimento.setText(" ");
             }
@@ -251,7 +251,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
                 && !sistema.getAlimentos().contains(comparo);
         if (nombre) {
             alimento.setNombre(cajaNombreAlim.getText());
-            alimento.setTipo(alimento.getListaEnumTipoAlimento()[listaTiposAlimentos.getSelectedIndex()]);
+            alimento.setTipo(alimento.getListaTipoAlimento()[listaTiposAlimentos.getSelectedIndex()]);
             etiquetaMensajeAlAceptar.setText("Alimento registrado correctamente");
             sistema.getAlimentos().add(alimento);
         } else {

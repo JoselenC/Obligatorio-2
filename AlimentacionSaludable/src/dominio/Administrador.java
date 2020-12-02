@@ -8,9 +8,9 @@ public class Administrador implements Serializable {
     private String usuario;
     private String contraseña;
     
-    public Administrador(String vUsuario, String vContraseña){
-        usuario=vUsuario;
-        contraseña=vContraseña;
+    public Administrador(String miUsuario, String miContraseña){
+        usuario=miUsuario;
+        contraseña=miContraseña;
     }
     
     public Administrador(){

@@ -7,6 +7,7 @@ import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
@@ -157,6 +158,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         actualizarLista();
     }//GEN-LAST:event_btnQuitarComidaActionPerformed
 
+       
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         ventana.remove(this);
         ArrayList<Alimento> listaActiva = listaActiva();

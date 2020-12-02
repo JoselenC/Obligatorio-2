@@ -97,7 +97,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         Alimento comidaSeleccionada = (Alimento) listaComidasDiarias.getSelectedValue();
-        interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().add(comidaSeleccionada);
+        interfaz.getUsuarioActual().getHistorialComidaDelDia().getComidasIngeridas().add(comidaSeleccionada);
         LocalDate diaActual = LocalDate.now();
         interfaz.getUsuarioActual().setFechaUltimaAdicion(diaActual.toString());
         JOptionPane.showMessageDialog(null, "Se agrego correctamete la comida");
