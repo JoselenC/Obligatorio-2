@@ -55,6 +55,7 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
         etiquetaTituloProf = new javax.swing.JLabel();
         lblUsu = new javax.swing.JLabel();
         lblCon = new javax.swing.JLabel();
+        lblContra = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -110,12 +111,15 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(67, 67, 67)
-                                .addComponent(jLabel1)
-                                .addGap(27, 27, 27))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)))
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(jLabel2))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(127, 127, 127)
+                                    .addComponent(lblContra, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -149,7 +153,9 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
                             .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCon, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCon, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblContra))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(brnRegistrarme)
@@ -168,10 +174,14 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
         String usuario = txtUsuario.getText();
         String contraseña = txtContraseña.getText();
         if (usuario.equals("")) {
-            lblUsuario.setText("El usuario no puede ser vacio");
+             JOptionPane.showMessageDialog(null,"El usuario no puede ser vacio");
         } else if (contraseña.equals("")) {
-            lblContraseña.setText("La contraseña no puede ser vacia");
-        } else {
+             JOptionPane.showMessageDialog(null,"La contraseña no puede ser vacia");
+        } 
+        else if (contraseña.length()>8){
+             JOptionPane.showMessageDialog(null,"La contraseña no puede tener mas de 8 caracteres");
+        }
+        else {
             Administrador nuevoAdministrador = new Administrador(usuario, contraseña);
             if (sistema.getListaAdministradores().contains(nuevoAdministrador)) {
                 JOptionPane.showMessageDialog(null, "ya estas registrado en el sistema presiona iniciar sesion");
@@ -214,6 +224,7 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblCon;
+    private javax.swing.JLabel lblContra;
     private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblUsu;
     private javax.swing.JLabel lblUsuario;
