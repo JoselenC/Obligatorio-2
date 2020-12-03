@@ -1,10 +1,9 @@
 package dominio;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class PlanDeAlimentacion implements Serializable{
+public class PlanDeAlimentacion implements Serializable {
 
     private static final long serialVersionUID = 6106269076155338045L;
     private Usuario usuario;

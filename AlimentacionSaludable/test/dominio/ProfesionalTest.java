@@ -6,6 +6,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class ProfesionalTest {
@@ -33,7 +34,7 @@ public class ProfesionalTest {
     public void testGetCasillaDeEntrada() {
         System.out.println("getCasillaDeEntrada");
         Profesional instance = new Profesional();
-        ArrayList<Mensaje> expResult = new ArrayList<Mensaje>();
+        ArrayList<Mensaje> expResult = new ArrayList<>();
         ArrayList<Mensaje> result = instance.getCasillaDeEntrada();
         assertEquals(expResult, result);
     }
@@ -41,7 +42,7 @@ public class ProfesionalTest {
     @Test
     public void testSetCasillaDeEntrada() {
         System.out.println("setCasillaDeEntrada");
-        ArrayList<Mensaje> casillaDeEntrada = new ArrayList<Mensaje>();
+        ArrayList<Mensaje> casillaDeEntrada = new ArrayList<>();
         Profesional instance = new Profesional();
         instance.setCasillaDeEntrada(casillaDeEntrada);
         assertEquals(instance.getCasillaDeEntrada(), casillaDeEntrada);

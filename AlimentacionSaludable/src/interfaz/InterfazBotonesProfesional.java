@@ -1,14 +1,14 @@
 package interfaz;
+
 import dominio.Profesional;
 import dominio.Sistema;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class InterfazBotonesProfesional extends javax.swing.JPanel {
-
     
-    private Sistema sistema;
-    private JFrame ventana;
+    private final Sistema sistema;
+    private final JFrame ventana;
     private JPanel actual;
     private JPanel nuevaActual;
     private Profesional usuarioActivo;
@@ -128,11 +128,11 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
 
     
     
-    private void cambiarPanel(JPanel actualNueva){
+    private void cambiarPanel(JPanel actualNueva) {
         ventana.remove(actual);
-        nuevaActual= actualNueva;
+        nuevaActual = actualNueva;
         ventana.add(nuevaActual);
-        actual=nuevaActual;
+        actual = nuevaActual;
         ventana.pack();
     }
     

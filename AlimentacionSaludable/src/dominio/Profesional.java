@@ -3,7 +3,6 @@ package dominio;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Optional;
-import javax.swing.ImageIcon;
 
 public class Profesional extends Persona implements Serializable {
 
@@ -21,7 +20,7 @@ public class Profesional extends Persona implements Serializable {
         this.setFotoPerfil(new javax.swing
                            .ImageIcon(getClass()
                            .getResource
-                           ("/imagenes/predeterminadaProfesional.png")));
+                          ("/imagenes/predeterminadaProfesional.png")));
         this.tituloProfesional = "No se ingreso el nombre del titulo de profesional";
         this.fechaGraduacion = "No se ingreso la fecha graduacion";
         this.paisObtuvoTitulo = Pais.Uruguay;
@@ -41,7 +40,7 @@ public class Profesional extends Persona implements Serializable {
     }
 
     public void setTituloProfesional(String tituloProfesional) {
-        if(!tituloProfesional.trim().isEmpty()){
+        if (!tituloProfesional.trim().isEmpty()){
             this.tituloProfesional = tituloProfesional;
         }
     }

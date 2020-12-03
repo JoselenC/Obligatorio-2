@@ -24,7 +24,7 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
         comidaActiva = unaComidaPorDia;
         fecha.setText(comidaActiva.getFecha());
         listaHistorialDeComidas.setListData(comidaActiva.getComidasIngeridas().toArray());
-        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre() + " " + interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")

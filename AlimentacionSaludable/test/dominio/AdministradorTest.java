@@ -1,14 +1,15 @@
-
 package dominio;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class AdministradorTest {
-    
+
     public AdministradorTest() {
     }
 
@@ -28,87 +29,86 @@ public class AdministradorTest {
     public void tearDown() {
     }
 
-   @Test
+    @Test
     public void testConstructorParametros() {
-        String usuario="Joselen";
-        String contraseña="1234";
-        Administrador administrador=new Administrador(usuario,contraseña);
-        Administrador administradorEsperado= new Administrador();
-        administradorEsperado.setContraseña(contraseña);
+        String usuario = "Joselen";
+        String contrasenia = "1234";
+        Administrador administrador = new Administrador(usuario, contrasenia);
+        Administrador administradorEsperado = new Administrador();
+        administradorEsperado.setContrasenia(contrasenia);
         administradorEsperado.setUsuario(usuario);
-        assertEquals(administrador,administradorEsperado);
+        assertEquals(administrador, administradorEsperado);
     }
-    
-    
-     @Test
+
+    @Test
     public void testGetUsuario() {
-        String usuarioEsperado="Joselen";
-        String contraseña="1234";
-        Administrador administrador=new Administrador(usuarioEsperado,contraseña);
-        String usuario= administrador.getUsuario();
-        assertEquals(usuarioEsperado,usuario);
+        String usuarioEsperado = "Joselen";
+        String contrasenia = "1234";
+        Administrador administrador = new Administrador(usuarioEsperado, contrasenia);
+        String usuario = administrador.getUsuario();
+        assertEquals(usuarioEsperado, usuario);
     }
-    
-     @Test
+
+    @Test
     public void testGetContraseña() {
-        String usuario="Joselen";
-        String contraseñaEsperada="1234";
-        Administrador administrador=new Administrador(usuario,contraseñaEsperada);
-        String contraseña=administrador.getContraseña();
-        assertEquals(contraseña,contraseñaEsperada);
+        String usuario = "Joselen";
+        String contraseniaEsperada = "1234";
+        Administrador administrador = new Administrador(usuario, contraseniaEsperada);
+        String contrasenia = administrador.getContrasenia();
+        assertEquals(contrasenia, contraseniaEsperada);
     }
-    
-     @Test
-    public void testEqualsCaseDiffContraseña() {
-        String usuario="Joselen";
-        String contraseñaEsperada="123478";
-        String contraseña="3478";
-        Administrador administrador=new Administrador(usuario,contraseñaEsperada);
-        Administrador administrador2=new Administrador(usuario,contraseña);
-        assertNotEquals(administrador,administrador2);
+
+    @Test
+    public void testEqualsCaseDiffcontrasenia() {
+        String usuario = "Joselen";
+        String contraseniaEsperada = "123478";
+        String contrasenia = "3478";
+        Administrador administrador = new Administrador(usuario, contraseniaEsperada);
+        Administrador administrador2 = new Administrador(usuario, contrasenia);
+        assertNotEquals(administrador, administrador2);
     }
-    
-     @Test
+
+    @Test
     public void testEqualsCaseDiffUsuario() {
-        String usuario="JoselenCC";
-        String contraseñaEsperada="123478";
-        String usuario2="Joselen";
-        Administrador administrador=new Administrador(usuario,contraseñaEsperada);
-        Administrador administrador2=new Administrador(usuario2,contraseñaEsperada);
-        assertNotEquals(administrador2,administrador);
+        String usuario = "JoselenCC";
+        String contraseniaEsperada = "123478";
+        String usuario2 = "Joselen";
+        Administrador administrador = new Administrador(usuario, contraseniaEsperada);
+        Administrador administrador2 = new Administrador(usuario2, contraseniaEsperada);
+        assertNotEquals(administrador2, administrador);
     }
-    
+
     @Test
     public void testEqualsCaseDiffObj() {
-        String usuario="JoselenCC";
-        String contraseñaEsperada="123478";
-        String usuario2="Joselen";
-        Administrador administrador=new Administrador(usuario,contraseñaEsperada);
-        Administrador administrador2=new Administrador(usuario2,contraseñaEsperada);
-        assertNotEquals(administrador2,administrador);
+        String usuario = "JoselenCC";
+        String contraseniaEsperada = "123478";
+        String usuario2 = "Joselen";
+        Administrador administrador = new Administrador(usuario, contraseniaEsperada);
+        Administrador administrador2 = new Administrador(usuario2, contraseniaEsperada);
+        assertNotEquals(administrador2, administrador);
     }
-    
-     @Test
+
+    @Test
     public void testEqualsCaseNull() {
-        Administrador administrador=null;
-         Administrador administrador2=new Administrador();
-        assertNotEquals(administrador2,administrador);
+        Administrador administrador = null;
+        Administrador administrador2 = new Administrador();
+        assertNotEquals(administrador2, administrador);
     }
-    
-     @Test
+
+    @Test
     public void testEqualsCaseDiffType() {
-        Alimento alimento=new Alimento();
-         Administrador administrador2=new Administrador();
-        assertNotEquals(administrador2,alimento);
+        Alimento alimento = new Alimento();
+        Administrador administrador2 = new Administrador();
+        assertNotEquals(administrador2, alimento);
     }
-    
-     @Test
+
+    @Test
     public void testToString() {
-        String usuario="Joselen";
-        String contraseñaEsperada="1234";
-        Administrador administrador=new Administrador(usuario,contraseñaEsperada);
-        String administradorString= administrador.toString();
-        String administradorEsperadoString ="Administrador{" + "usuario=" + usuario + '}';
-        assertEquals(administradorString,administradorEsperadoString);
+        String usuario = "Joselen";
+        String contraseniaEsperada = "1234";
+        Administrador administrador = new Administrador(usuario, contraseniaEsperada);
+        String administradorString = administrador.toString();
+        String administradorEsperadoString = "Administrador{" + "usuario=" + usuario + '}';
+        assertEquals(administradorString, administradorEsperadoString);
     }
 }

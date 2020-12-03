@@ -1,6 +1,7 @@
 package dominio;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -21,14 +22,13 @@ public class Alimento implements Serializable {
         this.listaNutrientesSeleccionados = new boolean[listaNutrientes
                                                         .length];
     }
-
     
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
-        if(!nombre.trim().isEmpty()){
+        if (!nombre.trim().isEmpty()) {
             this.nombre = nombre;
         }
     }
@@ -105,11 +105,10 @@ public class Alimento implements Serializable {
             Nutrientes.Agua, Nutrientes.Fibra,
             Nutrientes.HidratosDeCarbono,
             Nutrientes.Lipidos, Nutrientes.Minerales,
-            Nutrientes.Proteinas, Nutrientes.Vitaminas,Nutrientes.Ninguno
+            Nutrientes.Proteinas, Nutrientes.Vitaminas, Nutrientes.Ninguno
         };
         return listaNutrientes;
     }
-
  
     @Override
     public String toString() {
@@ -121,6 +120,36 @@ public class Alimento implements Serializable {
         int hash = 7;
         return hash;
     } 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alimento other = (Alimento) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (this.tipo != other.tipo) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.listaTipoAlimento, other.listaTipoAlimento)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.listaNutrientes, other.listaNutrientes)) {
+            return false;
+        }
+        if (!Arrays.equals(this.listaNutrientesSeleccionados, other.listaNutrientesSeleccionados)) {
+            return false;
+        }
+        return true;
+    }
     
 
 }

@@ -15,17 +15,17 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
     private JFrame ventana;
     JPanel cambio;
 
-    public PanelValidacionAdministrador(Sistema unSistema, JFrame unaVentana,JPanel cambioUsuario) {
+    public PanelValidacionAdministrador(Sistema unSistema, JFrame unaVentana, JPanel cambioUsuario) {
         initComponents();
         sistema = unSistema;
         this.setSize(500, 250);
         this.setResizable(false);
         setLocationRelativeTo(cambioUsuario);
         ventana = unaVentana;
-        cambio=cambioUsuario;
+        cambio = cambioUsuario;
     }
 
-      @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -160,14 +160,12 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
         String usuario = txtUsuario.getText();
         String contraseña = txtContraseña.getText();
         if (usuario.equals("")) {
-             JOptionPane.showMessageDialog(null,"El usuario no puede ser vacio");
+            JOptionPane.showMessageDialog(null, "El usuario no puede ser vacio");
         } else if (contraseña.equals("")) {
-             JOptionPane.showMessageDialog(null,"La contraseña no puede ser vacia");
-        } 
-        else if (contraseña.length()<8){
-             JOptionPane.showMessageDialog(null,"La contraseña debe tener mas de 8 caracteres");
-        }
-        else {
+            JOptionPane.showMessageDialog(null, "La contraseña no puede ser vacia");
+        } else if (contraseña.length() < 8) {
+            JOptionPane.showMessageDialog(null, "La contraseña debe tener mas de 8 caracteres");
+        } else {
             Administrador nuevoAdministrador = new Administrador(usuario, contraseña);
             if (sistema.getListaAdministradores().contains(nuevoAdministrador)) {
                 JOptionPane.showMessageDialog(null, "El administrador ya esta registrado en el sistema, presiona iniciar sesion");
@@ -175,7 +173,7 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
                 sistema.getListaAdministradores().add(nuevoAdministrador);
                 JOptionPane.showMessageDialog(null, "Registrado exitosamente");
                 this.setVisible(false);
-                
+
             }
         }
     }//GEN-LAST:event_brnRegistrarmeActionPerformed
