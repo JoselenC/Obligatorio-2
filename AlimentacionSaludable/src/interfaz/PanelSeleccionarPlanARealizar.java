@@ -66,18 +66,17 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         if (listaUsuarios.getSelectedValue() != null) {
-             if(sistema.getAlimentos().isEmpty()){
-            JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema que permitan realizar el plan");
-             }
-             else{
-            Usuario usuarioAModificar = sistema.getUsuarios().get(listaUsuarios.getSelectedIndex());
-            ventana.remove(this);
-            PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar);
-            interfaz.setActual(nuevo);
-            ventana.add(nuevo);
-            ventana.pack();}
-        }
-        else{
+            if (sistema.getAlimentos().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema que permitan realizar el plan");
+            } else {
+                Usuario usuarioAModificar = sistema.getUsuarios().get(listaUsuarios.getSelectedIndex());
+                ventana.remove(this);
+                PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar);
+                interfaz.setActual(nuevo);
+                ventana.add(nuevo);
+                ventana.pack();
+            }
+        } else {
             JOptionPane.showMessageDialog(null, "Seleccione un usuario para realizar el plan");
         }
 

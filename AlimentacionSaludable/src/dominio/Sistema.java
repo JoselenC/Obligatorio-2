@@ -1,6 +1,5 @@
 package dominio;
 
-import com.toedter.calendar.JDateChooser;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
@@ -9,11 +8,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Optional;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 public class Sistema implements Serializable {
 
@@ -25,7 +22,7 @@ public class Sistema implements Serializable {
     tipoUsuario[] listaTiposDeUsuario;
     tipoUsuario usuarioActivo;
 
-     public Sistema(ArrayList<Alimento> listaAlimentos,
+    public Sistema ( ArrayList<Alimento> listaAlimentos,
             ArrayList<Usuario> listaUsuarios,
             ArrayList<Profesional> listaProfesionales,
             ArrayList<Administrador> listaAdministradores,
@@ -73,7 +70,7 @@ public class Sistema implements Serializable {
 
     public Usuario getUsuarioPorNombre(String nombre) {
         for (int i = 0; i < usuarios.size(); i++) {
-           Usuario usuario = usuarios.get(i);
+            Usuario usuario = usuarios.get(i);
             if (usuario.getAliasUsuario().equals(nombre)) {
                 return usuario;
             }
@@ -184,6 +181,7 @@ public class Sistema implements Serializable {
             out.flush();
             out.close();
         } catch (IOException ex) {
+            System.out.println("No se puede guardar el sistema");
         }
     }
 
@@ -196,7 +194,7 @@ public class Sistema implements Serializable {
                 pidiendo = true;
             }
         } catch (NumberFormatException ex) {
-
+             System.out.println("No se puede verificar");
         }
         return pidiendo;
     }
@@ -266,9 +264,9 @@ public class Sistema implements Serializable {
         }
     }
 
-     public void registroAdministrador(String usuarioAdministrador, String contraseñaAdministrador) {
-        Administrador administrador= new Administrador();
+    public void registroAdministrador(String usuarioAdministrador, String contraseñaAdministrador) {
+        Administrador administrador = new Administrador();
         administrador.setUsuario(usuarioAdministrador);
-        administrador.setContraseña(contraseñaAdministrador);
+        administrador.setContrasenia(contraseñaAdministrador);
     }
 }

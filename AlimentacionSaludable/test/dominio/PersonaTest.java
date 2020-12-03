@@ -9,22 +9,22 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PersonaTest {
-    
+
     public PersonaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -37,62 +37,62 @@ public class PersonaTest {
         String result = instance.getNombre();
         assertEquals(expResult, result);
     }
-    
-     @Test
+
+    @Test
     public void testGetNombre() {
-        String nombre="Juan";
+        String nombre = "Juan";
         Persona instance = new Usuario();
         instance.setNombre(nombre);
         String result = instance.getNombre();
         assertEquals(nombre, result);
     }
 
-     @Test
+    @Test
     public void testGetEmptyApellido() {
         Persona instance = new Usuario();
         String expResult = "no ingreso apellido";
         String result = instance.getApellidos();
         assertEquals(expResult, result);
     }
-    
+
     @Test
     public void testGetApellidos() {
-        String apellido="Perez";
+        String apellido = "Perez";
         Persona instance = new Usuario();
         instance.setApellidos(apellido);
         String result = instance.getApellidos();
         assertEquals(apellido, result);
     }
-    
+
     @Test
     public void testGetFechaNacimiento() {
-        String fechaExpected="23/04/2020";
+        String fechaExpected = "23/04/2020";
         Persona instance = new Usuario();
         instance.setApellidos("lopez");
         instance.setFechaNacimiento(fechaExpected);
         String fechaNacimiento = instance.getFechaNacimiento();
         assertEquals(fechaExpected, fechaNacimiento);
     }
-        
+
     @Test
     public void testEqualsFalse() {
         System.out.println("equalsFalse");
         Persona obj = new Usuario();
-        obj.setNombreUsuario("pruebaFalse");
+        obj.setNombre("pruebaFalse");
         Persona instance = new Usuario();
         boolean expResult = false;
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
     }
-    
+
     @Test(expected = NullPointerException.class)
     public void testEqualsNull() {
         System.out.println("equalsNull");
         Persona obj = null;
         Persona instance = new Usuario();
-        assert(instance.equals(obj));
+        assert (instance.equals(obj));
     }
-    
+
     @Test
     public void testEqualsDistintoTipo() {
         System.out.println("equalsNull");
@@ -100,14 +100,14 @@ public class PersonaTest {
         boolean test = instance.equals("soy string");
         assertFalse(test);
     }
-    
+
     @Test
-    public void testSetGetFotoPerfil(){
-        ImageIcon fotoPerfil=new ImageIcon();
+    public void testSetGetFotoPerfil() {
+        ImageIcon fotoPerfil = new ImageIcon();
         Persona instance = new Usuario();
         instance.setFotoPerfil(fotoPerfil);
-        ImageIcon fotoPerfil2=instance.getFotoPerfil();
-        assertEquals(fotoPerfil,fotoPerfil2);
+        ImageIcon fotoPerfil2 = instance.getFotoPerfil();
+        assertEquals(fotoPerfil, fotoPerfil2);
     }
 
     public class PersonaImpl extends Persona {
@@ -116,5 +116,5 @@ public class PersonaTest {
             super("", "", "", "", null);
         }
     }
-    
+
 }

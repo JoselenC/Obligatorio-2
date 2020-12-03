@@ -2,16 +2,13 @@ package dominio;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Objects;
 
-public class ComidaPorDia implements Serializable{
+public class ComidaPorDia implements Serializable {
    
-     private static final long serialVersionUID = 6106269076155338045L;
-     private ArrayList<Alimento> comidasIngeridas;
-     private String fecha;
+    private static final long serialVersionUID = 6106269076155338045L;
+    private ArrayList<Alimento> comidasIngeridas;
+    private String fecha;
      
      
     public ComidaPorDia(ArrayList<Alimento> comidasIngeridas, String fecha) {
@@ -25,7 +22,7 @@ public class ComidaPorDia implements Serializable{
         this.fecha = diaActual.toString();
     }
     
-        public ArrayList<Alimento> getComidasIngeridas() {
+    public ArrayList<Alimento> getComidasIngeridas() {
         return comidasIngeridas;
     }
 
@@ -41,29 +38,33 @@ public class ComidaPorDia implements Serializable{
         this.fecha = fecha;
     }
     
-      @Override
+    @Override
     public String toString() {
-        return "Comidas ingeridas el: "+this.getFecha();
+        return "Comidas ingeridas el: " + this.getFecha();
     }
 
     @Override
     public boolean equals(Object obj) {
-        boolean retorno=true;
+        boolean retorno = true;
         if (obj == null) {
-            retorno= false;
+            retorno = false;
         }
         if (getClass() != obj.getClass()) {
-            retorno= false;
+            retorno = false;
         }
         if (retorno == true) {
             ComidaPorDia other = (ComidaPorDia) obj;
-            retorno=other.getComidasIngeridas()
-                    .equals(this.getComidasIngeridas()) && 
-                    other.getFecha().equalsIgnoreCase(this.getFecha());
+            retorno = other.getComidasIngeridas()
+                    .equals(this.getComidasIngeridas()) 
+                    && other.getFecha().equalsIgnoreCase(this.getFecha());
         }
         return retorno;
     }
-    
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }   
     
 }

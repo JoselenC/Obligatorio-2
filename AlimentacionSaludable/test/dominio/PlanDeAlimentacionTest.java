@@ -6,6 +6,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class PlanDeAlimentacionTest {
@@ -40,7 +41,7 @@ public class PlanDeAlimentacionTest {
 
     @Test
     public void testSetListaLunes() {
-        ArrayList<Alimento> listaLunesExpected = new ArrayList<Alimento>();
+        ArrayList<Alimento> listaLunesExpected = new ArrayList<>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
         plan.setListaLunes(listaLunesExpected);
         ArrayList<Alimento> listaLunes = plan.getListaLunes();
@@ -49,7 +50,7 @@ public class PlanDeAlimentacionTest {
 
     @Test
     public void testSetListaMartes() {
-        ArrayList<Alimento> listaMartesExpected = new ArrayList<Alimento>();
+        ArrayList<Alimento> listaMartesExpected = new ArrayList<>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
         plan.setListaMartes(listaMartesExpected);
         ArrayList<Alimento> listaMartes = plan.getListaMartes();
@@ -58,7 +59,7 @@ public class PlanDeAlimentacionTest {
 
     @Test
     public void testSetListaMiercoles() {
-        ArrayList<Alimento> listaMiercolesExpected = new ArrayList<Alimento>();
+        ArrayList<Alimento> listaMiercolesExpected = new ArrayList<>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
         plan.setListaMiercoles(listaMiercolesExpected);
         ArrayList<Alimento> listaMiercoles = plan.getListaMiercoles();
@@ -67,7 +68,7 @@ public class PlanDeAlimentacionTest {
 
     @Test
     public void testSetListaJueves() {
-        ArrayList<Alimento> listaJuevesExpected = new ArrayList<Alimento>();
+        ArrayList<Alimento> listaJuevesExpected = new ArrayList<>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
         plan.setListaJueves(listaJuevesExpected);
         ArrayList<Alimento> listaJueves = plan.getListaJueves();
@@ -76,7 +77,7 @@ public class PlanDeAlimentacionTest {
 
     @Test
     public void testSetListaViernes() {
-        ArrayList<Alimento> listaViernesExpected = new ArrayList<Alimento>();
+        ArrayList<Alimento> listaViernesExpected = new ArrayList<>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
         plan.setListaViernes(listaViernesExpected);
         ArrayList<Alimento> listaViernes = plan.getListaViernes();
@@ -85,7 +86,7 @@ public class PlanDeAlimentacionTest {
 
     @Test
     public void testSetListaSabado() {
-        ArrayList<Alimento> listaSabadoExpected = new ArrayList<Alimento>();
+        ArrayList<Alimento> listaSabadoExpected = new ArrayList<>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
         plan.setListaSabado(listaSabadoExpected);
         ArrayList<Alimento> listaSabado = plan.getListaSabado();
@@ -94,7 +95,7 @@ public class PlanDeAlimentacionTest {
 
     @Test
     public void testSetListaDomingo() {
-        ArrayList<Alimento> listaDomingoExpected = new ArrayList<Alimento>();
+        ArrayList<Alimento> listaDomingoExpected = new ArrayList<>();
         PlanDeAlimentacion plan = new PlanDeAlimentacion();
         plan.setListaDomingo(listaDomingoExpected);
         ArrayList<Alimento> listaDomingo = plan.getListaDomingo();

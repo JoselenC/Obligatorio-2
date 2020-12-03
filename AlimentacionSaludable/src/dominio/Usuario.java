@@ -3,7 +3,6 @@ package dominio;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import java.io.Serializable;
-import java.util.Objects;
 import java.util.Optional;
 
 public class Usuario extends Persona implements Serializable {
@@ -58,7 +57,7 @@ public class Usuario extends Persona implements Serializable {
         this.setFotoPerfil(new javax
                            .swing.ImageIcon(getClass()
                            .getResource
-                           ("/imagenes/predeterminadaUsuario.jpg")));
+                          ( "/imagenes/predeterminadaUsuario.jpg")));
         this.nacionalidad = Nacionalidades.Uruguaya;
         this.pesoKg = 0;
         this.alturaCm = 0;
@@ -121,7 +120,7 @@ public class Usuario extends Persona implements Serializable {
         return lista;
     }
 
-    public void setListaNacionalidades (Nacionalidades[] listaEnumNac) {
+    public void setListaNacionalidades(Nacionalidades[] listaEnumNac) {
         this.listaNacionalidades = Optional
                 .ofNullable(listaEnumNac)
                 .orElse(null);
@@ -132,7 +131,7 @@ public class Usuario extends Persona implements Serializable {
     }
 
     public void setPesoKg(double pesoKg) {
-        if(pesoKg > 0 && pesoKg < 501){
+        if (pesoKg > 0 && pesoKg < 501){
             this.pesoKg = pesoKg;
         }
     }
@@ -142,7 +141,7 @@ public class Usuario extends Persona implements Serializable {
     }
 
     public void setAlturaCm(double alturaCm) {
-        if(alturaCm > 0 && alturaCm < 266){
+        if (alturaCm > 0 && alturaCm < 266){
             this.alturaCm = alturaCm;
         }
     }
@@ -177,7 +176,7 @@ public class Usuario extends Persona implements Serializable {
     }
 
     public void setSexo(String sexo) {
-        if(sexo.equals("Masculino") || sexo.equals("Femenino")){
+        if (sexo.equals("Masculino") || sexo.equals("Femenino")){
             this.sexo = sexo;
         }
     }
@@ -219,7 +218,7 @@ public class Usuario extends Persona implements Serializable {
 
     String[] misNacionalidades() {
         String[] listaPaisesPivot = {"Alemana", "Australiana", "Austriaca",
-            "Brasileña","Canadiense", "Chilena", "China", "Colombiana",
+            "Brasileña", "Canadiense", "Chilena", "China", "Colombiana",
             "Surcoreana", "Cubana", "Ecuatoriana", "Egipcia",
             "Española", "EstadoUnidense", "Francesa", "Griega",
             "Holandesa", "India", "Inglesa", "Israeli", "Italiana",

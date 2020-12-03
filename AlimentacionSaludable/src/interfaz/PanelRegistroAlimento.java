@@ -288,7 +288,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
     }//GEN-LAST:event_listaTiposAlimentosActionPerformed
 
     private void checkBoxNingunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxNingunoActionPerformed
-     boolean estadoActual = alimento.getListaNutrientesSeleccionados()[Alimento.Nutrientes.Ninguno.ordinal()];
+        boolean estadoActual = alimento.getListaNutrientesSeleccionados()[Alimento.Nutrientes.Ninguno.ordinal()];
         estadoActual = !estadoActual;
     }//GEN-LAST:event_checkBoxNingunoActionPerformed
 

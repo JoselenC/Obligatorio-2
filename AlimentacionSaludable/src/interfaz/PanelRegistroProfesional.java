@@ -19,7 +19,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
     private Sistema sistema;
     private Profesional prof;
     private JFrame ventana;
-    
+
     public PanelRegistroProfesional(Sistema unSistema, JFrame unaVentana) {
         initComponents();
         sistema = unSistema;
@@ -29,7 +29,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         listaPaisDeGraduacion.setModel(new DefaultComboBoxModel(listaPaises));
         listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.Uruguay.ordinal());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -297,7 +297,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
     private void btnAceptarProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarProfActionPerformed
         Profesional profesional = new Profesional();
         boolean nombreValido = !cajaNombreProf.getText().trim().isEmpty();
-        
+
         Usuario comparoUsr = new Usuario();
         comparoUsr.setAliasUsuario(cajaUsuarioProf.getText());
         Profesional comparoProf = new Profesional();
@@ -329,7 +329,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             if (nombreValido == false) {
                 etiquetaErrorNombreProf.setText("El nombre no puede ser vacío");
             }
-            
+
             if (nombreUsuarioValido == false) {
                 etiquetaErrorNombreUsuarioProf.setText("Alias de usuario no válido");
             }
@@ -379,17 +379,17 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
     private void cajaApellidosProf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaApellidosProf1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cajaApellidosProf1ActionPerformed
-    
+
     void actualizar() {
         fotoPerfil.setIcon(prof.getFotoPerfil());
     }
-    
+
     ImageIcon resizeImageIcon(ImageIcon imageIcon, Integer width, Integer height) {
         BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TRANSLUCENT);
         Graphics2D graphics2D = bufferedImage.createGraphics();
         graphics2D.drawImage(imageIcon.getImage(), 0, 0, width, height, null);
         graphics2D.dispose();
-        
+
         return new ImageIcon(bufferedImage, imageIcon.getDescription());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

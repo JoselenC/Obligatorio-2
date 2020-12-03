@@ -5,6 +5,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class AlimentoTest {
@@ -55,15 +56,15 @@ public class AlimentoTest {
         assertArrayEquals(listaEnumNutrientesExpected, listaEnumNutrientes);
     }
 
-     @Test
-    public void testToString(){
+    @Test
+    public void testToString() {
         Alimento instance = new Alimento();
-        String nombreExpected="Juan";
+        String nombreExpected = "Juan";
         instance.setNombre(nombreExpected);
-        String nombre= instance.toString();
-        assertEquals(nombreExpected,nombre);
+        String nombre = instance.toString();
+        assertEquals(nombreExpected, nombre);
     }
-    
+
     @Test
     public void testGetTipoBebidas() {
         System.out.println("getTipo");

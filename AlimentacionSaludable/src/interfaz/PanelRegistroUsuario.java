@@ -479,7 +479,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         } else if (pidoDatoNumerico(altura, 0, 265, etiquetaErrorAltura)) {
             int alturaEnInt = Integer.parseInt(altura);
     }//GEN-LAST:event_cajaAlturaFocusLost
-}
+    }
     private void cajaPesoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaPesoFocusLost
         String peso = cajaPeso.getText();
         if (peso.trim().isEmpty()) {

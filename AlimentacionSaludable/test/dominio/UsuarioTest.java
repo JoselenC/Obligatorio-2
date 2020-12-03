@@ -1,6 +1,6 @@
 package dominio;
 
-import dominio.Usuario.Nacionalidades;
+
 import dominio.Usuario.Preferencias;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -9,6 +9,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class UsuarioTest {
@@ -49,7 +50,7 @@ public class UsuarioTest {
 
     @Test
     public void testGetCasillaDeEntrada() {
-        ArrayList<Mensaje> casillaExpected = new ArrayList<Mensaje>();
+        ArrayList<Mensaje> casillaExpected = new ArrayList<>();
         Usuario usuario = new Usuario();
         usuario.setCasillaDeEntrada(casillaExpected);
         ArrayList<Mensaje> casillaDeEntrada = usuario.getCasillaDeEntrada();
@@ -64,34 +65,33 @@ public class UsuarioTest {
         Usuario.Preferencias preferenciasAlimentarias = usuario.getPreferenciasAlimentarias();
         assertEquals(preferenciasExpected, preferenciasAlimentarias);
     }
-    
+
     @Test
-    public void testGetRestricciones(){
-        Usuario.Restricciones restriccionesExpected= Usuario.Restricciones.Celiaco;
+    public void testGetRestricciones() {
+        Usuario.Restricciones restriccionesExpected = Usuario.Restricciones.Celiaco;
         Usuario usuario = new Usuario();
         usuario.setRestricciones(restriccionesExpected);
         Usuario.Restricciones restricciones = usuario.getRestricciones();
         assertEquals(restriccionesExpected, restricciones);
     }
-    
+
     @Test
-    public void testGetPlan(){
-        PlanDeAlimentacion planExpected= new PlanDeAlimentacion();
+    public void testGetPlan() {
+        PlanDeAlimentacion planExpected = new PlanDeAlimentacion();
         Usuario usuario = new Usuario();
         usuario.setPlan(planExpected);
-         PlanDeAlimentacion plan = usuario.getPlan();
+        PlanDeAlimentacion plan = usuario.getPlan();
         assertEquals(planExpected, plan);
     }
-    
+
     @Test
-    public void testSetCasillaDeEntrada(){
-        ArrayList<Mensaje> casillaExpected= new ArrayList<Mensaje>();
+    public void testSetCasillaDeEntrada() {
+        ArrayList<Mensaje> casillaExpected = new ArrayList<>();
         Usuario usuario = new Usuario();
         usuario.setCasillaDeEntrada(casillaExpected);
         ArrayList<Mensaje> casillaDeEntrada = usuario.getCasillaDeEntrada();
         assertEquals(casillaExpected, casillaDeEntrada);
     }
-    
 
     @Test
     public void testGetAlturaCm() {
@@ -451,7 +451,7 @@ public class UsuarioTest {
     }
 
     @Test
-    public void testGetNacionalidadSudáfricana() {
+    public void testGetNacionalidadSudafricana() {
         System.out.println("getNacionalidadSudáfricana");
         Usuario instance = new Usuario();
         instance.setNacionalidad(Usuario.Nacionalidades.Sudáfricana);
@@ -461,7 +461,7 @@ public class UsuarioTest {
     }
 
     @Test
-    public void testSetNacionalidadSudáfricana() {
+    public void testSetNacionalidadSudafricana() {
         System.out.println("setNacionalidadSudáfricana");
         Usuario.Nacionalidades nacionalidad = Usuario.Nacionalidades.Sudáfricana;
         Usuario instance = new Usuario();
@@ -685,18 +685,19 @@ public class UsuarioTest {
     public void pruebaConstructorConParametros() {
         String nombre = "nombre";
         String apellido = "apellido";
-        String usuario = "usuario";
-        String fNacimiento = "19/12/2012";
-        Usuario c = new Usuario();
+        String NombreUsuario = "usuario";
+        String FNacimiento = "19/12/2012";
+        Usuario usuario  = new Usuario();
         Usuario.Nacionalidades nacionalidad = Usuario.Nacionalidades.Uruguaya;
         double peso = 19.0;
         double altura = 19.0;
         Usuario.Preferencias preferencias = Usuario.Preferencias.Macrobiotico;
         Usuario.Restricciones restricciones = Usuario.Restricciones.Celiaco;
-        PlanDeAlimentacion plan = new PlanDeAlimentacion(c);
+        PlanDeAlimentacion plan = new PlanDeAlimentacion(usuario);
         String sexo = "Masculino";
         ImageIcon fotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"));
-        Usuario nuevo = new Usuario(nacionalidad, peso, altura, preferencias, restricciones, plan, sexo, nombre, apellido, usuario, fNacimiento, fotoPerfil);
+        Usuario nuevo = new Usuario(nacionalidad, peso, altura, preferencias, 
+                restricciones, plan, sexo, nombre, apellido, NombreUsuario, FNacimiento, fotoPerfil);
 
     }
 

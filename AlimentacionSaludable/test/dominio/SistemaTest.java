@@ -1,11 +1,8 @@
 package dominio;
 
-import static datechooser.beans.pic.Pictures.getResource;
-import java.io.IOException;
-import java.net.URL;
+
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,22 +11,22 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SistemaTest {
-    
+
     public SistemaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -42,7 +39,7 @@ public class SistemaTest {
         Sistema.tipoUsuario[] result = instance.getListaTiposDeUsuario();
         assertArrayEquals(expResult, result);
     }
-    
+
     @Test
     public void testPidoDatoNumericoInvalido() {
         System.out.println("pidoDatoNumericoInvalido");
@@ -53,7 +50,7 @@ public class SistemaTest {
         boolean result = instance.esNumero(dato, min, max);
         assertFalse(result);
     }
-    
+
     @Test
     public void testPidoDatoNumericoInvalido2() {
         System.out.println("pidoDatoNumericoInvalido2");
@@ -66,7 +63,7 @@ public class SistemaTest {
     }
 
     @Test
-    public void testResizeImageIconTrue(){
+    public void testResizeImageIconTrue() {
         System.out.println("resizeImageIcon");
         Sistema instance = new Sistema();
         ImageIcon imageIcon = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"));
@@ -77,9 +74,9 @@ public class SistemaTest {
         boolean widthCorrectas = result.getIconWidth() == width;
         assertTrue(heightCorrectas && widthCorrectas);
     }
-    
+
     @Test
-    public void testResizeImageIconFalse(){
+    public void testResizeImageIconFalse() {
         System.out.println("resizeImageIcon");
         Sistema instance = new Sistema();
         ImageIcon imageIcon = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"));
@@ -106,9 +103,9 @@ public class SistemaTest {
         Usuario.Nacionalidades unaNacionalidad = Usuario.Nacionalidades.Uruguaya;
         Sistema instance = new Sistema();
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);
-        assertTrue(instance.getUsuarios().size()>0);
+        assertTrue(instance.getUsuarios().size() > 0);
     }
-    
+
     @Test
     public void testRegistroUsuarioInvalido() {
         System.out.println("registroUsuario");
@@ -124,7 +121,7 @@ public class SistemaTest {
         Sistema instance = new Sistema();
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);
-        assertFalse(instance.getUsuarios().size()>1);
+        assertFalse(instance.getUsuarios().size() > 1);
     }
 
     @Test
@@ -142,9 +139,9 @@ public class SistemaTest {
         Sistema instance = new Sistema();
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
-        assertFalse(instance.getProfesionales().size()>1);
+        assertFalse(instance.getProfesionales().size() > 1);
     }
-    
+
     @Test
     public void testRegistroProfesional() {
         System.out.println("registroProfesional");
@@ -159,7 +156,7 @@ public class SistemaTest {
         Profesional.Pais unPaisTitulo = Profesional.Pais.Uruguay;
         Sistema instance = new Sistema();
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
-        assertTrue(instance.getProfesionales().size()>0);
+        assertTrue(instance.getProfesionales().size() > 0);
     }
 
     @Test
@@ -171,168 +168,165 @@ public class SistemaTest {
         boolean[] unaListaNutrientes = new boolean[a.getListaNutrientesSeleccionados().length];
         Sistema instance = new Sistema();
         instance.registroAlimento(nombreAlim, unTipo, unaListaNutrientes);
-        assertTrue(instance.getAlimentos().size()>0);
+        assertTrue(instance.getAlimentos().size() > 0);
     }
-    
-    
+
     @Test
     public void testSetGetAlimentos() {
-        Sistema sistema= new Sistema();
-        ArrayList<Alimento> alimentosExpected= new ArrayList<Alimento>();
+        Sistema sistema = new Sistema();
+        ArrayList<Alimento> alimentosExpected = new ArrayList<>();
         sistema.setAlimentos(alimentosExpected);
-        ArrayList<Alimento> alimentos=sistema.getAlimentos();
-        assertEquals(alimentosExpected,alimentos);
+        ArrayList<Alimento> alimentos = sistema.getAlimentos();
+        assertEquals(alimentosExpected, alimentos);
     }
-    
-     @Test
+
+    @Test
     public void testGetUsuarioPorNombre() {
-        Sistema sistema= new Sistema();
-        ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
+        Sistema sistema = new Sistema();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
         Usuario usuario = new Usuario();
         usuario.setNombre("joselen");
         usuarios.add(usuario);
         sistema.setUsuarios(usuarios);
-        Usuario usuarioEncontrado= sistema.getUsuarioPorNombre("joselen");
-        assertEquals(usuario,usuarioEncontrado);
+        Usuario usuarioEncontrado = sistema.getUsuarioPorNombre("joselen");
+        assertEquals(usuario, usuarioEncontrado);
     }
-    
-     @Test
+
+    @Test
     public void testGeUsuarioPorNombre() {
-        Sistema sistema= new Sistema();
-        ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
+        Sistema sistema = new Sistema();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
         Usuario usuario = new Usuario();
         usuario.setNombre("joselen");
         usuarios.add(usuario);
         sistema.setUsuarios(usuarios);
-        Usuario usuarioEncontrado= sistema.getUsuarioPorNombre("joselenC");
-        assertEquals(usuarioEncontrado,null);
+        Usuario usuarioEncontrado = sistema.getUsuarioPorNombre("joselenC");
+        assertEquals(usuarioEncontrado, null);
     }
-    
-     @Test
+
+    @Test
     public void testSetListaTiposDeUsuario() {
-        Sistema sistema= new Sistema();
+        Sistema sistema = new Sistema();
         Sistema.tipoUsuario[] tipoUsuario = sistema.inicializoListaTiposDeUsuario();
         sistema.setListaTiposDeUsuario(tipoUsuario);
-        Sistema.tipoUsuario[] tipoUsuario2=sistema.getListaTiposDeUsuario();
-        
-        assertEquals(tipoUsuario,tipoUsuario2);
+        Sistema.tipoUsuario[] tipoUsuario2 = sistema.getListaTiposDeUsuario();
+
+        assertEquals(tipoUsuario, tipoUsuario2);
     }
-    
-     @Test
+
+    @Test
     public void testRegistroAdministrador() {
-        Sistema sistema= new Sistema();
-        sistema.registroAdministrador("Joselen", "1234");   
+        Sistema sistema = new Sistema();
+        sistema.registroAdministrador("Joselen", "1234");
     }
-    
-     @Test
+
+    @Test
     public void testExisteNombreUsuarioCaseTrue() {
-        Sistema sistema= new Sistema();
-        ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
+        Sistema sistema = new Sistema();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
         Usuario usuario = new Usuario();
         usuario.setNombre("joselen");
         usuarios.add(usuario);
         sistema.setUsuarios(usuarios);
-        boolean usuarioEncontrado= sistema.existeNombreUsuario("joselen");
+        boolean usuarioEncontrado = sistema.existeNombreUsuario("joselen");
         assertTrue(usuarioEncontrado);
     }
-    
-      @Test
+
+    @Test
     public void testExisteNombreUsuarioCaseFalse() {
-        Sistema sistema= new Sistema();
-        ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
+        Sistema sistema = new Sistema();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
         Usuario usuario = new Usuario();
         usuario.setNombre("joselen");
         usuarios.add(usuario);
         sistema.setUsuarios(usuarios);
-        boolean usuarioEncontrado= sistema.existeNombreUsuario("joselenC");
+        boolean usuarioEncontrado = sistema.existeNombreUsuario("joselenC");
         assertFalse(usuarioEncontrado);
     }
-    
-     @Test
+
+    @Test
     public void testExisteNombreProfesionCaseFalse() {
-        Sistema sistema= new Sistema();
-        ArrayList<Profesional> profesionales= new ArrayList<Profesional>();
+        Sistema sistema = new Sistema();
+        ArrayList<Profesional> profesionales = new ArrayList<>();
         Profesional profesional = new Profesional();
         profesional.setNombre("joselen");
         profesionales.add(profesional);
-        boolean profesionalEncontrado= sistema.existeNombreProfesional("joselenC");
+        boolean profesionalEncontrado = sistema.existeNombreProfesional("joselenC");
         assertFalse(profesionalEncontrado);
     }
-    
+
     @Test
     public void testExisteNombreProfesionCaseTrue() {
-        Sistema sistema= new Sistema();
-        ArrayList<Profesional> profesionales= new ArrayList<Profesional>();
+        Sistema sistema = new Sistema();
+        ArrayList<Profesional> profesionales = new ArrayList<>();
         Profesional profesional = new Profesional();
         profesional.setNombre("joselen");
         profesionales.add(profesional);
         sistema.setProfesionales(profesionales);
-        boolean profesionalEncontrado= sistema.existeNombreProfesional("joselen");
+        boolean profesionalEncontrado = sistema.existeNombreProfesional("joselen");
         assertTrue(profesionalEncontrado);
     }
-    
-     @Test
+
+    @Test
     public void testExisteNombreGetProfesionalPorNombre() {
-        Sistema sistema= new Sistema();
-        ArrayList<Profesional> profesionales= new ArrayList<Profesional>();
+        Sistema sistema = new Sistema();
+        ArrayList<Profesional> profesionales = new ArrayList<>();
         Profesional profesional = new Profesional();
         profesional.setNombre("joselen");
         profesionales.add(profesional);
         sistema.setProfesionales(profesionales);
-        Profesional profesionalEncontrado= sistema.getProfesionalPorNombre("joselen");
-        assertEquals(profesional,profesionalEncontrado);
+        Profesional profesionalEncontrado = sistema.getProfesionalPorNombre("joselen");
+        assertEquals(profesional, profesionalEncontrado);
     }
-    
-     @Test
+
+    @Test
     public void testSetAdministrador() {
-        Sistema sistema= new Sistema();
-        Administrador administrador= new Administrador();
+        Sistema sistema = new Sistema();
+        Administrador administrador = new Administrador();
         sistema.setAdministrador(administrador);
-        assertEquals(administrador,administrador);
+        assertEquals(administrador, administrador);
     }
-    
+
     @Test
     public void testSetGetAdministradores() {
-        Sistema sistema= new Sistema();
-        ArrayList<Administrador> administradores= new ArrayList<Administrador>();
+        Sistema sistema = new Sistema();
+        ArrayList<Administrador> administradores = new ArrayList<>();
         sistema.setListaAdministradores(administradores);
-        ArrayList<Administrador> administradores2=sistema.getListaAdministradores();
-        assertEquals(administradores,administradores2);
+        ArrayList<Administrador> administradores2 = sistema.getListaAdministradores();
+        assertEquals(administradores, administradores2);
     }
-    
-    
-     @Test
-    public void testSetUsuario() {
-        Sistema sistema= new Sistema();
-        ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
-        sistema.setUsuarios(usuarios);
-        ArrayList<Usuario> usuarios2=sistema.getUsuarios();
-        assertEquals(usuarios,usuarios2);
-    }
-    
-      @Test
-    public void testGetUsuarioActivo() {
-        Sistema sistema= new Sistema();
-        Sistema.tipoUsuario usuarioTipo= Sistema.tipoUsuario.Profesional;
-        sistema.setUsuarioActivo(usuarioTipo);
-        Sistema.tipoUsuario usuario=sistema.getUsuarioActivo();
-        assertEquals(usuarioTipo,usuario);
-    }
-    
-    
+
     @Test
-    public void testValuesTipoUsuario(){
+    public void testSetUsuario() {
+        Sistema sistema = new Sistema();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        sistema.setUsuarios(usuarios);
+        ArrayList<Usuario> usuarios2 = sistema.getUsuarios();
+        assertEquals(usuarios, usuarios2);
+    }
+
+    @Test
+    public void testGetUsuarioActivo() {
+        Sistema sistema = new Sistema();
+        Sistema.tipoUsuario usuarioTipo = Sistema.tipoUsuario.Profesional;
+        sistema.setUsuarioActivo(usuarioTipo);
+        Sistema.tipoUsuario usuario = sistema.getUsuarioActivo();
+        assertEquals(usuarioTipo, usuario);
+    }
+
+    @Test
+    public void testValuesTipoUsuario() {
         Sistema.tipoUsuario[] listaNac = Sistema.tipoUsuario.values();
     }
-    
+
     @Test
-    public void testSistemaPorParametro(){
-        ArrayList<Usuario> listaU = new ArrayList<Usuario>();
-        ArrayList<Profesional> listaP = new ArrayList<Profesional>();
-        ArrayList<Alimento> listaA = new ArrayList<Alimento>();
-        ArrayList<Administrador> listaAdmi = new ArrayList<Administrador>();
+    public void testSistemaPorParametro() {
+        ArrayList<Usuario> listaU = new ArrayList<>();
+        ArrayList<Profesional> listaP = new ArrayList<>();
+        ArrayList<Alimento> listaA = new ArrayList<>();
+        ArrayList<Administrador> listaAdmi = new ArrayList<>();
         Sistema.tipoUsuario usuarioActivo = Sistema.tipoUsuario.NoSeleccionado;
-        Sistema s = new Sistema(listaA,listaU,listaP,listaAdmi,usuarioActivo);
-    }    
-    
+        Sistema s = new Sistema(listaA, listaU, listaP, listaAdmi, usuarioActivo);
+    }
+
 }

@@ -7,17 +7,17 @@ import javax.swing.JPanel;
 public class InterfazBotonesAdministrador extends javax.swing.JPanel {
 
  
-    private Sistema sistema;
+    private final Sistema sistema;
     private JPanel actual;    
     private JPanel nuevaActual;
-    private JFrame ventana;
+    private final JFrame ventana;
 
     
     public InterfazBotonesAdministrador(Sistema unSistema, JFrame unaVentana) {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana; 
-        actual =new PanelRegistroUsuario(sistema,ventana);       
+        actual = new PanelRegistroUsuario(sistema,ventana);        
         ventana.add(this);   
         ventana.add(actual);
         ventana.pack();
@@ -36,8 +36,6 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         this.nuevaActual = nuevaActual;
     }
     
-    
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -124,11 +122,11 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
-private void cambiarPanel(JPanel actualNueva){
+    private void cambiarPanel(JPanel actualNueva) {
         ventana.remove(actual);
-        nuevaActual= actualNueva;
+        nuevaActual = actualNueva;
         ventana.add(nuevaActual);
-        actual=nuevaActual;
+        actual = nuevaActual;
         ventana.pack();
     }
 

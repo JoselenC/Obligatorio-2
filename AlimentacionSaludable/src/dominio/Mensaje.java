@@ -3,7 +3,7 @@ package dominio;
 import java.io.Serializable;
 
 
-public class Mensaje implements Serializable{
+public class Mensaje implements Serializable {
     
     private static final long serialVersionUID = 6106269076155338045L;
     private Persona origen;
@@ -13,9 +13,9 @@ public class Mensaje implements Serializable{
     
     
     public Mensaje() {
-        Persona p = (Persona) new Usuario();
-        this.origen = p;
-        this.destino = p;
+        Persona persona = (Persona) new Usuario();
+        this.origen = persona;
+        this.destino = persona;
         this.asunto = "No se asigno un asunto";
         this.mensaje = "No se ha scrito un texto de mensaje";
     }
@@ -56,7 +56,7 @@ public class Mensaje implements Serializable{
  
     @Override
     public String toString() {
-        return "Mensaje de: "+ origen.getAliasUsuario() 
+        return "Mensaje de: " + origen.getAliasUsuario() 
                + " con Asunto: " + asunto;
     }
     

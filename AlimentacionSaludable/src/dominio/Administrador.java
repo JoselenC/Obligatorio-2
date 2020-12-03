@@ -6,17 +6,37 @@ import java.io.Serializable;
 public class Administrador implements Serializable {
     private static final long serialVersionUID = 6106269076155338045L;
     private String usuario;
-    private String contraseña;
+    private String contrasenia;
     
-    public Administrador(String miUsuario, String miContraseña){
-        usuario=miUsuario;
-        contraseña=miContraseña;
+    public Administrador(String miUsuario, String miContrasenia) {
+        usuario = miUsuario;
+        contrasenia = miContrasenia;
     }
     
-    public Administrador(){
+    public Administrador() {
+    }  
+
+    public String getUsuario() {
+        return usuario;
+    }
+   
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
+    public String getContrasenia() {
+        return contrasenia;
+    }
 
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+    
+    @Override
+    public String toString() {
+        return "Administrador{" + "usuario=" + usuario + '}';
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -32,32 +52,15 @@ public class Administrador implements Serializable {
         if (!Objects.equals(this.usuario, other.usuario)) {
             return false;
         }
-        if (!Objects.equals(this.contraseña, other.contraseña)) {
+        if (!Objects.equals(this.contrasenia, other.contrasenia)) {
             return false;
         }
         return true;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-   
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-    
-     @Override
-    public String toString() {
-        return "Administrador{" + "usuario=" + usuario + '}';
-    }
-
-            
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }            
 }
