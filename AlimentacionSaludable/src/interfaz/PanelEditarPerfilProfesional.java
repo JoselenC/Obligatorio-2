@@ -59,6 +59,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         btnCambiarFoto = new javax.swing.JButton();
         fotoPerfil = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -232,6 +233,10 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         panelRegProf.add(btnVolver);
         btnVolver.setBounds(20, 10, 110, 60);
 
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        panelRegProf.add(jPanel1);
+        jPanel1.setBounds(10, 0, 950, 80);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -374,6 +379,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser fechaGraduacion;
     private com.toedter.calendar.JDateChooser fechaNacimiento;
     private javax.swing.JLabel fotoPerfil;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> listaPaisDeGraduacion;
     private javax.swing.JPanel panelRegProf;
     // End of variables declaration//GEN-END:variables

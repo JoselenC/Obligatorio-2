@@ -30,10 +30,10 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         panelHome = new javax.swing.JPanel();
         btnEditarPerfilUsuario = new javax.swing.JButton();
         etiquetaFoto = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         datosDelUsuario = new javax.swing.JList();
         etiquetaEditar = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         etiquetaInfoUsuario = new javax.swing.JLabel();
@@ -60,6 +60,10 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         panelHome.add(etiquetaFoto);
         etiquetaFoto.setBounds(120, 180, 220, 260);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
+        panelHome.add(jLabel2);
+        jLabel2.setBounds(910, 30, 190, 230);
+
         datosDelUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         datosDelUsuario.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -75,10 +79,6 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         etiquetaEditar.setText("Editar");
         panelHome.add(etiquetaEditar);
         etiquetaEditar.setBounds(50, 230, 70, 30);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
-        panelHome.add(jLabel2);
-        jLabel2.setBounds(910, 30, 190, 230);
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");

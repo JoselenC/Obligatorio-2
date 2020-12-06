@@ -95,7 +95,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         ventana.remove(this);
         interfaz.setActual(nuevaActual);
         ventana.add(nuevaActual);
-        ventana.setSize(600,600);
+        ventana.pack();
     }
     
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -104,11 +104,17 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
+                   
         Alimento alimentoAAgregar = (Alimento) listaComidas.getSelectedValue();
-        listaAModificar.add(alimentoAAgregar);
-         JOptionPane.showMessageDialog(null, "Se agrego correctamete la comida");
-       PanelRealizarPlanAlimentacion nuevaActual = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
-       cambiarPanel(nuevaActual);
+        if(alimentoAAgregar!=null){
+        listaAModificar.add(alimentoAAgregar);            
+        JOptionPane.showMessageDialog(null, "Se agrego correctamete la comida");
+        PanelRealizarPlanAlimentacion nuevaActual = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar, plan);
+        cambiarPanel(nuevaActual);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Seleccione una comida para agregar");
+        }
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
 

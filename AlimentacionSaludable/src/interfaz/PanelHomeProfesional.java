@@ -34,6 +34,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         jListDatosDelProfesional = new javax.swing.JList();
         etiquetaEditar = new javax.swing.JLabel();
         etiquetaFoto = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -48,7 +49,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
             }
         });
         add(btnEdiatrPerfilProfesional);
-        btnEdiatrPerfilProfesional.setBounds(50, 60, 110, 70);
+        btnEdiatrPerfilProfesional.setBounds(30, 90, 110, 70);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));
@@ -70,13 +71,17 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         etiquetaEditar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaEditar.setText("Editar ");
         add(etiquetaEditar);
-        etiquetaEditar.setBounds(60, 140, 80, 30);
+        etiquetaEditar.setBounds(50, 170, 80, 30);
 
         etiquetaFoto.setMaximumSize(new java.awt.Dimension(210, 240));
         etiquetaFoto.setMinimumSize(new java.awt.Dimension(210, 240));
         etiquetaFoto.setPreferredSize(new java.awt.Dimension(210, 240));
         add(etiquetaFoto);
         etiquetaFoto.setBounds(70, 240, 210, 290);
+
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        add(jPanel1);
+        jPanel1.setBounds(10, 0, 1050, 80);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEdiatrPerfilProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdiatrPerfilProfesionalActionPerformed
@@ -94,6 +99,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaFoto;
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JList jListDatosDelProfesional;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 

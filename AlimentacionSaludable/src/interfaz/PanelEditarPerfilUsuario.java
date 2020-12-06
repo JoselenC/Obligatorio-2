@@ -41,7 +41,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         usuario.setListaRestricciones(new boolean[usuario.getListaRestricciones().length]);
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Ninguna);
         fotoPerfil.setSize(210, 240);
-        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
         this.setVisible(true);
     }
 
@@ -92,8 +91,8 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         rBOrganico = new javax.swing.JRadioButton();
         btnCambiarFoto = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        lblUsuario = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -301,7 +300,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
         etiquetaErrorApellido.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelEditarPerfilUsuario.add(etiquetaErrorApellido);
-        etiquetaErrorApellido.setBounds(640, 130, 270, 30);
+        etiquetaErrorApellido.setBounds(650, 130, 270, 30);
 
         etiquetaErrorNombreUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelEditarPerfilUsuario.add(etiquetaErrorNombreUsuario);
@@ -412,24 +411,26 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         panelEditarPerfilUsuario.add(btnVolver);
         btnVolver.setBounds(30, 10, 100, 80);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        panelEditarPerfilUsuario.add(jLabel2);
-        jLabel2.setBounds(810, 10, 190, 130);
+        jPanel2.setBackground(new java.awt.Color(171, 171, 199));
+        panelEditarPerfilUsuario.add(jPanel2);
+        jPanel2.setBounds(10, 0, 950, 70);
 
-        lblUsuario.setText("jLabel1");
-        panelEditarPerfilUsuario.add(lblUsuario);
-        lblUsuario.setBounds(820, 140, 210, 20);
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1333, Short.MAX_VALUE)
+            .addGap(0, 1147, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelEditarPerfilUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -439,6 +440,11 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelEditarPerfilUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -655,8 +661,8 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel fotoPerfil;
     private javax.swing.ButtonGroup grupoBotonesPreferencias;
     private javax.swing.ButtonGroup grupoBotonesSexo;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox listaNacionalidadesUsuario;
     private javax.swing.JPanel panelEditarPerfilUsuario;
     private javax.swing.JRadioButton rBMacrobiotico;

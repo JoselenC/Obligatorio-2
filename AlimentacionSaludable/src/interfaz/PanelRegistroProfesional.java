@@ -156,11 +156,11 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         panelRegProf.add(listaPaisDeGraduacion);
         listaPaisDeGraduacion.setBounds(560, 420, 160, 35);
 
-        etiquetaErrorNombreProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaErrorNombreProf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         panelRegProf.add(etiquetaErrorNombreProf);
-        etiquetaErrorNombreProf.setBounds(740, 120, 400, 26);
+        etiquetaErrorNombreProf.setBounds(740, 120, 370, 26);
 
-        etiquetaErrorApellidoProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaErrorApellidoProf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         panelRegProf.add(etiquetaErrorApellidoProf);
         etiquetaErrorApellidoProf.setBounds(720, 170, 400, 26);
 
@@ -168,7 +168,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         panelRegProf.add(etiquetaErrorNombreUsuarioProf);
         etiquetaErrorNombreUsuarioProf.setBounds(720, 220, 400, 26);
 
-        etiquetaErrorNombreTituloProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaErrorNombreTituloProf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         panelRegProf.add(etiquetaErrorNombreTituloProf);
         etiquetaErrorNombreTituloProf.setBounds(740, 320, 410, 26);
 
@@ -297,7 +297,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
     private void btnAceptarProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarProfActionPerformed
         Profesional profesional = new Profesional();
         boolean nombreValido = !cajaNombreProf.getText().trim().isEmpty();
-
+        boolean apellidoValido = !cajaApellidosProf1.getText().trim().isEmpty();
         Usuario comparoUsr = new Usuario();
         comparoUsr.setAliasUsuario(cajaUsuarioProf.getText());
         Profesional comparoProf = new Profesional();
@@ -309,7 +309,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         boolean nombreTituloValido = !cajaNombreTituloProf.getText().trim().isEmpty();
         boolean fGraduacionValido = fechaGraduacion.getCalendar() != null;
         if (nombreValido && nombreUsuarioValido
-                && fNacimientoValido && nombreTituloValido && fGraduacionValido) {
+                && !fNacimientoValido && nombreTituloValido && !fGraduacionValido && apellidoValido ) {
             profesional.setNombre(cajaNombreProf.getText());
             profesional.setApellidos(cajaApellidosProf1.getText());
             profesional.setAliasUsuario(cajaUsuarioProf.getText());
@@ -331,16 +331,19 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             }
 
             if (nombreUsuarioValido == false) {
-                etiquetaErrorNombreUsuarioProf.setText("Alias de usuario no válido");
+                etiquetaErrorNombreUsuarioProf.setText("Alias no válido");
             }
             if (fNacimientoValido == false) {
-                etiquetaErrorFechaNacimiento.setText("Fecha de nacimiento no válida");
+                etiquetaErrorFechaNacimiento.setText("Fecha no válida");
             }
             if (nombreTituloValido == false) {
-                etiquetaErrorNombreTituloProf.setText("El nombre del titulo no es válido");
+                etiquetaErrorNombreTituloProf.setText("Titulo no válido");
             }
             if (fGraduacionValido == false) {
-                etiquetaErrorFechaGraduacion.setText("Fecha de graduación no válida");
+                etiquetaErrorFechaGraduacion.setText("Fecha no válida");
+            }
+            if(apellidoValido==false){
+                etiquetaErrorNombreProf.setText("El apellido no puede ser vacío");
             }
         }
     }//GEN-LAST:event_btnAceptarProfActionPerformed

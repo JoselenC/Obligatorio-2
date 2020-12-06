@@ -46,11 +46,12 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         panelDietaDiaria = new javax.swing.JPanel();
         lstComDiarias = new javax.swing.JScrollPane();
         listaComidasDiarias = new javax.swing.JList();
-        etiquetaTituloAlim = new javax.swing.JLabel();
         etiquetaBtnAgregarComidas = new javax.swing.JButton();
         etiquetaBtnQuitarComida = new javax.swing.JButton();
-        lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        etiquetaTituloAlim = new javax.swing.JLabel();
 
         panelDietaDiaria.setBackground(new java.awt.Color(229, 229, 240));
         panelDietaDiaria.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -61,12 +62,6 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
 
         panelDietaDiaria.add(lstComDiarias);
         lstComDiarias.setBounds(370, 160, 330, 410);
-
-        etiquetaTituloAlim.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloAlim.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaTituloAlim.setText("Comidas Ingeridas Diarias");
-        panelDietaDiaria.add(etiquetaTituloAlim);
-        etiquetaTituloAlim.setBounds(330, 10, 440, 44);
 
         etiquetaBtnAgregarComidas.setBackground(new java.awt.Color(102, 102, 102));
         etiquetaBtnAgregarComidas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -96,15 +91,24 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         panelDietaDiaria.add(etiquetaBtnQuitarComida);
         etiquetaBtnQuitarComida.setBounds(140, 260, 210, 37);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
+        panelDietaDiaria.add(jLabel2);
+        jLabel2.setBounds(780, 0, 190, 230);
+
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");
         panelDietaDiaria.add(lblUsuario);
-        lblUsuario.setBounds(820, 130, 230, 30);
+        lblUsuario.setBounds(750, 230, 230, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        panelDietaDiaria.add(jLabel2);
-        jLabel2.setBounds(810, 0, 190, 130);
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+
+        etiquetaTituloAlim.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaTituloAlim.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaTituloAlim.setText("Comidas Ingeridas Diarias");
+        jPanel1.add(etiquetaTituloAlim);
+
+        panelDietaDiaria.add(jPanel1);
+        jPanel1.setBounds(10, 10, 950, 120);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -148,6 +152,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
     private javax.swing.JButton etiquetaBtnQuitarComida;
     private javax.swing.JLabel etiquetaTituloAlim;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaComidasDiarias;
     private javax.swing.JScrollPane lstComDiarias;

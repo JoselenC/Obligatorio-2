@@ -36,8 +36,9 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         jScrollPane2 = new javax.swing.JScrollPane();
         listaMensajes = new javax.swing.JList();
         btnBorrarCons = new javax.swing.JButton();
-        etiquetaTituloConsultas = new javax.swing.JLabel();
         etiquetaBandejaDeEntrada = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        etiquetaTituloConsultas = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -76,7 +77,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         jScrollPane2.setViewportView(listaMensajes);
 
         panelConsultaProf.add(jScrollPane2);
-        jScrollPane2.setBounds(670, 160, 258, 350);
+        jScrollPane2.setBounds(628, 160, 390, 350);
 
         btnBorrarCons.setBackground(new java.awt.Color(102, 102, 102));
         btnBorrarCons.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -92,27 +93,34 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         panelConsultaProf.add(btnBorrarCons);
         btnBorrarCons.setBounds(820, 530, 110, 37);
 
-        etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloConsultas.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaTituloConsultas.setText("Consultas a Profesionales");
-        panelConsultaProf.add(etiquetaTituloConsultas);
-        etiquetaTituloConsultas.setBounds(330, 10, 420, 44);
-
         etiquetaBandejaDeEntrada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaBandejaDeEntrada.setForeground(new java.awt.Color(102, 102, 102));
         etiquetaBandejaDeEntrada.setText("Bandeja de entrada");
         panelConsultaProf.add(etiquetaBandejaDeEntrada);
-        etiquetaBandejaDeEntrada.setBounds(690, 120, 220, 30);
+        etiquetaBandejaDeEntrada.setBounds(710, 120, 220, 30);
+
+        jPanel1.setBackground(new java.awt.Color(137, 137, 161));
+
+        etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaTituloConsultas.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaTituloConsultas.setText("Consultas a Profesionales");
+        jPanel1.add(etiquetaTituloConsultas);
+
+        panelConsultaProf.add(jPanel1);
+        jPanel1.setBounds(0, 0, 1130, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelConsultaProf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -154,6 +162,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
     private javax.swing.JButton btnRedactar;
     private javax.swing.JLabel etiquetaBandejaDeEntrada;
     private javax.swing.JLabel etiquetaTituloConsultas;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList listaMensajes;

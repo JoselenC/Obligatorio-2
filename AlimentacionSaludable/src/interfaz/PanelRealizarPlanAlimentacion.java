@@ -182,7 +182,12 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
     private void btnEnviarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarPlanActionPerformed
         usuarioAModificar.setPlan(nuevoPlan);
+        if(nuevoPlan!=null){
         JOptionPane.showMessageDialog(null, "Se ha enviado correctamente el plan");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "El plan no puedo ser vacio");
+        }
     }//GEN-LAST:event_btnEnviarPlanActionPerformed
 
     void actualizarLista() {

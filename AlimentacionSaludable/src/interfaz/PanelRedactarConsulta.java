@@ -20,7 +20,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         ventana = unaVentana;
         ventana.pack();
         listaProfConsulta.setModel(new DefaultComboBoxModel(sistema.getProfesionales().toArray()));
-        //lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        lblUsuario.setText(interfazUsuario.getUsuarioActual().getNombre()+ " "+ interfazUsuario.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -40,6 +40,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         mensajeAlAceptar = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -129,12 +130,15 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");
         add(lblUsuario);
-        lblUsuario.setBounds(830, 130, 210, 30);
+        lblUsuario.setBounds(810, 210, 210, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(810, 10, 190, 130);
+        jLabel2.setBounds(830, 10, 188, 189);
+
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        add(jPanel1);
+        jPanel1.setBounds(10, 0, 990, 80);
     }// </editor-fold>//GEN-END:initComponents
 
     private void listaProfConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaProfConsultaActionPerformed
@@ -174,6 +178,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaMensaje;
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JComboBox<String> listaProfConsulta;

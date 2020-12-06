@@ -88,6 +88,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         rBMacrobiotico = new javax.swing.JRadioButton();
         rBOrganico = new javax.swing.JRadioButton();
         btnCambiarFoto = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -414,6 +415,10 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         panelRegUsuario.add(btnCambiarFoto);
         btnCambiarFoto.setBounds(30, 330, 210, 37);
 
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        panelRegUsuario.add(jPanel1);
+        jPanel1.setBounds(10, 0, 1080, 60);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -425,10 +430,10 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelRegUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -465,7 +470,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         } else {
             if (sistema.getUsuarios().contains(comparoUsuario)
                     && sistema.getProfesionales().contains(comparoProf)) {
-                etiquetaErrorNombreUsuario.setText("El alias de usuario ya está en uso");
+                etiquetaErrorNombreUsuario.setText("El alias de usuario ya existe");
             } else {
                 etiquetaErrorNombreUsuario.setText(" ");
             }
@@ -505,7 +510,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         boolean peso = pidoDatoNumerico(cajaPeso.getText(), 0, 600, etiquetaErrorPeso);
         boolean sexoPred = sexoPredeterminado();
         if (apellidoValido && nombreUsuarioValido
-                && altura && peso && fNacimientoValido) {
+                && altura && peso && !fNacimientoValido) {
             etiquetaErrorAltura.setText("");
             etiquetaErrorPeso.setText("");
             miUsuario.setNombre(cajaNombre.getText());
@@ -533,7 +538,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
                 etiquetaErrorNombreUsuario.setText("Nombre de usuario no válido");
             }
             if (fNacimientoValido == false) {
-                etiquetaErrorFechaNacimiento.setText("Fecha de nacimiento no válida");
+                etiquetaErrorFechaNacimiento.setText("Fecha no válida");
             }
     }//GEN-LAST:event_btnAceptarUsuarioActionPerformed
     }
@@ -672,6 +677,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel fotoPerfil;
     private javax.swing.ButtonGroup grupoBotonesPreferencias;
     private javax.swing.ButtonGroup grupoBotonesSexo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox listaNacionalidadesUsuario;
     private javax.swing.JPanel panelRegUsuario;
     private javax.swing.JRadioButton rBMacrobiotico;
