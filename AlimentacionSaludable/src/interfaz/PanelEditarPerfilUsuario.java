@@ -151,11 +151,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
                 cajaAlturaFocusLost(evt);
             }
         });
-        cajaAltura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaAlturaActionPerformed(evt);
-            }
-        });
         panelEditarPerfilUsuario.add(cajaAltura);
         cajaAltura.setBounds(480, 330, 160, 35);
 
@@ -560,10 +555,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         int posicionEnum = Usuario.Restricciones.Diabetico.ordinal();
         auxCheckBox(posicionEnum);
     }//GEN-LAST:event_checkBoxDiabeticoActionPerformed
-
-    private void cajaAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaAlturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaAlturaActionPerformed
 
     private void btnCambiarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarFotoActionPerformed
         JFileChooser fileChooser = new JFileChooser();

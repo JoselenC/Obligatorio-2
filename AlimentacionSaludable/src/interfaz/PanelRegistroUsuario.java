@@ -453,17 +453,16 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         String altura = cajaAltura.getText();
         if (altura.trim().isEmpty()) {
             etiquetaErrorAltura.setText("La altura no puede estar vacia");
-        } else if (pidoDatoNumerico(altura, 0, 265, etiquetaErrorAltura)) {
-            Integer.parseInt(altura);
+        }
+        pidoDatoNumerico(altura, 0, 265, etiquetaErrorAltura);
     }//GEN-LAST:event_cajaAlturaFocusLost
-    }
+
     private void cajaPesoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaPesoFocusLost
         String peso = cajaPeso.getText();
         if (peso.trim().isEmpty()) {
             etiquetaErrorPeso.setText("El peso no puede estar vacío");
-        } else if (pidoDatoNumerico(peso, 0, 265, etiquetaErrorPeso)) {
-            Integer.parseInt(peso);
         }
+        pidoDatoNumerico(peso, 0, 265, etiquetaErrorAltura);
     }//GEN-LAST:event_cajaPesoFocusLost
 
     private void btnAceptarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarUsuarioActionPerformed
