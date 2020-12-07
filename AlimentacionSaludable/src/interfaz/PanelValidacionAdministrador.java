@@ -154,18 +154,25 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
         brnRegistrarme.getAccessibleContext().setAccessibleName("btnRegistrarme");
     }// </editor-fold>//GEN-END:initComponents
 
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
     private void brnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnRegistrarmeActionPerformed
         String usuario = txtUsuario.getText();
         String contrasenia = txtContraseña.getText();
-        boolean alfanumerica=Pattern.matches("^[a-zA-Z]*$", contrasenia);     
+        boolean alfanumerica = Pattern.matches("^[a-zA-Z]*$", contrasenia) || isNumeric(contrasenia);
         if (usuario.equals("")) {
             JOptionPane.showMessageDialog(null, "El usuario no puede ser vacio");
         } else if (contrasenia.equals("")) {
             JOptionPane.showMessageDialog(null, "La contraseña no puede ser vacia");
         } else if (contrasenia.length() < 8) {
-            JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos 8 caracteres");            
-        }
-        else if(alfanumerica){
+            JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos 8 caracteres");
+        } else if (alfanumerica) {
             JOptionPane.showMessageDialog(null, "La contraseña debe ser alfanumerica");
         } else {
             Administrador nuevoAdministrador = new Administrador(usuario, contrasenia);

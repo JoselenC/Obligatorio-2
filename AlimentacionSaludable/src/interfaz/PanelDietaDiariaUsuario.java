@@ -20,6 +20,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         sistema = unSistema;
         ventana = unaVentana;
         interfaz = unaInterfaz;
+        ventana.pack();
         LocalDate diaActual = LocalDate.now();
         interfaz.getUsuarioActual().setFechaUltimaAdicion(diaActual.toString());
         if (interfaz.getUsuarioActual().getHistorialComidaDelDia().getFecha() == null) {

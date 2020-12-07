@@ -450,12 +450,12 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
     private void btnAceptarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarUsuarioActionPerformed
         boolean nombreValido = !cajaNombre.getText().trim().isEmpty();
         boolean apellidoValido = !cajaApellidos.getText().trim().isEmpty();
-        boolean FNacimientoValido = fechaNacimiento.getCalendar() != null;
+        boolean FNacimientoValido = fechaNacimiento.getCalendar() == null;
         boolean altura = pidoDatoNumerico(cajaAltura.getText(), 0, 265, etiquetaErrorAltura);
         boolean peso = pidoDatoNumerico(cajaPeso.getText(), 0, 265, etiquetaErrorPeso);
         boolean sexoPred = sexoPredeterminado();
         if (nombreValido && apellidoValido
-                && altura && peso && FNacimientoValido) {
+                && altura && peso && !FNacimientoValido) {
             editarUSuario(sexoPred);
 
         } else {
@@ -490,7 +490,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         if (!apellidoValido) {
             etiquetaErrorApellido.setText("El apellido no puede ser vacío");
         }
-        if (!FNacimientoValido) {
+        if (FNacimientoValido) {
             etiquetaErrorFechaNacimiento.setText("Fecha de nacimiento no válida");
         }
         if (!altura) {

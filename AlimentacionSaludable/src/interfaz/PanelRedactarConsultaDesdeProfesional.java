@@ -138,17 +138,23 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
     private void btnEnviarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarConsultaActionPerformed
         Mensaje mensajeAEnviar = new Mensaje();
         Usuario destino = (Usuario) listaUsrConsultas.getSelectedItem();
-        mensajeAEnviar.setOrigen(interfazProf.getUsuarioActivo());
-        mensajeAEnviar.setDestino(destino);
-        mensajeAEnviar.setAsunto(cajaAsunto.getText());
-        mensajeAEnviar.setTextoMensaje(textoConsultaAEnviar.getText());
-        destino.getCasillaDeEntrada().add(mensajeAEnviar);
-        JOptionPane.showMessageDialog(null, "Se envio correctamente el mensaje");
-        ventana.remove(this);
-        PanelConsultaProfesionalDesdeProfesional nuevo = new PanelConsultaProfesionalDesdeProfesional(sistema, interfazProf, ventana);
-        interfazProf.setActual(nuevo);
-        ventana.add(nuevo);
-        ventana.pack();
+        if (textoConsultaAEnviar.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No se puede enviar un mensaje vacio");
+        } else if (cajaAsunto.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No se puede enviar un mensaje sin asunto");
+        } else {
+            mensajeAEnviar.setOrigen(interfazProf.getUsuarioActivo());
+            mensajeAEnviar.setDestino(destino);
+            mensajeAEnviar.setAsunto(cajaAsunto.getText());
+            mensajeAEnviar.setTextoMensaje(textoConsultaAEnviar.getText());
+            destino.getCasillaDeEntrada().add(mensajeAEnviar);
+            JOptionPane.showMessageDialog(null, "Se envio correctamente el mensaje");
+            ventana.remove(this);
+            PanelConsultaProfesionalDesdeProfesional nuevo = new PanelConsultaProfesionalDesdeProfesional(sistema, interfazProf, ventana);
+            interfazProf.setActual(nuevo);
+            ventana.add(nuevo);
+            ventana.pack();
+        }
 
     }//GEN-LAST:event_btnEnviarConsultaActionPerformed
 

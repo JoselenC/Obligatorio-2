@@ -5,6 +5,7 @@ import dominio.Profesional;
 import dominio.Sistema;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelRedactarConsulta extends javax.swing.JPanel {
 
@@ -20,7 +21,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         ventana = unaVentana;
         ventana.pack();
         listaProfConsulta.setModel(new DefaultComboBoxModel(sistema.getProfesionales().toArray()));
-        lblUsuario.setText(interfazUsuario.getUsuarioActual().getNombre()+ " "+ interfazUsuario.getUsuarioActual().getApellidos());
+        lblUsuario.setText(interfazUsuario.getUsuarioActual().getNombre() + " " + interfazUsuario.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -136,10 +137,16 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         Profesional destino = (Profesional) listaProfConsulta.getSelectedItem();
         mensajeAEnviar.setOrigen(interfazUsuario.getUsuarioActual());
         mensajeAEnviar.setDestino(destino);
-        mensajeAEnviar.setAsunto(cajaAsunto.getText());
-        mensajeAEnviar.setTextoMensaje(textoConsultaAEnviar.getText());
-        destino.getCasillaDeEntrada().add(mensajeAEnviar);
-        mensajeAlAceptar.setText("Se ha enviado la consulta");
+        if (textoConsultaAEnviar.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No se puede enviar un mensaje vacio");
+        } else if (cajaAsunto.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No se puede enviar un mensaje sin asunto");
+        } else {
+            mensajeAEnviar.setAsunto(cajaAsunto.getText());
+            mensajeAEnviar.setTextoMensaje(textoConsultaAEnviar.getText());
+            destino.getCasillaDeEntrada().add(mensajeAEnviar);
+            JOptionPane.showMessageDialog(null, "Se ha enviado la consulta");
+        }
     }//GEN-LAST:event_btnEnviarConsultaActionPerformed
 
     private void btnVolverConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverConsultasActionPerformed

@@ -329,7 +329,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             etiquetaErrorFechaGraduacion.setText("Fecha no válida");
         }
         if (!apellidoValido) {
-            etiquetaErrorNombreProf.setText("El apellido no puede ser vacío");
+            etiquetaErrorApellidoProf.setText("El apellido no puede ser vacío");
         }
     }
 

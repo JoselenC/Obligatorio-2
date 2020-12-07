@@ -28,10 +28,11 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         sistema = unSistema;
         interfaz = unaInterfaz;
         ventana = unaVentana;
+        ventana.pack();
         usuarioAModificar = unUsuario;
         listaAModificar = unaLista;
         plan = unPlan;
-
+        
         listaComidas.setListData(sistema.getAlimentos().toArray());
 
     }
