@@ -301,7 +301,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         boolean nombreTituloValido = !cajaNombreTituloProf.getText().trim().isEmpty();
         boolean fGraduacionValido = fechaGraduacion.getCalendar() != null;
         if (nombreValido && nombreUsuarioValido
-                && !fNacimientoValido && nombreTituloValido && !fGraduacionValido && apellidoValido) {
+                && fNacimientoValido && nombreTituloValido && fGraduacionValido && apellidoValido) {
             registrarProfesional(profesional);
         } else {
             noRegistrarProfesional(nombreValido, apellidoValido, fNacimientoValido,
