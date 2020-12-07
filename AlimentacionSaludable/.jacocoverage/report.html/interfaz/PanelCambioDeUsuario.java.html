@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelCambioDeUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelCambioDeUsuario.java</span></div><h1>PanelCambioDeUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Persona;
+import dominio.Profesional;
+import dominio.Usuario;
+import dominio.Sistema;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
+
+public class PanelCambioDeUsuario extends javax.swing.JPanel {
+
+    private JFrame ventana;
+    private Sistema sistema;
+<span class="nc" id="L14">    private InterfazBotonesProfesional interfazProf = null;</span>
+<span class="nc" id="L15">    private InterfazBotonesUsuario interfazUsr = null;</span>
+<span class="nc" id="L16">    private InterfazBotonesAdministrador interfazAdm = null;</span>
+
+    //constructor desde Profesional
+    public PanelCambioDeUsuario(JFrame unaVentana,
+            Sistema unSistema,
+<span class="nc" id="L21">            InterfazBotonesProfesional unaInterfaz) {</span>
+<span class="nc" id="L22">        initComponents();</span>
+<span class="nc" id="L23">        ventana = unaVentana;</span>
+<span class="nc" id="L24">        sistema = unSistema;</span>
+<span class="nc" id="L25">        interfazProf = unaInterfaz;</span>
+<span class="nc" id="L26">        this.setSize(800, 500);</span>
+<span class="nc" id="L27">    }</span>
+
+    //constructor desde Usuario
+    public PanelCambioDeUsuario(JFrame unaVentana,
+            Sistema unSistema,
+<span class="nc" id="L32">            InterfazBotonesUsuario unaInterfaz) {</span>
+<span class="nc" id="L33">        initComponents();</span>
+<span class="nc" id="L34">        ventana = unaVentana;</span>
+<span class="nc" id="L35">        sistema = unSistema;</span>
+<span class="nc" id="L36">        interfazUsr = unaInterfaz;</span>
+<span class="nc" id="L37">    }</span>
+
+    //constructor desde Administrador
+    public PanelCambioDeUsuario(JFrame unaVentana,
+            Sistema unSistema,
+<span class="nc" id="L42">            InterfazBotonesAdministrador unaInterfaz) {</span>
+<span class="nc" id="L43">        initComponents();</span>
+<span class="nc" id="L44">        ventana = unaVentana;</span>
+<span class="nc" id="L45">        sistema = unSistema;</span>
+<span class="nc" id="L46">        interfazAdm = unaInterfaz;</span>
+<span class="nc" id="L47">    }</span>
+
+    //constructor para comenzar la aplicacion
+    public PanelCambioDeUsuario(JFrame unaVentana,
+<span class="nc" id="L51">            Sistema unSistema) {</span>
+<span class="nc" id="L52">        initComponents();</span>
+<span class="nc" id="L53">        ventana = unaVentana;</span>
+<span class="nc" id="L54">        sistema = unSistema;</span>
+<span class="nc" id="L55">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L61">        btnProfesional = new javax.swing.JButton();</span>
+<span class="nc" id="L62">        btnPruebaAdministrador1 = new javax.swing.JButton();</span>
+<span class="nc" id="L63">        btnUsuario1 = new javax.swing.JButton();</span>
+<span class="nc" id="L64">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L65">        etiquetaTitulo = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L67">        setBackground(new java.awt.Color(229, 229, 240));</span>
+<span class="nc" id="L68">        setPreferredSize(new java.awt.Dimension(800, 500));</span>
+<span class="nc" id="L69">        setLayout(null);</span>
+
+<span class="nc" id="L71">        btnProfesional.setBackground(new java.awt.Color(229, 229, 240));</span>
+<span class="nc" id="L72">        btnProfesional.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L73">        btnProfesional.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L74">        btnProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/profesional 2.png&quot;))); // NOI18N</span>
+<span class="nc" id="L75">        btnProfesional.setBorderPainted(false);</span>
+<span class="nc" id="L76">        btnProfesional.setContentAreaFilled(false);</span>
+<span class="nc" id="L77">        btnProfesional.setOpaque(true);</span>
+<span class="nc" id="L78">        btnProfesional.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L80">                btnProfesionalActionPerformed(evt);</span>
+<span class="nc" id="L81">            }</span>
+        });
+<span class="nc" id="L83">        add(btnProfesional);</span>
+<span class="nc" id="L84">        btnProfesional.setBounds(40, 150, 210, 250);</span>
+
+<span class="nc" id="L86">        btnPruebaAdministrador1.setBackground(new java.awt.Color(229, 229, 240));</span>
+<span class="nc" id="L87">        btnPruebaAdministrador1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L88">        btnPruebaAdministrador1.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L89">        btnPruebaAdministrador1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/interfaz/administrador 1 1.png&quot;))); // NOI18N</span>
+<span class="nc" id="L90">        btnPruebaAdministrador1.setBorderPainted(false);</span>
+<span class="nc" id="L91">        btnPruebaAdministrador1.setContentAreaFilled(false);</span>
+<span class="nc" id="L92">        btnPruebaAdministrador1.setOpaque(true);</span>
+<span class="nc" id="L93">        btnPruebaAdministrador1.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L95">                btnPruebaAdministrador1ActionPerformed(evt);</span>
+<span class="nc" id="L96">            }</span>
+        });
+<span class="nc" id="L98">        add(btnPruebaAdministrador1);</span>
+<span class="nc" id="L99">        btnPruebaAdministrador1.setBounds(490, 160, 260, 210);</span>
+
+<span class="nc" id="L101">        btnUsuario1.setBackground(new java.awt.Color(229, 229, 240));</span>
+<span class="nc" id="L102">        btnUsuario1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L103">        btnUsuario1.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L104">        btnUsuario1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/images 1.png&quot;))); // NOI18N</span>
+<span class="nc" id="L105">        btnUsuario1.setBorderPainted(false);</span>
+<span class="nc" id="L106">        btnUsuario1.setContentAreaFilled(false);</span>
+<span class="nc" id="L107">        btnUsuario1.setOpaque(true);</span>
+<span class="nc" id="L108">        btnUsuario1.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L110">                btnUsuario1ActionPerformed(evt);</span>
+<span class="nc" id="L111">            }</span>
+        });
+<span class="nc" id="L113">        add(btnUsuario1);</span>
+<span class="nc" id="L114">        btnUsuario1.setBounds(280, 170, 220, 197);</span>
+
+<span class="nc" id="L116">        jPanel1.setBackground(new java.awt.Color(171, 171, 199));</span>
+
+<span class="nc" id="L118">        etiquetaTitulo.setBackground(new java.awt.Color(135, 135, 156));</span>
+<span class="nc" id="L119">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Yu Gothic UI Semibold&quot;, 0, 48)); // NOI18N</span>
+<span class="nc" id="L120">        etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L121">        etiquetaTitulo.setText(&quot;Inicio de sesion&quot;);</span>
+<span class="nc" id="L122">        jPanel1.add(etiquetaTitulo);</span>
+
+<span class="nc" id="L124">        add(jPanel1);</span>
+<span class="nc" id="L125">        jPanel1.setBounds(10, 10, 800, 90);</span>
+<span class="nc" id="L126">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnPruebaAdministrador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPruebaAdministrador1ActionPerformed
+<span class="nc bnc" id="L129" title="All 2 branches missed.">        if (interfazProf != null) {</span>
+<span class="nc" id="L130">            ventana.remove(interfazProf);</span>
+        }
+<span class="nc bnc" id="L132" title="All 2 branches missed.">        if (interfazUsr != null) {</span>
+<span class="nc" id="L133">            ventana.remove(interfazAdm);</span>
+        }
+<span class="nc" id="L135">        PanelValidacionAdministrador validacion = new PanelValidacionAdministrador(sistema, ventana, this);</span>
+<span class="nc" id="L136">        validacion.setVisible(true);</span>
+<span class="nc" id="L137">    }//GEN-LAST:event_btnPruebaAdministrador1ActionPerformed</span>
+
+    private void btnUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuario1ActionPerformed
+<span class="nc bnc" id="L140" title="All 2 branches missed.">        if (interfazProf != null) {</span>
+<span class="nc" id="L141">            ventana.remove(interfazProf);</span>
+        }
+<span class="nc bnc" id="L143" title="All 2 branches missed.">        if (interfazAdm != null) {</span>
+<span class="nc" id="L144">            ventana.remove(interfazAdm);</span>
+        }
+<span class="nc" id="L146">        FromIngresoUsuario usuario = new FromIngresoUsuario(sistema, ventana, &quot;Usuario&quot;, this);</span>
+<span class="nc" id="L147">        usuario.setVisible(true);</span>
+<span class="nc" id="L148">    }//GEN-LAST:event_btnUsuario1ActionPerformed</span>
+
+    private void btnProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesionalActionPerformed
+
+<span class="nc bnc" id="L152" title="All 2 branches missed.">        if (interfazUsr != null) {</span>
+<span class="nc" id="L153">            ventana.remove(interfazProf);</span>
+        }
+<span class="nc bnc" id="L155" title="All 2 branches missed.">        if (interfazAdm != null) {</span>
+<span class="nc" id="L156">            ventana.remove(interfazAdm);</span>
+        }
+<span class="nc" id="L158">        FromIngresoUsuario usuario = new FromIngresoUsuario(sistema, ventana, &quot;Profesional&quot;, this);</span>
+<span class="nc" id="L159">        usuario.setVisible(true);</span>
+
+<span class="nc" id="L161">    }//GEN-LAST:event_btnProfesionalActionPerformed</span>
+
+    void limpioInterfaces() {
+<span class="nc bnc" id="L164" title="All 2 branches missed.">        if (interfazProf != null) {</span>
+<span class="nc" id="L165">            ventana.remove(interfazProf.getActual());</span>
+<span class="nc" id="L166">            ventana.remove(interfazProf);</span>
+        }
+<span class="nc bnc" id="L168" title="All 2 branches missed.">        if (interfazUsr != null) {</span>
+<span class="nc" id="L169">            ventana.remove(interfazUsr.getActual());</span>
+<span class="nc" id="L170">            ventana.remove(interfazUsr);</span>
+        }
+
+<span class="nc" id="L173">    }</span>
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnProfesional;
+    private javax.swing.JButton btnPruebaAdministrador1;
+    private javax.swing.JButton btnUsuario1;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JPanel jPanel1;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
