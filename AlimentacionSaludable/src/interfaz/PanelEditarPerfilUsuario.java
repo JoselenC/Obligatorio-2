@@ -5,8 +5,6 @@ import dominio.Usuario;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -92,7 +90,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         btnCambiarFoto = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -124,11 +121,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         cajaNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cajaNombreFocusLost(evt);
-            }
-        });
-        cajaNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaNombreActionPerformed(evt);
             }
         });
         panelEditarPerfilUsuario.add(cajaNombre);
@@ -210,11 +202,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         etiquetaNacionalidadUsuario.setBounds(330, 180, 160, 29);
 
         listaNacionalidadesUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        listaNacionalidadesUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaNacionalidadesUsuarioActionPerformed(evt);
-            }
-        });
         panelEditarPerfilUsuario.add(listaNacionalidadesUsuario);
         listaNacionalidadesUsuario.setBounds(480, 180, 160, 37);
 
@@ -415,8 +402,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         panelEditarPerfilUsuario.add(jPanel2);
         jPanel2.setBounds(10, 0, 950, 70);
 
-        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -427,11 +412,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelEditarPerfilUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -440,11 +420,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelEditarPerfilUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -480,48 +455,56 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
     private void btnAceptarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarUsuarioActionPerformed
         boolean nombreValido = !cajaNombre.getText().trim().isEmpty();
         boolean apellidoValido = !cajaApellidos.getText().trim().isEmpty();
-        boolean fNacimientoValido = fechaNacimiento.getCalendar() != null;
+        boolean FNacimientoValido = fechaNacimiento.getCalendar() != null;
         boolean altura = pidoDatoNumerico(cajaAltura.getText(), 0, 265, etiquetaErrorAltura);
         boolean peso = pidoDatoNumerico(cajaPeso.getText(), 0, 265, etiquetaErrorPeso);
         boolean sexoPred = sexoPredeterminado();
         if (nombreValido && apellidoValido
-                && altura && peso && fNacimientoValido) {
-            usuario.setNombre(cajaNombre.getText());
-            usuario.setApellidos(cajaApellidos.getText());
-            usuario.setNacionalidad(usuario.getListaNacionalidades()[listaNacionalidadesUsuario.getSelectedIndex()]);
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());
-            usuario.setFechaNacimiento(fNacimiento);
-            if (sexoPred == true) {
-                usuario.setSexo("Masculino");
-            } else {
-                usuario.setSexo("Femenino");
-            }
-            usuario.setAlturaCm(Integer.parseInt(cajaAltura.getText()));
-            usuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
-            usuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
-            etiquetaMensajeAlAceptar.setText("Usuario editado correctamente");
+                && altura && peso && FNacimientoValido) {
+            editarUSuario(sexoPred);
 
         } else {
-            etiquetaMensajeAlAceptar.setText("Error al editar el usuario");
-            if (nombreValido == false) {
-                etiquetaErrorNombre.setText("El nombre no puede ser vacío");
-            }
-            if (apellidoValido == false) {
-                etiquetaErrorApellido.setText("El apellido no puede ser vacío");
-            }
-            if (fNacimientoValido == false) {
-                etiquetaErrorFechaNacimiento.setText("Fecha de nacimiento no válida");
-            }
-            if (altura == false) {
-                 etiquetaErrorAltura.setText("La altura no puede estar vacía");
-            }
-            if (peso == false) {
-                 etiquetaErrorPeso.setText("El peso no puede estar vacío");
-            }
+            validaciones(nombreValido, apellidoValido, FNacimientoValido, altura, peso);
         }
     }//GEN-LAST:event_btnAceptarUsuarioActionPerformed
 
+    private void editarUSuario(boolean sexoPred) {
+        usuario.setNombre(cajaNombre.getText());
+        usuario.setApellidos(cajaApellidos.getText());
+        usuario.setNacionalidad(usuario.getListaNacionalidades()[listaNacionalidadesUsuario.getSelectedIndex()]);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());
+        usuario.setFechaNacimiento(fNacimiento);
+        if (sexoPred) {
+            usuario.setSexo("Masculino");
+        } else {
+            usuario.setSexo("Femenino");
+        }
+        usuario.setAlturaCm(Integer.parseInt(cajaAltura.getText()));
+        usuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
+        usuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
+        etiquetaMensajeAlAceptar.setText("Usuario editado correctamente");
+    }
+
+    private void validaciones(boolean nombreValido, boolean apellidoValido,
+            boolean FNacimientoValido, boolean altura, boolean peso) {
+        etiquetaMensajeAlAceptar.setText("Error al editar el usuario");
+        if (!nombreValido) {
+            etiquetaErrorNombre.setText("El nombre no puede ser vacío");
+        }
+        if (!apellidoValido) {
+            etiquetaErrorApellido.setText("El apellido no puede ser vacío");
+        }
+        if (!FNacimientoValido) {
+            etiquetaErrorFechaNacimiento.setText("Fecha de nacimiento no válida");
+        }
+        if (!altura) {
+            etiquetaErrorAltura.setText("La altura no puede estar vacía");
+        }
+        if (!peso) {
+            etiquetaErrorPeso.setText("El peso no puede estar vacío");
+        }
+    }
     private void rBtnMasculinoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnMasculinoUsuarioActionPerformed
         usuario.setSexo("Masculino");
     }//GEN-LAST:event_rBtnMasculinoUsuarioActionPerformed
@@ -537,11 +520,11 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_fechaNacimientoFocusLost
 
-    private void auxCheckBox(int posicionEnum){
+    private void auxCheckBox(int posicionEnum) {
         boolean valorEnPos = usuario.getListaRestricciones()[posicionEnum];
         usuario.getListaRestricciones()[posicionEnum] = !valorEnPos;
     }
-    
+
     private void checkBoxIntoleranteLactosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxIntoleranteLactosaActionPerformed
         int posicionEnum = Usuario.Restricciones.IntoleranteALaLactosa.ordinal();
         auxCheckBox(posicionEnum);
@@ -555,10 +538,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
     private void rBMacrobioticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBMacrobioticoActionPerformed
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Macrobiotico);
     }//GEN-LAST:event_rBMacrobioticoActionPerformed
-
-    private void listaNacionalidadesUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaNacionalidadesUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaNacionalidadesUsuarioActionPerformed
 
     private void rBVeganoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBVeganoActionPerformed
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Vegano);
@@ -581,10 +560,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         int posicionEnum = Usuario.Restricciones.Diabetico.ordinal();
         auxCheckBox(posicionEnum);
     }//GEN-LAST:event_checkBoxDiabeticoActionPerformed
-
-    private void cajaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaNombreActionPerformed
 
     private void cajaAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaAlturaActionPerformed
         // TODO add your handling code here:
@@ -661,7 +636,6 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel fotoPerfil;
     private javax.swing.ButtonGroup grupoBotonesPreferencias;
     private javax.swing.ButtonGroup grupoBotonesSexo;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox listaNacionalidadesUsuario;
     private javax.swing.JPanel panelEditarPerfilUsuario;
@@ -692,7 +666,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
     private boolean sexoPredeterminado() {
         boolean predeterminado = true;
-        if (rBtnMasculinoUsuario.isSelected() == false) {
+        if (!rBtnMasculinoUsuario.isSelected()) {
             predeterminado = false;
         }
         return predeterminado;

@@ -39,6 +39,7 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
         fecha = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -48,7 +49,7 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(listaHistorialDeComidas);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(250, 160, 650, 400);
+        jScrollPane1.setBounds(160, 160, 650, 400);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setBorderPainted(false);
@@ -70,22 +71,25 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
         etiquetaFecha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaFecha.setText("Fecha de Ingesta:");
         add(etiquetaFecha);
-        etiquetaFecha.setBounds(220, 100, 200, 40);
+        etiquetaFecha.setBounds(140, 100, 200, 40);
 
         fecha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         fecha.setText("-");
         add(fecha);
-        fecha.setBounds(430, 110, 160, 29);
+        fecha.setBounds(340, 110, 160, 29);
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUsuario.setText("jLabel1");
         add(lblUsuario);
-        lblUsuario.setBounds(930, 140, 210, 20);
+        lblUsuario.setBounds(880, 250, 210, 20);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images 1.png"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(910, 10, 190, 130);
+        jLabel2.setBounds(890, 0, 190, 230);
+
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        add(jPanel1);
+        jPanel1.setBounds(10, 10, 1080, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -103,6 +107,7 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JLabel fecha;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JList listaHistorialDeComidas;

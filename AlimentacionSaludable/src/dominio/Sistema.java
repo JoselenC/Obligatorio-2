@@ -22,7 +22,7 @@ public class Sistema implements Serializable {
     tipoUsuario[] listaTiposDeUsuario;
     tipoUsuario usuarioActivo;
 
-    public Sistema ( ArrayList<Alimento> listaAlimentos,
+    public Sistema( ArrayList<Alimento> listaAlimentos,
             ArrayList<Usuario> listaUsuarios,
             ArrayList<Profesional> listaProfesionales,
             ArrayList<Administrador> listaAdministradores,

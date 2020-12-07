@@ -7,13 +7,11 @@ import javax.swing.JOptionPane;
 
 public class PanelConsultaProfesional extends javax.swing.JPanel {
 
-    
     private Sistema sistema;
     private InterfazBotonesUsuario interfaz;
     private JFrame ventana;
     private Mensaje mensajeSeleccionado;
 
-   
     public PanelConsultaProfesional(Sistema unSistema,
             InterfazBotonesUsuario interfazActual, JFrame unaVentana) {
         initComponents();
@@ -27,11 +25,11 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         }
         mensajeSeleccionado = null;
         textoLeerMensaje.setEditable(false);
-        if(sistema.getProfesionales().size()<1){
+        if (sistema.getProfesionales().size() < 1) {
             btnRedactar.setEnabled(false);
         }
-        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
-        
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre() + " " + interfaz.getUsuarioActual().getApellidos());
+
     }
 
     @SuppressWarnings("unchecked")
@@ -172,8 +170,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
             interfaz.getUsuarioActual().getCasillaDeEntrada().remove(mensajeSeleccionado);
             mensajeSeleccionado = null;
             listaMensajes.setListData(interfaz.getUsuarioActual().getCasillaDeEntrada().toArray());
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Seleccione una consulta para borrar");
         }
     }//GEN-LAST:event_btnBorrarConsActionPerformed
@@ -181,10 +178,9 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
     private void listaMensajesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaMensajesValueChanged
         mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();
         if (mensajeSeleccionado != null) {
-            String textoMensaje = mensajeSeleccionado.getMensaje();
+            String textoMensaje = mensajeSeleccionado.getTextoMensaje();
             textoLeerMensaje.setText(textoMensaje);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Seleccione una consulta");
         }
     }//GEN-LAST:event_listaMensajesValueChanged

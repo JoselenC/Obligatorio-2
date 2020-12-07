@@ -1,7 +1,6 @@
 package dominio;
 
 import java.io.Serializable;
-import java.util.Objects;
 import javax.swing.ImageIcon;
 
 public abstract class Persona implements Serializable {
@@ -76,13 +75,10 @@ public abstract class Persona implements Serializable {
     @Override
     public boolean equals(Object obj) {
         boolean retorno = true;
-        if (obj == null) {
+        if (obj == null || obj.getClass() != this.getClass()) {
             retorno = false;
         }
-        if (obj.getClass() != this.getClass()) {
-            retorno = false;
-        }
-        if (retorno == true) {
+        if (retorno) {
             Persona persona = (Persona) obj;
             retorno = this.getAliasUsuario()
                       .equalsIgnoreCase(persona.getAliasUsuario());
@@ -92,7 +88,6 @@ public abstract class Persona implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        return hash;
+       return 7;
     }
 }

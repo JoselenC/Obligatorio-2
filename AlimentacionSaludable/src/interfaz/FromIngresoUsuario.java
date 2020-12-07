@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class FromIngresoUsuario extends javax.swing.JFrame {
+public class FromIngresoUsuario extends JFrame {
 
     private final Sistema sistema;
     private final JFrame ventana;
@@ -89,7 +89,7 @@ public class FromIngresoUsuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
+                        .addGap(139, 139, 139)
                         .addComponent(brnInicioSesion)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -111,12 +111,11 @@ public class FromIngresoUsuario extends javax.swing.JFrame {
 
     private void brnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnInicioSesionActionPerformed
         if ("Usuario".equals(tipo)) {
-            if (sistema.existeNombreUsuario(txtUsuario.getText())){
-                Usuario usuarioSeleccionado = sistema.getUsuarioPorNombre(txtUsuario.getText());           
+            if (sistema.existeNombreUsuario(txtUsuario.getText())) {
+                Usuario usuarioSeleccionado = sistema.getUsuarioPorNombre(txtUsuario.getText());
                 ventana.remove(cambio);
                 this.setVisible(false);
-                InterfazBotonesUsuario nuevaBotonera;
-                nuevaBotonera = new InterfazBotonesUsuario(sistema, ventana, usuarioSeleccionado);
+                new InterfazBotonesUsuario(sistema, ventana, usuarioSeleccionado);
                 ventana.pack();
             } else {
                 JOptionPane.showMessageDialog(null, "El usuario no esta registrado en el sistema");
@@ -126,8 +125,7 @@ public class FromIngresoUsuario extends javax.swing.JFrame {
             if (sistema.existeNombreProfesional(txtUsuario.getText())) {
                 ventana.remove(cambio);
                 this.setVisible(false);
-                InterfazBotonesProfesional nuevaBotonera;
-                nuevaBotonera= new InterfazBotonesProfesional(sistema, ventana, profesionalSeleccionado);
+                new InterfazBotonesProfesional(sistema, ventana, profesionalSeleccionado);
                 ventana.pack();
             } else {
                 JOptionPane.showMessageDialog(null, "Profesional no registrado en el sistema");

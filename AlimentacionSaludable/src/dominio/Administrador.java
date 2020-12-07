@@ -39,6 +39,7 @@ public class Administrador implements Serializable {
     
     @Override
     public boolean equals(Object obj) {
+        
         if (this == obj) {
             return true;
         }
@@ -52,15 +53,11 @@ public class Administrador implements Serializable {
         if (!Objects.equals(this.usuario, other.usuario)) {
             return false;
         }
-        if (!Objects.equals(this.contrasenia, other.contrasenia)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.contrasenia, other.contrasenia);
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        return hash;
+        return 5;
     }            
 }

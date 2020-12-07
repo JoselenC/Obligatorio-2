@@ -26,7 +26,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         profesional = interfaz.getUsuarioActivo();
         Profesional.Pais[] listaPaises = profesional.getListaEnumPais();
         listaPaisDeGraduacion.setModel(new DefaultComboBoxModel(listaPaises));
-        listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.Uruguay.ordinal());
+        listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.URUGUAY.ordinal());
     }
 
     @SuppressWarnings("unchecked")

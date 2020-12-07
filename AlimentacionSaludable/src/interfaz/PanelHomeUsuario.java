@@ -1,7 +1,6 @@
 package interfaz;
+
 import dominio.Sistema;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class PanelHomeUsuario extends javax.swing.JPanel {
@@ -16,7 +15,7 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
         interfaz = unaInterfaz;
         ventana = unaVentana;
         listaComidasPlan.setListData(interfaz.getUsuarioActual().getPlan().getListaLunes().toArray());
-        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());   
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre() + " " + interfaz.getUsuarioActual().getApellidos());   
         ventana.pack();
     }
 
@@ -49,11 +48,6 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
         listaDiasDeLaSemana.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 listaDiasDeLaSemanaItemStateChanged(evt);
-            }
-        });
-        listaDiasDeLaSemana.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaDiasDeLaSemanaActionPerformed(evt);
             }
         });
         add(listaDiasDeLaSemana);
@@ -113,10 +107,6 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
         ventana.add(nuevo);
         ventana.pack();
     }//GEN-LAST:event_btnHistorialDeComidasActionPerformed
-
-    private void listaDiasDeLaSemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaDiasDeLaSemanaActionPerformed
 
     void actualizarLista() {
         if (listaDiasDeLaSemana.getSelectedItem().equals("lunes")) {

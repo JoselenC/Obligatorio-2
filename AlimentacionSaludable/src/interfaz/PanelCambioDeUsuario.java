@@ -1,19 +1,16 @@
 package interfaz;
 
-import dominio.Persona;
-import dominio.Profesional;
-import dominio.Usuario;
+
 import dominio.Sistema;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
 public class PanelCambioDeUsuario extends javax.swing.JPanel {
 
     private JFrame ventana;
     private Sistema sistema;
-    private InterfazBotonesProfesional interfazProf=null;
-    private InterfazBotonesUsuario interfazUsr=null;
-    private InterfazBotonesAdministrador interfazAdm=null;
+    private InterfazBotonesProfesional interfazProf = null;
+    private InterfazBotonesUsuario interfazUsr = null;
+    private InterfazBotonesAdministrador interfazAdm = null;
 
        
     public PanelCambioDeUsuario(JFrame unaVentana,

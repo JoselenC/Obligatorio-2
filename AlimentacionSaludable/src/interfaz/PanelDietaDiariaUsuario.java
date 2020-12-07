@@ -3,10 +3,7 @@ package interfaz;
 import dominio.Alimento;
 import dominio.ComidaPorDia;
 import dominio.Sistema;
-import dominio.Usuario;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -36,7 +33,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             }
         }
         listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialComidaDelDia().getComidasIngeridas().toArray());
-        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre() + " " + interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -108,7 +105,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         jPanel1.add(etiquetaTituloAlim);
 
         panelDietaDiaria.add(jPanel1);
-        jPanel1.setBounds(10, 10, 950, 120);
+        jPanel1.setBounds(10, 10, 950, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -127,22 +124,20 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             Alimento alimentoABorrar = (Alimento) listaComidasDiarias.getSelectedValue();
             interfaz.getUsuarioActual().getHistorialComidaDelDia().getComidasIngeridas().remove(alimentoABorrar);
             listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialComidaDelDia().getComidasIngeridas().toArray());
-        }
-        else{
-             JOptionPane.showMessageDialog(null, "Seleccione una comida para quitar");
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una comida para quitar");
         }
     }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed
 
     private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
-        if(sistema.getAlimentos().isEmpty()){
-         JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
-        }
-        else{
-        ventana.remove(this);
-        PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema, ventana, interfaz);
-        interfaz.setActual(nuevo);
-        ventana.add(nuevo);
-        ventana.pack();
+        if (sistema.getAlimentos().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No hay alimentos registrados en el sistema");
+        } else {
+            ventana.remove(this);
+            PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema, ventana, interfaz);
+            interfaz.setActual(nuevo);
+            ventana.add(nuevo);
+            ventana.pack();
         }
     }//GEN-LAST:event_etiquetaBtnAgregarComidasActionPerformed
 

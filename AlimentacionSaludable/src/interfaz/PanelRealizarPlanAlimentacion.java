@@ -7,7 +7,6 @@ import dominio.Usuario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
@@ -61,6 +60,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         btnVolver = new javax.swing.JButton();
         btnEnviarPlan = new javax.swing.JButton();
         mensajeAlAceptar = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -150,6 +150,10 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
         mensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         add(mensajeAlAceptar);
         mensajeAlAceptar.setBounds(790, 160, 350, 50);
+
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        add(jPanel1);
+        jPanel1.setBounds(10, 0, 1050, 80);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnQuitarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarComidaActionPerformed
@@ -247,6 +251,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel etiquetaDiasDeLaSemana;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList listaComidasDiarias;
     private javax.swing.JComboBox<String> listaDiasDeLaSemana;

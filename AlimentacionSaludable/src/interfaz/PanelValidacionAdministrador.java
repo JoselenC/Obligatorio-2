@@ -2,7 +2,6 @@ package interfaz;
 
 import dominio.Administrador;
 import dominio.Sistema;
-import java.util.ArrayList;
 import java.util.regex.Pattern;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -11,8 +10,6 @@ import javax.swing.JPanel;
 public class PanelValidacionAdministrador extends javax.swing.JFrame {
 
     private Sistema sistema;
-    private ArrayList<Administrador> administradores = new ArrayList<Administrador>();
-    private boolean inicioSesion = false;
     private JFrame ventana;
     JPanel cambio;
 
@@ -89,9 +86,7 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(brnRegistrarme)
-                        .addGap(84, 84, 84)
+                        .addGap(288, 288, 288)
                         .addComponent(btnIniciarSesion))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,12 +105,14 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
                             .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCon, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblCon, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(brnRegistrarme)
+                        .addGap(202, 202, 202)))
                 .addGap(125, 125, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblUsuario)
-                    .addComponent(lblContraseña))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblContraseña)))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -143,10 +140,10 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblCon, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblContra))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(brnRegistrarme)
-                            .addComponent(btnIniciarSesion))
+                            .addComponent(btnIniciarSesion)
+                            .addComponent(brnRegistrarme))
                         .addGap(29, 29, 29))))
         );
 
@@ -159,19 +156,19 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
 
     private void brnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnRegistrarmeActionPerformed
         String usuario = txtUsuario.getText();
-        String contraseña = txtContraseña.getText();
-        boolean alfanumerica=Pattern.matches("^[a-zA-Z]*$", contraseña);     
+        String contrasenia = txtContraseña.getText();
+        boolean alfanumerica=Pattern.matches("^[a-zA-Z]*$", contrasenia);     
         if (usuario.equals("")) {
             JOptionPane.showMessageDialog(null, "El usuario no puede ser vacio");
-        } else if (contraseña.equals("")) {
+        } else if (contrasenia.equals("")) {
             JOptionPane.showMessageDialog(null, "La contraseña no puede ser vacia");
-        } else if (contraseña.length() < 8) {
+        } else if (contrasenia.length() < 8) {
             JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos 8 caracteres");            
         }
         else if(alfanumerica){
             JOptionPane.showMessageDialog(null, "La contraseña debe ser alfanumerica");
         } else {
-            Administrador nuevoAdministrador = new Administrador(usuario, contraseña);
+            Administrador nuevoAdministrador = new Administrador(usuario, contrasenia);
             if (sistema.getListaAdministradores().contains(nuevoAdministrador)) {
                 JOptionPane.showMessageDialog(null, "El administrador ya esta registrado en el sistema, presiona iniciar sesion");
             } else {
@@ -195,7 +192,7 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
             if (sistema.getListaAdministradores().contains(nuevoAdministrador)) {
                 this.setVisible(false);
                 ventana.remove(cambio);
-                InterfazBotonesAdministrador nuevaBotonera = new InterfazBotonesAdministrador(sistema, ventana);
+                InterfazBotonesAdministrador interfazBotonesAdministrador = new InterfazBotonesAdministrador(sistema, ventana);
                 ventana.pack();
             } else {
                 JOptionPane.showMessageDialog(null, "Administrador no registrado en el sistema");

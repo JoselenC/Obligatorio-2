@@ -46,13 +46,10 @@ public class ComidaPorDia implements Serializable {
     @Override
     public boolean equals(Object obj) {
         boolean retorno = true;
-        if (obj == null) {
+        if (obj == null || getClass() != obj.getClass()) {
             retorno = false;
         }
-        if (getClass() != obj.getClass()) {
-            retorno = false;
-        }
-        if (retorno == true) {
+        if (retorno) {
             ComidaPorDia other = (ComidaPorDia) obj;
             retorno = other.getComidasIngeridas()
                     .equals(this.getComidasIngeridas()) 
@@ -63,8 +60,7 @@ public class ComidaPorDia implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        return hash;
+        return 3;
     }   
     
 }

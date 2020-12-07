@@ -131,11 +131,11 @@ public class SistemaTest {
         String unApellido = "apellido";
         String unNombreUsuario = "usuario";
         String unNombreTitulo = "titulo";
-        Profesional.Pais unPais = Profesional.Pais.Uruguay;
+        Profesional.Pais unPais = Profesional.Pais.URUGUAY;
         ImageIcon unaFotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaProfesional.png"));
         String unaFechaNacimiento = "19/11/2004";
         String unaFechaGraduacion = "19/11/2004";
-        Profesional.Pais unPaisTitulo = Profesional.Pais.Uruguay;
+        Profesional.Pais unPaisTitulo = Profesional.Pais.URUGUAY;
         Sistema instance = new Sistema();
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
@@ -149,11 +149,11 @@ public class SistemaTest {
         String unApellido = "apellido";
         String unNombreUsuario = "usuario";
         String unNombreTitulo = "titulo";
-        Profesional.Pais unPais = Profesional.Pais.Uruguay;
+        Profesional.Pais unPais = Profesional.Pais.URUGUAY;
         ImageIcon unaFotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaProfesional.png"));
         String unaFechaNacimiento = "19/11/2004";
         String unaFechaGraduacion = "19/11/2004";
-        Profesional.Pais unPaisTitulo = Profesional.Pais.Uruguay;
+        Profesional.Pais unPaisTitulo = Profesional.Pais.URUGUAY;
         Sistema instance = new Sistema();
         instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
         assertTrue(instance.getProfesionales().size() > 0);
@@ -163,7 +163,7 @@ public class SistemaTest {
     public void testRegistroAlimento() {
         System.out.println("registroAlimento");
         String nombreAlim = "";
-        Alimento.TipoAlimento unTipo = Alimento.TipoAlimento.Otro;
+        Alimento.TipoAlimento unTipo = Alimento.TipoAlimento.OTRO;
         Alimento a = new Alimento();
         boolean[] unaListaNutrientes = new boolean[a.getListaNutrientesSeleccionados().length];
         Sistema instance = new Sistema();

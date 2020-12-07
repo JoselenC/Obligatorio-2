@@ -1,7 +1,6 @@
 package interfaz;
 
 import dominio.Mensaje;
-import dominio.Profesional;
 import dominio.Sistema;
 import dominio.Usuario;
 import javax.swing.DefaultComboBoxModel;
@@ -39,6 +38,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         cajaAsunto = new javax.swing.JTextField();
         etiquetaTitulo = new javax.swing.JLabel();
         lblEnvio = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         panelRedactarConsulta.setBackground(new java.awt.Color(229, 229, 240));
         panelRedactarConsulta.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -111,6 +111,10 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         panelRedactarConsulta.add(lblEnvio);
         lblEnvio.setBounds(670, 640, 0, 0);
 
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        panelRedactarConsulta.add(jPanel1);
+        jPanel1.setBounds(10, 0, 990, 80);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,7 +141,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         mensajeAEnviar.setOrigen(interfazProf.getUsuarioActivo());
         mensajeAEnviar.setDestino(destino);
         mensajeAEnviar.setAsunto(cajaAsunto.getText());
-        mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());
+        mensajeAEnviar.setTextoMensaje(textoConsultaAEnviar.getText());
         destino.getCasillaDeEntrada().add(mensajeAEnviar);
         JOptionPane.showMessageDialog(null, "Se envio correctamente el mensaje");
         ventana.remove(this);
@@ -157,6 +161,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaDestinatarioConsulta;
     private javax.swing.JLabel etiquetaMensaje;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblEnvio;
     private javax.swing.JComboBox<String> listaUsrConsultas;

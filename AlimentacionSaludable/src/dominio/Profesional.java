@@ -13,18 +13,15 @@ public class Profesional extends Persona implements Serializable {
     private Pais[] listaPaises = inicializoListaPaises();
     private ArrayList<Mensaje> casillaDeEntrada;
 
-
     public Profesional() {
         super("No se ingreso el nombre", "No se ingreso el apellido", "No se ingreso el alias de usuario",
-              "no ingreso fecha nacimiento", null);
-        this.setFotoPerfil(new javax.swing
-                           .ImageIcon(getClass()
-                           .getResource
-                          ("/imagenes/predeterminadaProfesional.png")));
+                "no ingreso fecha nacimiento", null);
+        this.setFotoPerfil(new javax.swing.ImageIcon(getClass()
+                .getResource("/imagenes/predeterminadaProfesional.png")));
         this.tituloProfesional = "No se ingreso el nombre del titulo de profesional";
         this.fechaGraduacion = "No se ingreso la fecha graduacion";
-        this.paisObtuvoTitulo = Pais.Uruguay;
-        this.casillaDeEntrada = new ArrayList<Mensaje>();
+        this.paisObtuvoTitulo = Pais.URUGUAY;
+        this.casillaDeEntrada = new ArrayList<>();
     }
 
     public ArrayList<Mensaje> getCasillaDeEntrada() {
@@ -40,7 +37,7 @@ public class Profesional extends Persona implements Serializable {
     }
 
     public void setTituloProfesional(String tituloProfesional) {
-        if (!tituloProfesional.trim().isEmpty()){
+        if (!tituloProfesional.trim().isEmpty()) {
             this.tituloProfesional = tituloProfesional;
         }
     }
@@ -50,7 +47,7 @@ public class Profesional extends Persona implements Serializable {
     }
 
     public void setFechaGraduacion(String fechaGraduacion) {
-        if(!fechaGraduacion.trim().isEmpty()){
+        if (!fechaGraduacion.trim().isEmpty()) {
             this.fechaGraduacion = fechaGraduacion;
         }
     }
@@ -64,8 +61,7 @@ public class Profesional extends Persona implements Serializable {
     }
 
     public Pais[] getListaEnumPais() {
-        Pais[] lista = listaPaises;
-        return lista;
+        return listaPaises;
     }
 
     public void setListaEnumPais(Pais[] listaEnumPais) {
@@ -76,26 +72,26 @@ public class Profesional extends Persona implements Serializable {
     }
 
     public enum Pais {
-        Alemania, Argentina, Australia, Austria, Brasil, Canadá, Chile, China,
-        Colombia, CoreaDelSur, Cuba, Ecuador, Egipto, España, EstadosUnidos,
-        Francia, Grecia, Holanda, India, Inglaterra, Israel, Italia, Japón,
-        México, Paraguay, Perú, Portugal, Rusia, Sudáfrica, Uruguay, Venezuela
+        ALEMANIA, ARGENTINA, AUSTRALIA, AUSTRIA, BRASIL, CANADÁ, CHILE, CHINA,
+        COLOMBIA, COREADELSUR, CUBA, ECUADOR, EGIPTO, ESPAÑA, ESTADOSUNIDOS,
+        FRANCIA, GRECIA, HOLANDA, INDIA, INGLATERRA, ISRAEL, ITALIA, JAPÓN,
+        MÉXICO, PARAGUAY, PERÚ, PORTUGAL, RUSIA, SUDÁFRICA, URUGUAY, VENEZUELA
+
     }
 
     public Pais[] inicializoListaPaises() {
-        Pais[] listaEnumPivot = {
-            Pais.Alemania, Pais.Argentina, Pais.Australia,
-            Pais.Austria, Pais.Brasil, Pais.Canadá,
-            Pais.Chile, Pais.China, Pais.Colombia,
-            Pais.CoreaDelSur, Pais.Cuba, Pais.Ecuador,
-            Pais.Egipto, Pais.España, Pais.EstadosUnidos,
-            Pais.Francia, Pais.Grecia, Pais.Holanda,
-            Pais.India, Pais.Inglaterra, Pais.Israel,
-            Pais.Italia, Pais.Japón, Pais.México, Pais.Paraguay,
-            Pais.Perú, Pais.Portugal, Pais.Rusia, Pais.Sudáfrica,
-            Pais.Uruguay, Pais.Venezuela
+        return new Pais[]{
+            Pais.ALEMANIA, Pais.ARGENTINA, Pais.AUSTRALIA,
+            Pais.AUSTRIA, Pais.BRASIL, Pais.CANADÁ,
+            Pais.CHILE, Pais.CHINA, Pais.COLOMBIA,
+            Pais.COREADELSUR, Pais.CUBA, Pais.ECUADOR,
+            Pais.EGIPTO, Pais.ESPAÑA, Pais.ESTADOSUNIDOS,
+            Pais.FRANCIA, Pais.GRECIA, Pais.HOLANDA,
+            Pais.INDIA, Pais.INGLATERRA, Pais.ISRAEL,
+            Pais.ITALIA, Pais.JAPÓN, Pais.MÉXICO, Pais.PARAGUAY,
+            Pais.PERÚ, Pais.PORTUGAL, Pais.RUSIA, Pais.SUDÁFRICA,
+            Pais.URUGUAY, Pais.VENEZUELA
         };
-        return listaEnumPivot;
     }
 
     @Override

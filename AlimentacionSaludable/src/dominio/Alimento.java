@@ -18,7 +18,7 @@ public class Alimento implements Serializable {
    
     public Alimento() {
         this.nombre = "sin nombre";
-        this.tipo = TipoAlimento.Otro;
+        this.tipo = TipoAlimento.OTRO;
         this.listaNutrientesSeleccionados = new boolean[listaNutrientes
                                                         .length];
     }
@@ -42,8 +42,7 @@ public class Alimento implements Serializable {
     }
 
     public Nutrientes[] getListaNutrientes() {
-        Nutrientes[] lista = listaNutrientes;
-        return lista;
+        return listaNutrientes;        
     }
 
     public void setListaNutrientes(Nutrientes[] listaNutrientes) {
@@ -53,8 +52,7 @@ public class Alimento implements Serializable {
     }
 
     public TipoAlimento[] getListaTipoAlimento() {
-        TipoAlimento[] lista = listaTipoAlimento;
-        return lista;
+        return listaTipoAlimento;
     }
 
     public void setListaTipoAlimento(TipoAlimento[]
@@ -65,8 +63,7 @@ public class Alimento implements Serializable {
     }
 
     public boolean[] getListaNutrientesSeleccionados() {
-        boolean[] lista = listaNutrientesSeleccionados;
-        return lista;
+       return listaNutrientesSeleccionados;       
     }
 
     public void setListaNutrientesSeleccionados(boolean[]
@@ -77,37 +74,36 @@ public class Alimento implements Serializable {
     }
 
     public enum TipoAlimento {
-        Fruta, Cereal, Legumbre, CarnesBlancas, CarnesRojas, Vegetales,
-        Embutidos, Lacteos, Bebidas, Mariscos, Postres, Otro,
-        ProvenienteDeAnimales
+        
+        FRUTA, CEREAL, LEGUMBRE, CARNESBLANCAS, CARNESROJAS, VEGETALES,
+        EMBUTIDOS, LACTEOS, BEBIDAS, MARISCOS, POSTRES, OTRO,
+        PROVENIENTEDEANIMALES
     }
 
     public TipoAlimento[] inicializoTipoAlimento() {
-        TipoAlimento[] listaEnumPivot = {
-            TipoAlimento.Bebidas, TipoAlimento.CarnesBlancas,
-            TipoAlimento.CarnesRojas, TipoAlimento.Cereal,
-            TipoAlimento.Embutidos, TipoAlimento.Fruta,
-            TipoAlimento.Lacteos, TipoAlimento.Legumbre,
-            TipoAlimento.Mariscos, TipoAlimento.Otro,
-            TipoAlimento.Postres, TipoAlimento.ProvenienteDeAnimales,
-            TipoAlimento.Vegetales
+        return new TipoAlimento[]{
+            TipoAlimento.BEBIDAS, TipoAlimento.CARNESBLANCAS,
+            TipoAlimento.CARNESROJAS, TipoAlimento.CEREAL,
+            TipoAlimento.EMBUTIDOS, TipoAlimento.FRUTA,
+            TipoAlimento.LACTEOS, TipoAlimento.LEGUMBRE,
+            TipoAlimento.MARISCOS, TipoAlimento.OTRO,
+            TipoAlimento.POSTRES, TipoAlimento.PROVENIENTEDEANIMALES,
+            TipoAlimento.VEGETALES
         };
-        return listaEnumPivot;
     }
 
     public enum Nutrientes {
-        Proteinas, Lipidos, HidratosDeCarbono, Vitaminas, Minerales, Agua,
-        Fibra, Ninguno
+        PROTEINAS, LIPIDOS, HIDRATOSDECARBONO, VITAMINAS, MINERALES, AGUA,
+        FIBRA, NINGUNO
     }
 
     public Nutrientes[] inicializoNutrientes() {
-        Nutrientes[] listaNutrientes = {
-            Nutrientes.Agua, Nutrientes.Fibra,
-            Nutrientes.HidratosDeCarbono,
-            Nutrientes.Lipidos, Nutrientes.Minerales,
-            Nutrientes.Proteinas, Nutrientes.Vitaminas, Nutrientes.Ninguno
+        return new Nutrientes[]{
+            Nutrientes.AGUA, Nutrientes.FIBRA,
+            Nutrientes.HIDRATOSDECARBONO,
+            Nutrientes.LIPIDOS, Nutrientes.MINERALES,
+            Nutrientes.PROTEINAS, Nutrientes.VITAMINAS, Nutrientes.NINGUNO
         };
-        return listaNutrientes;
     }
  
     @Override
@@ -117,8 +113,7 @@ public class Alimento implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        return hash;
+        return 7;
     } 
 
     @Override
@@ -145,10 +140,7 @@ public class Alimento implements Serializable {
         if (!Arrays.deepEquals(this.listaNutrientes, other.listaNutrientes)) {
             return false;
         }
-        if (!Arrays.equals(this.listaNutrientesSeleccionados, other.listaNutrientesSeleccionados)) {
-            return false;
-        }
-        return true;
+        return Arrays.equals(this.listaNutrientesSeleccionados, other.listaNutrientesSeleccionados);
     }
     
 

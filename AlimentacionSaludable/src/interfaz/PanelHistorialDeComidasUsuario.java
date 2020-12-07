@@ -1,4 +1,5 @@
 package interfaz;
+
 import dominio.ComidaPorDia;
 import dominio.Sistema;
 import javax.swing.JFrame;
@@ -19,7 +20,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         ventana.pack();
         interfaz = unaInterfaz;
         listaHistorialDeComidas.setListData(interfaz.getUsuarioActual().getHistorialComidas().toArray());
-        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre() + " " + interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -44,7 +45,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(listaHistorialDeComidas);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(360, 130, 440, 400);
+        jScrollPane1.setBounds(350, 120, 440, 400);
 
         btnVerHistorial.setBackground(new java.awt.Color(102, 102, 102));
         btnVerHistorial.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -58,7 +59,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
             }
         });
         add(btnVerHistorial);
-        btnVerHistorial.setBounds(500, 550, 170, 37);
+        btnVerHistorial.setBounds(490, 550, 170, 37);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(102, 102, 102));

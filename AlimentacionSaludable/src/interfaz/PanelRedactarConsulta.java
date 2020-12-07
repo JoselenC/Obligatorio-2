@@ -66,11 +66,6 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
 
         listaProfConsulta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaProfConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        listaProfConsulta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaProfConsultaActionPerformed(evt);
-            }
-        });
         add(listaProfConsulta);
         listaProfConsulta.setBounds(230, 110, 190, 35);
 
@@ -97,11 +92,6 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         btnEnviarConsulta.setBounds(620, 580, 140, 37);
 
         cajaAsunto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        cajaAsunto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaAsuntoActionPerformed(evt);
-            }
-        });
         add(cajaAsunto);
         cajaAsunto.setBounds(230, 170, 530, 35);
 
@@ -141,17 +131,13 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         jPanel1.setBounds(10, 0, 990, 80);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void listaProfConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaProfConsultaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaProfConsultaActionPerformed
-
     private void btnEnviarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarConsultaActionPerformed
         Mensaje mensajeAEnviar = new Mensaje();
         Profesional destino = (Profesional) listaProfConsulta.getSelectedItem();
         mensajeAEnviar.setOrigen(interfazUsuario.getUsuarioActual());
         mensajeAEnviar.setDestino(destino);
         mensajeAEnviar.setAsunto(cajaAsunto.getText());
-        mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());
+        mensajeAEnviar.setTextoMensaje(textoConsultaAEnviar.getText());
         destino.getCasillaDeEntrada().add(mensajeAEnviar);
         mensajeAlAceptar.setText("Se ha enviado la consulta");
     }//GEN-LAST:event_btnEnviarConsultaActionPerformed
@@ -163,10 +149,6 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         ventana.add(nuevo);
         ventana.pack();
     }//GEN-LAST:event_btnVolverConsultasActionPerformed
-
-    private void cajaAsuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaAsuntoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaAsuntoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

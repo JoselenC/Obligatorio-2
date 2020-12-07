@@ -1,8 +1,6 @@
 package interfaz;
 
 import dominio.Sistema;
-import alimentacionsaludable.AlimentacionSaludable;
-import java.io.IOException;
 
 public class PanelPrincipal extends javax.swing.JFrame {
 

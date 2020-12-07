@@ -6,8 +6,6 @@ import dominio.Usuario;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -20,12 +18,10 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
     private Sistema sistema;
     private Usuario usuario;
-    private JFrame ventana;
 
     public PanelRegistroUsuario(Sistema unSistema, JFrame unaVentana) {
         initComponents();
         sistema = unSistema;
-        ventana = unaVentana;
         usuario = new Usuario();
         grupoBotonesSexo.add(rBtnFemeninoUsuario);
         grupoBotonesSexo.add(rBtnMasculinoUsuario);
@@ -127,11 +123,6 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
                 cajaNombreFocusLost(evt);
             }
         });
-        cajaNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaNombreActionPerformed(evt);
-            }
-        });
         panelRegUsuario.add(cajaNombre);
         cajaNombre.setBounds(480, 80, 160, 35);
 
@@ -148,11 +139,6 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         cajaNombUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cajaNombUsuarioFocusLost(evt);
-            }
-        });
-        cajaNombUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaNombUsuarioActionPerformed(evt);
             }
         });
         panelRegUsuario.add(cajaNombUsuario);
@@ -172,11 +158,6 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         cajaAltura.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cajaAlturaFocusLost(evt);
-            }
-        });
-        cajaAltura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaAlturaActionPerformed(evt);
             }
         });
         panelRegUsuario.add(cajaAltura);
@@ -225,11 +206,6 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         etiquetaNacionalidadUsuario.setBounds(330, 230, 160, 29);
 
         listaNacionalidadesUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        listaNacionalidadesUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaNacionalidadesUsuarioActionPerformed(evt);
-            }
-        });
         panelRegUsuario.add(listaNacionalidadesUsuario);
         listaNacionalidadesUsuario.setBounds(480, 230, 160, 37);
 
@@ -444,8 +420,6 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         } else {
             etiquetaErrorNombre.setText(" ");
         }
-
-
     }//GEN-LAST:event_cajaNombreFocusLost
 
     private void cajaApellidosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaApellidosFocusLost
@@ -455,8 +429,6 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         } else {
             etiquetaErrorApellido.setText(" ");
         }
-
-
     }//GEN-LAST:event_cajaApellidosFocusLost
 
     private void cajaNombUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaNombUsuarioFocusLost
@@ -482,7 +454,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         if (altura.trim().isEmpty()) {
             etiquetaErrorAltura.setText("La altura no puede estar vacia");
         } else if (pidoDatoNumerico(altura, 0, 265, etiquetaErrorAltura)) {
-            int alturaEnInt = Integer.parseInt(altura);
+            Integer.parseInt(altura);
     }//GEN-LAST:event_cajaAlturaFocusLost
     }
     private void cajaPesoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaPesoFocusLost
@@ -490,7 +462,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         if (peso.trim().isEmpty()) {
             etiquetaErrorPeso.setText("El peso no puede estar vacío");
         } else if (pidoDatoNumerico(peso, 0, 265, etiquetaErrorPeso)) {
-            int pesoEnInt = Integer.parseInt(peso);
+            Integer.parseInt(peso);
         }
     }//GEN-LAST:event_cajaPesoFocusLost
 
@@ -509,38 +481,41 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         boolean altura = pidoDatoNumerico(cajaAltura.getText(), 0, 265, etiquetaErrorAltura);
         boolean peso = pidoDatoNumerico(cajaPeso.getText(), 0, 600, etiquetaErrorPeso);
         boolean sexoPred = sexoPredeterminado();
-        if (apellidoValido && nombreUsuarioValido
-                && altura && peso && !fNacimientoValido) {
-            etiquetaErrorAltura.setText("");
-            etiquetaErrorPeso.setText("");
-            miUsuario.setNombre(cajaNombre.getText());
-            miUsuario.setApellidos(cajaApellidos.getText());
-            miUsuario.setAliasUsuario(cajaNombUsuario.getText());
-            miUsuario.setNacionalidad(miUsuario.getListaNacionalidades()[listaNacionalidadesUsuario.getSelectedIndex()]);
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());
-            miUsuario.setFechaNacimiento(fNacimiento);
-            if (sexoPred == true) {
-                miUsuario.setSexo("Masculino");
-            } else {
-                miUsuario.setSexo("Femenino");
-            }
-            miUsuario.setAlturaCm(Integer.parseInt(cajaAltura.getText()));
-            miUsuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
-            miUsuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
-            sistema.getUsuarios().add(miUsuario);
-            JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
-
+        if (apellidoValido && nombreUsuarioValido) {
+            registrarUsuario(miUsuario, sexoPred);
         } else {
             JOptionPane.showMessageDialog(this, "Error al registrar el usuario");
 
-            if (nombreUsuarioValido == false) {
+            if (!nombreUsuarioValido) {
                 etiquetaErrorNombreUsuario.setText("Nombre de usuario no válido");
             }
-            if (fNacimientoValido == false) {
+            if (!fNacimientoValido) {
                 etiquetaErrorFechaNacimiento.setText("Fecha no válida");
             }
     }//GEN-LAST:event_btnAceptarUsuarioActionPerformed
+    }
+
+    private void registrarUsuario(Usuario miUsuario, boolean sexoPred) {
+        etiquetaErrorAltura.setText("");
+        etiquetaErrorPeso.setText("");
+        miUsuario.setNombre(cajaNombre.getText());
+        miUsuario.setApellidos(cajaApellidos.getText());
+        miUsuario.setAliasUsuario(cajaNombUsuario.getText());
+        miUsuario.setNacionalidad(miUsuario.getListaNacionalidades()[listaNacionalidadesUsuario.getSelectedIndex()]);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());
+        miUsuario.setFechaNacimiento(fNacimiento);
+        if (sexoPred == true) {
+            miUsuario.setSexo("Masculino");
+        } else {
+            miUsuario.setSexo("Femenino");
+        }
+        miUsuario.setAlturaCm(Integer.parseInt(cajaAltura.getText()));
+        miUsuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
+        miUsuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
+        sistema.getUsuarios().add(miUsuario);
+        JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
+
     }
     private void rBtnMasculinoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnMasculinoUsuarioActionPerformed
         usuario.setSexo("Masculino");
@@ -573,10 +548,6 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Macrobiotico);
     }//GEN-LAST:event_rBMacrobioticoActionPerformed
 
-    private void listaNacionalidadesUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaNacionalidadesUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaNacionalidadesUsuarioActionPerformed
-
     private void rBVeganoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBVeganoActionPerformed
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Vegano);
     }//GEN-LAST:event_rBVeganoActionPerformed
@@ -601,26 +572,14 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         usuario.getListaRestricciones()[posicionEnum] = !valorEnPos;
     }//GEN-LAST:event_checkBoxDiabeticoActionPerformed
 
-    private void cajaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaNombreActionPerformed
-
-    private void cajaNombUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaNombUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaNombUsuarioActionPerformed
-
-    private void cajaAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaAlturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaAlturaActionPerformed
-
     private void btnCambiarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarFotoActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter file = new FileNameExtensionFilter("Archivo imagen", "jpg");
         fileChooser.setFileFilter(file);
         int imagen = fileChooser.showOpenDialog(this);
         if (imagen == JFileChooser.APPROVE_OPTION) {
-            ImageIcon fotoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());
-            ImageIcon fotoArreglada = resizeImageIcon(fotoPerfil, 210, 240);
+            ImageIcon imgFotoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());
+            ImageIcon fotoArreglada = resizeImageIcon(imgFotoPerfil, 210, 240);
             usuario.setFotoPerfil(fotoArreglada);
         }
         actualizar();
@@ -707,7 +666,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
 
     private boolean sexoPredeterminado() {
         boolean predeterminado = true;
-        if (rBtnMasculinoUsuario.isSelected() == false) {
+        if (!rBtnMasculinoUsuario.isSelected()) {
             predeterminado = false;
         }
         return predeterminado;

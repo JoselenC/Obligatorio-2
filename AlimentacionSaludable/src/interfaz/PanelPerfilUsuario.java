@@ -20,7 +20,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         usuario = interfaz.getUsuarioActual();
         datosDelUsuario.setListData(cargoDatosDelUsuario(usuario).toArray());
         etiquetaFoto.setIcon(usuario.getFotoPerfil());
-        lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
+        lblUsuario.setText(interfaz.getUsuarioActual().getNombre() + " " + interfaz.getUsuarioActual().getApellidos());
     }
 
     @SuppressWarnings("unchecked")
@@ -116,10 +116,10 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
 
     private void btnEditarPerfilUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPerfilUsuarioActionPerformed
         ventana.remove(this);
-        PanelEditarPerfilUsuario nuevo = new PanelEditarPerfilUsuario(sistema, ventana, interfaz);        
+        PanelEditarPerfilUsuario nuevo = new PanelEditarPerfilUsuario(sistema, ventana, interfaz);
         ventana.add(nuevo);
         ventana.pack();
-        
+
     }//GEN-LAST:event_btnEditarPerfilUsuarioActionPerformed
 
 
@@ -161,7 +161,13 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
                 cantidadDeRestricciones++;
             }
         }
-        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Celiaco.ordinal()] == true) {
+        return imprimirRestricciones(unUsuario, cantidadDeRestricciones, contador, retorno);
+
+    }
+
+    private String imprimirRestricciones(Usuario unUsuario, int cantidadDeRestricciones,
+            int contador, String retorno) {
+        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Celiaco.ordinal()]) {
             if (contador == cantidadDeRestricciones - 1) {
                 retorno += "Celiaco";
             } else {
@@ -170,7 +176,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
             }
 
         }
-        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Diabetico.ordinal()] == true) {
+        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Diabetico.ordinal()]) {
             if (contador == cantidadDeRestricciones - 1) {
                 retorno += "Diabético";
             } else {
@@ -178,7 +184,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
                 contador++;
             }
         }
-        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Hipertension.ordinal()] == true) {
+        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Hipertension.ordinal()]) {
             if (contador == cantidadDeRestricciones - 1) {
                 retorno += "Hipertensión";
             } else {
@@ -186,7 +192,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
                 contador++;
             }
         }
-        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.IntoleranteALaLactosa.ordinal()] == true) {
+        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.IntoleranteALaLactosa.ordinal()]) {
             if (contador == cantidadDeRestricciones - 1) {
                 retorno += "Intolerancia a la lactosa";
             } else {
@@ -199,5 +205,4 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         }
         return retorno;
     }
-
 }

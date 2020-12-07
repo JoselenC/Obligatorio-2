@@ -78,8 +78,8 @@ public class MensajeTest {
     public void testSetMensaje() {
         String mensajeExpected = "";
         Mensaje mensaje = new Mensaje();
-        mensaje.setMensaje(mensajeExpected);
-        String mensajeResultado = mensaje.getMensaje();
+        mensaje.setTextoMensaje(mensajeExpected);
+        String mensajeResultado = mensaje.getTextoMensaje();
         assertEquals(mensajeExpected, mensajeResultado);
     }
 

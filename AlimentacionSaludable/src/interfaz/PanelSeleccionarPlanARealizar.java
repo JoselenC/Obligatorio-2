@@ -1,6 +1,6 @@
 package interfaz;
 
-import dominio.PlanDeAlimentacion;
+
 import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
@@ -32,6 +32,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         listaUsuarios = new javax.swing.JList();
         btnRealizarPlan = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(229, 229, 240));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -62,6 +63,10 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         });
         add(btnRealizarPlan);
         btnRealizarPlan.setBounds(610, 540, 180, 40);
+
+        jPanel1.setBackground(new java.awt.Color(171, 171, 199));
+        add(jPanel1);
+        jPanel1.setBounds(10, 10, 1080, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
@@ -79,7 +84,6 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Seleccione un usuario para realizar el plan");
         }
-
     }//GEN-LAST:event_btnRealizarPlanActionPerformed
 
     ArrayList<Usuario> listaConPlanARealizar() {
@@ -95,6 +99,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRealizarPlan;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList listaUsuarios;
     // End of variables declaration//GEN-END:variables

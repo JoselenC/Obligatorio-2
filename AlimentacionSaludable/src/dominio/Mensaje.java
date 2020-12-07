@@ -9,7 +9,7 @@ public class Mensaje implements Serializable {
     private Persona origen;
     private Persona destino;
     private String asunto;
-    private String mensaje;
+    private String textoMensaje;
     
     
     public Mensaje() {
@@ -17,7 +17,7 @@ public class Mensaje implements Serializable {
         this.origen = persona;
         this.destino = persona;
         this.asunto = "No se asigno un asunto";
-        this.mensaje = "No se ha scrito un texto de mensaje";
+        this.textoMensaje = "No se ha scrito un texto de mensaje";
     }
     
    
@@ -45,12 +45,12 @@ public class Mensaje implements Serializable {
         this.asunto = asunto;
     }
 
-    public String getMensaje() {
-        return mensaje;
+    public String getTextoMensaje() {
+        return textoMensaje;
     }
 
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
+    public void setTextoMensaje(String textoMensaje) {
+        this.textoMensaje = textoMensaje;
     }
     
  

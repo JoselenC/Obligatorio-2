@@ -1,4 +1,6 @@
 package interfaz;
+
+
 import dominio.Profesional;
 import dominio.Sistema;
 import javax.swing.DefaultComboBoxModel;
@@ -8,7 +10,6 @@ import javax.swing.JOptionPane;
 public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
 
     private Sistema sistema;
-    private JFrame ventana;
     private InterfazBotonesUsuario interfaz;
 
     public PanelPlanAlimentacionUsuario(Sistema unSistema,
@@ -16,7 +17,6 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
             InterfazBotonesUsuario unaInterfaz) {
         initComponents();
         sistema = unSistema;
-        ventana = unaVentana;
         interfaz = unaInterfaz;
         listaProfesionalesAlim.setModel(new DefaultComboBoxModel(sistema.getProfesionales().toArray()));
         lblUsuario.setText(interfaz.getUsuarioActual().getNombre()+ " "+ interfaz.getUsuarioActual().getApellidos());
