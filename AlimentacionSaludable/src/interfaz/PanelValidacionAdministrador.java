@@ -3,6 +3,7 @@ package interfaz;
 import dominio.Administrador;
 import dominio.Sistema;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -159,16 +160,7 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
     private void brnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnRegistrarmeActionPerformed
         String usuario = txtUsuario.getText();
         String contraseña = txtContraseña.getText();
-        char[] contraArray=contraseña.toCharArray();   
-        boolean alfanumerica=false;
-        for (int i = 0; i < contraArray.length; i++) {
-             if(  contraArray[i]==1 || contraArray[i]==2 || contraArray[i]==3 ||
-                contraArray[i]==4 || contraArray[i]==5 || contraArray[i]==6 ||  contraArray[i]==7 ||
-                        contraArray[i]==8 || contraArray[i]==9 ){
-                 alfanumerica=true;
-             }
-                        
-        }       
+        boolean alfanumerica=Pattern.matches("^[a-zA-Z]*$", contraseña);     
         if (usuario.equals("")) {
             JOptionPane.showMessageDialog(null, "El usuario no puede ser vacio");
         } else if (contraseña.equals("")) {
@@ -176,7 +168,7 @@ public class PanelValidacionAdministrador extends javax.swing.JFrame {
         } else if (contraseña.length() < 8) {
             JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos 8 caracteres");            
         }
-        else if(!alfanumerica){
+        else if(alfanumerica){
             JOptionPane.showMessageDialog(null, "La contraseña debe ser alfanumerica");
         } else {
             Administrador nuevoAdministrador = new Administrador(usuario, contraseña);
