@@ -85,6 +85,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         rBOrganico = new javax.swing.JRadioButton();
         btnCambiarFoto = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        lblFecha = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -395,6 +396,10 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         panelRegUsuario.add(jPanel1);
         jPanel1.setBounds(10, 0, 1080, 60);
 
+        lblFecha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        panelRegUsuario.add(lblFecha);
+        lblFecha.setBounds(660, 280, 400, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -480,7 +485,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         boolean altura = pidoDatoNumerico(cajaAltura.getText(), 0, 265, etiquetaErrorAltura);
         boolean peso = pidoDatoNumerico(cajaPeso.getText(), 0, 600, etiquetaErrorPeso);
         boolean sexoPred = sexoPredeterminado();
-        if (apellidoValido && nombreUsuarioValido) {
+        if (apellidoValido && nombreUsuarioValido && fNacimientoValido) {
             registrarUsuario(miUsuario, sexoPred);
         } else {
             JOptionPane.showMessageDialog(this, "Error al registrar el usuario");
@@ -489,7 +494,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
                 etiquetaErrorNombreUsuario.setText("Nombre de usuario no válido");
             }
             if (!fNacimientoValido) {
-                etiquetaErrorFechaNacimiento.setText("Fecha no válida");
+                lblFecha.setText("Fecha no válida");
             }
     }//GEN-LAST:event_btnAceptarUsuarioActionPerformed
     }
@@ -527,7 +532,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     private void fechaNacimientoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fechaNacimientoFocusLost
         //Metodo para validar que se seleccione la fecha de nacimiento 
         if (fechaNacimiento.getCalendar() == null) {
-            etiquetaErrorFechaNacimiento.setText("Debe ingresar una fecha");
+            lblFecha.setText("Debe ingresar una fecha");
         }
     }//GEN-LAST:event_fechaNacimientoFocusLost
 
@@ -636,6 +641,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.ButtonGroup grupoBotonesPreferencias;
     private javax.swing.ButtonGroup grupoBotonesSexo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblFecha;
     private javax.swing.JComboBox listaNacionalidadesUsuario;
     private javax.swing.JPanel panelRegUsuario;
     private javax.swing.JRadioButton rBMacrobiotico;
